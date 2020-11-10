@@ -3,7 +3,7 @@ import { linkTo } from '@storybook/addon-links';
 import { Welcome } from '@storybook/react/demo';
 
 export default {
-  title: 'Welcome',
+  title: 'Welome',
 };
 
 export const toStorybook = () => <Welcome showApp={linkTo('Button')} />;
