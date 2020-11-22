@@ -12,19 +12,29 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #83268F;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: baseline;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.row {
+  margin-right: 0px; 
+  margin-left: 0px; 
 }
-.row{
-  margin-top: 3%;
+titre{
+  color: #BDEAEF;;
+}
+.choixEntre{
+  background-color: #BDEAEF;
+  border-radius: 10px;
+  margin:auto;
+  width: 50%;
+  align-items: flex-end ;
+}
+.App-header {
+  background-color: white;
+  height: 100%;
+  margin-top: 2em;
+  /*flex-direction: column;align-items: center; font-size: calc(10px + 2vmin);*/
+  justify-content: baseline;
+ 
+  border-radius: 50px;
+  color: black;
 }
 
 contain{
