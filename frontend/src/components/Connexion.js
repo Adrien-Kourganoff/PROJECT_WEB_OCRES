@@ -23,18 +23,27 @@ class Connexion extends Component {
     }
 
     return (
-      <div className='connexionBox'>
-        <form className='connexion' onSubmit={this.handleSubmit}>
-          <input
-            value={this.state.pseudo}
-            onChange={this.handleChange}
-            placeholder='Pseudo'
-            type='text'
-            required />
-          <button type='submit'>GO</button>
-        </form>
-      </div>
+        <div>
+        
+            <header className='header'>
+                Dashboard
+            </header>
+
+            <div className='connexionBox'>                              
+                <form className='connexion' onSubmit={this.handleSubmit}>
+                <input
+                    value={this.state.pseudo}
+                    onChange={this.handleChange}
+                    placeholder='Pseudo'
+                    type='text'
+                    required />
+                <button type='submit'>GO</button>
+                </form>
+            </div>
+    
+        </div>
     )
+        
   }
 }
 

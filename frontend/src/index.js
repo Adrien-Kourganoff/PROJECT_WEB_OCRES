@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
+import Main from './dashboard/Main'
+import Choixformulaire from './admin/Admin'
 import Connexion from './components/Connexion'
 import NotFound from './components/NotFound'
 import * as serviceWorker from './serviceWorker'
@@ -12,7 +14,8 @@ const Root = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path='/' component={Connexion} />
-      <Route path='/pseudo/:pseudo' component={App} />
+      <Route path='/pseudo/:pseudo' component={Main} />
+      <Route path='/admin' component={Choixformulaire} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
