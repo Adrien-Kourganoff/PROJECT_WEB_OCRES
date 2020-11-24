@@ -14,7 +14,7 @@ export default props => {
       <a className="Admin" href="/">
         Admin
       </a>
- 
+
     </Sidebar>
   );
 };
