@@ -8,7 +8,6 @@ export default class Containerw1 extends React.Component {
         return (
             <div >
                 Annual target 
-               
             </div>)
     }
 }
