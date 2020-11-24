@@ -1,0 +1,72 @@
+header{
+    
+    color: #009FC2;
+    font-size: 25px;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .lienAdmin{
+    float: right;
+    color: white;
+}
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  
+  .Cardun{
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+    
+  }
+  
+  .Carddeux{
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .Cardtrois{
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .Cardquatre{
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .Cardcinq{
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .Cardsix{
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
