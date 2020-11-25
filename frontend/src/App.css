@@ -1,22 +1,105 @@
-.App {
-  text-align: center;
+
+header{
+    
+  background: linear-gradient(to right, #FDA7A7, #FCEDA7);
+  font-size: 30px;
+
+  color:white;
+  font-weight: bold;
+   
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
-.App-link {
-  color: #09d3ac;
+.Cardun{
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 3px #aaa;
+  border-radius: 10px;
+
 }
+
+.Carddeux{
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 3px #aaa;
+  border-radius: 10px;
+
+}
+
+.Cardtrois{
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 3px #aaa;
+  border-radius: 10px;
+  flex:50%
+}
+
+.Cardquatre{
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 3px #aaa;
+  border-radius: 10px;
+
+}
+
+.Cardcinq{
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 3px #aaa;
+  border-radius: 10px;
+
+}
+
+.Cardsix{
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 3px #aaa;
+  border-radius: 10px;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+

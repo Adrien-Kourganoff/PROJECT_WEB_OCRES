@@ -1,0 +1,172 @@
+header{
+    
+  background: linear-gradient(to right, #FDA7A7, #FCEDA7);
+
+  color:white;
+  font-weight: bold;
+}
+
+.imgHeader{
+  width: 80px; 
+  height: 80px;
+
+  
+}
+
+  .lienAdmin{
+    float: right;
+    color: white;
+}
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .container-flex {
+    margin:2%;
+  }
+  
+  .Cardun{
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .Carddeux{
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .Cardtrois{
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  .TitreCardetrois{
+    text-align: center;
+  }
+  
+  .Cardquatre{
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .Cardcinq{
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .Cardsix{
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #aaa;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .nbBougie{
+    color: #FDA7A7;
+  }
+
+  .bougie{
+    color: #FEC89D;
+  }
+
+  .black{
+    color: black;
+  }
+  
+  /* CSS pour rendre la couleur de fond du profil blanche */
+  .red{
+    color: red;
+  }
+
+
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 80px;
+    background: linear-gradient(#FDA7A7, #FCEDA7);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+
+  }
+  
+  .sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .sidebar p {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+   
+
+  
+  .sidebar a:hover:not(.active) {
+    
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 100px;
+
+    padding: 1px 12px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      background: linear-gradient(to right, #FDA7A7, #FCEDA7);
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+
+    .sidebar p{display:none;}
+  }
+
+
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }  
