@@ -64,8 +64,8 @@ var data2 = {
 
 <link
   rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-></link>;
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </link>;
 
 function App() {
   console.log(window.location.pathname); //si on peut voir l'url en haut
