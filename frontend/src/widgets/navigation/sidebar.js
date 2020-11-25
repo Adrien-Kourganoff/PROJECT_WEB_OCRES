@@ -1,20 +1,60 @@
 import React from 'react';
-import { slide as Sidebar } from 'react-burger-menu';
+import { Nav, initializeIcons } from '@fluentui/react';
 
-// ne pas oublier de mettre la ref pour la page admin
+const navigationStyles = {
+  root: {
+    height: '100vh',
+    boxSizing: 'border-box',
+    border: '1px solid #eee',
+    overflowY: 'auto',
+    paddingTop: '10vh',
+  },
+};
 
-export default props => {
+const links = [
+  {
+    links: [
+      {
+        name: 'Dashboard',
+        key:'key1',
+        url: '/',
+        iconProps: {
+          iconName: 'News',
+          styles: {
+            root: {
+              fontSize: 20,
+              color: '#106ebe',
+            },
+          }
+        }
+      },
+      {
+        name: 'Admin',
+        key: 'key2',
+        url: '/',
+        iconProps: {
+          iconName: 'PlayerSettings',
+          styles: {
+            root: {
+              fontSize: 20,
+              color: '#106ebe',
+            },
+          }
+        }
+      },
+    ],
+  },
+];
+
+const Navigation = () => {
+  initializeIcons();
   return (
-    <Sidebar>
-      
-      <a className="Dashboard" href="/">
-        Dashboard
-      </a>
-
-      <a className="Admin" href="/">
-        Admin
-      </a>
-
-    </Sidebar>
+    <Nav
+      groups={links}
+      selectedKey='key1'
+      styles={navigationStyles}
+    />
   );
 };
+
+export default Navigation;

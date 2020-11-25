@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fluentui/react": "^7.153.0",
+    "@syncfusion/ej2-react-layouts": "^18.3.48",
+    "@uifabric/react-cards": "^0.114.16",
     "react": "^16.11.0",
     "react-burger-menu": "^2.9.0",
     "react-dom": "^16.11.0",
