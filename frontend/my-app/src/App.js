@@ -7,6 +7,7 @@ import Dash from "./dash.png";
 import Graph from "./components/Graph";
 import "./App.css";
 import DayPicker from "react-day-picker";
+import Commentaire from "./components/Commentaire/Commentaire.jsx";
 import "react-day-picker/lib/style.css";
 
 var option = {
@@ -111,21 +112,21 @@ function App() {
         <div class="col-sm-10" style={{ fontWeight: "bold" }}>
           <div class="row">
             <div class="col-sm-9">
-              <div class="row">
+              <div class="row row-mid">
                 <div class="App-headerMilieu">
                   <div class="col-sm-1"></div>
-                  <div class="col-sm-10">
+                  <div class="col-sm-10 container-graph-benefice">
                     <div class="row" style={{ marginTop: "1em" }}>
                       <titre>Bénéfices</titre>
                     </div>
-                    <div class="row">
-                      <Line data={data2} type="line" height="150px" />
+                    <div class="row row-graph-benefice">
+                      <Line data={data2} type="line" height="auto" />
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-1"></div>
               </div>
-              <div class="row">
+              <div class="row row-mid">
                 <div class="col-sm-6">
                   <div class="App-headerMilieu">
                     <div class="col-sm-1"></div>
@@ -159,10 +160,11 @@ function App() {
                   </div>
                 </div>
               </div>
-
-              <div class="row">
-                <div class="App-headerMilieu">
-                  <titre>Commentaires</titre>
+              <div class="row row-mid">
+                <div class="col-sm-10">
+                  <div class="App-headerMilieu">
+                    <Commentaire /> 
+                  </div>
                 </div>
               </div>
             </div>
