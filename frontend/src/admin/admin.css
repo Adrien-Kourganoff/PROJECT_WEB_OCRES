@@ -38,8 +38,8 @@ body {
   }
   
   /* CSS pour les boutons */
-  button{
-    background-color: #009FC2;
+  .button12{
+    background-color: #FDA7A7;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -49,6 +49,37 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    margin: 5px;
+    
+  }
+
+  .button34{
+    background-color: #FEC89D;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    
+  }
+
+  .button56{
+    background-color: #FCEDA7;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
     
   }
 
@@ -57,7 +88,7 @@ body {
   }
 
   .retourButton{
-    background-color: #009FC2;
+    background-color: #FDA7A7;
     border: none;
     color: white;
     padding: 10px 20px;

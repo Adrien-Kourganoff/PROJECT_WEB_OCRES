@@ -10,24 +10,52 @@ import Cardsix from './Cardsix'
 import './dashboard.css';
 
 
+
 class Main extends Component {
+
+
   
   render () {
     
     return (
       <div>
         <header className='header'>
-         Dashboard 
-         <a className='lienAdmin' href='/admin'> Admin</a>
+         <img className='imgHeader' src='../logo.png'/> Dashboard 
         </header>
-        <div className='flex-container'>
-            <Cardun/>
-            <Carddeux/>
-            <Cardtrois/>
-            <Cardquatre/>
-            <Cardcinq/>
-            <Cardsix/>
+
+        <div class="sidebar">
+          <p>Home</p> 
+          <a href="/admin">Admin</a>
+          <a href="/">Logout</a>
         </div>
+
+        <div class="content">
+        <div className='container-flex'>
+          <div className='row'> 
+            <div className='col-lg-12 col-md-12'>
+            <Cardun/>
+            </div>
+            <div className='col-lg-4 col-md-6'>
+            <Cardtrois/>
+            </div>
+            <div className='col-lg-4 col-md-6'>
+            <Carddeux/>
+            </div>
+            <div className='col-lg-4 col-md-4'>
+            <Cardsix/>
+            </div>
+            <div className='col-lg-6 col-md-8'>
+            <Cardquatre/>
+            </div>
+            <div className='col-lg-6 col-md-12'>
+            <Cardcinq/>
+            </div>            
+          </div> 
+        </div>
+          
+        </div>
+
+        
     
       </div>
     )

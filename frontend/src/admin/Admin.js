@@ -109,12 +109,12 @@ class Choixformulaire extends React.Component {
           <br></br>
         <div className="container-form">
           <div className="row">
-            <div className="col-sm-2"><button onClick={this.changeWidge0}>Widget 1</button></div>
-            <div className="col-sm-2"><button onClick={this.changeWidge1}>Widget 2</button></div>
-            <div className="col-sm-2"><button onClick={this.changeWidge2}> Widget 3</button></div>
-            <div className="col-sm-2"><button onClick={this.changeWidge3}>Widget 4</button></div>
-            <div className="col-sm-2"><button onClick={this.changeWidge4}>Widget 5</button></div>
-            <div className="col-sm-2"><button onClick={this.changeWidge5}> Widget 6</button></div>
+            <div className="col-sm-2"><button className='button12' onClick={this.changeWidge0}>Widget 1</button></div>
+            <div className="col-sm-2"><button className='button12' onClick={this.changeWidge1}>Widget 2</button></div>
+            <div className="col-sm-2"><button className='button34' onClick={this.changeWidge2}> Widget 3</button></div>
+            <div className="col-sm-2"><button className='button34' onClick={this.changeWidge3}>Widget 4</button></div>
+            <div className="col-sm-2"><button className='button56' onClick={this.changeWidge4}>Widget 5</button></div>
+            <div className="col-sm-2"><button className='button56' onClick={this.changeWidge5}> Widget 6</button></div>
           </div>
         </div>
         
