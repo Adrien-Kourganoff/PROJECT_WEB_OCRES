@@ -1,0 +1,11 @@
+.container-commentaire {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+
+.message-list-container {
+    height: 50vh;
+    overflow: auto;
+    
+}
