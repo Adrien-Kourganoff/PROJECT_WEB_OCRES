@@ -7,6 +7,5 @@
 .message-list-container {
     height: 50vh;
     overflow: auto;
-    border: rgb(21, 45, 68)solid 1px;
-    border-radius: 5px;
+    
 }
