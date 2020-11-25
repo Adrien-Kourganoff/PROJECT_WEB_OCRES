@@ -11,13 +11,19 @@ class Graphi extends Component {
         <div className="todoListMain">
           <div className="header">
             <form onSubmit={this.props.addItem}>
-              <input
-                placeholder="Task"
-                ref={this.props.inputElement}
-                value={this.props.currentItem.text}
-                onChange={this.props.handleInput}
-              />
-              <button type="submit"> Add Task </button>
+              <div class="col-sm-7">
+                <input
+                  placeholder="Taches"
+                  ref={this.props.inputElement}
+                  value={this.props.currentItem.text}
+                  onChange={this.props.handleInput}
+                />
+              </div>
+              <div class="col-sm-2">
+                <button type="submit"> Ajouter </button>
+              </div>
+              
+              
             </form>
           </div>
         </div>

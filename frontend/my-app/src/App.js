@@ -84,7 +84,9 @@ function App() {
               <div class="col-sm-12">
                 <div class="choixEntre">
                   <div class="row">
-                    <a style={{ margin: "auto" }}>Entreprise A</a>
+                    <a style={{ margin: "auto", color: "#333" }}>
+                      Entreprise A
+                    </a>
                   </div>
                 </div>
               </div>
@@ -102,7 +104,7 @@ function App() {
                 <img src={Param}></img>
               </div>
               <div class="col-sm-10">
-                <a> Mes Paramètres</a>
+                <a style={{ color: "#333" }}> Mes Paramètres</a>
               </div>
             </div>
           </header>
@@ -119,43 +121,40 @@ function App() {
                       <titre>Bénéfices</titre>
                     </div>
                     <div class="row">
-                      <Line data={data2} type="line" height="150px" />
+                      <Line data={data2} type="line" />
                     </div>
                   </div>
+                  <div class="col-sm-1"></div>
                 </div>
-                <div class="col-sm-1"></div>
+                
               </div>
               <div class="row">
                 <div class="col-sm-6">
                   <div class="App-headerMilieu">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10">
-                      <titre>Gains</titre>
-                      <div class="row">
-                        <Doughnut
-                          data={dataGain}
-                          options={option}
-                          height="150px"
-                        />
+                    <div class="row">
+                      <div class="col-sm-1"></div>
+                      <div class="col-sm-10">
+                        <titre>Gains</titre>
+                        <div class="row">
+                          <Doughnut data={dataGain} options={option} />
+                        </div>
                       </div>
+                      <div class="col-sm-1"></div>
                     </div>
-                    <div class="col-sm-1"></div>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="App-headerMilieu">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10">
-                      <titre>Depense</titre>
-                      <div class="row">
-                        <Doughnut
-                          data={dataDep}
-                          options={option}
-                          height="150px"
-                        />
+                    <div class="row">
+                      <div class="col-sm-1"></div>
+                      <div class="col-sm-10">
+                        <titre>Depense</titre>
+                        <div class="row">
+                          <Doughnut data={dataDep} options={option} />
+                        </div>
                       </div>
+                      <div class="col-sm-1"></div>
                     </div>
-                    <div class="col-sm-1"></div>
                   </div>
                 </div>
               </div>
@@ -181,14 +180,16 @@ function App() {
               </div>
               <div class="row">
                 <div class="App-header">
-                  <div class="col-sm-1"></div>
-                  <div class="col-sm-10">
-                    <titre>ToDo</titre>
-                    <div class="row">
-                      <Graph />
+                  <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                      <titre>ToDo</titre>
                     </div>
+                    <div class="col-sm-1"></div>
                   </div>
-                  <div class="col-sm-1"></div>
+                  <div class="row">
+                    <Graph />
+                  </div>
                 </div>
               </div>
             </div>
