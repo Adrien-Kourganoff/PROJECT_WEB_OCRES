@@ -1,50 +1,58 @@
-/* Graph.js */
-
-import React from 'react';
-import CanvasJSReact from '../canvasjs.react.js';
-
-var Component = React.Component;
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-export default class Graph extends Component {
-	render() {
-		const options = {
-			animationEnabled: true,
-			color:{
-				color:"blue"
-			},
-			title: {
-				text: "Bénéfices de l'entreprise"
-			},
-			axisY: {
-				title: "bénefices",
-				suffix: "k€"
-			},
-			data: [{
-				type: "splineArea",
-
-				dataPoints: [
-					{ x: new Date(2020, 0), y: 70.735 },
-					{ x: new Date(2020, 1), y: 74.102 },
-					{ x: new Date(2020, 2), y: 72.569 },
-					{ x: new Date(2020, 3), y: 72.743 },
-					{ x: new Date(2020, 4), y: 72.381 },
-					{ x: new Date(2020, 5), y: 71.406 },
-					{ x: new Date(2020, 6), y: 73.163 },
-					{ x: new Date(2020, 7), y: 74.270 },
-					{ x: new Date(2020, 8), y: 72.525 },
-					{ x: new Date(2020, 9), y: 73.121 }
-				]
-			}]
-		}
-		return (
-		<div>
-			<CanvasJSChart options = {options}
-				/* onRef={ref => this.chart = ref} */
-			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-		</div>
-		);
+import React, { Component } from 'react'
+import Graphi from "./Graphi"
+import TodoItems from "./TodoItems"
+import './Todo.css'
+class Graph extends Component {
+	inputElement = React.createRef()
+	constructor() {
+	  super()
+	  this.state = {
+		items: [],
+		currentItem: {
+		  text: '',
+		  key: '',
+		},
+	  }
 	}
-}
-              
+	deleteItem = key => {
+	  const filteredItems = this.state.items.filter(item => {
+		return item.key !== key
+	  })
+	  this.setState({
+		items: filteredItems,
+	  })
+	}
+  
+	handleInput = e => {
+	  const itemText = e.target.value
+	  const currentItem = { text: itemText, key: Date.now() }
+	  this.setState({
+		currentItem,
+	  })
+	}
+	addItem = e => {
+	  e.preventDefault()
+	  const newItem = this.state.currentItem
+	  if (newItem.text !== '') {
+		const items = [...this.state.items, newItem]
+		this.setState({
+		  items: items,
+		  currentItem: { text: '', key: '' },
+		})
+	  }
+	}
+	render() {
+	  return (
+		<div className="App">
+		  <Graphi
+			addItem={this.addItem}
+			inputElement={this.inputElement}
+			handleInput={this.handleInput}
+			currentItem={this.state.currentItem}
+		  />
+		  <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
+		</div>
+	  )
+	}
+  }
+export default Graph

@@ -27,6 +27,13 @@ titre{
   width: 75%;
   align-items: flex-end ;
 }
+.date{
+  background-color: #BDEAEF;
+  border-radius: 10px;
+  margin:auto;
+  width: 2em;
+  align-items: flex-end ;
+}
 .App-header {
   background-color: white;
   height: 100%;
