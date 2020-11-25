@@ -7,6 +7,7 @@
   pointer-events: none;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -23,12 +24,23 @@ titre{
   background-color: #BDEAEF;
   border-radius: 10px;
   margin:auto;
-  width: 50%;
+  width: 75%;
   align-items: flex-end ;
 }
 .App-header {
   background-color: white;
   height: 100%;
+  margin-top: 2em;
+  /*flex-direction: column;align-items: center; font-size: calc(10px + 2vmin);*/
+  justify-content: baseline;
+ 
+  border-radius: 50px;
+  color: black;
+}
+.App-headerMilieu {
+  background-color: white;
+  height: 100%;
+  width: 75%;
   margin-top: 2em;
   /*flex-direction: column;align-items: center; font-size: calc(10px + 2vmin);*/
   justify-content: baseline;
