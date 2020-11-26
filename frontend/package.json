@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.2.2",
     "bootstrap": "^4.5.3",
     "chart.js": "^2.9.4",
+    "lodash": "^4.17.20",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-chartjs-2": "^2.11.1",
@@ -16,6 +17,7 @@
     "react-dom": "^17.0.1",
     "react-native-calendar-strip": "^2.0.9",
     "react-scripts": "4.0.0",
+    "react-simple-maps": "^2.3.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
