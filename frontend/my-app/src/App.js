@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Doughnut } from "react-chartjs-2";
 import { Line } from "react-chartjs-2";
-import Graph from "./components/Graph";
+import Todo from "./components/Todo.jsx";
 import DayPicker from "react-day-picker";
 import Commentaire from "./components/Commentaire/Commentaire.jsx";
 import Parameter from "./components/Parameter/Parameter.jsx"
@@ -69,7 +69,6 @@ var data2 = {
   ],
 };
 
-var id = window.location.pathname[1] === undefined ? 0 : window.location.pathname[1];
 
 
 <link
@@ -239,7 +238,7 @@ class App extends Component {
                         <div class="col-sm-10">
                           <titre>ToDo</titre>
                           <div class="row">
-                            <Graph />
+                            <Todo />
                           </div>
                         </div>
                         <div class="col-sm-1"></div>
@@ -248,7 +247,7 @@ class App extends Component {
                     <div class="col-sm-1"></div>
                   </div>
                   <div class="row">
-                    <Graph />
+                    <Todo />
                   </div>
                 </div>
               </div>

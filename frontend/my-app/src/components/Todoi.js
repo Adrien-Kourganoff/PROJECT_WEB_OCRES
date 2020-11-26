@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import Graph from 'chart.js';
 
 
-class Graphi extends Component {
+class Todoi extends Component {
     componentDidUpdate() {
       this.props.inputElement.current.focus()
     }
@@ -30,4 +29,4 @@ class Graphi extends Component {
       )
     }
   }
-export default Graphi
+export default Todoi
