@@ -11,6 +11,7 @@
     "chart.js": "^2.9.4",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
+    "react-card-flip": "^1.0.11",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "recharts": "^1.8.5",

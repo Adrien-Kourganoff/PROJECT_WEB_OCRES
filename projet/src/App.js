@@ -14,6 +14,9 @@ import './Widgets/Widget.css';
 import Button from './Widgets/Button';
 import './Widgets/button.css';
 import SideBar from './Widgets/SideBar';
+/*import Astuce from './Widgets/Astuce';
+import './Widgets/Astuce.css';*/
+
 
 <link
   rel="stylesheet "
@@ -77,12 +80,17 @@ function App() {
 
         <Col md={6}>
     <div className="card-deck">
-    <Card style={{ width: '10px'} }>
-      <Card.Body>
-     
-        <h4 className="title">Astuces</h4>
-        <p className="category">Astuces</p>
-      
+    <Card className="flip-card"style={{ width: '10px'} }>
+      <Card.Body >
+<div>
+    <div class="flip-card-inner">   
+    <h4 className="astuce">Astuces</h4>
+      <p className="category">Astuces</p>
+     </div>
+     <div class="flip-card-back">
+        Astuce du jour
+     </div>
+     </div>
         </Card.Body>
         </Card>
         </div>
@@ -115,6 +123,7 @@ function App() {
    <Card.Body>
         <h4 className="title">Feeling</h4>
         <p className="category">Feeling</p>
+  
         </Card.Body>
         </Card>
         </div>
