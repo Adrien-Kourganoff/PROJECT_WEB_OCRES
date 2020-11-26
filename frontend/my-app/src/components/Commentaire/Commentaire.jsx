@@ -83,7 +83,6 @@ class Commentaire extends Component {
     render() {
         return (
             <div className="container-commentaire">
-                <h1>Commentaires</h1>
                 <div className="message-list-container">
                     <MessageList
                         className='message-list'
