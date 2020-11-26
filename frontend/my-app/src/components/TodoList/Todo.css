@@ -42,7 +42,7 @@ html, body {
 
     border: 2px solid #FFF;
     border-radius: 10px;
-    width: 100px;
+    width: 100%;
   }
   
   .todoListMain .header button {

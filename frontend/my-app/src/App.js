@@ -77,7 +77,7 @@ class App extends Component {
                 <div class="col-sm-12">
                   <div class="choixEntre">
                     <div class="row">
-                      <a style={{ margin: "auto" }}>Entreprise A</a>
+                      <a style={{ margin: "auto", fontSize:"100%" }}>Entreprise A</a>
                     </div>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ class App extends Component {
                       <img src={DashA}></img>
                     </div>
                     <div class="col-sm-10">
-                      <a style={{ color: "#FDE1DE" }}>Mon DashBoard</a>
+                      <a style={{ color: "#FDE1DE", fontSize:"100%" }}>Mon DashBoard</a>
                     </div>
                   </div>
 
@@ -108,7 +108,7 @@ class App extends Component {
                       <img src={Param}></img>
                     </div>
                     <div class="col-sm-10">
-                      <a> Mes Paramètres</a>
+                      <a style={{ fontSize:"100%" }}> Mes Paramètres</a>
                     </div>
                   </div>
                 </div>
@@ -120,11 +120,11 @@ class App extends Component {
                     onClick={this.dashboard}
                     style={{ marginTop: "40%", cursor: "pointer" }}
                   >
-                    <div class="col-sm-2">
+                    <div class="col-sm-2 col-xs-2">
                       <img src={Dash}></img>
                     </div>
-                    <div class="col-sm-10">
-                      <a>Mon DashBoard</a>
+                    <div class="col-sm-10 col-xs-10">
+                      <a style={{ fontSize:"100%" }}>Mon DashBoard</a>
                     </div>
                   </div>
                   <div
@@ -136,7 +136,7 @@ class App extends Component {
                       <img src={ParamA}></img>
                     </div>
                     <div class="col-sm-10">
-                      <a style={{ color: "#78E6D0" }}> Mes Paramètres</a>
+                      <a style={{ color: "#78E6D0", fontSize:"100%" }}> Mes Paramètres</a>
                     </div>
                   </div>
                 </div>
@@ -179,10 +179,10 @@ class App extends Component {
                             </div>
                             <div class="col-sm-1"></div>
                           </div>
-                        
-                        <div class="row">
-                          <Doughnutt user={0} />
-                        </div>
+
+                          <div class="row">
+                            <Doughnutt user={0} />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -196,10 +196,10 @@ class App extends Component {
                             </div>
                             <div class="col-sm-1"></div>
                           </div>
-                        
-                        <div class="row">
-                          <Doughnutt user={1} />
-                        </div>
+
+                          <div class="row">
+                            <Doughnutt user={1} />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -213,35 +213,45 @@ class App extends Component {
                   </div>
                 </div>
                 <div class="col-sm-3">
-                  <div class="row">
-                    <div class="App-header">
+                <div class="row">
+                    <div class="App-headerMilieu">
                       <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-9">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10">
                           <titre>Date</titre>
                         </div>
+                        <div class="col-sm-1"></div>
                       </div>
-                      <div class="row" >
-                        <div class="col-sm-12" style={{alignItems:"center"}} >
-                        <DayPicker  />
+                      <div class="row" style={{margin:"auto"}}>
+                        <div class="col-sm-1 col-xs-1">
+                          </div>
+                          <div class="col-sm-10 col-xs-10">
+                          <div class="row">
+                            <DayPicker />
+                          </div>
+                          <div class="col-sm-1 col-xs-1">
+                          </div>
+
                         </div>
                         
                       </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="App-header">
+                    <div class="App-headerMilieu">
                       <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-7">
-                          <titre>À faire</titre>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10">
+                          <titre>À Faire</titre>
                         </div>
+                        <div class="col-sm-1"></div>
                       </div>
                       <div class="row">
                         <Graph />
                       </div>
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </div>
