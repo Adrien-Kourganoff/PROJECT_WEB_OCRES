@@ -103,7 +103,7 @@ function App() {
     
       <Card style={{ width: '10px'} }>
       <Card.Body>
-        <h4 className="title">Gaphique</h4>
+        <h4 className="title">Graphique</h4>
         <p className="category">Graphique</p>
         <Baton/>
         </Card.Body>
