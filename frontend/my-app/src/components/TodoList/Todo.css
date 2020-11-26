@@ -39,22 +39,22 @@ html, body {
     margin: 6px 10px 6px 0;
   }
   .todoListMain .header input {
-    font-size: 16px;
+
     border: 2px solid #FFF;
-    width: 165px;
+    border-radius: 10px;
+    width: 100px;
   }
   
   .todoListMain .header button {
+    margin-right: 0px;
     background-color: #BDEAEF;
+    border-radius: 10px;
     color: #FFF;
-    border-radius: 5px;
-    border: 2px solid #BDEAEF;
   }
   
   .todoListMain .header button:hover {
-    background-color: #696969;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #BDEAEF;
+    border-radius: 10px;
   }
   
   .todoListMain .theList {
@@ -83,7 +83,7 @@ html, body {
   
   
   .theList li {
-    color: #696969;
+    color: #333;
     background-color: rgba(255, 255, 255, .5);
     padding: 15px;
     margin-bottom: 15px;
