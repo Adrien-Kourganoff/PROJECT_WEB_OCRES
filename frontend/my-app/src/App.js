@@ -6,6 +6,8 @@ import Graph from "./components/TodoList/Graph";
 import DayPicker from "react-day-picker";
 import Commentaire from "./components/Commentaire/Commentaire.jsx";
 import Parameter from "./components/Parameter/Parameter.jsx";
+import Form from 'react-bootstrap/Form'
+import { Button} from 'react-bootstrap';
 
 import "./App.css";
 import "react-day-picker/lib/style.css";
@@ -54,7 +56,13 @@ class App extends Component {
     super(props);
     this.parameter = this.parameter.bind(this);
     this.dashboard = this.dashboard.bind(this);
-    this.state = { page: 1 };
+    this.changeentrepriseJade = this.changeentrepriseJade.bind(this);
+    this.changeentrepriseMathilde = this.changeentrepriseMathilde.bind(this);
+    this.state = { 
+      page: 1,
+      entreprise: 'Jade',
+     };
+    
   }
   parameter() {
     this.setState({ page: 2 });
@@ -64,6 +72,15 @@ class App extends Component {
     this.setState({ page: 1 });
   }
 
+
+
+  changeentrepriseJade() {
+    this.setState ({entreprise: 'Jade'})
+  }
+  changeentrepriseMathilde(){
+    this.setState ({entreprise: 'Mathilde'})
+  }
+  
   render() {
     return (
       <div class="container" style={{ maxWidth: "2000px" }}>
@@ -77,7 +94,26 @@ class App extends Component {
                 <div class="col-sm-12">
                   <div class="choixEntre">
                     <div class="row">
-                      <a style={{ margin: "auto" }}>Entreprise A</a>
+                      {/* je sais c'est trop cheum */ }
+                      
+                      <Form >
+                      <Form.Check
+                        onClick={this.changeentrepriseJade}
+                        type="radio"
+                        label="Jade"
+                        name="Jade"
+                        id="Jade"
+                      />
+                      <Form.Check
+                        onClick={this.changeentrepriseMathilde}
+                        type="radio"
+                        label="Mathilde"
+                        name="Mathilde"
+                        id="Mathilde"
+                      />
+                      
+                      </Form>
+                      
                     </div>
                   </div>
                 </div>
