@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import "./Parameter.css";
 import Form from 'react-bootstrap/Form'
 import { Button} from 'react-bootstrap';
-import FormControl from 'react-bootstrap/FormControl'
-import FormCheck from 'react-bootstrap/FormCheck'
-import FormFile from 'react-bootstrap/FormFile'
+// import FormControl from 'react-bootstrap/FormControl'
+// import FormCheck from 'react-bootstrap/FormCheck'
+// import FormFile from 'react-bootstrap/FormFile'
 import {isNaN} from 'lodash'
 
 class parameter extends Component {
@@ -14,16 +14,24 @@ class parameter extends Component {
             mois: null,
             benef: null,
             gain: null, 
+            typegain:null,
             dep: null,
+            typedep:null,
+            event:null,
+            moisevent:null,
+            jourevent:null,
             pseudo:null,
             commentaire:null,
          }  
     }
 
-    /*benefice*/
+    /*----------------------------------------------------------benefice*/
     mySubmitHandlerBenef = (event) => {
         event.preventDefault();
         let benef = parseInt(this.state.benef,10);
+        let mois=this.state.mois;
+        console.log(mois);
+        console.log(benef);
         
         if (isNaN(benef)) {
           alert("Le benefice doit être un nombre");
@@ -31,15 +39,20 @@ class parameter extends Component {
       }
     handleBenefChange = (e) => {
         this.setState({benef: e.target.value});
+        
      }
      handleBenefMoisChange = (e) => {
         this.setState({mois: e.target.value});
-        console.log(this.mois);
+        // let mois=this.state.mois;
+        // console.log(mois);  
      }
-     /*gain*/
+     /*----------------------------------------------------------gain*/
      mySubmitHandlerGain = (event) => {
         event.preventDefault();
         let gain = parseInt(this.state.gain,10);
+        let typegain=this.state.typegain;
+        console.log(typegain);
+        console.log(gain);
         
         if (isNaN(gain)) {
           alert("Le gain doit être un nombre");
@@ -48,10 +61,16 @@ class parameter extends Component {
     handleGainChange = (e) => {
         this.setState({gain: e.target.value});
      }
-    /*dépense*/
+     handleTypeGainChange = (e) => {
+        this.setState({typegain: e.target.value});
+     }
+    /*----------------------------------------------------------dépense*/
     mySubmitHandlerDep = (event) => {
             event.preventDefault();
             let dep = parseInt(this.state.dep,10);
+            let typedep=this.state.typedep;
+            console.log(typedep);
+            console.log(dep);
             
             if (isNaN(dep)) {
               alert("La dépense doit être un nombre");
@@ -60,10 +79,47 @@ class parameter extends Component {
     handleDepChange = (e) => {
             this.setState({dep: e.target.value});
          }
+    handleTypeDepChange = (e) => {
+            this.setState({typedep: e.target.value});
+         }
+    /*----------------------------------------------------------évènement*/
+    mySubmitHandlerEvent = (e) => {
+        e.preventDefault();
+        let event = this.state.event;
+        let moisevent = this.state.moisevent;
+        let jourevent=this.state.jourevent;
+        console.log(jourevent);
+        console.log(moisevent);
+        console.log(event);
+        
+      }
+    handleEventChange = (e) => {
+            this.setState({event: e.target.value});
+        }
+    handleMoisEventChange = (e) => {
+            this.setState({moisevent: e.target.value});
+        }
+    handleJourEventChange = (e) => {
+            this.setState({jourevent: e.target.value});
+        }
+    /*----------------------------------------------------------commentaire*/
+    mySubmitHandlerCommentaire = (e) => {
+        e.preventDefault();
+        let commentaire = this.state.commentaire;
+        let pseudo = this.state.pseudo;
+        console.log(commentaire);
+        console.log(pseudo);
+      }
+    handleCommentaireChange = (e) => {
+            this.setState({commentaire: e.target.value});
+        }
+    handleCommentairePseudoChange = (e) => {
+            this.setState({pseudo: e.target.value});
+        }
     render() { 
         return ( 
             <div className="containerPage2">
-                {/*benefice*/}
+                {/*----------------------------------------------------------benefice  */}
                 <div className="row ">
                     <div className="App-headerMilieu style">
                         <div className="row">
@@ -99,7 +155,7 @@ class parameter extends Component {
                       <br></br>
                     </div>
                   </div>
-                  {/*gain*/}
+                  {/*----------------------------------------------------------gain*/}
                   <div className="row">
                     <div className="App-headerMilieu style">
                         <div className="row">
@@ -112,7 +168,7 @@ class parameter extends Component {
                         <Form onSubmit={this.mySubmitHandlerGain}>
                         
                             <br />
-                            <Form.Control as="select" size="lg" value={this.state.gain} >
+                            <Form.Control as="select" size="lg" value={this.state.typegain} onChange={this.handleTypeGainChange} >
                             <option value="Marchandise">Marchandise</option>
                                 <option value="Immobilier">Immobilier</option>
                                 <option value="Investissement">Investissement</option>
@@ -129,7 +185,7 @@ class parameter extends Component {
                       <br></br>
                     </div>
                   </div>
-                  {/*dépense*/}
+                  {/*----------------------------------------------------------dépense*/}
                   <div className="row">
                     <div className="App-headerMilieu style">
                         <div className="row">
@@ -142,7 +198,7 @@ class parameter extends Component {
                         <Form onSubmit={this.mySubmitHandlerDep}>
                             
                             <br />
-                            <Form.Control as="select" size="lg" value={this.state.dep} >
+                            <Form.Control as="select" size="lg" value={this.state.typedep} onChange={this.handleTypeDepChange}>
                                 
                                 <option value="Salaire">Charges employés</option>
                                 <option value="MatierePremiere">Matières Premières</option>
@@ -159,6 +215,7 @@ class parameter extends Component {
                       <br></br>
                     </div>
                   </div>
+                  {/*----------------------------------------------------------evenement*/}
                   <div className="row">
                     <div className="App-headerMilieu style">
                         <div className="row">
@@ -168,10 +225,10 @@ class parameter extends Component {
                                 </div>
                             <div className="col-sm-1"></div>
                         </div>
-                        <Form onSubmit={this.mySubmitHandler}>
+                        <Form onSubmit={this.mySubmitHandlerEvent}>
                             
                             <br />
-                            <Form.Control as="select" size="lg" value={this.state.dep} >
+                            <Form.Control as="select" size="lg" value={this.state.moisevent} onChange={this.handleMoisEventChange} >
                             <option value="Janvier">Janvier</option>
                                 <option value="Février">Février</option>
                                 <option value="Mars">Mars</option>
@@ -186,7 +243,7 @@ class parameter extends Component {
                                 <option value="Décembre">Décembre</option>
                             </Form.Control>
                             <br />
-                            <Form.Control as="select" size="lg" value={this.state.dep} >
+                            <Form.Control as="select" size="lg" value={this.state.jourevent} onChange={this.handleJourEventChange} >
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -220,7 +277,7 @@ class parameter extends Component {
                                 <option value="31">31</option>
                             </Form.Control>
                             <br />
-                            <Form.Control type="text" placeholder="évènement" name="event" size="lg"/>
+                            <Form.Control type="text" placeholder="évènement" name="event" size="lg" value={this.state.event} onChange={this.handleEventChange}/>
                             <br />
                             <Button variant="flat" type="submit" >Envoyer</Button>
                             <br />
@@ -229,23 +286,24 @@ class parameter extends Component {
                       <br></br>
                     </div>
                   </div>
+                  {/*----------------------------------------------------------Commentaire  style={{ justify-content: center }}*/}
                   <div className="row">
                     <div className="App-headerMilieu style">
                         <div className="row">
                             <div className="col-sm-1"></div>
                                 <div className="col-sm-10">
-                                    <titre>Ajout d'un commentaire</titre>
+                                    <titre >Ajout d'un commentaire</titre>
                                 </div>
                             <div className="col-sm-1"></div>
                         </div>
-                        <Form onSubmit={this.mySubmitHandler}>
+                        <Form onSubmit={this.mySubmitHandlerCommentaire}>
                         <Form.Group >
                             
                             <br/>
-                            <Form.Control type="text" placeholder="Pseudo" name="pseudo" size="lg"/>
+                            <Form.Control type="text" placeholder="Pseudo" name="pseudo" size="lg" value={this.state.pseudo} onChange={this.handleCommentairePseudoChange}/>
                             
                             <Form.Group controlId="exampleForm.ControlTextarea1">
-                            <Form.Control as="textarea" rows={3} placeholder="Commentaire..." name="commentaire" size="lg"/>
+                            <Form.Control as="textarea" rows={3} placeholder="Commentaire..." name="commentaire" size="lg" value={this.state.commentaire} onChange={this.handleCommentaireChange}/>
                             </Form.Group>
                             </Form.Group>
                             
