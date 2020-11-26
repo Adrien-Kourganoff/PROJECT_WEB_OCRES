@@ -5,6 +5,7 @@ import './App.css';
 import Navigation from './widgets/navigation/sidebar';
 import Tableauevent from './widgets/info/tableau';
 import Carte from './widgets/info/info2';
+import Diagramme from './widgets/info/diagramme';
 
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
           <div className="ms-Grid-row">
             <Tableauevent />
           </div>
+          <div className="ms-Grid-row">
+            <Diagramme />
+          </div>
+
         </div>
       </div>
     </div>
