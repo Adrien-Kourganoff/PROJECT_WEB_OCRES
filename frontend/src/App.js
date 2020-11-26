@@ -12,7 +12,8 @@ import Button from "./components/Bouton.jsx"
 import "./App.css";
 import "react-day-picker/lib/style.css";
 
-import Logo from "./unknown.png";
+import Logo1 from "./unknown.png";
+import Logo2 from "./jade.png";
 import Param from "./paramnoir.png";
 import ParamA from "./paramvert.png";
 import Dash from "./dashnoir.png";
@@ -22,19 +23,19 @@ import Dashboard from "./components/Dashboard"
 
 var entreprise = [
   {
-    nom: "Apple",
+    nom: "Entreprise 1",
     benef: [65, 59, 80, 81, 56, 55, 40, 55, 62, 10, 1, 3],
     donut:[[300, 50, 100],[50,10, 100]],
 
-    photo_prof: "https://picsum.photos/200",
+    photo_prof: Logo1,
     couleur: "red",
     jaime: 0,
   },
   {
-    nom: "Entreprise",
+    nom: "Entreprise 2",
     benef: [65, 59, 80, 81, 56, 55, 40, 55, 62, 10, 1, 66],
     donut:[[300, 50, 100], [300,10,  100]],
-    photo_prof: "https://picsum.photos/200",
+    photo_prof: Logo2,
     couleur: "blue",
     jaime: 0,
   },
@@ -71,7 +72,7 @@ class App extends Component {
           <div class="col-sm-2" style={{ fontWeight: "bold" }}>
             <header class="App-header">
               <div class="row">
-                <img src={Logo} style={{ margin: "auto" }}></img>
+                <img src={entreprise[id].photo_prof} style={{ margin: "auto" , maxWidth:"75%"}}></img>
               </div>
               <div class="row">
                   <div class="choixEntre">
