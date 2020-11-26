@@ -5,13 +5,9 @@ import Linee from "./components/Graphiques/Linee.jsx";
 import Graph from "./components/TodoList/Graph";
 import DayPicker from "react-day-picker";
 import Commentaire from "./components/Commentaire/Commentaire.jsx";
-import calendrier from "./components/Calendrier/calendrier.jsx";
 import Parameter from "./components/Parameter/Parameter.jsx";
 import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
-
-
-import MapChart from "./components/Map/MapChart.js";
+import Button from "./components/Bouton.jsx"
 
 import "./App.css";
 import "react-day-picker/lib/style.css";
@@ -21,7 +17,8 @@ import Param from "./paramnoir.png";
 import ParamA from "./paramvert.png";
 import Dash from "./dashnoir.png";
 import DashA from "./dashrose.png";
-import Calend from "./components/Calendrier/calendrier.jsx";
+
+import Dashboard from "./components/Dashboard"
 
 var entreprise = [
   {
@@ -57,12 +54,7 @@ class App extends Component {
     super(props);
     this.parameter = this.parameter.bind(this);
     this.dashboard = this.dashboard.bind(this);
-    this.changeentrepriseJade = this.changeentrepriseJade.bind(this);
-    this.changeentrepriseMathilde = this.changeentrepriseMathilde.bind(this);
-    this.state = {
-      page: 1,
-      entreprise: "Jade",
-    };
+    this.state={page : 1,};
   }
   parameter() {
     this.setState({ page: 2 });
@@ -72,16 +64,8 @@ class App extends Component {
     this.setState({ page: 1 });
   }
 
-  changeentrepriseJade() {
-    this.setState({ entreprise: "Jade" });
-  }
-  changeentrepriseMathilde() {
-    this.setState({ entreprise: "Mathilde" });
-  }
-
   render() {
     return (
-      
       <div class="container" style={{ maxWidth: "2000px" }}>
         <div class="row">
           <div class="col-sm-2" style={{ fontWeight: "bold" }}>
@@ -90,29 +74,16 @@ class App extends Component {
                 <img src={Logo} style={{ margin: "auto" }}></img>
               </div>
               <div class="row">
-                <div class="col-sm-12">
                   <div class="choixEntre">
-                    <div class="row">
-                      {/* je sais c'est trop cheum */}
-
-                      <Form>
-                        <Form.Check
-                          onClick={this.changeentrepriseJade}
-                          type="radio"
-                          label="Jade"
-                          name="Jade"
-                          id="Jade"
-                        />
-                        <Form.Check
-                          onClick={this.changeentrepriseMathilde}
-                          type="radio"
-                          label="Mathilde"
-                          name="Mathilde"
-                          id="Mathilde"
-                        />
-                      </Form>
+                    <div class="col-sm-12">
+                      <div class="row">
+                      <Button name="Entreprise 1" id="0" />
+                      </div>
+                      <div class="row">
+                      <Button name="Entreprise 2" id="1" />
+                      </div>
                     </div>
-                  </div>
+                    
                 </div>
               </div>
 
@@ -189,128 +160,9 @@ class App extends Component {
               class="col-sm-10"
               style={{ fontWeight: "bold" }}
             >
-              <div class="row">
-                <div class="col-sm-9">
-                  <div class="row">
-                    <div class="App-headerMilieu">
-                      <div class="row">
-                        <div class="col-sm-1"></div>
-                        <div class="col-sm-10">
-                          <titre>Bénéfices</titre>
-                        </div>
-                        <div class="col-sm-1"></div>
-                      </div>
-                      <div class="row">
-                        <Linee user={entreprise[id]} />
-                      </div>
-                      <br></br>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <div class="App-headerMilieu">
-                          <div class="row">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
-                              <titre>Gains</titre>
-                            </div>
-                            <div class="col-sm-1"></div>
-                          </div>
-
-                          <div class="row">
-                            <Doughnutt user={entreprise[id].donut[0]} />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <div class="App-headerMilieu">
-                          <div class="row">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
-                              <titre>Dépenses</titre>
-                            </div>
-                            <div class="col-sm-1"></div>
-                          </div>
-
-                          <div class="row">
-                            <Doughnutt user={entreprise[id].donut[1]} />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="App-headerMilieu">
-                        <div class="row">
-                          <div class="col-sm-1"></div>
-                          <div class="col-sm-10">
-                            <titre>Commentaire</titre>
-                          </div>
-                          <div class="col-sm-1"></div>
-                        </div>
-
-                        <div class="row">
-                          <Commentaire />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="row">
-                    <div class="App-headerMilieu">
-                      <div class="row">
-                        <div class="col-sm-1"></div>
-                        <div class="col-sm-10">
-                          <titre>Date</titre>
-                        </div>
-                        <div class="col-sm-1"></div>
-                      </div>
-                      <div class="row" style={{ margin: "auto" }}>
-                        <div class="col-sm-1 col-xs-1"></div>
-                        <div class="col-sm-10 col-xs-10">
-                          <div class="row">
-                            <DayPicker />
-                          </div>
-                          <div class="col-sm-1 col-xs-1"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="App-headerMilieu">
-                      <div class="row">
-                        <div class="col-sm-1"></div>
-                        <div class="col-sm-10">
-                          <titre>À Faire</titre>
-                        </div>
-                        <div class="col-sm-1"></div>
-                      </div>
-                      <div class="row">
-                        <Graph />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="App-headerMilieu">
-                      <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-7">
-                          <titre>Map</titre>
-                        </div>
-                      </div>
-                      <div class="row">
-                         <MapChart />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <Dashboard user={entreprise[id]} />
               </div>
-            </div>
+        
           ) : (
             /* Page 2 */
             <div className="page2">
@@ -319,12 +171,8 @@ class App extends Component {
           )}
         </div>
       </div>
-      
-      
-     );
-    
+    );
   }
-
 }
 
 export default App;

@@ -50,6 +50,7 @@ html, body {
     background-color: #BDEAEF;
     border-radius: 10px;
     color: #FFF;
+    border: #BDEAEF;
   }
   
   .todoListMain .header button:hover {
