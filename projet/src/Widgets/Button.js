@@ -11,9 +11,6 @@ class Button extends React.Component {
       return (
         <button className="button" {...rest}>
       {children}
-          <p class='button' onClick={onClick} style={style}>
-              {text}
-          </p>
           </button>)
   }
 }
