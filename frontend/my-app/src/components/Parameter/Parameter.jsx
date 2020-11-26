@@ -5,6 +5,7 @@ import { Button} from 'react-bootstrap';
 import FormControl from 'react-bootstrap/FormControl'
 import FormCheck from 'react-bootstrap/FormCheck'
 import FormFile from 'react-bootstrap/FormFile'
+import {isNaN} from 'lodash'
 
 class parameter extends Component {
     constructor(props) {
@@ -20,11 +21,15 @@ class parameter extends Component {
     }
     mySubmitHandler = (event) => {
         event.preventDefault();
-        let benef = this.state.benef;
-        if (!Number(benef)) {
+        let benef = parseInt(this.state.benef,10);
+        
+        if (isNaN(benef)) {
           alert("Le benefice doit être un nombre");
         }
       }
+    handleBenefChange = (e) => {
+        this.setState({benef: e.target.value});
+     }
     render() { 
         return ( 
             <div className="containerPage2">
@@ -35,7 +40,9 @@ class parameter extends Component {
                                 <div className="col-sm-10">
                                     <titre>Mes paramètres</titre>
                                 </div>
-                            <div className="col-sm-1"></div>
+                            <div className="col-sm-1">
+                                
+                            </div>
                         </div>
                         
                         <Form onSubmit={this.mySubmitHandler}>
@@ -57,7 +64,9 @@ class parameter extends Component {
                                 <option value="Décembre">Décembre</option>
                             </Form.Control>
                             <br />
-                            <Form.Control type="text" placeholder="bénéfice" name="benef" size="lg"/>
+                            <Form.Control type="text" placeholder="bénéfice" name="benef" value={this.state.benef} size="lg" onChange={this.handleBenefChange}/>
+                            <br />
+                            <Button variant="flat" type="submit" >Envoyer</Button>
                             <br />
                             <Form.Label>Ajouter un gain</Form.Label>
                             <br />
@@ -92,9 +101,11 @@ class parameter extends Component {
                             <Form.Control as="textarea" rows={3} placeholder="Commentaire..." name="commentaire"/>
                             </Form.Group>
                             </Form.Group>
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" type="submit" classeName= "btn-success" /*style={{ background-color: "#78E6D0" }}*/  >
                                 Submit
                             </Button>
+                            
+                            
                             
                         </Form>
                       

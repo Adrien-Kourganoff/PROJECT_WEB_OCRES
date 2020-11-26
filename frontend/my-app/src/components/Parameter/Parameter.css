@@ -1,0 +1,22 @@
+.btn-success{
+    background-color:#78E6D0 !important
+    ;}
+
+.custom-btn {
+        background: #fff;
+        color: red;
+        border: 2px solid red;
+        border-radius: 3px;
+        padding: 5px 10px;
+        text-transform: uppercase;
+      }
+
+      .btn-flat {
+        background-color: #BDEDEF;
+        color: white;
+      }
+  
+      .btn-xxl {
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+      }

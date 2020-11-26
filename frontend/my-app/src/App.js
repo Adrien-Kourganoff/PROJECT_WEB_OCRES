@@ -5,9 +5,13 @@ import Linee from "./components/Graphiques/Linee.jsx";
 import Graph from "./components/TodoList/Graph";
 import DayPicker from "react-day-picker";
 import Commentaire from "./components/Commentaire/Commentaire.jsx";
+import calendrier from "./components/Calendrier/calendrier.jsx";
 import Parameter from "./components/Parameter/Parameter.jsx";
 import Form from 'react-bootstrap/Form'
 import { Button} from 'react-bootstrap';
+
+
+import MapChart from "./components/Map/MapChart.js";
 
 import "./App.css";
 import "react-day-picker/lib/style.css";
@@ -17,6 +21,7 @@ import Param from "./paramnoir.png";
 import ParamA from "./paramvert.png";
 import Dash from "./dashnoir.png";
 import DashA from "./dashrose.png";
+import Calend from "./components/Calendrier/calendrier.jsx";
 
 var data2 = {
   labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -80,9 +85,10 @@ class App extends Component {
   changeentrepriseMathilde(){
     this.setState ({entreprise: 'Mathilde'})
   }
-  
+
   render() {
     return (
+      
       <div class="container" style={{ maxWidth: "2000px" }}>
         <div class="row">
           <div class="col-sm-2" style={{ fontWeight: "bold" }}>
@@ -250,7 +256,7 @@ class App extends Component {
                 </div>
                 <div class="col-sm-3">
                   <div class="row">
-                    <div class="App-header">
+                    <div class="App-headerMilieu">
                       <div class="row">
                         <div class="col-sm-3"></div>
                         <div class="col-sm-9">
@@ -259,14 +265,15 @@ class App extends Component {
                       </div>
                       <div class="row" >
                         <div class="col-sm-12" style={{alignItems:"center"}} >
-                        <DayPicker  />
+                          <Calend />
+                        
                         </div>
                         
                       </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="App-header">
+                    <div class="App-headerMilieu">
                       <div class="row">
                         <div class="col-sm-3"></div>
                         <div class="col-sm-7">
@@ -275,6 +282,19 @@ class App extends Component {
                       </div>
                       <div class="row">
                         <Graph />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="App-headerMilieu">
+                      <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-7">
+                          <titre>Map</titre>
+                        </div>
+                      </div>
+                      <div class="row">
+                         <MapChart />
                       </div>
                     </div>
                   </div>
@@ -289,8 +309,12 @@ class App extends Component {
           )}
         </div>
       </div>
-    );
+      
+      
+     );
+    
   }
+
 }
 
 export default App;
