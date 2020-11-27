@@ -1,61 +1,28 @@
-
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-<<<<<<< Updated upstream
-
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Component } from "react";
-import Widget from './Widgets/Widget';
+import Widget from './Widget';
 import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
 import {Card} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
-import Baton from './Widgets/Baton';
-import Quote from'./Widgets/Quote';
-import './Widgets/Widget.css';
-import Button from './Widgets/Button';
-import './Widgets/button.css';
-import SideBar from './Widgets/SideBar';
+import Baton from './Baton';
+import Quote from'./Quote';
+import './Widget.css';
+import Button from './Button';
+import './button.css';
 /*import Astuce from './Widgets/Astuce';
 import './Widgets/Astuce.css';*/
-=======
-import img from './Kahina_blanc.jpg';
-import React,{Component} from 'react';
->>>>>>> Stashed changes
 
 
-<link
-  rel="stylesheet "
- href="path/to/font-awesome/css/font-awesome.min.css"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-  crossorigin="anonymous"
-  rel="manifest" href="%PUBLIC_URL%/manifest.json"
-	 rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"
- href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
- integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
- crossorigin="anonymous"
-/>
-
-<<<<<<< Updated upstream
-function App() {
-  return (
-
-<div>
-
-
-<main>
-<Container>
-
-  <Row clasName="show-grid">
-    <SideBar/>
-     
-</Row>
-
-
-<Row clasName="show-grid">
+const Accueuil =() => {
+    return (
+      <main>
+      <Container>
+        <Row clasName="show-grid">
+      
     <Col md={6}>
     <div className="card-deck">
- 
    <Card style={{ width: '10px'} }>
    <Card.Body>
         <h4 className="motivation">Motivation</h4>
@@ -64,7 +31,8 @@ function App() {
         <Button>New Quote</Button>
         </Card.Body>
         </Card>
-        </div>
+        
+        </div> 
         </Col>
      
         <div class="mt-3" />
@@ -83,7 +51,6 @@ function App() {
         </Col>
        
         <div class="mt-3" />
-
         <Col md={6}>
     <div className="card-deck">
     <Card className="flip-card"style={{ width: '10px'} }>
@@ -111,6 +78,21 @@ function App() {
       <Card.Body>
         <h4 className="graphique">Graphique</h4>
         <p className="category">Graphique</p>
+        <form class="form-inline">
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Notez votre du jour humeur sur 8</label>
+  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+    <option selected>Choose...</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+  </select>
+  <button type="submit" class="btn btn-primary my-1">Submit</button>
+  </form>
         <Baton/>
         </Card.Body>
         </Card>
@@ -151,32 +133,12 @@ function App() {
         </div>
         
         </Col>
-        
+
+
       </Row>
       </Container>
-
       </main>
-
-
-   </div>
-=======
-class App extends Component {
-  render(){
-    return (
-      <div class="Page">
-
-      <div class="Colonne">
-      <img src={img} class="ImageKahina" height="80px" />
-      <div class="ligneblanche"> </div>
-      <div class="Boutons">
-      <a href="#"><button type="button" class="button" >I'Care </button></a>
-      </div>
-      <a href="#"><button type="button" class="button"> Page Admin</button></a>
-      </div>
-    </div>
->>>>>>> Stashed changes
-  );
-  }
+    )
 }
 
-export default App;
+export default Accueuil;
