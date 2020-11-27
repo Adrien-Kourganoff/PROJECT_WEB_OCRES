@@ -62,7 +62,7 @@ class Dashboard extends Component {
                   </div>
 
                   <div class="row">
-                    <Doughnutt user={this.props.user.donut[0]} />
+                    <Doughnutt user={this.props.user.donut.gain} />
                   </div>
                 </div>
               </div>
@@ -79,7 +79,7 @@ class Dashboard extends Component {
                   </div>
 
                   <div class="row">
-                    <Doughnutt user={this.props.user.donut[1]} />
+                    <Doughnutt user={this.props.user.donut.dep} />
                   </div>
                 </div>
               </div>
@@ -97,7 +97,7 @@ class Dashboard extends Component {
                 </div>
 
                 <div class="row">
-                  <Commentaire />
+                  <Commentaire user={this.props.user} />
                 </div>
               </div>
             </div>

@@ -6,81 +6,13 @@ import 'react-chat-elements/dist/main.css';
 class Commentaire extends Component {
     constructor(props) {
         super(props);
-        // this.state = {  }
+         this.state = { benef : this.props.user.commentaire };
     }
-    data = [{
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(2018, 8, 22, 15, 0, 0),
-        },
-        {
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(),
-        },
-        {
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(),
-        },
-        {
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(),
-        },
-        {
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(),
-        },
-        {
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(),
-        },
-        {
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(),
-        },
-        {
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elitLorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(),
-        },
-        {
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(),
-        },
-        {
-            position: 'left',
-            type: 'text',
-            title: 'Elit magna',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-            date: new Date(),
-        }
-    ]
+    
 
     render() {
+        var data =this.state.benef;
+    
         return (
             <div className="container-commentaire">
                 <div className="message-list-container">
@@ -88,7 +20,7 @@ class Commentaire extends Component {
                         className='message-list'
                         lockable={true}
                         toBottomHeight={'100%'}
-                        dataSource={this.data} />
+                        dataSource={data} />
                 </div>
             </div>
         );

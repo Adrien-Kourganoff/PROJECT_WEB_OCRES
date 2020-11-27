@@ -14,18 +14,8 @@ class Doughnutt extends Component {
         },
       };
     render() {
-      var datas = 
-        {
-        labels: ["Fourniture", "Salaires", "Autre"],
-      
-        datasets: [
-          {
-            data: this.props.user,
-            backgroundColor: ["#C2BDEF", "#BDEAEF", "#EFC2BD"],
-            hoverBackgroundColor: ["#C2BDEF", "#BDEAEF", "#EFC2BD"],
-          },
-        ],
-      };
+      var datas = this.state.benef;
+      console.log(datas);
         return (
             <Doughnut data={datas} options={this.option} />
         );
