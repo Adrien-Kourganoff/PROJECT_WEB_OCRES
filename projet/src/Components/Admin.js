@@ -21,7 +21,7 @@ const Admin = () => {
             </div>
              
             <div class="form-group">
-    <label for="exampleFormControlTextarea1">Ajout et suppression de "Motivation Quote"</label>
+    <label for="exampleFormControlTextarea1">Ajout et suppression de "Motivation Quote" BIENSUUUUR</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
   <div class="form-group">
