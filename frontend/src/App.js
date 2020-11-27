@@ -9,7 +9,8 @@ import Parameter from "./components/Parameter/Parameter.jsx";
 import Form from "react-bootstrap/Form";
 import Button from "./components/Bouton.jsx";
 
-import {entreprise} from "./components/Entreprise/Entreprise.js"
+
+import { entreprise } from "./components/Entreprise/Entreprise.js"
 
 import "./App.css";
 import "react-day-picker/lib/style.css";
@@ -25,7 +26,7 @@ import Dashboard from "./Dashboard.jsx";
 console.log(window.location.pathname); //si on peut voir l'url en haut
 var id =
   window.location.pathname[1] === undefined ? 0 : window.location.pathname[1];
-console.log(id);
+console.log("id: ", id);
 
 <link
   rel="stylesheet"
@@ -36,7 +37,9 @@ class App extends Component {
     super(props);
     this.parameter = this.parameter.bind(this);
     this.dashboard = this.dashboard.bind(this);
-    this.state = { page: 1 };
+    this.handleBuisness = this.handleBuisness.bind(this);
+    this.state = { page: 1, buisness: id};
+    
   }
   parameter() {
     this.setState({ page: 2 });
@@ -44,6 +47,9 @@ class App extends Component {
 
   dashboard() {
     this.setState({ page: 1 });
+  }
+  handleBuisness(e) {
+    window.location.href = "/"+e.target.value;
   }
 
   render() {
@@ -62,11 +68,12 @@ class App extends Component {
                 <div class="choixEntre">
                   <div class="col-sm-12">
                     <div class="row">
-                      <Button name="Entreprise 1" id="0" />
+                      <Form.Control as="select" size="lg" value={this.state.buisness} onChange={this.handleBuisness}>
+                        <option value="0">Mathilde</option>
+                        <option value="1">Jade</option>
+                      </Form.Control>
                     </div>
-                    <div class="row">
-                      <Button name="Entreprise 2" id="1" />
-                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -103,40 +110,39 @@ class App extends Component {
                   </div>
                 </div>
               ) : (
-                /*btn page 2 */
-                <div>
-                  <div
-                    class="row"
-                    onClick={this.dashboard}
-                    style={{ marginTop: "40%", cursor: "pointer" }}
-                  >
-                    <div class="col-sm-2 col-xs-2">
-                      <img src={Dash}></img>
+                  /*btn page 2 */
+                  <div>
+                    <div
+                      class="row"
+                      onClick={this.dashboard}
+                      style={{ marginTop: "40%", cursor: "pointer" }}
+                    >
+                      <div class="col-sm-2 col-xs-2">
+                        <img src={Dash}></img>
+                      </div>
+                      <div class="col-sm-10 col-xs-10">
+                        <a style={{ fontSize: "100%" }}>Mon DashBoard</a>
+                      </div>
                     </div>
-                    <div class="col-sm-10 col-xs-10">
-                      <a style={{ fontSize: "100%" }}>Mon DashBoard</a>
-                    </div>
-                  </div>
-                  <div
-                    class="row"
-                    onClick={this.parameter}
-                    style={{ marginTop: "10%", cursor: "pointer" }}
-                  >
-                    <div class="col-sm-2">
-                      <img src={ParamA}></img>
-                    </div>
-                    <div class="col-sm-10">
-                      <a style={{ color: "#78E6D0", fontSize: "100%" }}>
-                        {" "}
+                    <div
+                      class="row"
+                      onClick={this.parameter}
+                      style={{ marginTop: "10%", cursor: "pointer" }}
+                    >
+                      <div class="col-sm-2">
+                        <img src={ParamA}></img>
+                      </div>
+                      <div class="col-sm-10">
+                        <a style={{ color: "#78E6D0", fontSize: "100%" }}>
+                          {" "}
                         Mes Paramètres
                       </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
             </header>
           </div>
-
           {this.state.page === 1 ? (
             /* Page 1 */
             <div
@@ -147,24 +153,19 @@ class App extends Component {
               <Dashboard user={entreprise[id]} />
             </div>
           ) : (
-            /* Page 2 */
-            <div class="col-sm-10">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-9">
-                  <div className="page2">
-              
-                <Parameter />
-              </div>
-                </div>
-                
-              </div>
-            
+              /* Page 2 */
+              <div class="col-sm-10">
+                <div class="row">
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-9">
+                    <div className="page2">
 
-              
-            </div>
-           
-          )}
+                      <Parameter />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
         </div>
       </div>
     );

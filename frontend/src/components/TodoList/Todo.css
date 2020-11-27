@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    color: #FFE4B5;
+    color: #FAE8E8;
   }
   
   h1 {
@@ -18,12 +18,13 @@ html, body {
   }
   
   ul>li:hover {
-    background-color: #F5F5F5;
+    background-color: #FAE8E8;
   }
   
   .form-inline .form-control {
     width: 50%;
     margin-left: 80px;
+    
   }
   
   .done {
@@ -32,31 +33,50 @@ html, body {
   }
   
   .undone {
-    color: #FDCDA8;
+    color: #FAE8E8;
   }
   
   .icon {
     margin: 6px 10px 6px 0;
   }
   .todoListMain .header input {
-
-    border: 2px solid #FFF;
-    border-radius: 10px;
+    color: #E27F7F;
+    padding: 0.8em;
+    border: #FFF;
+    border-radius: 5px;
     width: 100%;
+    overflow: hidden;
+    padding: 1.3rem;
+    display: flex;
+
+  
+    box-shadow: inset 8px 8px 13px 0 #f2f2f2,
+    inset -8px -8px 13px 0 #ffffff;
+
   }
   
   .todoListMain .header button {
     margin-right: 0px;
-    background-color: #FEE4CB;
-    border-radius: 10px;
-    color: #FFF;
-    border: #FDCDA8;
+    padding: 0.8em;
+    background:  #F4CFCF;
+    box-shadow:  41px 41px 100px #bdbdbd, 
+                 -41px -41px 100px #ffffff;
+    border-radius: 5px;
+    color: white;
+    border: white;
+
+    transition: 0.3s all ease-in-out
+    
   }
+
   
   .todoListMain .header button:hover {
-    background-color: #FDCDA8;
-    border-radius: 10px;
+    background: #EBA7A7;
+    
   }
+
+  
+
   
   .todoListMain .theList {
     list-style: none;

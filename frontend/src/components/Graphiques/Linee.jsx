@@ -12,6 +12,8 @@ class Linee extends Component {
     render() {
       var datas = {
       labels: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"],
+
+
       
       datasets: [
         {
@@ -32,9 +34,9 @@ class Linee extends Component {
           pointHoverBorderWidth: 5,
           pointRadius: 1,
           pointHitRadius: 10,
-          //fill: true,
-          // backgroundColor: gradientFill,
-          data:this.state.benef,
+          fill: true,
+          backgroundColor: "rgb(121,94,255,0.1 )",
+          data: this.state.benef,
           //data: [65, 59, 80, 81, 56, 55, 40, 55, 62,10, 1 ,66],
         },
       ],

@@ -24,26 +24,26 @@ class Calend extends Component {
     
     renderDay = (day) => {
         const date = day.getDate();
-        // const dateStyle = {
-        //   position: 'absolute',
-        //   color: 'black',
-        //   bottom: 0,
-        //   right: 0,
-        //   fontSize: 10,
-        // };
-        //const eventStyle = { fontSize: '0.8em', textAlign: 'left' };
+        const dateStyle = {
+          position: 'absolute',
+          color: 'black',
+          bottom: 0,
+          right: 0,
+          fontSize: 10,
+        };
+        const eventStyle = { fontSize: '0.8em', textAlign: 'left' };
         const cellStyle = {
           height: 10,
           width: 0,
           position: 'relative',
         };
         return (
-           <div style={cellStyle}>
-          {/* <div className="cellStyle"> */}
-            <div className="dateStyle">{date}</div>
+            <div style={cellStyle}>
+           {/* <div className="cellStyle">  */}
+            <div style={dateStyle}>{date}</div>
             {event[date] &&
               event[date].map((name, i) => (
-                <div key={i} className="eventStyle">
+                <div key={i} style={eventStyle}>
                   {name}
                 </div>
               ))}

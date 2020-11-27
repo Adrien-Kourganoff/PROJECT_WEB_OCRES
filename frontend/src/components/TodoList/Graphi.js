@@ -13,7 +13,7 @@ class Graphi extends Component {
             <div class="row">
               <div class="col-sm-7">
               <input
-                placeholder="Taches"
+                placeholder="Tâches"
                 ref={this.props.inputElement}
                 value={this.props.currentItem.text}
                 onChange={this.props.handleInput}

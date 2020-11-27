@@ -10,8 +10,9 @@ import Parameter from "./components/Parameter/Parameter.jsx";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import Calend from "./components/Calendrier/calendrier.jsx";
+import Agenda from "./components/Agenda/Agenda";
 
-//import MapChart from "./components/Map/MapChart.js";
+import MapChart from "./components/Map/MapChart.js";
 
 import "./Dashboard.css";
 import "react-day-picker/lib/style.css";
@@ -51,6 +52,7 @@ class Dashboard extends Component {
               <br></br>
             </div>
           </div>
+
           <div class="row">
             <div class="col-sm-6">
               <div class="row">
@@ -87,6 +89,7 @@ class Dashboard extends Component {
               </div>
             </div>
           </div>
+
           <div class="row">
             <div class="col-sm-12">
               <div class="App-headerMilieu">
@@ -111,7 +114,7 @@ class Dashboard extends Component {
               <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10">
-                  <titre>Date</titre>
+                  <titre>Emploi du temps</titre>
                 </div>
                 <div class="col-sm-1"></div>
               </div>
@@ -119,7 +122,7 @@ class Dashboard extends Component {
                 <div class="col-sm-1 col-xs-1"></div>
                 <div class="col-sm-10 col-xs-10">
                   <div class="row">
-                    <Calend />
+                    <Agenda />
                     {/* <DayPicker /> */}
                   </div>
                   <div class="col-sm-1 col-xs-1"></div>
@@ -150,7 +153,7 @@ class Dashboard extends Component {
                 </div>
               </div>
               <div class="row">
-                {/*<MapChart />*/}
+                <MapChart />
               </div>
             </div>
           </div>

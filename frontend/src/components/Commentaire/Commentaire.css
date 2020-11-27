@@ -1,12 +1,14 @@
 .container-commentaire {
     display: flex;
     flex-direction: column;
-    padding: 3%;
+    padding: 1%;
 }
 
 .message-list-container {
-    height: 50vh;
+    height: 25vh;
     overflow: auto;
+    font-family: Avenir;
+    
     
 }
 

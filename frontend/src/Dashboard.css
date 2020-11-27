@@ -17,8 +17,8 @@
     margin-left: 0px; 
   }
   titre{
-    color: #BDEAEF;
-    font-size: 200%;
+    color: black;
+    font-size: 150%;
   }
   .choixEntre{
     background-color: #BDEAEF;
@@ -35,15 +35,17 @@
     align-items: flex-end ;
   }
   .App-header {
-    background-color: white;
+    
     height: 100%;
     width: 100%;
     margin-top: 2em;
     /*flex-direction: column;align-items: center; font-size: calc(10px + 2vmin);*/
     justify-content: baseline;
    
-    border-radius: 50px;
-    color: black;
+    border-radius: 17px;
+background: #ffffff;
+box-shadow:  10px 10px 25px #bdbdbd, 
+-10px -10px 25px #ffffff;
   }
   .style {
     padding-top:2rem;
@@ -53,16 +55,21 @@
     
   }
   .App-headerMilieu {
-    background-color: white;
+    
     height: 100%;
     width: 100%;
     margin-top: 2em;
     flex-direction: column;
     align-items: center; 
+
+    border-radius: 17px;
+background: #ffffff;
+box-shadow:  10px 10px 25px #bdbdbd, 
+             -10px -10px 25px #ffffff;
     
     justify-content: baseline;
-    border-radius: 50px;
-    color: black;
+    
+    
     padding-top:1rem;
     padding-bottom:1rem;
     padding-right:1rem;

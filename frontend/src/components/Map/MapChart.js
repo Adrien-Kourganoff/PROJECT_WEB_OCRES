@@ -6,12 +6,14 @@ import {
   ZoomableGroup
 } from "react-simple-maps";
 
+import "./MapChart.css";
+
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
 const MapChart = () => {
   return (
-    <div>
+    <div className="map-container">
       <ComposableMap>
         <ZoomableGroup zoom={1}>
           <Geographies geography={geoUrl}>
