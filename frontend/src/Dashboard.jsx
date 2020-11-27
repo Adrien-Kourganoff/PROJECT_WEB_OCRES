@@ -35,8 +35,9 @@ class Dashboard extends Component {
 
   render() {
     return (
+      <div class="contain">
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-8 col-md-12 col-lg-8">
           <div class="row">
             <div class="App-headerMilieu">
               <div class="row">
@@ -108,7 +109,7 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-4 visible-lg-* hidden-md hidden-sm hidden-xs " > 
           <div class="row">
             <div class="App-headerMilieu">
               <div class="row">
@@ -118,15 +119,8 @@ class Dashboard extends Component {
                 </div>
                 <div class="col-sm-1"></div>
               </div>
-              <div class="row" style={{ margin: "auto" }}>
-                <div class="col-sm-1 col-xs-1"></div>
-                <div class="col-sm-10 col-xs-10">
-                  <div class="row">
-                    <Agenda />
-                    {/* <DayPicker /> */}
-                  </div>
-                  <div class="col-sm-1 col-xs-1"></div>
-                </div>
+              <div class="row">
+                    <Agenda user={this.props.user} />
               </div>
             </div>
           </div>
@@ -158,6 +152,55 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
+        
+      </div>
+      <br/>
+      <div class="row">
+      <div class="col-sm-8 hidden-lg col-md-12" > 
+          <div class="row">
+            <div class="App-headerMilieu">
+              <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                  <titre>Emploi du temps</titre>
+                </div>
+                <div class="col-sm-1"></div>
+              </div>
+              <div class="row">
+                    <Agenda user={this.props.user} />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="App-headerMilieu">
+              <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                  <titre>À Faire</titre>
+                </div>
+                <div class="col-sm-1"></div>
+              </div>
+              <div class="row">
+                <Graph />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="App-headerMilieu">
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-7">
+                  <titre>Map</titre>
+                </div>
+              </div>
+              <div class="row">
+                <MapChart />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
       </div>
     );
   }

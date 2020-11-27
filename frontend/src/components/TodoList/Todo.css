@@ -58,6 +58,7 @@ html, body {
   .todoListMain .header button {
     margin-right: 0px;
     padding: 0.8em;
+    width: 100%;
     background:  #F4CFCF;
     box-shadow:  41px 41px 100px #bdbdbd, 
                  -41px -41px 100px #ffffff;

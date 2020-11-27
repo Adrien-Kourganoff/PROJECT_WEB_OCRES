@@ -4,25 +4,16 @@ import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import "./calendrier.css";
 
-const event = {
-    3: ['Réunion', 'Sport'],
-    8: ['Réunion'],
-    9: ['Sport'],
-    12: ['Réunion', 'Sport'],
-    18: ['Sport'],
-    22: ['Réunion', 'Réunion'],
-    25: ['Sport'],
-    26: ['Sport'],
-  };
 
 class Calend extends Component {
     constructor(props) {
         super(props);
-
+        this.state = { benef : this.props.user.event };
         //this.state = { null:null }
     }
     
     renderDay = (day) => {
+      const event=this.state.benef;
         const date = day.getDate();
         const dateStyle = {
           position: 'absolute',

@@ -44,13 +44,17 @@ class Graph extends Component {
 	render() {
 	  return (
 		<div className="App">
-		  <Graphi
+				<div class="row">
+					<Graphi
 			addItem={this.addItem}
 			inputElement={this.inputElement}
 			handleInput={this.handleInput}
 			currentItem={this.state.currentItem}
 		  />
-		  <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
+				</div>
+				<div class="row">
+		  <TodoItems entries={this.state.items} deleteItem={this.deleteItem} /></div>
+		  
 		</div>
 	  )
 	}

@@ -107,8 +107,20 @@ var entreprise = [
         },
       ],
       photo_prof: Logo1,
-      couleur: "red",
-      jaime: 0,
+      myEventsList : [
+        {
+            title: "test",
+            start: new Date('November 22, 2020 15:00:00'),
+            end:  new Date('November 22, 2020 18:00:00'),
+            allDay: false
+        },
+        {
+            title: "test2",
+            start: new Date('December 23, 2020 15:00:00'),
+            end:  new Date('December 23, 2020 18:00:00'),
+            allDay: false
+        },
+    ],
     },
     {
       nom: "Entreprise 2",
@@ -214,8 +226,20 @@ var entreprise = [
         },
       ],
       photo_prof: Logo2,
-      couleur: "blue",
-      jaime: 0,
+      myEventsList : [
+        {
+            title: "test de Maths",
+            start: new Date('November 22, 2020 15:00:00'),
+            end:  new Date('November 22, 2020 18:00:00'),
+            allDay: false
+        },
+        {
+            title: "test 2 de Maths",
+            start: new Date('November 23, 2020 15:00:00'),
+            end:  new Date('November 23, 2020 18:00:00'),
+            allDay: false
+        },
+    ],
     },
   ];
 
