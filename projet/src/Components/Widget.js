@@ -4,8 +4,9 @@ import Baton from './Baton';
 import Quote from'./Quote';
 import './Widget.css';
 import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
-import Button from './Button';
-import './button.css';
+/*import Button from './Button';
+import './button.css';*/
+
 
 const Widget = () => {
   return (
@@ -19,9 +20,7 @@ const Widget = () => {
    <Card style={{ width: '10rem'} }>
    <Card.Body>
         <h4 className="title">Motivation</h4>
-        <p className="category">Motivation</p>
         <Quote/>
-        <Button>New Quote</Button>
         </Card.Body>
         </Card>
         </div>
