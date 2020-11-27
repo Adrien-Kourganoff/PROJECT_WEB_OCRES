@@ -129,8 +129,9 @@ class parameter extends Component {
                                 </div>
                             <div className="col-sm-1"></div>
                         </div>
+                        <br></br>
                         <Form onSubmit={this.mySubmitHandlerBenef}>
-                            <br />
+                            <div class="col-sm-5">
                             <Form.Control as="select" size="lg" value={this.state.mois} onChange={this.handleBenefMoisChange}>
                                 <option value="Janvier">Janvier</option>
                                 <option value="Février">Février</option>
@@ -145,11 +146,13 @@ class parameter extends Component {
                                 <option value="Novembre">Novembre</option>
                                 <option value="Décembre">Décembre</option>
                             </Form.Control>
-                            <br />
-                            <Form.Control type="text" placeholder="bénéfice en K€" name="benef" size="lg" value={this.state.benef} onChange={this.handleBenefChange}/>
-                            <br />
-                            <Button variant="flat" type="submit" >Envoyer</Button>
-                            <br />
+                            </div>
+                            <div class="col-sm-5">
+                                 <Form.Control type="text" placeholder="bénéfice en K€" name="benef" size="lg" value={this.state.benef} onChange={this.handleBenefChange}/>
+                            </div>
+                            <div class="col-sm-2">
+                                    <Button variant="flat" type="submit" >Envoyer</Button>
+                            </div>
                         </Form>
                       
                       <br></br>
@@ -165,19 +168,25 @@ class parameter extends Component {
                                 </div>
                             <div className="col-sm-1"></div>
                         </div>
+                        <br/>
                         <Form onSubmit={this.mySubmitHandlerGain}>
-                        
-                            <br />
+                            <div class="col-sm-5">
                             <Form.Control as="select" size="lg" value={this.state.typegain} onChange={this.handleTypeGainChange} >
                             <option value="Marchandise">Marchandise</option>
                                 <option value="Immobilier">Immobilier</option>
                                 <option value="Investissement">Investissement</option>
                                 <option value="Autres">Autres</option>
                             </Form.Control>
-                            <br />
-                            <Form.Control type="text" placeholder="gain en K€" name="gain" size="lg" value={this.state.gain} onChange={this.handleGainChange}/>
-                            <br />
-                            <Button variant="flat" type="submit" >Envoyer</Button>
+                            </div>
+                            <div class="col-sm-5">
+<Form.Control type="text" placeholder="gain en K€" name="gain" size="lg" value={this.state.gain} onChange={this.handleGainChange}/>
+                            </div>
+                            <div class="col-sm-2">
+                                <Button variant="flat" type="submit" >Envoyer</Button>
+                                
+                            </div>
+                            
+                            
                             <br />
                             
                         </Form>
@@ -195,9 +204,10 @@ class parameter extends Component {
                                 </div>
                             <div className="col-sm-1"></div>
                         </div>
+                        <br/>
                         <Form onSubmit={this.mySubmitHandlerDep}>
                             
-                            <br />
+                        <div class="col-sm-5">
                             <Form.Control as="select" size="lg" value={this.state.typedep} onChange={this.handleTypeDepChange}>
                                 
                                 <option value="Salaire">Charges employés</option>
@@ -205,11 +215,14 @@ class parameter extends Component {
                                 <option value="Charges">Charges</option>
                                 <option value="Autres">Autres</option>
                             </Form.Control>
-                            <br />
-                            <Form.Control type="text" placeholder="dépense en K€" name="dep" size="lg" value={this.state.dep} onChange={this.handleDepChange}/>
-                            <br />
-                            <Button variant="flat" type="submit" >Envoyer</Button>
-                            <br />
+                            </div>
+                            <div class="col-sm-5">
+<Form.Control type="text" placeholder="dépense en K€" name="dep" size="lg" value={this.state.dep} onChange={this.handleDepChange}/>
+                            </div>
+                            <div clas="col-sm-2">
+<Button variant="flat" type="submit" >Envoyer</Button>
+                            </div>
+                            
                         </Form>
                       
                       <br></br>
@@ -225,9 +238,11 @@ class parameter extends Component {
                                 </div>
                             <div className="col-sm-1"></div>
                         </div>
+                        <br />
                         <Form onSubmit={this.mySubmitHandlerEvent}>
+                            <div class="row">
+                        <div class="col-sm-4">
                             
-                            <br />
                             <Form.Control as="select" size="lg" value={this.state.moisevent} onChange={this.handleMoisEventChange} >
                             <option value="Janvier">Janvier</option>
                                 <option value="Février">Février</option>
@@ -242,8 +257,9 @@ class parameter extends Component {
                                 <option value="Novembre">Novembre</option>
                                 <option value="Décembre">Décembre</option>
                             </Form.Control>
-                            <br />
-                            <Form.Control as="select" size="lg" value={this.state.jourevent} onChange={this.handleJourEventChange} >
+                            </div>
+                            <div class="col-sm-4">
+                                <Form.Control as="select" size="lg" value={this.state.jourevent} onChange={this.handleJourEventChange} >
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -276,10 +292,22 @@ class parameter extends Component {
                                 <option value="30">30</option>
                                 <option value="31">31</option>
                             </Form.Control>
-                            <br />
+                            </div>
+                            <div class="col-sm-4">
+
                             <Form.Control type="text" placeholder="évènement" name="event" size="lg" value={this.state.event} onChange={this.handleEventChange}/>
-                            <br />
-                            <Button variant="flat" type="submit" >Envoyer</Button>
+                            </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                            <div class="col-sm-5">
+                                </div>
+                                <div class="col-sm-7">
+                                <Button variant="flat" type="submit" >Envoyer</Button>
+                            </div>
+                            </div>
+                            
+                            
                             <br />
                         </Form>
                       
@@ -306,8 +334,9 @@ class parameter extends Component {
                             <Form.Control as="textarea" rows={3} placeholder="Commentaire..." name="commentaire" size="lg" value={this.state.commentaire} onChange={this.handleCommentaireChange}/>
                             </Form.Group>
                             </Form.Group>
-                            
-                            <Button variant="flat" type="submit" >Envoyer</Button>
+                            <div class="col-sm-5"></div>
+                            <div clas="col-sm-7">
+                            <Button variant="flat" type="submit" >Envoyer</Button></div>
                             <br />
                         </Form>
                       
