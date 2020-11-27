@@ -14,6 +14,9 @@ import './Widgets/Widget.css';
 import Button from './Widgets/Button';
 import './Widgets/button.css';
 import SideBar from './Widgets/SideBar';
+/*import Astuce from './Widgets/Astuce';
+import './Widgets/Astuce.css';*/
+
 
 <link
   rel="stylesheet "
@@ -49,7 +52,7 @@ function App() {
  
    <Card style={{ width: '10px'} }>
    <Card.Body>
-        <h4 className="title">Motivation</h4>
+        <h4 className="motivation">Motivation</h4>
         <p className="category">Motivation</p>
         <Quote/>
         <Button>New Quote</Button>
@@ -66,7 +69,7 @@ function App() {
  
    <Card style={{ width: '10px'} }>
    <Card.Body>
-        <h4 className="title">Music</h4>
+        <h4 className="music">Music</h4>
         <p className="category">Music</p>
         </Card.Body>
         </Card>
@@ -77,12 +80,17 @@ function App() {
 
         <Col md={6}>
     <div className="card-deck">
-    <Card style={{ width: '10px'} }>
-      <Card.Body>
-     
-        <h4 className="title">Astuces</h4>
-        <p className="category">Astuces</p>
-      
+    <Card className="flip-card"style={{ width: '10px'} }>
+      <Card.Body >
+<div>
+    <div class="flip-card-inner">   
+    <h4 className="astuce">Astuces</h4>
+      <p className="category">Astuces</p>
+     </div>
+     <div class="flip-card-back">
+        Astuce du jour
+     </div>
+     </div>
         </Card.Body>
         </Card>
         </div>
@@ -95,7 +103,7 @@ function App() {
     
       <Card style={{ width: '10px'} }>
       <Card.Body>
-        <h4 className="title">Gaphique</h4>
+        <h4 className="graphique">Graphique</h4>
         <p className="category">Graphique</p>
         <Baton/>
         </Card.Body>
@@ -113,8 +121,9 @@ function App() {
  
    <Card style={{ width: '10px'} }>
    <Card.Body>
-        <h4 className="title">Feeling</h4>
+        <h4 className="feeling">Feeling</h4>
         <p className="category">Feeling</p>
+  
         </Card.Body>
         </Card>
         </div>
@@ -129,7 +138,7 @@ function App() {
  
    <Card style={{ width: '10px'} }>
    <Card.Body>
-        <h4 className="title">Goal</h4>
+        <h4 className="goal">Goal</h4>
         <p className="category">Goal</p>
         </Card.Body>
         </Card>
