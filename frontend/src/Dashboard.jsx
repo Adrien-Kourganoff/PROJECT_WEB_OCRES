@@ -1,19 +1,21 @@
 import React, { Component } from "react";
 //import { Doughnut } from "react-chartjs-2";
-import Doughnutt from "./Graphiques/Doughnutt.jsx";
-import Linee from "./Graphiques/Linee.jsx";
-import Graph from "./TodoList/Graph";
+import Doughnutt from "./components/Graphiques/Doughnutt.jsx";
+
+import Linee from "./components/Graphiques/Linee.jsx";
+import Graph from "./components/TodoList/Graph";
 import DayPicker from "react-day-picker";
-import Commentaire from "./Commentaire/Commentaire.jsx";
-import calendrier from "./Calendrier/calendrier.jsx";
-import Parameter from "./Parameter/Parameter.jsx";
+import Commentaire from "./components/Commentaire/Commentaire.jsx";
+import Parameter from "./components/Parameter/Parameter.jsx";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
+import Calend from "./components/Calendrier/calendrier.jsx";
 
 //import MapChart from "./components/Map/MapChart.js";
 
 import "./Dashboard.css";
 import "react-day-picker/lib/style.css";
+
 
 //on a une etreprise en user
 class Dashboard extends Component {
@@ -39,7 +41,7 @@ class Dashboard extends Component {
               <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10">
-                  <titre>Bénéfices</titre>
+                  <titre>Chiffre d'Affaire</titre>
                 </div>
                 <div class="col-sm-1"></div>
               </div>
@@ -117,7 +119,8 @@ class Dashboard extends Component {
                 <div class="col-sm-1 col-xs-1"></div>
                 <div class="col-sm-10 col-xs-10">
                   <div class="row">
-                    <DayPicker />
+                    <Calend />
+                    {/* <DayPicker /> */}
                   </div>
                   <div class="col-sm-1 col-xs-1"></div>
                 </div>

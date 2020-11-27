@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+import "./calendrier.css";
 
 const event = {
     3: ['Réunion', 'Sport'],
@@ -23,26 +24,27 @@ class Calend extends Component {
     
     renderDay = (day) => {
         const date = day.getDate();
-        const dateStyle = {
-          position: 'absolute',
-          color: 'black',
-          bottom: 0,
-          right: 0,
-          fontSize: 10,
-        };
-        const eventStyle = { fontSize: '0.8em', textAlign: 'left' };
+        // const dateStyle = {
+        //   position: 'absolute',
+        //   color: 'black',
+        //   bottom: 0,
+        //   right: 0,
+        //   fontSize: 10,
+        // };
+        //const eventStyle = { fontSize: '0.8em', textAlign: 'left' };
         const cellStyle = {
           height: 10,
           width: 0,
           position: 'relative',
         };
         return (
-          <div style={cellStyle}>
-            <div style={dateStyle}>{date}</div>
+           <div style={cellStyle}>
+          {/* <div className="cellStyle"> */}
+            <div className="dateStyle">{date}</div>
             {event[date] &&
               event[date].map((name, i) => (
-                <div key={i} style={eventStyle}>
-                  🎁 {name}
+                <div key={i} className="eventStyle">
+                  {name}
                 </div>
               ))}
           </div>
@@ -52,8 +54,8 @@ class Calend extends Component {
     render() { 
         return ( <div>
             <DayPicker
-                canChangeMonth={false}
-                className="Birthdays"
+                canChangeMonth={true}
+                className="Evenement"
                 renderDay={this.renderDay}
             />
         </div> );

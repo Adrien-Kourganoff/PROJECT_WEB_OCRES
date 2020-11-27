@@ -45,6 +45,13 @@
     border-radius: 50px;
     color: black;
   }
+  .style {
+    padding-top:2rem;
+    padding-bottom:2rem;
+    padding-right:5rem;
+    padding-left:5rem;
+    
+  }
   .App-headerMilieu {
     background-color: white;
     height: 100%;
@@ -56,6 +63,11 @@
     justify-content: baseline;
     border-radius: 50px;
     color: black;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    padding-right:1rem;
+    padding-left:1rem;
+    
   }
   
   /*font-size: calc(10px + 2vmin); contain{
