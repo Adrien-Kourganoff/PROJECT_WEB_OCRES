@@ -9,6 +9,7 @@ import Parameter from "./components/Parameter/Parameter.jsx";
 import Form from "react-bootstrap/Form";
 import Button from "./components/Bouton.jsx"
 
+
 import "./App.css";
 import "react-day-picker/lib/style.css";
 
@@ -25,7 +26,7 @@ var entreprise = [
   {
     nom: "Entreprise 1",
     benef: [65, 59, 80, 81, 56, 55, 40, 55, 62, 10, 1, 3],
-    donut:[[300, 50, 100],[50,10, 100]],
+    donut:[[300, 50, 100,25],[50,10, 100,75]],
 
     photo_prof: Logo1,
     couleur: "red",
@@ -34,7 +35,7 @@ var entreprise = [
   {
     nom: "Entreprise 2",
     benef: [65, 59, 80, 81, 56, 55, 40, 55, 62, 10, 1, 66],
-    donut:[[300, 50, 100], [300,10,  100]],
+    donut:[[300, 50, 100,66], [300,10,  100,230]],
     photo_prof: Logo2,
     couleur: "blue",
     jaime: 0,

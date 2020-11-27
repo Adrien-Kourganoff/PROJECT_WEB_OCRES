@@ -125,7 +125,7 @@ class parameter extends Component {
                         <div className="row">
                             <div className="col-sm-1"></div>
                                 <div className="col-sm-10">
-                                    <titre>Ajout d'un bénéfice</titre>
+                                    <titre>Ajout d'un chiffre d'affaire</titre>
                                 </div>
                             <div className="col-sm-1"></div>
                         </div>

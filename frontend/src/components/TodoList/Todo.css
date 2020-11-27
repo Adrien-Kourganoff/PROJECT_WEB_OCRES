@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    color: #61DAFB;
+    color: #FFE4B5;
   }
   
   h1 {
@@ -32,7 +32,7 @@ html, body {
   }
   
   .undone {
-    color: #61DAFB;
+    color: #FDCDA8;
   }
   
   .icon {
@@ -47,14 +47,14 @@ html, body {
   
   .todoListMain .header button {
     margin-right: 0px;
-    background-color: #BDEAEF;
+    background-color: #FEE4CB;
     border-radius: 10px;
     color: #FFF;
-    border: #BDEAEF;
+    border: #FDCDA8;
   }
   
   .todoListMain .header button:hover {
-    background-color: #BDEAEF;
+    background-color: #FDCDA8;
     border-radius: 10px;
   }
   

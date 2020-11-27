@@ -1,0 +1,22 @@
+
+.dateStyle {
+    position: 'absolute';
+    color: 'black';
+    bottom: 0;
+    right: 0;
+    font-Size: 1em;
+  };
+
+  .eventStyle { 
+      font-Size: '0.8em'; 
+      text-Align: 'left';
+      color:red;
+      background-color: #f19021;
+      
+};
+
+.cellStyle {
+    height: 10;
+    width: 0;
+    position: 'relative';
+  };
