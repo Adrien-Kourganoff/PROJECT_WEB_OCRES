@@ -109,7 +109,7 @@ useEffect(
       return (
         <div className="mySlides">
           <q>{quote.quote}</q>
-          <p className="author">&mdash;{quote.author}</p>
+          <p className="author">  <br /> &mdash;{quote.author}</p>
         </div>
       )
     }
