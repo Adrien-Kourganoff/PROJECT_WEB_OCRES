@@ -37,7 +37,7 @@ class Dashboard extends Component {
     return (
       <div class="contain">
       <div class="row">
-        <div class="col-sm-8 col-md-12 col-lg-8">
+        <div class="col-sm-12 col-md-12 col-lg-8">
           <div class="row">
             <div class="App-headerMilieu">
               <div class="row">
@@ -154,6 +154,8 @@ class Dashboard extends Component {
         </div>
         
       </div>
+      <br/>
+      <br/>
       <br/>
       <div class="row">
       <div class="col-sm-8 hidden-lg col-md-12" > 

@@ -87,9 +87,9 @@ class App extends Component {
                     style={{ marginTop: "40%", cursor: "pointer" }}
                   >
                     <div class="col-sm-2">
-                      <img src={DashA}></img>
+                      <img  src={DashA}></img>
                     </div>
-                    <div class="col-sm-10">
+                    <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
                       <a style={{ color: "#FDE1DE", fontSize: "100%" }}>
                         Mon DashBoard
                       </a>
@@ -102,10 +102,10 @@ class App extends Component {
                     style={{ marginTop: "10%", cursor: "pointer" }}
                   >
                     <div class="col-sm-2">
-                      <img src={Param}></img>
+                      <img  src={Param}></img>
                     </div>
-                    <div class="col-sm-10">
-                      <a style={{ fontSize: "100%" }}> Mes Paramètres</a>
+                    <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
+                      <a style={{ fontSize: "1em" }}> Mes Paramètres</a>
                     </div>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ class App extends Component {
                       <div class="col-sm-2 col-xs-2">
                         <img src={Dash}></img>
                       </div>
-                      <div class="col-sm-10 col-xs-10">
+                      <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
                         <a style={{ fontSize: "100%" }}>Mon DashBoard</a>
                       </div>
                     </div>
@@ -132,7 +132,7 @@ class App extends Component {
                       <div class="col-sm-2">
                         <img src={ParamA}></img>
                       </div>
-                      <div class="col-sm-10">
+                      <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
                         <a style={{ color: "#78E6D0", fontSize: "100%" }}>
                           {" "}
                         Mes Paramètres

@@ -5,7 +5,7 @@ import 'react-chat-elements/dist/main.css';
 class Doughnutt extends Component {
     constructor(props) {
         super(props);
-         this.state = { benef : this.props.user };
+         this.state = { jdsf : this.props.user };
         // this.state = {  }
     }
     option = {
@@ -14,7 +14,7 @@ class Doughnutt extends Component {
         },
       };
     render() {
-      var datas = this.state.benef;
+      var datas = this.state.jdsf;
       console.log(datas);
         return (
             <Doughnut data={datas} options={this.option} />
