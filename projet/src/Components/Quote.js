@@ -135,4 +135,5 @@ useEffect(
         </div>
       )
     }
+    
 export default Quote;
