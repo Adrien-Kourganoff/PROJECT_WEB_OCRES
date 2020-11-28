@@ -1,7 +1,5 @@
 import React from 'react';
-import { DetailsList,DetailsRow} from '@fluentui/react';
-//import 'office-ui-fabric-react/dist/css/fabric.css';
-
+import { DetailsList,} from '@fluentui/react';
 
 
 const operations = [
@@ -52,13 +50,6 @@ const columns = [
 export default class Tableauevent extends React.Component{
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/xqjtetw0/';
 
-  /*constructor() {
-    super();
-      
-      this._onRenderRow = this._onRenderRow.bind(this);
-    }*/
-
-
   render() {
 
     return (
@@ -81,13 +72,5 @@ export default class Tableauevent extends React.Component{
       </div>
       );
   } ;
-
-  /*</div>_onRenderRow(props) {
-    let colorStyle = {
-      backgroundColor: props.item.bateau
-    };
-     
-    return <div style={colorStyle}><DetailsRow { ...props } /></div>;
-  }*/
 
 }
