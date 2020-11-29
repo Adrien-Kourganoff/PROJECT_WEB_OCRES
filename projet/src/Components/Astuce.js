@@ -21,11 +21,13 @@ class Astuce extends React.Component {
       
    >
       <FrontSide className="flip-card-inner">
-        ASTUCES
+        Cliquez vite pour decouvir une Astuce !!!
       </FrontSide>
 
       <BackSide className="flip-card-back" >
-        BOBO
+        <h4>Astuce pour être heureux</h4>
+        <h5>Savoir lâcher-prise quand il le faut</h5>
+        <p> Le plus grand secret pour le bonheur, c’est d’être bien avec soi. <br />- Bernard Fontenelle </p>
       </BackSide>
     </Flippy>
   
