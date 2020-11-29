@@ -14,6 +14,7 @@ import './button.css';
 import Astuce from './Astuce';
 import './Astuce.css';
 import ToDoList from './ToDoList';
+import Digital from './Digital';
 
 
 const Accueuil =() => {
@@ -102,9 +103,9 @@ const Accueuil =() => {
  
    <Card style={{ width: '10px'} }>
    <Card.Body>
-        <h4 className="feeling">Feeling</h4>
-        <p className="category">Feeling</p>
-  
+        <h4 className="feeling">CLOCK</h4>
+        <p className="category">Clock</p>
+        <Digital/>
         </Card.Body>
         </Card>
         </div>
