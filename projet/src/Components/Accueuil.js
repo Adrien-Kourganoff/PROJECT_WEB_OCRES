@@ -11,8 +11,10 @@ import Quote from'./Quote';
 import './Widget.css';
 import Button from './Button';
 import './button.css';
-/*import Astuce from './Widgets/Astuce';
-import './Widgets/Astuce.css';*/
+import Astuce from './Astuce';
+import './Astuce.css';
+import ToDoList from './ToDoList';
+import Digital from './Digital';
 
 
 const Accueuil =() => {
@@ -28,7 +30,7 @@ const Accueuil =() => {
         <h4 className="motivation">Motivation</h4>
         <p className="category">Motivation</p>
         <Quote/>
-        <Button>New Quote</Button>
+        
         </Card.Body>
         </Card>
         
@@ -55,15 +57,7 @@ const Accueuil =() => {
     <div className="card-deck">
     <Card className="flip-card"style={{ width: '10px'} }>
       <Card.Body >
-<div>
-    <div class="flip-card-inner">   
-    <h4 className="astuce">Astuces</h4>
-      <p className="category">Astuces</p>
-     </div>
-     <div class="flip-card-back">
-        Astuce du jour
-     </div>
-     </div>
+        <Astuce/>
         </Card.Body>
         </Card>
         </div>
@@ -109,9 +103,9 @@ const Accueuil =() => {
  
    <Card style={{ width: '10px'} }>
    <Card.Body>
-        <h4 className="feeling">Feeling</h4>
-        <p className="category">Feeling</p>
-  
+        <h4 className="feeling">CLOCK</h4>
+        <p className="category">Clock</p>
+        <Digital/>
         </Card.Body>
         </Card>
         </div>
@@ -128,6 +122,7 @@ const Accueuil =() => {
    <Card.Body>
         <h4 className="goal">Goal</h4>
         <p className="category">Goal</p>
+        <ToDoList/>
         </Card.Body>
         </Card>
         </div>
@@ -136,6 +131,7 @@ const Accueuil =() => {
 
 
       </Row>
+      <Audio/>
       </Container>
       </main>
     )
