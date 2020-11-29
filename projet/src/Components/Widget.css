@@ -1,0 +1,9 @@
+.container-fluid,.content,.row
+{
+    right: 10px;
+}
+
+Card
+{
+    background-color: rgba(137, 43, 226, 0.637);
+}

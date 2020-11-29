@@ -1,0 +1,17 @@
+.prev,.next
+{
+    font-size: 30px;
+    cursor: pointer;
+  
+}
+
+.quote
+{
+    font-size: x-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.author
+{
+    font-size: 12px;
+}

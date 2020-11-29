@@ -1,0 +1,14 @@
+.flipcard
+{
+    background-color: midnightblue;
+    color: black;
+}
+.flip-card-inner
+{
+    color: oldlace;
+    background-color: darkviolet;
+}
+.flip-card-back
+{
+    background-color: rgba(148, 0, 211, 0.363)
+}
