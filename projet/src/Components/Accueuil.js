@@ -15,6 +15,7 @@ import Astuce from './Astuce';
 import './Astuce.css';
 import ToDoList from './ToDoList';
 import Digital from './Digital';
+import Audio from './Audio';
 
 
 const Accueuil =() => {
@@ -47,6 +48,7 @@ const Accueuil =() => {
    <Card.Body>
         <h4 className="music">Music</h4>
         <p className="category">Music</p>
+        <Audio/>
         </Card.Body>
         </Card>
         </div>
