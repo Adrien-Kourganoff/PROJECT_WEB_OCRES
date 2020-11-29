@@ -1,6 +1,9 @@
 Cyril BOPOUNGO      cyril.bopoungo@edu.ece.fr      TD2A
 Joanélia RAPSODE    joanelia.rapsode@edu.ece.fr    TD2B
 
+## Link to Figma :
+https://www.figma.com/file/JO5KLA3Tad7fQrgSAsAQfk/Projet-WEB?node-id=7%3A7
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
