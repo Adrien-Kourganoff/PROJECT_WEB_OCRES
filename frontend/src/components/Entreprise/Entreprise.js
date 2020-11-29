@@ -5,7 +5,7 @@ import Logo2 from "./jade.png";
 var entreprise = [
     {
       nom: "Entreprise 1",
-      benef: [65, 59, 80, 81, 56, 55, 40, 55, 62, 10, 1, 3],
+      benef: [15, 10, 16, 10, 20, 65, 40, 50, 60, 15, 51, 32],
       donut: 
         {
           gain:
