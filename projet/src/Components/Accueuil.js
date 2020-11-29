@@ -56,15 +56,12 @@ const Accueuil =() => {
 
          <h2>ECOUTEZ VOTREZ MEILLEURE PLAYLIST</h2>  <FontAwesomeIcon  icon={faMusic} style={{ width: '20px'},{ height: '20px'}, {color:'violet'}}/>
          
-
-      
-
         <Audio/>
         </Card.Body>
         </Card>
         </div>
         </Col>
-       
+    
         <div class="mt-3" />
         <Col md={6}>
     <div className="card-deck">
