@@ -12,9 +12,8 @@ import './Widget.css';
 import Button from './Button';
 import './button.css';
 import Astuce from './Astuce';
+import './Astuce.css';
 import ToDoList from './ToDoList';
-/*import Astuce from './Widgets/Astuce';
-import './Widgets/Astuce.css';*/
 
 
 const Accueuil =() => {
@@ -30,7 +29,7 @@ const Accueuil =() => {
         <h4 className="motivation">Motivation</h4>
         <p className="category">Motivation</p>
         <Quote/>
-        <Button>New Quote</Button>
+        
         </Card.Body>
         </Card>
         

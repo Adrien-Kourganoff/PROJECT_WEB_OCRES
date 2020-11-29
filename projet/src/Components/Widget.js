@@ -9,7 +9,7 @@ import ToDoList from './ToDoList';
 import './button.css';*/
 
 
-const Widget = () => {
+/*const Widget = () => {
   return (
 <div className="content">
 <div className="container-fluid">
@@ -119,4 +119,4 @@ const Widget = () => {
   );
 };
 
-export default Widget;
+export default Widget;*/

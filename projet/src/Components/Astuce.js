@@ -14,12 +14,10 @@ class Astuce extends React.Component {
       flipOnHover={false} // default false
       flipOnClick={true} // default false
       flipDirection="horizontal" // horizontal or vertical
-      ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle()
-      // if you pass isFlipped prop component will be controlled component.
-      // and other props, which will go to div
+      ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle(), // if you pass isFlipped prop component will be controlled component.// and other props, which will go to div
       style={{ width: '200px', 
       height: '160px',
-      color:'purple' }} 
+     }} 
       
    >
       <FrontSide className="flip-card-inner">
@@ -27,7 +25,7 @@ class Astuce extends React.Component {
       </FrontSide>
 
       <BackSide className="flip-card-back" >
-        
+        BOBO
       </BackSide>
     </Flippy>
   
