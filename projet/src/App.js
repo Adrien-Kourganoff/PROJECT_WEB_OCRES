@@ -1,10 +1,7 @@
 import logo from './logo.svg';
-<<<<<<< Updated upstream
-import 'C:/Users/cybop/tutoo/src/App.css';
-=======
 import './App.css';
-import Audio from './Components/Audio'
->>>>>>> Stashed changes
+import Audio from './Audio'
+
 import Accueuil from './Components/Accueuil';
 import Admin from './Components/Admin';
 import Menu from './Components/Menu';
