@@ -34,7 +34,6 @@ const Accueuil =() => {
    <Card style={{ width: '10px'},{ height: '300px'} }>
    <Card.Body>
         <h4 className="motivation">Motivation</h4>
-        <p className="category">Motivation</p>
         <Quote/>
         
         </Card.Body>
@@ -42,26 +41,6 @@ const Accueuil =() => {
         
         </div> 
         </Col>
-     
-        <div class="mt-3" />
-
-        <Col md={6}>
-        <div className="card-deck">
- 
- 
-   <Card style={{ width: '300px'},{ height: '300px'}}>
-   <Card.Body>
-        <h4 className="music">Music</h4>
-        <p className="category">Music</p>
-
-         <h2>ECOUTEZ VOTREZ MEILLEURE PLAYLIST</h2>  <FontAwesomeIcon  icon={faMusic} style={{ width: '20px'},{ height: '20px'}, {color:'violet'}}/>
-         
-        <Audio/>
-        </Card.Body>
-        </Card>
-        </div>
-        </Col>
-    
         <div class="mt-3" />
         <Col md={6}>
     <div className="card-deck">
@@ -81,7 +60,6 @@ const Accueuil =() => {
       <Card style={{ width: '300px'},{ height: '300px'} }>
       <Card.Body>
         <h4 className="graphique">Graphique</h4>
-        <p className="category">Graphique</p>
         <form class="form-inline">
         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Notez votre du jour humeur sur 8</label>
   <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
@@ -114,7 +92,6 @@ const Accueuil =() => {
    <Card style={{ width: '300px'},{ height: '300px'} }>
    <Card.Body>
         <h4 className="feeling">CLOCK</h4>
-        <p className="category">Clock</p>
         <Digital/>
         </Card.Body>
         </Card>
@@ -131,7 +108,6 @@ const Accueuil =() => {
    <Card style={{ width: '300px'},{ height: '300px'} }>
    <Card.Body>
         <h4 className="goal">Goal</h4>
-        <p className="category">Goal</p>
         <ToDoList/>
         </Card.Body>
         </Card>
@@ -141,6 +117,7 @@ const Accueuil =() => {
 
 
       </Row>
+      <Audio/>
       </Container>
       </ResponsiveContainer>
       </main>
