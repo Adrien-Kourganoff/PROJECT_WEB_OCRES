@@ -8,7 +8,7 @@ import { Component } from "react";
 
 import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
 import {Card} from 'react-bootstrap';
-import './SideBar.css'
+import './SideBar.css';
 
 /*import img from './Kahina_blanc.jpg';
 import logo from './logo.svg';*/
