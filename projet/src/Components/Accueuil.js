@@ -25,7 +25,7 @@ const Accueuil =() => {
       
     <Col md={6}>
     <div className="card-deck">
-   <Card style={{ width: '10px'} }>
+   <Card style={{ width: '10px'},{ height: '300px'} }>
    <Card.Body>
         <h4 className="motivation">Motivation</h4>
         <p className="category">Motivation</p>
@@ -43,7 +43,7 @@ const Accueuil =() => {
         <div className="card-deck">
  
  
-   <Card style={{ width: '10px'} }>
+   <Card style={{ width: '300px'},{ height: '300px'}}>
    <Card.Body>
         <h4 className="music">Music</h4>
         <p className="category">Music</p>
@@ -55,7 +55,7 @@ const Accueuil =() => {
         <div class="mt-3" />
         <Col md={6}>
     <div className="card-deck">
-    <Card className="flip-card"style={{ width: '10px'} }>
+    <Card className="flip-card"style={{ width: '300px'},{ height: '300px'} }>
       <Card.Body >
         <Astuce/>
         </Card.Body>
@@ -68,7 +68,7 @@ const Accueuil =() => {
     <div className="card-deck">
  
     
-      <Card style={{ width: '10px'} }>
+      <Card style={{ width: '300px'},{ height: '300px'} }>
       <Card.Body>
         <h4 className="graphique">Graphique</h4>
         <p className="category">Graphique</p>
@@ -101,7 +101,7 @@ const Accueuil =() => {
         <div className="card-deck">
  
  
-   <Card style={{ width: '10px'} }>
+   <Card style={{ width: '300px'},{ height: '300px'} }>
    <Card.Body>
         <h4 className="feeling">CLOCK</h4>
         <p className="category">Clock</p>
@@ -118,7 +118,7 @@ const Accueuil =() => {
         <div className="card-deck">
  
  
-   <Card style={{ width: '10px'} }>
+   <Card style={{ width: '300px'},{ height: '300px'} }>
    <Card.Body>
         <h4 className="goal">Goal</h4>
         <p className="category">Goal</p>
