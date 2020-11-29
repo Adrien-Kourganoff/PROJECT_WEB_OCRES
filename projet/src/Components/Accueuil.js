@@ -1,9 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import { Component } from "react";
 import Widget from './Widget';
-import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
+import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend,ResponsiveContainer} from 'recharts';
 import {Card} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
 import Baton from './Baton';
@@ -16,11 +17,15 @@ import './Astuce.css';
 import ToDoList from './ToDoList';
 import Digital from './Digital';
 import Audio from './Audio';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {faTrash,faHome,faUser,faMusic,faHeadphones} from '@fortawesome/free-solid-svg-icons';
 
 
 const Accueuil =() => {
     return (
       <main>
+        <ResponsiveContainer width="100%"  >
       <Container>
         <Row clasName="show-grid">
       
@@ -48,6 +53,12 @@ const Accueuil =() => {
    <Card.Body>
         <h4 className="music">Music</h4>
         <p className="category">Music</p>
+
+         <h2>ECOUTEZ VOTREZ MEILLEURE PLAYLIST</h2>  <FontAwesomeIcon  icon={faMusic} style={{ width: '20px'},{ height: '20px'}, {color:'violet'}}/>
+         
+
+      
+
         <Audio/>
         </Card.Body>
         </Card>
@@ -134,6 +145,7 @@ const Accueuil =() => {
 
       </Row>
       </Container>
+      </ResponsiveContainer>
       </main>
     )
 }
