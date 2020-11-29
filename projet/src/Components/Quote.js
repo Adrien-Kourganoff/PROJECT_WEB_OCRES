@@ -3,7 +3,6 @@ import {Card,Button} from 'react-bootstrap';
 import './Quote.css'
 
 
-
 function Quote(){
     
     const citations = [
