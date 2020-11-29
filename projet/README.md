@@ -45,4 +45,5 @@ npm install recharts
 ### RESPONSIVE CONTAINERS
 
 npm i @bit/recharts.recharts.responsive-container
+
 npm install react-bootstrap bootstrap
