@@ -22,7 +22,9 @@ To install storybook.
 
 ### `npm run storybook`
 To load the storybook page.
+### Before installing the librairies 
 
+type "cd projet" in the terminal.
 ## INSTALL LIBRARIES
 
 ### ICONS
@@ -47,3 +49,14 @@ npm install recharts
 npm i @bit/recharts.recharts.responsive-container
 
 npm install react-bootstrap bootstrap
+
+### Audio 
+
+npm install react-playlist-player
+
+### Routes
+
+npm install react-router-dom
+
+Make sure you installed all theses librairies.
+After the installation, type "npm start" in the terminal.
