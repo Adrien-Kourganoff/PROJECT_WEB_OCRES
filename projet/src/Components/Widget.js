@@ -4,6 +4,7 @@ import Baton from './Baton';
 import Quote from'./Quote';
 import './Widget.css';
 import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
+import ToDoList from './ToDoList';
 /*import Button from './Button';
 import './button.css';*/
 
@@ -98,7 +99,7 @@ const Widget = () => {
    <Card style={{ width: '10rem'} }>
    <Card.Body>
         <h4 className="title">Goal</h4>
-        <p className="category">Goal</p>
+        <ToDoList/>
         </Card.Body>
         </Card>
         </div>

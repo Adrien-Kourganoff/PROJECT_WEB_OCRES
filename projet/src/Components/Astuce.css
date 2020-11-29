@@ -1,8 +1,9 @@
-/*.front
+.flipcard
 {
     background-color: midnightblue;
+    color: black;
 }
-.back
+.flipcardinner
 {
-    background-color: oldlace;
-}*/
+    color: oldlace;
+}

@@ -1,38 +1,38 @@
-/*import React, { Component } from 'react';
+import React, { Component } from 'react';
 import ReactCardFlip from 'react-card-flip';
-
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
 
 
 class Astuce extends React.Component {
-    constructor() {
-      super();
-        this.state = {
-        isFlipped: false
-      };
-      this.handleClick = this.handleClick.bind(this);
-    }
+  
    
-    handleClick(e) {
-      e.preventDefault();
-      this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
-    }
+  render() {
    
-    render() {
-      return (
-        <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
-          <YOUR_FRONT_CCOMPONENT className="front">
-            This is the front of the card.
-            <button onClick={this.handleClick}>Click to flip</button>
-          </YOUR_FRONT_CCOMPONENT>
-   
-          <YOUR_BACK_COMPONENT className="back">
-            This is the back of the card.
-            <button onClick={this.handleClick}>Click to flip</button>
-          </YOUR_BACK_COMPONENT>
-        </ReactCardFlip>
-      )
+    return(
+    <Flippy className="flipcard"
+      flipOnHover={false} // default false
+      flipOnClick={true} // default false
+      flipDirection="horizontal" // horizontal or vertical
+      ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle()
+      // if you pass isFlipped prop component will be controlled component.
+      // and other props, which will go to div
+      style={{ width: '200px', 
+      height: '160px',
+      color:'purple' }} 
+      
+   >
+      <FrontSide className="flip-card-inner">
+        ASTUCES
+      </FrontSide>
+
+      <BackSide className="flip-card-back" >
+        
+      </BackSide>
+    </Flippy>
+  
+      );
     }
   }
 
-  export default Astuce;*/
+  export default Astuce;

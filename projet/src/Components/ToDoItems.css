@@ -1,0 +1,22 @@
+.todo-item
+{
+    color: black;
+    font-size: 1em;
+}
+
+.list
+{
+    background-color:peachpuff;
+    border-radius: 8px;
+    width: 300px;
+    height: 50px;
+    margin: 15px auto;
+    padding: 10px ;
+    position: relative;
+}
+
+.faicons
+{color: black;
+position: absolute;
+right: 10px;
+cursor: pointer; }

@@ -11,6 +11,8 @@ import Quote from'./Quote';
 import './Widget.css';
 import Button from './Button';
 import './button.css';
+import Astuce from './Astuce';
+import ToDoList from './ToDoList';
 /*import Astuce from './Widgets/Astuce';
 import './Widgets/Astuce.css';*/
 
@@ -55,15 +57,7 @@ const Accueuil =() => {
     <div className="card-deck">
     <Card className="flip-card"style={{ width: '10px'} }>
       <Card.Body >
-<div>
-    <div class="flip-card-inner">   
-    <h4 className="astuce">Astuces</h4>
-      <p className="category">Astuces</p>
-     </div>
-     <div class="flip-card-back">
-        Astuce du jour
-     </div>
-     </div>
+        <Astuce/>
         </Card.Body>
         </Card>
         </div>
@@ -128,6 +122,7 @@ const Accueuil =() => {
    <Card.Body>
         <h4 className="goal">Goal</h4>
         <p className="category">Goal</p>
+        <ToDoList/>
         </Card.Body>
         </Card>
         </div>
