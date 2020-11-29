@@ -14,6 +14,37 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+###  `npx sb init`
+To install storybook.
+
+### `npm run storybook`
+To load the storybook page.
+
+## INSTALL LIBRARIES
+
+### ICONS
+npm i --save @fortawesome/fontawesome-svg-core
+
+npm install --save @fortawesome/free-solid-svg-icons
+
+npm install --save @fortawesome/react-fontawesome
+
+### FLIP CARD
+
+npm install react-flipcard
+
+npm install grommet styled-components
+
+### CHARTS
+
+npm install recharts
+
+### RESPONSIVE CONTAINERS
+
+npm i @bit/recharts.recharts.responsive-container
+npm install react-bootstrap bootstrap
+
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
