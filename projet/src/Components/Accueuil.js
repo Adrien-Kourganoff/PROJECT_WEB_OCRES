@@ -52,9 +52,8 @@ const Accueuil =() => {
         <h4 className="music">Music</h4>
         <p className="category">Music</p>
 
-         <h2>ECOUTEZ VOTREZ MEILLEURE PLAYLIST</h2>  <FontAwesomeIcon  icon={faMusic} style={{ width: '20px'},{ height: '20px'}, {color:'violet'}}/>
-         
-        <Audio/>
+         <h2>ECOUTEZ VOTRE MEILLEURE PLAYLIST</h2>  <FontAwesomeIcon  icon={faMusic} style={{ width: '20px'},{ height: '20px'}, {color:'violet'}}/>
+        
         </Card.Body>
         </Card>
         </div>
@@ -139,6 +138,7 @@ const Accueuil =() => {
 
 
       </Row>
+      <Audio/>
       </Container>
       </ResponsiveContainer>
       </main>
