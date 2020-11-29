@@ -3,6 +3,7 @@ import './ToDoItems.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import ToDoList from './ToDoList'
 
+
 function ToDoItems(props)
 {
     const items = props.items;
