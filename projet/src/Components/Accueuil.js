@@ -42,17 +42,6 @@ const Accueuil =() => {
         </div> 
         </Col>
         <div class="mt-3" />
-        <Col md={6}>
-    <div className="card-deck">
-    <Card className="flip-card"style={{ width: '300px'},{ height: '300px'} }>
-      <Card.Body >
-        <Astuce/>
-        </Card.Body>
-        </Card>
-        </div>
-        </Col>
-        <div class="mt-3" />
-
     <Col md={6}>
     <div className="card-deck">
  
@@ -84,6 +73,17 @@ const Accueuil =() => {
 
 
 <div class="mt-3" />
+<Col md={6}>
+    <div className="card-deck">
+    <Card className="flip-card"style={{ width: '300px'},{ height: '300px'} }>
+      <Card.Body >
+        <Astuce/>
+        </Card.Body>
+        </Card>
+        </div>
+        </Col>
+        <div class="mt-3" />
+
 
         <Col md={6}>
         <div className="card-deck">
@@ -100,14 +100,12 @@ const Accueuil =() => {
         
 
         <div class="mt-3" />
-
         <Col md={6}>
         <div className="card-deck">
  
- 
-   <Card style={{ width: '300px'},{ height: '300px'} }>
+   <Card style={{ width: '300px'},{ height: '170px'} }>
    <Card.Body>
-        <h4 className="goal">Goal</h4>
+        <h4 className="goal">Goal of the day</h4>
         <ToDoList/>
         </Card.Body>
         </Card>
@@ -115,12 +113,13 @@ const Accueuil =() => {
         
         </Col>
 
-
       </Row>
       <Audio/>
+      
       </Container>
       </ResponsiveContainer>
       </main>
+      
     )
 }
 

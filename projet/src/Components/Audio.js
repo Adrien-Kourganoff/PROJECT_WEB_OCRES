@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import AudioPlayer from 'react-playlist-player'
+import './Astuce.css';
  
 class Audio extends Component {
   state = {
