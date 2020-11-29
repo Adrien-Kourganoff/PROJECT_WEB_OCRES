@@ -9,9 +9,11 @@ import { Component } from "react";
 import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
 import {Card} from 'react-bootstrap';
 import './SideBar.css';
+import './ToDoItems.css'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {faTrash,faHome,faUser} from '@fortawesome/free-solid-svg-icons';
 
-/*import img from './Kahina_blanc.jpg';
-import logo from './logo.svg';*/
 
 <link
   rel="stylesheet "
@@ -35,11 +37,9 @@ class SideBar extends React.Component{
 
 <SideNav className="Nav"
     onSelect={(selected) => {
-        // Add your code here
+      
     }}
 
-   /* <img src={img} class="ImageKahina" height="80px" />
-      <div class="ligneblanche"> </div>*/
 
 >
 
@@ -49,6 +49,7 @@ class SideBar extends React.Component{
         <NavItem eventKey="home">
             <NavIcon>
                 <i className="fa fa-fw fa-home" style={ { fontSize: '1.75em'}} />
+                <FontAwesomeIcon  icon={faUser}/>
             </NavIcon>
             <NavText><a href="/Admin">
                 Admin</a>
@@ -57,7 +58,8 @@ class SideBar extends React.Component{
 
         <NavItem eventKey="Icare">
             <NavIcon>
-            <i class="fa fa-fw fa-home fa-5x" style={{ fontSize: '1.75em' }} ></i>
+            <i class="fa fa-fw fa-home fa-5x" style={{ fontSize: '1.75em' }} />
+            <FontAwesomeIcon  icon={faHome}/>
             </NavIcon>
             <NavText><a href="/Accueuil">
                 ICare</a>

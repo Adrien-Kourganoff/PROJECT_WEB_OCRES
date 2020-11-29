@@ -26,8 +26,7 @@ class Digital extends React.Component {
 
     return(
   <Grommet theme={theme}>
-
-    <Box direction="row" gap="medium" pad="medium">
+    <Box  direction="row" gap="medium" pad="medium">
       <Box align="center">
         <Clock type="digital" size="customSize" color="blue"/>
       </Box>
