@@ -21,7 +21,7 @@ class Astuce extends React.Component {
       
    >
       <FrontSide className="flip-card-inner">
-        Cliquez vite pour decouvir une Astuce !!!
+        Cliquez vite pour découvir une Astuce !!!
       </FrontSide>
 
       <BackSide className="flip-card-back" >
