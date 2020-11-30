@@ -34,7 +34,8 @@ class SideBar extends React.Component{
     render()
 {
     return(
-
+        
+    
 <SideNav className="Nav"
     onSelect={(selected) => {
       
@@ -42,6 +43,7 @@ class SideBar extends React.Component{
 
     style={{ height: '1200px' }}
 >
+
     <SideNav.Toggle />
     <SideNav.Nav defaultSelected="home">
         <NavItem eventKey="home">
@@ -66,7 +68,8 @@ class SideBar extends React.Component{
          
     </SideNav.Nav>
 </SideNav>
-    );
+   );
+    
 }
 }
 

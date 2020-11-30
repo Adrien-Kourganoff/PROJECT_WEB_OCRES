@@ -25,6 +25,7 @@ class Digital extends React.Component {
   render(){
 
     return(
+      <Card>
   <Grommet  theme={theme}>
     <Box  direction="row" gap="medium" pad="medium">
       <Box align="center">
@@ -32,6 +33,7 @@ class Digital extends React.Component {
       </Box>
     </Box>
   </Grommet>
+  </Card>
 );
 
 Digital.story = {

@@ -40,7 +40,8 @@ const Accueil =() => {
     return (
     
       <Container maxWidth>
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
+      
       <Grid>
       <Row clasName="show-grid">
     <SideBar/>
@@ -88,6 +89,7 @@ const Accueil =() => {
         <h4 className="feeling">ASTUCES</h4>
         <Astuce/>
         </Grid>
+
         <Grid item lg={5} sm={6} md={5} xs={12}></Grid>
       <Audio/>
   

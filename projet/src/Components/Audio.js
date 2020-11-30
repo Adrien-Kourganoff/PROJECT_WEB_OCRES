@@ -36,6 +36,7 @@ class Audio extends Component {
     })
  
   render() {
+    const {title} =this.props;
     return (
       <div className={'Audio'}>
         <AudioPlayer currentPlayList={this.state.currentPlayList} onToggle={({audioPlaying}) => console.log({audioPlaying})}/>
