@@ -1,9 +1,6 @@
 Cyril BOPOUNGO      cyril.bopoungo@edu.ece.fr      TD2A
 Joanélia RAPSODE    joanelia.rapsode@edu.ece.fr    TD2B
 
-### PROJECT DESCRIPTION
-We have decided to create an app for well-being. We provide tips, motivation quotes and other things to help the users to feel better.
-
 ## Link to Figma :
 
 https://www.figma.com/file/JO5KLA3Tad7fQrgSAsAQfk/Projet-WEB?node-id=7%3A7
@@ -67,3 +64,11 @@ npm install react-router-dom
 
 Make sure you installed all theses librairies.
 After the installation, type "npm start" in the terminal.
+
+
+### Struggles
+
+We had difficulties to use Github. We didn't understood well the features (Pull, push, fetch and everything else).
+We couldn't display our widgets on  Storybook. When we tried to, we had many errors on the terminal.
+It was difficult to make this project only through telephone and Discord.
+It was also difficult to manage our time with all the deadlines we had in other classes.
