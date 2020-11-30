@@ -41,12 +41,7 @@ const Accueil =() => {
     
       <Container maxWidth>
         <Grid container spacing={4}>
-      
-      <Grid>
-      <Row clasName="show-grid">
-    <SideBar/>
- </Row>
- </Grid>
+
 
         <Grid item lg={5} sm={6} md={5} xs={12}>
         <h4 className="goal">MOTIVATION</h4>

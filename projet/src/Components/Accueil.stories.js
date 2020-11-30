@@ -1,10 +1,21 @@
 import {storiesOf}  from '@storybook/react'
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+import PropTypes from 'prop-types';
 import Accueil from './Accueil';
 
-storiesOf("Accueil, module").add("Accueil", ()=>
-(
-    <Accueil/>
-)
-);
+
+
+export default{
+
+    title: 'Acceuil',
+    component: Accueil,
+    argTypes:{
+        color :{control : 'text'}
+    }
+}
+
+ const acc = args => <Accueil {...args}/> 
+ export const acceuil = acc.bind({})
+ acceuil.args={
+     color : 'purple',
+     label :'accueil'
+ }
