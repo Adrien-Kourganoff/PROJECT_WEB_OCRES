@@ -5,7 +5,7 @@ import Logo2 from "./jade.png";
 var entreprise = [
     {
       nom: "Entreprise 1",
-      benef: [15, 10, 16, 10, 20, 65, 40, 50, 60, 15, 51, 32],
+      benef: [15, 10, 16, 10, 20, 65, 40, 50, 60, 15, 51, 70],
       donut: 
         {
           gain:
@@ -109,17 +109,47 @@ var entreprise = [
       photo_prof: Logo1,
       myEventsList : [
         {
-            title: "test",
+            title: "Web",
             start: new Date('November 22, 2020 15:00:00'),
             end:  new Date('November 22, 2020 18:00:00'),
             allDay: false
         },
         {
-            title: "test2",
+            title: "Web",
             start: new Date('December 23, 2020 15:00:00'),
             end:  new Date('December 23, 2020 18:00:00'),
             allDay: false
         },
+        {
+          title: "Web",
+          start: new Date('December 19, 2020 15:00:00'),
+          end:  new Date('December 19, 2020 18:00:00'),
+          allDay: false
+      },
+      {
+        title: "Web",
+        start: new Date('December 15, 2020 15:00:00'),
+        end:  new Date('December 15, 2020 18:00:00'),
+        allDay: false
+    },
+    {
+      title: "Web",
+      start: new Date('December 13, 2020 15:00:00'),
+      end:  new Date('December 13, 2020 18:00:00'),
+      allDay: false
+  },
+  {
+    title: "Web",
+    start: new Date('December 11, 2020 15:00:00'),
+    end:  new Date('December 11, 2020 18:00:00'),
+    allDay: false
+},    
+{
+  title: "Web",
+  start: new Date('December 9, 2020 15:00:00'),
+  end:  new Date('December 9, 2020 18:00:00'),
+  allDay: false
+},
     ],
     },
     {
@@ -228,17 +258,54 @@ var entreprise = [
       photo_prof: Logo2,
       myEventsList : [
         {
-            title: "test de Maths",
+            title: "Web",
             start: new Date('November 22, 2020 15:00:00'),
             end:  new Date('November 22, 2020 18:00:00'),
             allDay: false
         },
         {
-            title: "test 2 de Maths",
-            start: new Date('November 23, 2020 15:00:00'),
-            end:  new Date('November 23, 2020 18:00:00'),
+            title: "Web",
+            start: new Date('November 12, 2020 15:00:00'),
+            end:  new Date('November 12, 2020 18:00:00'),
             allDay: false
         },
+        {
+          title: "Web",
+          start: new Date('November 9, 2020 15:00:00'),
+          end:  new Date('November 9, 2020 18:00:00'),
+          allDay: false
+      },
+      {
+        title: "Web",
+        start: new Date('November 15, 2020 15:00:00'),
+        end:  new Date('November 15, 2020 18:00:00'),
+        allDay: false
+    },
+    {
+      title: "Web",
+      start: new Date('November 19, 2020 15:00:00'),
+      end:  new Date('November 19, 2020 18:00:00'),
+      allDay: false
+  },
+  {
+    title: "Web",
+    start: new Date('November 24, 2020 15:00:00'),
+    end:  new Date('November 24, 2020 18:00:00'),
+    allDay: false
+},
+{
+  title: "Web",
+  start: new Date('November 27, 2020 15:00:00'),
+  end:  new Date('November 27, 2020 18:00:00'),
+  allDay: false
+},
+{
+  title: "Web",
+  start: new Date('November 28, 2020 15:00:00'),
+  end:  new Date('November 28, 2020 18:00:00'),
+  allDay: false
+},
+
     ],
     },
   ];

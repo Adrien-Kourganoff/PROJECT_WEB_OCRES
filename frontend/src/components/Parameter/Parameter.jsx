@@ -9,6 +9,8 @@ import { isNaN } from "lodash";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
+
+
 class parameter extends Component {
   constructor(props) {
     super(props);
@@ -125,13 +127,14 @@ class parameter extends Component {
               <div className="row">
                 <div className="col-sm-1"></div>
                 <div className="col-sm-10">
-                  <titre>Ajout d'un chiffre d'affaire</titre>
+                  <titre  style={{ fontWeight: "bold" }}>Ajout d'un chiffre d'affaire</titre>
                 </div>
                 <div className="col-sm-1"></div>
               </div>
               <br></br>
               <Form onSubmit={this.mySubmitHandlerBenef}>
                 <div class="row">
+                <Form.Label style={{ color: "#FBC86A" }} >Quel mois?  </Form.Label>
                   <Form.Control
                     as="select"
                     size="lg"
@@ -152,7 +155,9 @@ class parameter extends Component {
                     <option value="Décembre">Décembre</option>
                   </Form.Control>
                 </div>
+                <br />
                 <div class="row">
+                  <Form.Label style={{ color: "#FBC86A" }} >Combien?</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="bénéfice en K€"
@@ -162,10 +167,12 @@ class parameter extends Component {
                     onChange={this.handleBenefChange}
                   />
                 </div>
+                <br />
                 <div class="row">
-                  <Button variant="flat" type="submit">
+                  <Button variant="flat1" type="submit">
                     Envoyer
                   </Button>
+                  
                 </div>
               </Form>
 
@@ -177,13 +184,14 @@ class parameter extends Component {
               <div className="row">
                 <div className="col-sm-1"></div>
                 <div className="col-sm-10">
-                  <titre>Ajout d'un gain</titre>
+                  <titre style={{ fontWeight: "bold" }}>Ajout d'un gain</titre>
                 </div>
                 <div className="col-sm-1"></div>
               </div>
               <br />
               <Form onSubmit={this.mySubmitHandlerGain}>
                 <div class="row">
+                <Form.Label style={{ color: "#795EFF" }} >Quel type? </Form.Label>
                   <Form.Control
                     as="select"
                     size="lg"
@@ -196,7 +204,9 @@ class parameter extends Component {
                     <option value="Autres">Autres</option>
                   </Form.Control>
                 </div>
+                <br />
                 <div class="row">
+                <Form.Label style={{ color: "#795EFF" }} >Combien?</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="gain en K€"
@@ -206,8 +216,9 @@ class parameter extends Component {
                     onChange={this.handleGainChange}
                   />
                 </div>
+                <br />
                 <div class="row">
-                  <Button variant="flat" type="submit">
+                  <Button variant="flat2" type="submit">
                     Envoyer
                   </Button>
                 </div>
@@ -224,13 +235,14 @@ class parameter extends Component {
               <div className="row">
                 <div className="col-sm-1"></div>
                 <div className="col-sm-10">
-                  <titre>Ajout d'une dépense</titre>
+                  <titre style={{ fontWeight: "bold" }}>Ajout d'une dépense</titre>
                 </div>
                 <div className="col-sm-1"></div>
               </div>
               <br />
               <Form onSubmit={this.mySubmitHandlerDep}>
                 <div class="row">
+                <Form.Label style={{ color: "#89D761" }} >Quel type?</Form.Label>
                   <Form.Control
                     as="select"
                     size="lg"
@@ -243,8 +255,11 @@ class parameter extends Component {
                     <option value="Autres">Autres</option>
                   </Form.Control>
                 </div>
+                <br />
                 <div class="row">
+                <Form.Label style={{ color: "#89D761" }} >Combien?</Form.Label>
                   <Form.Control
+                  
                     type="text"
                     placeholder="dépense en K€"
                     name="dep"
@@ -253,8 +268,9 @@ class parameter extends Component {
                     onChange={this.handleDepChange}
                   />
                 </div>
+                <br />
                 <div clas="row">
-                  <Button variant="flat" type="submit">
+                  <Button variant="flat3" type="submit">
                     Envoyer
                   </Button>
                 </div>
@@ -271,18 +287,18 @@ class parameter extends Component {
               <div className="row">
                 <div className="col-sm-1"></div>
                 <div className="col-sm-10">
-                  <titre>Ajout d'un évènement</titre>
+                  <titre style={{ fontWeight: "bold" }}>Ajout d'un évènement</titre>
                 </div>
                 <div className="col-sm-1"></div>
               </div>
               <br />
               <Form onSubmit={this.mySubmitHandlerEvent}>
                 <div className="row">
-                    <Form.Label>Date de départ</Form.Label>
+                    <Form.Label style={{ color: "#F271D9" }} >Quel début?</Form.Label>
                   </div>
                   <div className="row">
                     <TextField
-                      label="Nouvel évènement"
+                      
                       type="datetime-local"
                       InputLabelProps={{
                         shrink: true,
@@ -291,12 +307,13 @@ class parameter extends Component {
                       onChange={this.handleDateDepChange}
                     />
                   </div>
+                  <br />
                   <div className="row">
-                    <Form.Label>Date de fin</Form.Label>
+                    <Form.Label style={{ color: "#F271D9" }}>Quelle fin?</Form.Label>
                   </div>
                   <div className="row">
                     <TextField
-                      label="Nouvel évènement"
+                      
                       type="datetime-local"
                       InputLabelProps={{
                         shrink: true,
@@ -305,8 +322,9 @@ class parameter extends Component {
                       onChange={this.handleDateDepChange}
                     />
                   </div>
+                  <br />
                 <div class="row">
-                  <Form.Label>Description</Form.Label>
+                  <Form.Label style={{ color: "#F271D9" }}>Quelle description?</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="évènement"
@@ -318,7 +336,7 @@ class parameter extends Component {
                 </div>
                 <br />
                 <div class="row">
-                  <Button variant="flat" type="submit">
+                  <Button variant="flat4" type="submit">
                     Envoyer
                   </Button>
                 </div>
@@ -335,13 +353,16 @@ class parameter extends Component {
               <div className="row">
                 <div className="col-sm-1"></div>
                 <div className="col-sm-10">
-                  <titre>Ajout d'un commentaire</titre>
+                  <titre style={{ fontWeight: "bold" }}>Ajout d'un commentaire</titre>
                 </div>
                 <div className="col-sm-1"></div>
               </div>
+              
+
               <Form onSubmit={this.mySubmitHandlerCommentaire}>
                 <Form.Group>
                   <br />
+                  <Form.Label style={{ color: "#8CA3D7" }}>Quel pseudo?</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Pseudo"
@@ -350,7 +371,8 @@ class parameter extends Component {
                     value={this.state.pseudo}
                     onChange={this.handleCommentairePseudoChange}
                   />
-
+                  <br />
+                  <Form.Label style={{ color: "#8CA3D7" }}>Quel message?</Form.Label>
                   <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Control
                       as="textarea"
@@ -362,8 +384,10 @@ class parameter extends Component {
                       onChange={this.handleCommentaireChange}
                     />
                   </Form.Group>
+                  
                 </Form.Group>
-                <Button variant="flat" type="submit">
+                <br />
+                <Button variant="flat5" type="submit">
                   Envoyer
                 </Button>
                 <br />

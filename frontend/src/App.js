@@ -63,16 +63,21 @@ class App extends Component {
                   src={entreprise[id].photo_prof}
                   style={{ margin: "auto", maxWidth: "75%" }}
                 ></img>
+                
               </div>
+              <br />
+              <br />
               <div class="row">
                 <div class="choixEntre">
                   <div class="col-sm-12">
                     <div class="row">
-                      <Form.Control as="select" size="lg" value={this.state.buisness} onChange={this.handleBuisness}>
+                    
+                      <Form.Control as="select" size="lg" value={this.state.buisness} onChange={this.handleBuisness} >
                         <option value="0">Mathilde</option>
                         <option value="1">Jade</option>
                       </Form.Control>
                     </div>
+                    
                     
                   </div>
                 </div>
@@ -90,7 +95,8 @@ class App extends Component {
                       <img  src={DashA}></img>
                     </div>
                     <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
-                      <a style={{ color: "#FDE1DE", fontSize: "100%" }}>
+                      
+                      <a style={{ color: "#FDE1DE", fontSize: "125%" }}>
                         Mon DashBoard
                       </a>
                     </div>
@@ -105,7 +111,7 @@ class App extends Component {
                       <img  src={Param}></img>
                     </div>
                     <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
-                      <a style={{ fontSize: "1em" }}> Mes Paramètres</a>
+                      <a style={{ fontSize: "125%" }}> Mes Paramètres</a>
                     </div>
                   </div>
                 </div>

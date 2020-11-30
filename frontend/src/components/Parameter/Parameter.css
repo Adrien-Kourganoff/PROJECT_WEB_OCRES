@@ -9,13 +9,34 @@
         border-radius: 3px;
         padding: 5px 10px;
         text-transform: uppercase;
+        font-weight: "bold";
       }
 
 .btn-flat {
         background-color: #BDEDEF;
         color: white;
       }
-  
+
+.btn-flat1 {
+        background-color: #FBC86A;
+        color: white;
+      }
+      .btn-flat2 {
+        background-color: #795EFF;
+        color: white;
+      }
+      .btn-flat3 {
+        background-color: #89D761;
+        color: white;
+      }
+      .btn-flat4 {
+        background-color: #F271D9;
+        color: white;
+      }
+      .btn-flat5 {
+        background-color: #8CA3D7;
+        color: white;
+      }  
 .btn-xxl {
         padding: 1rem 1.5rem;
         font-size: 1.5rem;
