@@ -16,8 +16,8 @@ export default{
 }
 
  const ast = args => <Astuce {...args}/> 
- export const acceuil = ast.bind({})
- acceuil.args={
+ export const astuce = ast.bind({})
+ astuce.args={
      variantcolor : 'purple',
      label :'astuce'
  }
