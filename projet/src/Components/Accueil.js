@@ -9,7 +9,6 @@ import {Card} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
 import Baton from './Baton';
 import Quote from'./Quote';
-
 import Astuce from './Astuce';
 import './Astuce.css';
 import ToDoList from './ToDoList';
@@ -42,7 +41,6 @@ const Accueil =() => {
     
       <Container maxWidth>
         <Grid container spacing={3}>
-
       <Grid>
       <Row clasName="show-grid">
     <SideBar/>
@@ -77,10 +75,6 @@ const Accueil =() => {
         </Grid>
 
         <Grid item lg={5} sm={6} md={5} xs={12}>
-        <h4 className="feeling">ASTUCES</h4>
-        <Astuce/>
-        </Grid>
-        <Grid item lg={5} sm={6} md={5} xs={12}>
         <h4 className="feeling">CLOCK</h4>
         <Digital/>
        </Grid>
@@ -90,9 +84,13 @@ const Accueil =() => {
         <ToDoList/>
       </Grid>
 
-      
+      <Grid item lg={5} sm={6} md={5} xs={12}>
+        <h4 className="feeling">ASTUCES</h4>
+        <Astuce/>
+        </Grid>
+        <Grid item lg={5} sm={6} md={5} xs={12}></Grid>
       <Audio/>
-    
+  
   </Grid>
   </Container>
 

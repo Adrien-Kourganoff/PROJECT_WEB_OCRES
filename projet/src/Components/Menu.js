@@ -22,7 +22,7 @@ import SideBar from './SideBar';
 function Menu(){
     return(
         <Row clasName="show-grid">
- 
+            <SideBar></SideBar>
 </Row>
     );
 }
