@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Box, Grommet, Clock, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
+import {Card} from 'react-bootstrap';
 
 const override = {
   clock: {
@@ -25,10 +25,10 @@ class Digital extends React.Component {
   render(){
 
     return(
-  <Grommet theme={theme}>
+  <Grommet  theme={theme}>
     <Box  direction="row" gap="medium" pad="medium">
       <Box align="center">
-        <Clock type="digital" size="customSize" color="blue"/>
+        <Clock style={{ width : '30em' }} type="digital" size="customSize" color="blue"/>
       </Box>
     </Box>
   </Grommet>

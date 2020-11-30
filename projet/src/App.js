@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Accueuil from './Components/Accueuil';
+import Accueil from './Components/Accueil';
 import Admin from './Components/Admin';
 import Menu from './Components/Menu';
 import { Component } from 'react';
@@ -12,7 +12,7 @@ class  App extends Component {
     return (
       <BrowserRouter>
       <Menu/>
-      <Route path="/Accueuil" component={Accueuil}/>
+      <Route path="/Accueil" component={Accueil}/>
       <Route path="/Admin" component={Admin}/>
       </BrowserRouter>
     );

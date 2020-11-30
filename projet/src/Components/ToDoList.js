@@ -4,6 +4,7 @@ import './ToDoList.css';
 import ToDoItems from './ToDoItems';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
+import {Card} from 'react-bootstrap';
 
 library.add(faTrash);
 
@@ -28,7 +29,7 @@ class ToDoList extends React.Component{
       this.setState({          //Pour changer le state de notre input
           currentItem:{        //Création d'ub objet currentItem
               text:e.target.value,
-              key:Date.now()  //POUR GARDER L'UNICITE DE LA CLE 
+              key:Date.now()
           }
       })
   }
@@ -52,7 +53,7 @@ class ToDoList extends React.Component{
     }
 
     deleteItem(key){
-        const filterItems= this.state.items.filter(item => //retourne un nouveau tableau contenant tous les éléments du tableau d'origine correspondant à item
+        const filterItems= this.state.items.filter(item =>
           item.key!==key);
         this.setState({
           items: filterItems
@@ -62,6 +63,9 @@ class ToDoList extends React.Component{
       
 render() {
     return (
+
+      <Card>
+      <Card.Body>
         <div className="todoListMain">
         <div className="headerT">
           <header>
@@ -75,6 +79,8 @@ render() {
           </header>
         </div>
       </div>
+      </Card.Body>
+  </Card>
     );
   }
 }

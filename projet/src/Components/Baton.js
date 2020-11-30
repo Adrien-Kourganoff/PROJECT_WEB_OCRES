@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Component} from 'react';
 import { BarChart, Bar, XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
 import './Baton.css';
-
+import {Card} from 'react-bootstrap';
 
 const data = [
   {name: 'Lu', happiness: 3,  amt: 24},
@@ -18,8 +18,10 @@ const data = [
 class Baton extends React.Component {
 	render () {
   	return (
-    	<BarChart width={500} height={150} data={data}
-            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+      <Card style={{ width : '600px' }} >
+      <Card.Body>
+    	<BarChart width={400} height={150} data={data}
+            margin={{top: 5, center: 30, left: 20, bottom: 5}}>
        <CartesianGrid strokeDasharray="3 3"/>
        <XAxis dataKey="name"/>
        <YAxis/>
@@ -27,11 +29,14 @@ class Baton extends React.Component {
        <Legend />
        <Bar dataKey="happiness" fill="#9370db" />
       </BarChart>
+      
+  </Card.Body>
+  </Card>
     );
   }
 }
-ReactDOM.render(
+/*ReactDOM.render(
   <Baton />,
   document.getElementById('root')
-);
+);*/
 export default Baton;
