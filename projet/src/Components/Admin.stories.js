@@ -14,7 +14,7 @@ export default{
     }
 }
 
- const adm= args => <Accueil {...args}/> 
+ const adm= args => <Admin {...args}/> 
  export const admin = adm.bind({})
  admin.args={
      variantcolor : 'purple',
