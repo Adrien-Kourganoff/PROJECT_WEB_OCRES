@@ -1,6 +1,9 @@
 Cyril BOPOUNGO      cyril.bopoungo@edu.ece.fr      TD2A
 Joanélia RAPSODE    joanelia.rapsode@edu.ece.fr    TD2B
 
+### PROJECT DESCRIPTION
+We have decided to create an app for well-being. We provide tips, motivation quotes and other things to help the users to feel better.
+
 ## Link to Figma :
 
 https://www.figma.com/file/JO5KLA3Tad7fQrgSAsAQfk/Projet-WEB?node-id=7%3A7
