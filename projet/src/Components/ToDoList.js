@@ -28,7 +28,7 @@ class ToDoList extends React.Component{
       this.setState({          //Pour changer le state de notre input
           currentItem:{        //Création d'ub objet currentItem
               text:e.target.value,
-              key:Date.now()
+              key:Date.now()  //POUR GARDER L'UNICITE DE LA CLE 
           }
       })
   }
@@ -52,7 +52,7 @@ class ToDoList extends React.Component{
     }
 
     deleteItem(key){
-        const filterItems= this.state.items.filter(item =>
+        const filterItems= this.state.items.filter(item => //retourne un nouveau tableau contenant tous les éléments du tableau d'origine correspondant à item
           item.key!==key);
         this.setState({
           items: filterItems

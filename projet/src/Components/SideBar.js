@@ -1,11 +1,8 @@
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import React from 'react';
 import { Component } from "react";
-
 import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
 import {Card} from 'react-bootstrap';
 import './SideBar.css';
@@ -39,8 +36,6 @@ class SideBar extends React.Component{
     onSelect={(selected) => {
       
     }}
-
-
 >
 
 
@@ -48,7 +43,7 @@ class SideBar extends React.Component{
     <SideNav.Nav defaultSelected="home">
         <NavItem eventKey="home">
             <NavIcon>
-                <i className="fa fa-fw fa-home" style={ { fontSize: '1.75em'}} />
+
                 <FontAwesomeIcon  icon={faUser}/>
             </NavIcon>
             <NavText><a href="/Admin">
@@ -58,7 +53,7 @@ class SideBar extends React.Component{
 
         <NavItem eventKey="Icare">
             <NavIcon>
-            <i class="fa fa-fw fa-home fa-5x" style={{ fontSize: '1.75em' }} />
+       
             <FontAwesomeIcon  icon={faHome}/>
             </NavIcon>
             <NavText><a href="/Accueuil">
