@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Accueuil from './Components/Acceuil';
+import Accueil from './Components/Accueil';
 import Admin from './Components/Admin';
 import Menu from './Components/Menu';
 import { Component } from 'react';

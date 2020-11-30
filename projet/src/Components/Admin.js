@@ -1,15 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Component } from "react";
-import Widget from './Widget';
 import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
 import {Card} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
 import Baton from './Baton';
 import Quote from'./Quote';
-import './Widget.css';
-import Button from './Button';
-import './button.css';
 
 const Admin = () => {
     return (

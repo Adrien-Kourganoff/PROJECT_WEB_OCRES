@@ -61,7 +61,7 @@ class SideBar extends React.Component{
             <i class="fa fa-fw fa-home fa-5x" style={{ fontSize: '1.75em' }} />
             <FontAwesomeIcon  icon={faHome}/>
             </NavIcon>
-            <NavText><a href="/Accueuil">
+            <NavText><a href="/Accueil">
                 ICare</a>
             </NavText>
         </NavItem>
