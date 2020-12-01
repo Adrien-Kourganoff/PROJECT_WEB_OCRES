@@ -1,0 +1,20 @@
+.flipcard
+{
+    background-color: midnightblue;
+    color: black;
+}
+.flip-card-inner
+{
+    color: oldlace;
+    background-color: mediumpurple;
+}
+.flip-card-back
+{
+    background-color: rgba(148, 0, 211, 0.363)
+}
+.Reg {
+    background-color: rgb(255, 255, 255);
+    width:1186px;
+    height:150px;
+    color:cornflowerblue;
+}
