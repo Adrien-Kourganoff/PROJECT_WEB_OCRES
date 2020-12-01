@@ -1,22 +1,28 @@
-.App {
-  text-align: center;
+#root {
+  background-color: rgba(225, 223, 221, 0.2);
 }
 
-.App-logo {
-  height: 40vmin;
+.ms-Nav {
+ background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ms-Grid-col {
+ padding-left: 0;
+ margin-left: 0;
 }
 
-.App-link {
-  color: #09d3ac;
+.ms-Viewport {
+  margin: 0 1.5%;
+}
+
+.ms-FocusZone {
+  padding: 0;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+.yellow {
+  background-color: lightgoldenrodyellow;
 }
