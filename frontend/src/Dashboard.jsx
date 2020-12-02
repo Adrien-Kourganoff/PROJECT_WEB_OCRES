@@ -97,7 +97,7 @@ class Dashboard extends Component {
                 <div class="row">
                   <div class="col-sm-1"></div>
                   <div class="col-sm-10">
-                    <titre>Commentaire</titre>
+                    <titre>Commentaires</titre>
                   </div>
                   <div class="col-sm-1"></div>
                 </div>

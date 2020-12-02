@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Parameter.css";
+import  Event from "./Event";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 // import FormControl from 'react-bootstrap/FormControl'
@@ -21,9 +22,7 @@ class parameter extends Component {
       typegain: null,
       dep: null,
       typedep: null,
-      event: null,
-      moisevent: null,
-      jourevent: null,
+      
       pseudo: null,
       commentaire: null,
     };
@@ -89,20 +88,21 @@ class parameter extends Component {
   mySubmitHandlerEvent = (e) => {
     e.preventDefault();
     let event = this.state.event;
-    let moisevent = this.state.moisevent;
-    let jourevent = this.state.jourevent;
-    console.log(jourevent);
-    console.log(moisevent);
+    let dateStart = this.state.dateStart;
+    let dateEnd = this.state.dateEnd;
+    console.log(dateStart);
+    console.log(dateEnd);
     console.log(event);
   };
   handleEventChange = (e) => {
     this.setState({ event: e.target.value });
   };
-  handleMoisEventChange = (e) => {
-    this.setState({ moisevent: e.target.value });
+  handleDateStartChange = (e) => {
+    this.setState({ dateStart: e.target.value });
   };
-  handleJourEventChange = (e) => {
-    this.setState({ jourevent: e.target.value });
+
+  handleDateEndChange = (e) => {
+    this.setState({ dateEnd: e.target.value });
   };
   /*----------------------------------------------------------commentaire*/
   mySubmitHandlerCommentaire = (e) => {
@@ -284,67 +284,8 @@ class parameter extends Component {
         <div class="col-sm-6">
           <div className="row">
             <div className="App-headerMilieu style">
-              <div className="row">
-                <div className="col-sm-1"></div>
-                <div className="col-sm-10">
-                  <titre style={{ fontWeight: "bold" }}>Ajout d'un évènement</titre>
-                </div>
-                <div className="col-sm-1"></div>
-              </div>
-              <br />
-              <Form onSubmit={this.mySubmitHandlerEvent}>
-                <div className="row">
-                    <Form.Label style={{ color: "#F271D9" }} >Quel début?</Form.Label>
-                  </div>
-                  <div className="row">
-                    <TextField
-                      
-                      type="datetime-local"
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                      value={this.state.datedep}
-                      onChange={this.handleDateDepChange}
-                    />
-                  </div>
-                  <br />
-                  <div className="row">
-                    <Form.Label style={{ color: "#F271D9" }}>Quelle fin?</Form.Label>
-                  </div>
-                  <div className="row">
-                    <TextField
-                      
-                      type="datetime-local"
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                      value={this.state.datedep}
-                      onChange={this.handleDateDepChange}
-                    />
-                  </div>
-                  <br />
-                <div class="row">
-                  <Form.Label style={{ color: "#F271D9" }}>Quelle description?</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="évènement"
-                    name="event"
-                    size="lg"
-                    value={this.state.event}
-                    onChange={this.handleEventChange}
-                  />
-                </div>
-                <br />
-                <div class="row">
-                  <Button variant="flat4" type="submit">
-                    Envoyer
-                  </Button>
-                </div>
-
-                <br />
-              </Form>
-
-              <br></br>
+              <Event />
+              
             </div>
           </div>
           {/*----------------------------------------------------------Commentaire  style={{ justify-content: center }}*/}
@@ -358,7 +299,6 @@ class parameter extends Component {
                 <div className="col-sm-1"></div>
               </div>
               
-
               <Form onSubmit={this.mySubmitHandlerCommentaire}>
                 <Form.Group>
                   <br />
