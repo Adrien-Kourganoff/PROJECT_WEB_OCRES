@@ -91,7 +91,15 @@ useEffect(
       
       console.log(current)
       return (
+
+
+        
         <section>
+            <Card>
+  <Card.Body>
+
+        <section>
+
           <div className="slideshow-container">
             <Slide quote={quote} />
             <Arrows nextQuote={nextQuote}
@@ -100,6 +108,12 @@ useEffect(
           <Dots dotQty={quoteD} 
                 current={current}
                 dotPicksQuote={dotPicksQuote} />
+
+      
+     
+  </Card.Body>
+    </Card>
+
         </section>  
       )
     }
