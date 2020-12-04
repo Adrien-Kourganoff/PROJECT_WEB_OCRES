@@ -4,7 +4,11 @@
     font-size: medium;
     color: white;
     border-radius: 3em;
+    overflow: auto;
+    position:fixed;
+    
 }
+
 .fa,.fa-child
 {
     color: white;

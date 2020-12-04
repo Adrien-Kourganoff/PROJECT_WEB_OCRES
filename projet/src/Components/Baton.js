@@ -18,7 +18,9 @@ const data = [
 class Baton extends React.Component {
 	render () {
   	return (
-      <Card style={{ width : '600px' }} >
+      <Card style={{ width : '500px' }
+      
+      } >
       <Card.Body>
     	<BarChart width={400} height={150} data={data}
             margin={{top: 5, center: 30, left: 20, bottom: 5}}>

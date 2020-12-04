@@ -10,7 +10,7 @@ class Astuce extends React.Component {
   render() {
    
     return(
-      <Card  style={{ width: '450px',}}>
+      <Card  style={{ width: '450px'}}>
   <Card.Body>
     <Flippy className="flipcard"
       flipOnHover={false} // default false
@@ -19,7 +19,7 @@ class Astuce extends React.Component {
       ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle(), // if you pass isFlipped prop component will be controlled component.// and other props, which will go to div
       style={{ width: '400px', 
       height: '240px',
-     }} 
+     }}
       
    >
       <FrontSide className="flip-card-inner">

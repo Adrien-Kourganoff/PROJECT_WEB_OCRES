@@ -22,5 +22,11 @@
     border-radius: 5px;
     border: 0;
     background-color: rgba(128, 78, 156, 0.63);
-   
+    margin-bottom:50px;
   }
+
+  @media screen and (max-width: 700px){
+    #todo-form button {
+      margin-bottom:0px;
+    }
+}

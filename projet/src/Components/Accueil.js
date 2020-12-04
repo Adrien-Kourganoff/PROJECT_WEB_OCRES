@@ -38,7 +38,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Accueil =() => {
     return (
-    
+    <div className="Alpha">
       <Container maxWidth>
         <Grid container spacing={4}>
 
@@ -47,7 +47,6 @@ const Accueil =() => {
         <h4 className="goal">MOTIVATION</h4>
         <Quote/>
         </Grid>
-        
      
         <Grid item lg={5} sm={6} md={5} xs={12}>
         <h4 className="graphique">GRAPHIQUE</h4>
@@ -92,6 +91,7 @@ const Accueil =() => {
   
   </Grid>
   </Container>
+  </div>
 
       
     )
