@@ -4,9 +4,7 @@ import './ToDoList.css';
 import ToDoItems from './ToDoItems';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
-
 import {Card} from 'react-bootstrap';
-
 
 library.add(faTrash);
 
@@ -66,10 +64,8 @@ class ToDoList extends React.Component{
 render() {
     return (
 
-
       <Card>
       <Card.Body>
-
         <div className="todoListMain">
         <div className="headerT">
           <header>
@@ -83,10 +79,8 @@ render() {
           </header>
         </div>
       </div>
-
       </Card.Body>
   </Card>
-
     );
   }
 }
