@@ -8,6 +8,7 @@ import SideBar from './SideBar';
 
 import { Grid } from '@material-ui/core';
 
+
 <link
   rel="stylesheet"
  href="path/to/font-awesome/css/font-awesome.min.css"
@@ -23,11 +24,16 @@ import { Grid } from '@material-ui/core';
 
 function Menu(){
     return(
+
     <Row clasName="show-grid">
         <Grid item lg={5} sm={6} md={5} xs={12}>
        
             <SideBar/>
             </Grid>
+
+        <Row clasName="show-grid">
+    <SideBar/>
+
 </Row>
     );
 }

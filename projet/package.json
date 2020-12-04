@@ -22,12 +22,17 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-card-flip": "^1.0.11",
+
     "react-confetti": "^6.0.0",
+
     "react-dom": "^17.0.1",
     "react-flipcard": "^0.2.1",
     "react-flippy": "^0.1.5",
     "react-icons": "^4.1.0",
     "react-playlist-player": "^1.0.11",
+
+    "react-router-dom": "^5.2.0",
+
     "react-scripts": "4.0.1",
     "recharts": "^1.8.5",
     "styled-components": "^5.2.1",

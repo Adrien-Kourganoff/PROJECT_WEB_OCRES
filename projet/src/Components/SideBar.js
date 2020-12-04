@@ -35,11 +35,16 @@ class SideBar extends React.Component{
     render()
 {
     return(
+
         
   <SideNav className="Nav"
+
+<SideNav className="Nav"
+
     onSelect={(selected) => {
       
     }}
+
 
     style={{ height: '1300px' }}
 >
@@ -48,6 +53,9 @@ class SideBar extends React.Component{
     <SideNav.Nav defaultSelected="home">
         <NavItem eventKey="home">
             <NavIcon>
+
+                <i className="fa fa-fw fa-home" style={ { fontSize: '1.75em'}} />
+
                 <FontAwesomeIcon  icon={faUser}/>
             </NavIcon>
             <NavText><a href="/Admin">
@@ -57,7 +65,10 @@ class SideBar extends React.Component{
 
         <NavItem eventKey="Icare">
             <NavIcon>
-            
+
+
+            <i class="fa fa-fw fa-home fa-5x" style={{ fontSize: '1.75em' }} />
+
             <FontAwesomeIcon  icon={faHome}/>
             </NavIcon>
             <NavText><a href="/Accueil">
