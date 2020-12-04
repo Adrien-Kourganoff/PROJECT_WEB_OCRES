@@ -9,8 +9,9 @@ const override = {
     digital: {
       text: {
         customSize: {
-          size: '30px',
-          height: 1.234,
+          size: '50px',
+          height: 4.234, //position
+
         },
       },
     },
@@ -25,11 +26,11 @@ class Digital extends React.Component {
   render(){
 
     return(
-      <Card>
+      <Card style={{ height : '280px'} } >
   <Grommet  theme={theme}>
     <Box  direction="row" gap="medium" pad="medium">
       <Box align="center">
-        <Clock style={{ width : '30em' }} type="digital" size="customSize" color="blue"/>
+        <Clock style={{ width : '60em'}} type="digital" size="customSize" color="blue"/>
       </Box>
     </Box>
   </Grommet>

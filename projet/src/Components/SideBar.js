@@ -15,6 +15,7 @@ import {library} from '@fortawesome/fontawesome-svg-core';
 import {faTrash,faHome,faUser} from '@fortawesome/free-solid-svg-icons';
 
 
+
 <link
   rel="stylesheet "
  href="path/to/font-awesome/css/font-awesome.min.css"
@@ -35,20 +36,18 @@ class SideBar extends React.Component{
 {
     return(
         
-    
-<SideNav className="Nav"
+  <SideNav className="Nav"
     onSelect={(selected) => {
       
     }}
 
-    style={{ height: '1200px' }}
+    style={{ height: '1300px' }}
 >
 
     <SideNav.Toggle />
     <SideNav.Nav defaultSelected="home">
         <NavItem eventKey="home">
             <NavIcon>
-                <i className="fa fa-fw fa-home" style={ { fontSize: '1.75em'}} />
                 <FontAwesomeIcon  icon={faUser}/>
             </NavIcon>
             <NavText><a href="/Admin">
@@ -58,7 +57,7 @@ class SideBar extends React.Component{
 
         <NavItem eventKey="Icare">
             <NavIcon>
-            <i class="fa fa-fw fa-home fa-5x" style={{ fontSize: '1.75em' }} />
+            
             <FontAwesomeIcon  icon={faHome}/>
             </NavIcon>
             <NavText><a href="/Accueil">
@@ -68,8 +67,7 @@ class SideBar extends React.Component{
          
     </SideNav.Nav>
 </SideNav>
-   );
-    
+    );
 }
 }
 

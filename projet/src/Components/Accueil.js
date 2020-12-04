@@ -76,14 +76,16 @@ const Accueil =() => {
        </Grid>
       
        <Grid item lg={5} sm={6} md={5} xs={12}>
+        <h4 className="feeling">ASTUCES</h4>
+        <Astuce/>
+        </Grid>
+        
+       <Grid item lg={5} sm={6} md={5} xs={12}>
         <h4 className="goal">GOAL OF THE DAY</h4>
         <ToDoList/>
       </Grid>
 
-      <Grid item lg={5} sm={6} md={5} xs={12}>
-        <h4 className="feeling">ASTUCES</h4>
-        <Astuce/>
-        </Grid>
+      
 
         <Grid item lg={5} sm={6} md={5} xs={12}></Grid>
       <Audio/>

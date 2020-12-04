@@ -6,6 +6,8 @@ import {Card} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
 import SideBar from './SideBar';
 
+import { Grid } from '@material-ui/core';
+
 <link
   rel="stylesheet"
  href="path/to/font-awesome/css/font-awesome.min.css"
@@ -21,8 +23,11 @@ import SideBar from './SideBar';
 
 function Menu(){
     return(
-        <Row clasName="show-grid">
+    <Row clasName="show-grid">
+        <Grid item lg={5} sm={6} md={5} xs={12}>
+       
             <SideBar/>
+            </Grid>
 </Row>
     );
 }
