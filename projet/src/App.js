@@ -15,9 +15,11 @@ class  App extends Component {
   render (){
     return (
       <BrowserRouter>
+      <div className="Page">
       <Menu/>
       <Route path="/Accueil" component={Accueil}/>
       <Route path="/Admin" component={Admin}/>
+      </div>
 
       </BrowserRouter>
     );

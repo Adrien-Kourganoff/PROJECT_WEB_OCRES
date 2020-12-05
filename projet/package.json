@@ -31,6 +31,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "recharts": "^1.8.5",
+    "sb": "^6.1.10",
+    "storybook": "^6.1.10",
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
   },
@@ -62,7 +64,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.9",
-    "@storybook/addon-essentials": "^6.1.9",
+    "@storybook/addon-essentials": "^6.1.10",
     "@storybook/addon-links": "^6.1.9",
     "@storybook/node-logger": "^6.1.9",
     "@storybook/preset-create-react-app": "^3.1.5",

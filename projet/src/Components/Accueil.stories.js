@@ -6,7 +6,7 @@ import Accueil from './Accueil';
 
 export default{
 
-    title: 'Acceuil',
+    title: 'Accueil',
     component: Accueil,
     argTypes:{
         color :{control : 'text'}

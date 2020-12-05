@@ -12,12 +12,7 @@
 {
     background-color: rgba(148, 0, 211, 0.363)
 }
-.Reg {
-    background-color: rgb(255, 255, 255);
-    width:1186px;
-    height:150px;
-    color:cornflowerblue;
-}
+
 
 @media screen and (max-width: 700px){
     .Alpha {
