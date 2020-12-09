@@ -8,8 +8,7 @@ var logger = require("morgan");
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+var eventRouter = require("./routes/event");
 
 var app = express();
 
@@ -24,9 +23,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
 
+
+app.use("/event",eventRouter);
 
 
 module.exports = app;

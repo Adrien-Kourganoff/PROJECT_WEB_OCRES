@@ -285,7 +285,6 @@ class parameter extends Component {
           <div className="row">
             <div className="App-headerMilieu style">
               <Event />
-              
             </div>
           </div>
           {/*----------------------------------------------------------Commentaire  style={{ justify-content: center }}*/}
