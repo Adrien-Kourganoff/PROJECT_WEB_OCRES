@@ -16,6 +16,7 @@ class parameter extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      _id : this.props.user._id,
       mois: null,
       benef: null,
       gain: null,
@@ -119,7 +120,9 @@ class parameter extends Component {
     this.setState({ pseudo: e.target.value });
   };
   render() {
+    var id=this.state._id;
     return (
+      
       <div className="containerPage2">
         <div class="col-sm-6">
           <div className="row ">
@@ -284,8 +287,8 @@ class parameter extends Component {
         <div class="col-sm-6">
           <div className="row">
             <div className="App-headerMilieu style">
-              <Event />
-              
+    
+              <Event user={id}/> 
             </div>
           </div>
           {/*----------------------------------------------------------Commentaire  style={{ justify-content: center }}*/}

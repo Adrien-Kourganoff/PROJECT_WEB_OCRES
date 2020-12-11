@@ -33,7 +33,9 @@ class Dashboard extends Component {
     this.setState({ page: 1 });
   }
 
+  
   render() {
+    console.log("this.props.user.donut.gain", this.props.user.donut.gain)
     return (
       <div class="contain">
       <div class="row">
@@ -68,7 +70,7 @@ class Dashboard extends Component {
 
                   <div class="row">
                     <Doughnutt user={this.props.user.donut.gain} />
-                  </div>
+    </div>
                 </div>
               </div>
             </div>
@@ -82,10 +84,9 @@ class Dashboard extends Component {
                     </div>
                     <div class="col-sm-1"></div>
                   </div>
-
                   <div class="row">
                     <Doughnutt user={this.props.user.donut.dep} />
-                  </div>
+    </div>
                 </div>
               </div>
             </div>

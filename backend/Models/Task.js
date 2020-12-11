@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 
 const taskchema = mongoose.Schema(
     {
-        content: String,
+        title: String,
         start: Date,
         end: Date,
+        allDay : Boolean,
     }
 )
 

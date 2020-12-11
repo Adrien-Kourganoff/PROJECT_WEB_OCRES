@@ -10,7 +10,7 @@ import Form from "react-bootstrap/Form";
 import Button from "./components/Bouton.jsx";
 
 
-import { entreprise } from "./components/Entreprise/Entreprise.js"
+import Logo1 from "./components/Entreprise/unknown.png";
 
 import "./App.css";
 import "react-day-picker/lib/style.css";
@@ -21,6 +21,7 @@ import Dash from "./dashnoir.png";
 import DashA from "./dashrose.png";
 
 import Dashboard from "./Dashboard.jsx";
+import API from './api';
 
 
 console.log(window.location.pathname); //si on peut voir l'url en haut
@@ -38,7 +39,7 @@ class App extends Component {
     this.parameter = this.parameter.bind(this);
     this.dashboard = this.dashboard.bind(this);
     this.handleBuisness = this.handleBuisness.bind(this);
-    this.state = { page: 1, buisness: id};
+    this.state = { page: 1, buisness: id, entreprise: null, loading: true};
     
   }
   parameter() {
@@ -52,7 +53,15 @@ class App extends Component {
     window.location.href = "/"+e.target.value;
   }
 
+  async componentDidMount() {
+    const response = await API.get(`/entreprises/${id || 1}`);
+    console.log(response);
+    this.setState({ entreprise: response.data.entreprise, loading: false})
+  };
+
+
   render() {
+    if (this.state.loading) return <p>loading...</p>
     return (
       <div class="container" style={{ maxWidth: "2000px" }}>
         <div class="row">
@@ -60,7 +69,7 @@ class App extends Component {
             <header class="App-header">
               <div class="row">
                 <img
-                  src={entreprise[id].photo_prof}
+                  src={Logo1}
                   style={{ margin: "auto", maxWidth: "75%" }}
                 ></img>
                 
@@ -73,8 +82,8 @@ class App extends Component {
                     <div class="row">
                     
                       <Form.Control as="select" size="lg" value={this.state.buisness} onChange={this.handleBuisness} >
-                        <option value="0">Mathilde</option>
-                        <option value="1">Jade</option>
+                        <option value="1">Mathilde</option>
+                        <option value="2">Jade</option>
                       </Form.Control>
                     </div>
                     
@@ -127,7 +136,7 @@ class App extends Component {
                         <img src={Dash}></img>
                       </div>
                       <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
-                        <a style={{ fontSize: "100%" }}>Mon DashBoard</a>
+                        <a onClick={()=> window.location.reload()} style={{ fontSize: "100%" }}>Mon DashBoard</a>
                       </div>
                     </div>
                     <div
@@ -156,7 +165,7 @@ class App extends Component {
               class="col-sm-10"
               style={{ fontWeight: "bold" }}
             >
-              <Dashboard user={entreprise[id]} />
+              <Dashboard user={this.state.entreprise} />
             </div>
           ) : (
               /* Page 2 */
@@ -165,7 +174,7 @@ class App extends Component {
 
                     <div className="page2" style={{width:"100%"}}>
 
-                      <Parameter />
+                      <Parameter user={this.state.entreprise}/>
 
                   </div>
                 </div>

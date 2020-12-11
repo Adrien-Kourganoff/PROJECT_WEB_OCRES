@@ -1,12 +1,12 @@
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://jade:dbJade@cluster0.ymgpm.mongodb.net/Projet?retryWrites=true&w=majority";
+const uri = "mongodb://localhost:27017/entrepriseDb";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
     const collection = client.db("test").collection("devices");
     var entreprise = [
         {
           _id: 1,  
-          nom: "Entreprise 1",
+          nom: "Entrepriseeee 1",
           benef: [15, 10, 16, 10, 20, 65, 40, 50, 60, 15, 51, 70],
           donut: 
             {
@@ -14,25 +14,23 @@ client.connect(err => {
               {
                   labels: ["Immobillier", "Marchandise", "Investissement", "Autre"],
       
-                  datasets: [
-                    {
+                  datasets: 
+                    [{
                       data: [300, 50, 100,200],
                       backgroundColor: ["#FFADCF", "#FFD0D0", "#FFF0CF","#FFFFD6"],
                       hoverBackgroundColor:  ["#D993B0", "#D9B1B1", "#D9CCB0","#D9D9B6"],
-                    },
-                  ],
+                    }],
                 },
               dep: 
                 {
                   labels:  ["Matières Premières", "Charges Salariés", "Charges", "Autre"],
       
-                  datasets: [
-                    {
+                  datasets: 
+                    [{
                       data: [150, 450, 200, 154],
                       backgroundColor: ["#CEACCE", "#CFBECF", "#D0E1D1","#CFFFD0"],
                       hoverBackgroundColor: ["#B79FB7", "#B7ACB7", "#B8C4B9","#B7D9B8"],
-                    },
-                  ],
+                    }],
                 },
             },
           commentaire: [
@@ -164,25 +162,23 @@ client.connect(err => {
               {
                   labels: ["Immobillier", "Marchandise", "Investissement", "Autre"],
       
-                  datasets: [
-                    {
+                  datasets: 
+                    [{
                       data: [200, 520, 110, 50],
                       backgroundColor: ["#FFADCF", "#FFD0D0", "#FFF0CF","#FFFFD6"],
                       hoverBackgroundColor:  ["#D993B0", "#D9B1B1", "#D9CCB0","#D9D9B6"],
-                    },
-                  ],
+                    }],
                 },
               dep: 
                 {
                   labels:  ["Matières Premières", "Charges Salariés", "Charges", "Autre"],
       
-                  datasets: [
-                    {
+                  datasets: 
+                    [{
                       data: [50, 450, 150, 200],
                       backgroundColor: ["#CEACCE", "#CFBECF", "#D0E1D1","#CFFFD0"],
                       hoverBackgroundColor: ["#B79FB7", "#B7ACB7", "#B8C4B9","#B7D9B8"],
-                    },
-                  ],
+                    }],
                 },
             },
           commentaire: [
@@ -315,8 +311,8 @@ client.connect(err => {
   
   // perform actions on the collection object
   
-  client.db("Projet").collection("Entreprise").remove({})
-  client.db("Projet").collection("Entreprise").insertMany(entreprise, function(res) {
+  client.db("entrepriseDb").collection("entreprises").remove({})
+  client.db("entrepriseDb").collection("entreprises").insertMany(entreprise, function(res) {
     if (err) throw err;
     //console.log("Number of documents inserted: " + res.insertedCount);
     client.close();
