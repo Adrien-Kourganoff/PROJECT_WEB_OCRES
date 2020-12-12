@@ -12,8 +12,8 @@ import moment from "moment";
 class Com extends Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCommentaireChange = this.handleCommentaireChange.bind(this);
+    this.mySubmitHandlerCommentaire = this.mySubmitHandlerCommentaire.bind(this);
     this.state = {
       formData: {
         title: null,
@@ -23,8 +23,7 @@ class Com extends Component {
       errorMessage: "",
     };
   }
-
-  handleChange(e) {
+  handleCommentaireChange = (e) => {
     this.setState({
       formData: {
         ...this.state.formData,
@@ -32,7 +31,8 @@ class Com extends Component {
       },
     });
   }
-  async handleSubmit(e) {
+  async mySubmitHandlerCommentaire(e) {
+
     e.preventDefault();
     if (this.state.formData.title === null) {
       this.setState({ errorMessage: "Il faut un texte" });
@@ -46,17 +46,18 @@ class Com extends Component {
     try {
       await API.put(`/entreprises/commentaire/${this.props.user}`,this.state.formData);
       console.log("test");
-
       this.setState({
         formData: {
           title: "",
           text: "",
         },
         errorMessage: "",
+        
       });
     } catch (error) {
       console.log(error);
     }
+    
   }
 
   render() {
@@ -77,10 +78,10 @@ class Com extends Component {
             <Form.Control
               type="text"
               placeholder="Pseudo"
-              name="pseudo"
+              name="title"
               size="lg"
-              value={this.state.pseudo}
-              onChange={this.handleCommentairePseudoChange}
+              value={this.state.formData.title}
+              onChange={this.handleCommentaireChange}
             />
             <br />
             <Form.Label style={{ color: "#8CA3D7" }}>Quel message?</Form.Label>
@@ -89,9 +90,9 @@ class Com extends Component {
                 as="textarea"
                 rows={3}
                 placeholder="Commentaire..."
-                name="commentaire"
+                name="text"
                 size="lg"
-                value={this.state.commentaire}
+                value={this.state.formData.text}
                 onChange={this.handleCommentaireChange}
               />
             </Form.Group>

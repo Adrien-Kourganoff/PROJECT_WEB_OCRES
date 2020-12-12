@@ -137,7 +137,7 @@ class App extends Component {
                         <img src={Dash}></img>
                       </div>
                       <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
-                        <a onClick={()=> window.location.reload()} style={{ fontSize: "100%" }}>Mon DashBoard</a>
+                        <a style={{ fontSize: "100%" }}>Mon DashBoard</a>
                       </div>
                     </div>
                     <div
