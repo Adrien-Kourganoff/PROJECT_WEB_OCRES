@@ -3,9 +3,11 @@ const express = require("express");
 const router = express.Router();
 const addEventEntreprise = require('../services/entreprise/addEventEntreprise');
 const addComEntreprise = require('../services/entreprise/addComEntreprise');
+const addGainEntreprise = require('../services/entreprise/addGainEntreprise');
 
 router.put('/event/:id', addEventEntreprise)
 router.put('/commentaire/:id', addComEntreprise)
+router.put('/gain/:id', addGainEntreprise)
 
 router.get('/:id', async (req, res) => {
   try {

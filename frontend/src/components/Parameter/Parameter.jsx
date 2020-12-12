@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Parameter.css";
 import  Event from "./Event";
+import  Graphique from "./Graphique";
+import  Gain from "./Gain";
 import  Com from "./Com";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
@@ -123,115 +125,22 @@ class parameter extends Component {
   };
   render() {
     var id=this.state._id;
+    
     return (
       
       <div className="containerPage2">
         <div class="col-sm-6">
           <div className="row ">
             <div className="App-headerMilieu style">
-              <div className="row">
-                <div className="col-sm-1"></div>
-                <div className="col-sm-10">
-                  <titre  style={{ fontWeight: "bold" }}>Ajout d'un chiffre d'affaire</titre>
-                </div>
-                <div className="col-sm-1"></div>
-              </div>
-              <br></br>
-              <Form onSubmit={this.mySubmitHandlerBenef}>
-                <div class="row">
-                <Form.Label style={{ color: "#FBC86A" }} >Quel mois?  </Form.Label>
-                  <Form.Control
-                    as="select"
-                    size="lg"
-                    value={this.state.mois}
-                    onChange={this.handleBenefMoisChange}
-                  >
-                    <option value="Janvier">Janvier</option>
-                    <option value="Février">Février</option>
-                    <option value="Mars">Mars</option>
-                    <option value="Avril">Avril</option>
-                    <option value="Mai">Mai</option>
-                    <option value="Juin">Juin</option>
-                    <option value="Juillet">Juillet</option>
-                    <option value="Août">Août</option>
-                    <option value="Septembre">Septembre</option>
-                    <option value="Octobre">Octobre</option>
-                    <option value="Novembre">Novembre</option>
-                    <option value="Décembre">Décembre</option>
-                  </Form.Control>
-                </div>
-                <br />
-                <div class="row">
-                  <Form.Label style={{ color: "#FBC86A" }} >Combien?</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="bénéfice en K€"
-                    name="benef"
-                    size="lg"
-                    value={this.state.benef}
-                    onChange={this.handleBenefChange}
-                  />
-                </div>
-                <br />
-                <div class="row">
-                  <Button variant="flat1" type="submit">
-                    Envoyer
-                  </Button>
-                  
-                </div>
-              </Form>
-
-              <br></br>
+              
+              
+            <Graphique user={id}/> 
+              
             </div>
           </div>
           <div className="row">
             <div className="App-headerMilieu style">
-              <div className="row">
-                <div className="col-sm-1"></div>
-                <div className="col-sm-10">
-                  <titre style={{ fontWeight: "bold" }}>Ajout d'un gain</titre>
-                </div>
-                <div className="col-sm-1"></div>
-              </div>
-              <br />
-              <Form onSubmit={this.mySubmitHandlerGain}>
-                <div class="row">
-                <Form.Label style={{ color: "#795EFF" }} >Quel type? </Form.Label>
-                  <Form.Control
-                    as="select"
-                    size="lg"
-                    value={this.state.typegain}
-                    onChange={this.handleTypeGainChange}
-                  >
-                    <option value="Marchandise">Marchandise</option>
-                    <option value="Immobilier">Immobilier</option>
-                    <option value="Investissement">Investissement</option>
-                    <option value="Autres">Autres</option>
-                  </Form.Control>
-                </div>
-                <br />
-                <div class="row">
-                <Form.Label style={{ color: "#795EFF" }} >Combien?</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="gain en K€"
-                    name="gain"
-                    size="lg"
-                    value={this.state.gain}
-                    onChange={this.handleGainChange}
-                  />
-                </div>
-                <br />
-                <div class="row">
-                  <Button variant="flat2" type="submit">
-                    Envoyer
-                  </Button>
-                </div>
-
-                <br />
-              </Form>
-
-              <br></br>
+              <Gain user={id}/>
             </div>
           </div>
           {/*----------------------------------------------------------dépense*/}
