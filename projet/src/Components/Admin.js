@@ -7,6 +7,8 @@ import {Container, Row, Col} from 'react-bootstrap';
 import Baton from './Baton';
 import Quote from'./Quote';
 import AdminAstuce from './AdminAstuce';
+import SupprimerAstuces from './SupprimerAstuces';
+import axios from 'axios';
 const Admin = () => {
     return (
         <main>
@@ -21,6 +23,7 @@ const Admin = () => {
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
   <AdminAstuce/>
+  <SupprimerAstuces/>
 
         </Container>
         </main>

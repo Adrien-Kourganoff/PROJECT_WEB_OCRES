@@ -6,7 +6,7 @@ import {Card} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
 import Baton from './Baton';
 import Quote from'./Quote';
-
+import axios from 'axios';
 
 
 class AdminAstuce extends React.Component {
@@ -21,7 +21,7 @@ constructor(props){
 
   componentDidMount(){
     this.setState({
-      phrase :"Le plus important c'est le principal et c'est ça l'essentiel"
+      phrase :""
     })
   }
    onChangePhrase(e){
@@ -36,7 +36,9 @@ constructor(props){
        phrase: this.state.phrase,
      }
      console.log(astuce);
-     window.location="/";
+     axios.post('http://localhost:5000/astuces/add', astuce)
+      .then(res =>console.log(res.data));
+     window.location="./Admin";
    }
    render() {
     return(
