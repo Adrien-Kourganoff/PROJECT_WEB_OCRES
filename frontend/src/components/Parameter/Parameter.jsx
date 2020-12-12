@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Parameter.css";
 import  Event from "./Event";
+import  Com from "./Com";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 // import FormControl from 'react-bootstrap/FormControl'
@@ -9,6 +10,7 @@ import { Button } from "react-bootstrap";
 import { isNaN } from "lodash";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import Commentaire from "../Commentaire/Commentaire";
 
 
 
@@ -294,49 +296,7 @@ class parameter extends Component {
           {/*----------------------------------------------------------Commentaire  style={{ justify-content: center }}*/}
           <div className="row">
             <div className="App-headerMilieu style">
-              <div className="row">
-                <div className="col-sm-1"></div>
-                <div className="col-sm-10">
-                  <titre style={{ fontWeight: "bold" }}>Ajout d'un commentaire</titre>
-                </div>
-                <div className="col-sm-1"></div>
-              </div>
-              
-              <Form onSubmit={this.mySubmitHandlerCommentaire}>
-                <Form.Group>
-                  <br />
-                  <Form.Label style={{ color: "#8CA3D7" }}>Quel pseudo?</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Pseudo"
-                    name="pseudo"
-                    size="lg"
-                    value={this.state.pseudo}
-                    onChange={this.handleCommentairePseudoChange}
-                  />
-                  <br />
-                  <Form.Label style={{ color: "#8CA3D7" }}>Quel message?</Form.Label>
-                  <Form.Group controlId="exampleForm.ControlTextarea1">
-                    <Form.Control
-                      as="textarea"
-                      rows={3}
-                      placeholder="Commentaire..."
-                      name="commentaire"
-                      size="lg"
-                      value={this.state.commentaire}
-                      onChange={this.handleCommentaireChange}
-                    />
-                  </Form.Group>
-                  
-                </Form.Group>
-                <br />
-                <Button variant="flat5" type="submit">
-                  Envoyer
-                </Button>
-                <br />
-              </Form>
-
-              <br></br>
+              <Com user={id}/> 
             </div>
           </div>
         </div>

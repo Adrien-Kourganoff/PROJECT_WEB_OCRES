@@ -2,8 +2,10 @@ const Entreprise = require("../Models/Entreprise.js");
 const express = require("express");
 const router = express.Router();
 const addEventEntreprise = require('../services/entreprise/addEventEntreprise');
+const addComEntreprise = require('../services/entreprise/addComEntreprise');
 
-router.put('/:id', addEventEntreprise)
+router.put('/event/:id', addEventEntreprise)
+router.put('/commentaire/:id', addComEntreprise)
 
 router.get('/:id', async (req, res) => {
   try {

@@ -27,7 +27,7 @@ const entreprisechema = mongoose.Schema({
   commentaire: [
     {
       position: String,
-      type: String,
+      comType: String,
       title: String,
       text: String,
       date: Date,
