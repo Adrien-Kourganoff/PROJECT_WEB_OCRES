@@ -5,10 +5,33 @@ import {Card} from 'react-bootstrap';
 
 
 class Astuce extends React.Component {
-  
-   
+  constructor(props){
+    super(props);
+    this.onChangePhrase=this.onChangePhrase.bind(this);
+    this.state = {
+      phrase:''
+    }
+  }
+
+  componentDidMount(){
+    this.setState = {
+      phrase :"Le plus important c'est le principal et c'est ça l'essentiel"
+    }
+  }
+   onChangePhrase(e){
+     this.setState({
+        phrase: e.target.value
+     });
+   }
+   onSubmit(e){
+     e.preventDefault();
+     const astuce = {
+       phrase: this.state.phrase,
+     }
+   }
+
+
   render() {
-   
     return(
       <Card  style={{ width: '450px'}}>
   <Card.Body>

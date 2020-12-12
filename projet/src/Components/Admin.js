@@ -6,7 +6,7 @@ import {Card} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
 import Baton from './Baton';
 import Quote from'./Quote';
-
+import AdminAstuce from './AdminAstuce';
 const Admin = () => {
     return (
         <main>
@@ -20,10 +20,8 @@ const Admin = () => {
     <label for="exampleFormControlTextarea1">Ajout et suppression de "Motivation Quote" </label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Ajout et suppression d'astuces</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
+  <AdminAstuce/>
+
         </Container>
         </main>
     )
