@@ -8,9 +8,9 @@ var logger = require("morgan");
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-var eventRouter = require("./routes/event");
+//var eventRouter = require("./routes/event");
 const entrepriseRouter = require("./routes/entrprise");
-var dataRouter = require("./routes/data");
+//var dataRouter = require("./routes/data");
 
 var app = express();
 
@@ -33,9 +33,10 @@ app.get("/bonjour", function(req,res){
 })
 
 app.listen(4000,()=>{console.log("letsgo")})
-app.use("/event",eventRouter);
+//app.use("/event",eventRouter);
 app.use("/entreprises", entrepriseRouter)
 //app.use("/data",eventRouter);
+
 
 
 module.exports = app;

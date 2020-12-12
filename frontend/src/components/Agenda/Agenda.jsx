@@ -19,10 +19,6 @@ const localizer = momentLocalizer(moment);// or globalizeLocalizer
 
 class Agenda extends Component {
  
-
-
-
- 
     render() {
         const eventElements = this.props.user.myEventsList.map(function (eventElement) {
             return {
