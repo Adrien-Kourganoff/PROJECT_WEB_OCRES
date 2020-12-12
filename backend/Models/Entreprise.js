@@ -42,6 +42,14 @@ const entreprisechema = mongoose.Schema({
       allDay: Boolean,
     },
   ],
+  items: [
+    {
+      currentItem: {
+		  text: String,
+		  key: String,
+		}
+    }
+		],
 });
 
 const Entreprise = mongoose.model("entreprise", entreprisechema);

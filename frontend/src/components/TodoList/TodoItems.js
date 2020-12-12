@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 
 class TodoItems extends Component {
   createTasks = item => {
+    console.log("item current todoitem",item.currentItem)
     return (
-      <li key={item.key} onClick={() => this.props.deleteItem(item.key)}>
-        {item.text}
+      <li key={item.currentItem.key} onClick={() => this.props.deleteItem(item.key)}>
+        {item.currentItem.text}
       </li>
     )
   }

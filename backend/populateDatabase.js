@@ -151,6 +151,7 @@ client.connect(err => {
       allDay: false
     },
         ],
+        items: [],
         },
         {
           _id:2,  
@@ -306,6 +307,7 @@ client.connect(err => {
     },
     
         ],
+        items: [],
         },
       ];
   

@@ -1,62 +1,93 @@
-import React, { Component } from 'react'
-import Graphi from "./Graphi"
-import TodoItems from "./TodoItems"
-import './Todo.css'
+import React, { Component } from "react";
+import Graphi from "./Graphi";
+import TodoItems from "./TodoItems";
+import "./Todo.css";
+import API from "../../api";
 class Graph extends Component {
-	inputElement = React.createRef()
-	constructor() {
-	  super()
-	  this.state = {
-		items: [],
-		currentItem: {
-		  text: '',
-		  key: '',
-		},
-	  }
-	}
-	deleteItem = key => {
-	  const filteredItems = this.state.items.filter(item => {
-		return item.key !== key
-	  })
-	  this.setState({
-		items: filteredItems,
-	  })
-	}
-  
-	handleInput = e => {
-	  const itemText = e.target.value
-	  const currentItem = { text: itemText, key: Date.now() }
-	  this.setState({
-		currentItem,
-	  })
-	}
-	addItem = e => {
-	  e.preventDefault()
-	  const newItem = this.state.currentItem
-	  if (newItem.text !== '') {
-		const items = [...this.state.items, newItem]
-		this.setState({
-		  items: items,
-		  currentItem: { text: '', key: '' },
-		})
-	  }
-	}
-	render() {
-	  return (
-		<div className="App">
-				<div class="row">
-					<Graphi
-			addItem={this.addItem}
-			inputElement={this.inputElement}
-			handleInput={this.handleInput}
-			currentItem={this.state.currentItem}
-		  />
-				</div>
-				<div class="row">
-		  <TodoItems entries={this.state.items} deleteItem={this.deleteItem} /></div>
-		  
-		</div>
-	  )
-	}
+  inputElement = React.createRef();
+  constructor(props) {
+	super(props);
+	this.addItem = this.addItem.bind(this);
+	this.handleInput = this.handleInput.bind(this);
+	this.deleteItem = this.deleteItem.bind(this);
+    this.state = {
+      items: this.props.user.items,
+      currentItem: {
+        text: "",
+        key: "",
+      },
+    };
   }
-export default Graph
+  /*async deleteItem(key) {
+
+    await API.delete(
+      `/entreprises/task/${this.props.user._id}`,
+      this.state.formData
+    );
+    const filteredItems = this.state.items.filter((item) => {
+      return item.key !== key;
+    });
+    this.setState({
+      items: filteredItems,
+    });
+  }
+*/
+deleteItem = key => {
+	const filteredItems = this.state.items.filter(item => {
+	  return item.key !== key
+	})
+	this.setState({
+	  items: filteredItems,
+	})
+  }
+  handleInput = (e) => {
+    const itemText = e.target.value;
+    const currentItem = { text: itemText, key: Date.now() };
+    this.setState({
+      currentItem,
+    });
+  };
+  async addItem(e) {
+    e.preventDefault();
+    try {
+      const newItem = this.state.currentItem;
+      if (newItem.text !== "") {
+		const items = [...this.state.items, newItem];
+		await API.put(`/entreprises/task/${this.props.user._id}`, newItem);
+        this.setState({
+			items: items,
+			currentItem: { text: '', key: '' },
+		  })
+        
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  render() {
+	const items = this.props.user.items.map(function (item){
+		return {
+			currentItem: {
+				text: item.currentItem.text,
+				key:item.currentItem.key,
+			  }
+		}
+	});
+    return (
+      <div className="App">
+        <div class="row">
+          <Graphi
+            addItem={this.addItem}
+            inputElement={this.inputElement}
+            handleInput={this.handleInput}
+            currentItem={this.state.currentItem}
+          />
+        </div>
+        <div class="row">
+          <TodoItems entries={items} deleteItem={this.deleteItem} />
+        </div>
+      </div>
+    );
+  }
+}
+export default Graph;
