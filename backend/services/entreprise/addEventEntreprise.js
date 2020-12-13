@@ -1,8 +1,7 @@
 const Entreprise = require("../../Models/Entreprise.js");
 
 const addEventEntreprise = async (req, res) => {
-    console.log("req.bodu", req.body)
-    console.log("req.params", req.params.id)
+    
     const idEntreprise = req.params.id;
     const { event, dateStart, dateEnd, allDay } = req.body
 

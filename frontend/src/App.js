@@ -20,10 +20,10 @@ import Dashboard from "./Dashboard.jsx";
 import API from './api';
 
 
-console.log(window.location.pathname); //si on peut voir l'url en haut
+
 var id =
   window.location.pathname[1] === undefined ? 0 : window.location.pathname[1];
-console.log("id: ", id);
+
 
 <link
   rel="stylesheet"
@@ -61,7 +61,7 @@ class App extends Component {
     const thisBoundedIncrementer = this.incrementCounter.bind(this);
 
     const response = await API.get(`/entreprises/${id || 1}`);
-    //console.log(response);
+    
     this.setState({ entreprise: response.data.entreprise, loading: false });
     setInterval(thisBoundedIncrementer, 1000);
 

@@ -22,10 +22,10 @@ class Graph extends Component {
   async deleteItem(item) {
 
     try {
-      console.log("item current todoitem", item)
+      
       await API.delete(`/entreprises/task/delete/${this.props.entreprise._id}/${item.key}/${item.text}`);
       const itemsEntreprise = await API.get(`/entreprises/${this.props.entreprise._id}`);
-      console.log("itemsEntreprise", itemsEntreprise.data.entreprise.items)
+      
       this.setState({
         items: itemsEntreprise.data.entreprise.items
       })

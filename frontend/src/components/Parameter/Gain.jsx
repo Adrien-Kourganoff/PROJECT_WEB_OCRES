@@ -55,14 +55,14 @@ class Gain extends Component {
       });
       return;
     }
-    console.log("avant switch", this.myRef.current.value)
+    
     switch (this.myRef.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
       case "Marchandise":
-        console.log("marchandise")
+        
         typeg = 1;
         break;
       case "Immobilier":
-        console.log("Immobilier")
+       
         typeg = 2;
 
         break;

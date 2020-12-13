@@ -2,8 +2,7 @@ const Entreprise = require("../../Models/Entreprise.js");
 
 
 const addGainEntreprise = async (req, res) => {
-  console.log("req.bodu", req.body);
-  console.log("req.params", req.params.id);
+  
   const idEntreprise = req.params.id;
   const entreprise = await Entreprise.findOne({ _id: idEntreprise });
   var typeG = parseInt(req.params.typeg);
@@ -11,8 +10,7 @@ const addGainEntreprise = async (req, res) => {
   switch (typeG) {
     case 1:
       try {
-        console.log("gain body", req.body.gain);
-        console.log("type param", entreprise.donut.gain);
+        
         await Entreprise.findOneAndUpdate(
           { _id: idEntreprise },
           {

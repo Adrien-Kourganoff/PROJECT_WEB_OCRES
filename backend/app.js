@@ -17,7 +17,7 @@ const db = mongoose.connection;
 
 
 app.use(cors());
-console.log("cvc")
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

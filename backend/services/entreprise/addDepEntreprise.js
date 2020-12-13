@@ -2,18 +2,16 @@ const Entreprise = require("../../Models/Entreprise.js");
 
 
 const addDepEntreprise = async (req, res) => {
-  console.log("req.bodu", req.body);
-  console.log("req.params", req.params.id);
+  
   const idEntreprise = req.params.id;
   const entreprise = await Entreprise.findOne({ _id: idEntreprise });
   var typeD = parseInt(req.params.typedep);
 
   switch (typeD) {
     case 1:
-      console.log("JE SUIS 1")
+      
       try {
-        console.log("dep body", req.body.dep);
-        console.log("type param", entreprise.donut.dep);
+        
         await Entreprise.findOneAndUpdate(
 
           { _id: idEntreprise },

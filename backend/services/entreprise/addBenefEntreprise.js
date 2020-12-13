@@ -2,8 +2,7 @@ const Entreprise = require("../../Models/Entreprise.js");
 
 
 const addBenefEntreprise = async (req, res) => {
-  console.log("req.bodu", req.body);
-  console.log("req.params", req.params.id);
+  
   const idEntreprise = req.params.id;
   const entreprise = await Entreprise.findOne({ _id: idEntreprise });
   var typeM = parseInt(req.params.mois);
@@ -12,8 +11,7 @@ const addBenefEntreprise = async (req, res) => {
     case 1:
 
       try {
-        console.log("dep body", req.body.benef);
-        console.log("type param", entreprise.donut.benef);
+        
         await Entreprise.findOneAndUpdate(
 
           { _id: idEntreprise },

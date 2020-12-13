@@ -54,23 +54,22 @@ class Depense extends Component {
       return;
     }
 
-    console.log("avant switch", this.myRef2.current.value)
     switch (this.myRef2.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
       case "Salaire":
-        console.log("Salaire")
+        
         typedep = 1;
         break;
       case "MatierePremiere":
-        console.log("MatierePremiere")
+        
         typedep = 2;
 
         break;
       case "Charges":
-        console.log("charges")
+        
         typedep = 3;
         break;
       case "Autres":
-        console.log("Autres")
+        
         typedep = 4;
         break;
       default:

@@ -54,56 +54,56 @@ class Graphique extends Component {
             });
             return;
         }
-        console.log("avant switch", this.myRef3.current.value)
+        
         switch (this.myRef3.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
             case "Janvier":
-                console.log("Janvier")
+                
                 mois = 1;
                 break;
             case "Février":
-                console.log("Février")
+                
                 mois = 2;
 
                 break;
             case "Mars":
-                console.log("Février")
+                
                 mois = 3;
                 break;
             case "Avril":
-                console.log("Février")
+                
                 mois = 4;
                 break;
 
             case "Mai":
-                console.log("Mai")
+               
                 mois = 5;
                 break;
             case "Juin":
-                console.log("Juin")
+                
                 mois = 6;
                 break;
             case "Juillet":
-                console.log("Juillet")
+                
                 mois = 7;
                 break;
             case "Aout":
-                console.log("Aout")
+                
                 mois = 8;
                 break;
             case "Septembre":
-                console.log("Septembre")
+                
                 mois = 9;
                 break;
             case "Octobre":
-                console.log("Octobre")
+                
                 mois = 10;
                 break;
             case "Novembre":
-                console.log("Novembre")
+                
                 mois = 11;
                 break;
             case "Décembre":
-                console.log("Décembre")
+                
                 mois = 12;
                 break;
             default:
@@ -131,7 +131,7 @@ class Graphique extends Component {
     }
 
     render() {
-        console.log("hello");
+        
         return (
 
             <Fragment>
