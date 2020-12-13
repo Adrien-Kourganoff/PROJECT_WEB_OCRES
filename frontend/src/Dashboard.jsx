@@ -125,7 +125,7 @@ class Dashboard extends Component {
               </div>
             </div>
           </div>
-          {/* <div class="row">
+          <div class="row">
             <div class="App-headerMilieu">
               <div class="row">
                 <div class="col-sm-1"></div>
@@ -138,7 +138,7 @@ class Dashboard extends Component {
                 <Graph user={this.props.user} />
               </div>
             </div>
-          </div> */}
+          </div>
           <div class="row">
             <div class="App-headerMilieu">
               <div class="row">
