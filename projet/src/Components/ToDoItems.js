@@ -10,19 +10,15 @@ function ToDoItems(props)
     const listItems = items.map(item=>         //boucle qui parcourt chaque élément et le store dans la variable ListItem
         {
             return (
-            
             <div className="list" key={item.key}>
                 <p className="todo-item">{item.text}
                 <span>
-       
         <FontAwesomeIcon className="faicons" onClick={() => {
             props.deleteItem(item.key);
         }} icon="trash" />
         </span>
                 </p>
-     
             </div>
-
                 )
         })
     return(

@@ -7,8 +7,11 @@ import {Container, Row, Col} from 'react-bootstrap';
 import Baton from './Baton';
 import Quote from'./Quote';
 import AdminAstuce from './AdminAstuce';
+import AjoutMotivation from './AjoutMotivation';
 import SupprimerAstuces from './SupprimerAstuces';
 import axios from 'axios';
+import './SupprimerAstuces.css';
+
 const Admin = () => {
     return (
         <main>
@@ -18,13 +21,11 @@ const Admin = () => {
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
              
-            <div class="form-group">
-    <label for="exampleFormControlTextarea1">Ajout et suppression de "Motivation Quote" </label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
+  <AjoutMotivation/>
   <AdminAstuce/>
+  <div className="Centrer">
   <SupprimerAstuces/>
-
+  </div>
         </Container>
         </main>
     )

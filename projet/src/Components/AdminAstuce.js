@@ -31,7 +31,6 @@ constructor(props){
    }
    onSubmit(e){
      e.preventDefault();
-
      const astuce = {
        phrase: this.state.phrase,
      }
@@ -44,7 +43,8 @@ constructor(props){
     return(
       <form onSubmit={this.onSubmit}>
   <div class="form-group">
-    <label>Astuce :</label>
+    <label><h2>Astuces</h2></label>
+    <h6>Inserez l'astuce à ajouter</h6>
     <input type="text" value={this.state.phrase} required className="form-control"  onChange={this.onChangePhrase} />
   </div>
   <div class="form-group">

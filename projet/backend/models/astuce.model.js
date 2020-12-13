@@ -11,6 +11,6 @@ const AstuceSchema = new Schema({
   }
 });
 
-const Astuce = mongoose.model('phrase', AstuceSchema);
+const Astuce = mongoose.model('Astuces', AstuceSchema);
 
 module.exports = Astuce;
