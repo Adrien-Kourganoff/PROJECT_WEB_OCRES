@@ -72,7 +72,7 @@ console.log("avant switch", this.myRef2.current.value)
     try {
         
       await API.put(
-        `/entreprises/dep/${this.props.user}/${typedep}`,
+        `/entreprises/dep/${this.props.entreprise_id}/${typedep}`,
         this.state.formData
       );
       this.setState({

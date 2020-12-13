@@ -6,7 +6,7 @@ class Linee extends Component {
     constructor(props) {
         super(props);
         
-        this.state = { benef : this.props.user.benef };
+        this.state = { benef : this.props.entreprise.benef };
         
     }
     render() {

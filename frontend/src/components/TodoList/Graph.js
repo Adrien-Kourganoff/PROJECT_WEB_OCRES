@@ -11,7 +11,7 @@ class Graph extends Component {
     this.deleteItem = this.deleteItem.bind(this);
     //this.handleInput = this.handleInput.bind(this);
     this.state = {
-      items: this.props.user.items,
+      items: this.props.entreprise.items,
       currentItem: {
         text: "",
         key: "",
@@ -23,8 +23,8 @@ class Graph extends Component {
 
     try {
       console.log("item current todoitem",item)
-      await API.delete(`/entreprises/task/delete/${this.props.user._id}/${item.key}/${item.text}`);
-      const itemsEntreprise = await API.get(`/entreprises/${this.props.user._id}`);
+      await API.delete(`/entreprises/task/delete/${this.props.entreprise._id}/${item.key}/${item.text}`);
+      const itemsEntreprise = await API.get(`/entreprises/${this.props.entreprise._id}`);
       console.log("itemsEntreprise", itemsEntreprise.data.entreprise.items)
       this.setState({
         items: itemsEntreprise.data.entreprise.items
@@ -47,7 +47,7 @@ class Graph extends Component {
       const newItem = this.state.currentItem;
       if (newItem.text !== "") {
         const items = [...this.state.items, newItem];
-        await API.put(`/entreprises/task/add/${this.props.user._id}`, newItem);
+        await API.put(`/entreprises/task/add/${this.props.entreprise._id}`, newItem);
         this.setState({
             items: items,
             currentItem: { text: '', key: '' },
@@ -59,7 +59,7 @@ class Graph extends Component {
     }
   }
   render() {
-    {/*this.state.items = this.props.user.items.map(function (item){
+    {/*this.state.items = this.props.entreprise.items.map(function (item){
         return {
             currentItem: {
                 text: item.text,
@@ -78,7 +78,7 @@ class Graph extends Component {
           />
         </div>
         <div class="row">
-          <TodoItems entries={this.state.items} deleteItem={this.deleteItem} id={this.props.user._id} />
+          <TodoItems entries={this.state.items} deleteItem={this.deleteItem} id={this.props.entreprise._id} />
         </div>
       </div>
     );

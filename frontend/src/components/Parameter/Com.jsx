@@ -44,7 +44,7 @@ class Com extends Component {
     }
 
     try {
-      await API.put(`/entreprises/commentaire/${this.props.user}`,this.state.formData);
+      await API.put(`/entreprises/commentaire/${this.props.entreprise_id}`,this.state.formData);
       console.log("test");
       this.setState({
         formData: {

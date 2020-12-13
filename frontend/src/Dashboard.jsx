@@ -50,7 +50,7 @@ class Dashboard extends Component {
                 <div class="col-sm-1"></div>
               </div>
               <div class="row">
-                <Linee user={this.props.user} />
+                <Linee entreprise={this.props.entreprise} />
               </div>
               <br></br>
             </div>
@@ -69,7 +69,7 @@ class Dashboard extends Component {
                   </div>
 
                   <div class="row">
-                    <DoughnuttGain gain={this.props.user.donut.gain} entreprise={this.props.user}/>
+                    <DoughnuttGain gain={this.props.entreprise.donut.gain} entreprise={this.props.entreprise}/>
     </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@ class Dashboard extends Component {
                     <div class="col-sm-1"></div>
                   </div>
                   <div class="row">
-                    <DoughnuttDep dep={this.props.user.donut.dep} entreprise={this.props.user}/>
+                    <DoughnuttDep dep={this.props.entreprise.donut.dep} entreprise={this.props.entreprise}/>
     </div>
                 </div>
               </div>
@@ -104,7 +104,7 @@ class Dashboard extends Component {
                 </div>
 
                 <div class="row">
-                  <Commentaire user={this.props.user} />
+                  <Commentaire entreprise={this.props.entreprise} />
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@ class Dashboard extends Component {
                 <div class="col-sm-1"></div>
               </div>
               <div class="row">
-                    <Agenda user={this.props.user} />
+                    <Agenda entreprise={this.props.entreprise} />
               </div>
             </div>
           </div>
@@ -135,7 +135,7 @@ class Dashboard extends Component {
                 <div class="col-sm-1"></div>
               </div>
               <div class="row">
-                <Graph user={this.props.user} />
+                <Graph entreprise={this.props.entreprise} />
               </div>
             </div>
           </div>
@@ -170,7 +170,7 @@ class Dashboard extends Component {
                 <div class="col-sm-1"></div>
               </div>
               <div class="row">
-                    <Agenda user={this.props.user} />
+                    <Agenda entreprise={this.props.entreprise} />
               </div>
             </div>
           </div>
@@ -184,7 +184,7 @@ class Dashboard extends Component {
                 <div class="col-sm-1"></div>
               </div>
               <div class="row">
-                <Graph user={this.props.user} />
+                <Graph entreprise={this.props.entreprise} />
               </div>
             </div>
           </div>

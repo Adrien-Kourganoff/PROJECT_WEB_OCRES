@@ -70,7 +70,7 @@ class Gain extends Component {
     try {
         
       await API.put(
-        `/entreprises/gain/${this.props.user}/${typeg}`,
+        `/entreprises/gain/${this.props.entreprise_id}/${typeg}`,
         this.state.formData
       );
       this.setState({

@@ -3,7 +3,6 @@ import React, { Component } from "react";
 
 import Parameter from "./components/Parameter/Parameter.jsx";
 import Form from "react-bootstrap/Form";
-import Button from "./components/Bouton.jsx";
 
 
 import Logo1 from "./components/Entreprise/unknown.png";
@@ -12,10 +11,10 @@ import Logo1 from "./components/Entreprise/unknown.png";
 import "./App.css";
 import "react-day-picker/lib/style.css";
 
-import Param from "./paramnoir.png";
-import ParamA from "./paramvert.png";
-import Dash from "./dashnoir.png";
-import DashA from "./dashrose.png";
+import Param from "./photos/paramnoir.png";
+import ParamA from "./photos/paramvert.png";
+import Dash from "./photos/dashnoir.png";
+import DashA from "./photos/dashrose.png";
 
 import Dashboard from "./Dashboard.jsx";
 import API from './api';
@@ -52,9 +51,11 @@ class App extends Component {
     window.location.href = "/"+e.target.value;
   }
 
-  incrementCounter() {
+  async incrementCounter() {
     const { counter } = this.state.counter;
-    this.setState({ counter: counter + 1 });
+    const response = await API.get(`/entreprises/${id || 1}`);
+    this.setState({entreprise: response.data.entreprise, counter: counter + 1 });
+
   }
   async componentDidMount() {
     const thisBoundedIncrementer = this.incrementCounter.bind(this);
@@ -63,6 +64,8 @@ class App extends Component {
     //console.log(response);
     this.setState({ entreprise: response.data.entreprise, loading: false});
     setInterval(thisBoundedIncrementer, 1000);
+    
+    
   };
 
 
@@ -171,7 +174,7 @@ class App extends Component {
               class="col-sm-10"
               style={{ fontWeight: "bold" }}
             >
-              <Dashboard user={this.state.entreprise} />
+              <Dashboard entreprise={this.state.entreprise} />
             </div>
           ) : (
               /* Page 2 */
@@ -180,7 +183,7 @@ class App extends Component {
 
                     <div className="page2" style={{width:"100%"}}>
 
-                      <Parameter user={this.state.entreprise}/>
+                      <Parameter entreprise={this.state.entreprise}/>
 
                   </div>
                 </div>
