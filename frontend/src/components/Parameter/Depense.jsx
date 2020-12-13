@@ -42,10 +42,21 @@ class Depense extends Component {
   async mySubmitHandler(event) {
     event.preventDefault();
     var typedep = 1;
+    let depe = parseInt(this.state.formData.dep, 10);
     if (this.state.formData.dep === null) {
-      this.setState({ errorMessage: "Il faut rentrer des valeurs" });
+      this.setState({ errorMessage: "Il faut rentrer une dépense" });
       return;
     }
+    if (isNaN(depe)) {
+      this.setState({ errorMessage: "Il faut que la dépense soit un nombre" });
+      this.setState({
+        formData: {
+            dep: "",
+            typedep: "",
+        }});
+      return;
+    }
+    
 console.log("avant switch", this.myRef2.current.value)
         switch (this.myRef2.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
           case "Salaire":
@@ -108,7 +119,7 @@ console.log("avant switch", this.myRef2.current.value)
                     ref = {this.myRef2}
                     onChange={this.handleChange}
                   >
-                    <option value="Salaire">Charges employés</option>
+                    <option value="Salaire">Charges Salariés</option>
                     <option value="MatierePremiere">Matières Premières</option>
                     <option value="Charges">Charges</option>
                     <option value="Autres">Autres</option>
@@ -133,6 +144,8 @@ console.log("avant switch", this.myRef2.current.value)
                     Envoyer
                   </Button>
                 </div>
+                <br />
+                <p style={{ color: "#89D761", fontSize: "80%"}}>{this.state.errorMessage}</p>
               </Form>
 
               <br></br>

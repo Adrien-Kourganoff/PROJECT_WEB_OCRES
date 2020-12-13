@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Graph from "chart.js";
 
 class Graphi extends Component {
-  componentDidUpdate() {
-    this.props.inputElement.current.focus();
-  }
+  // componentDidUpdate() {
+  //   this.props.inputElement.current.focus();
+  // }
   render() {
     return (
       <div className="todoListMain" style={{width:"100%"}}>

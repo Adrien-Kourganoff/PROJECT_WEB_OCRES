@@ -42,16 +42,19 @@ class Event extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         if (this.state.formData.event === null) {
-            this.setState({errorMessage:"Test"})
+            this.setState({errorMessage:"Il faut mettre un titre"})
             return;
         }
         if (this.state.formData.dateEnd === null) {
+            this.setState({errorMessage:"Il faut mettre une date de fin"})
             return;
         }
         if (this.state.formData.dateStart === null) {
+            this.setState({errorMessage:"Il faut mettre une date de début"})
             return;
         }
         if (moment(this.state.formData.dateStart).isAfter(moment(this.state.formData.dateEnd))) {
+            this.setState({errorMessage:"Il faut que la date de fin soit après la date de début"})
             return;
         }
         try {
@@ -137,7 +140,8 @@ class Event extends Component {
                         </Button>
 
                     </div>
-                    <p>{this.state.errorMessage}</p>
+                    <br />
+                    <p style={{ color: "#F271D9", fontSize: "80%"}} >{this.state.errorMessage}</p>
 
                     <br />
                 </Form>

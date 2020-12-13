@@ -35,11 +35,11 @@ class Com extends Component {
 
     e.preventDefault();
     if (this.state.formData.title === null) {
-      this.setState({ errorMessage: "Il faut un texte" });
+      this.setState({ errorMessage: "Il faut un pseudo" });
       return;
     }
     if (this.state.formData.text === null) {
-      this.setState({ errorMessage: "Il faut un texte" });
+      this.setState({ errorMessage: "Il faut un commentaire" });
       return;
     }
 
@@ -102,9 +102,12 @@ class Com extends Component {
             Envoyer
           </Button>
           <br />
+          <br />
+
+          <p style={{ color: "#8CA3D7", fontSize: "80%"}}>{this.state.errorMessage}</p>
         </Form>
 
-        <br></br>
+        <br />
       </Fragment>
     );
   }

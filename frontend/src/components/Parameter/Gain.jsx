@@ -42,8 +42,18 @@ class Gain extends Component {
   async mySubmitHandlerGain(event) {
     event.preventDefault();
     var typeg = 1;
+    let gaine = parseInt(this.state.formData.gain, 10);
     if (this.state.formData.gain === null) {
-      this.setState({ errorMessage: "Il faut rentrer des valeurs" });
+      this.setState({ errorMessage: "Il faut rentrer un gain" });
+      return;
+    }
+    if (isNaN(gaine)) {
+      this.setState({ errorMessage: "Il faut que le gain soit un nombre" });
+      this.setState({
+        formData: {
+            gain: "",
+            typegain: "",
+        }});
       return;
     }
     console.log("avant switch", this.myRef.current.value)
@@ -134,6 +144,7 @@ class Gain extends Component {
           </div>
 
           <br />
+          <p style={{ color: "#795EFF", fontSize: "80%"}}>{this.state.errorMessage}</p>
         </Form>
 
         <br></br>

@@ -42,9 +42,19 @@ class Graphique extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         var mois = 1;
+        let gaine = parseInt(this.state.formData.benef, 10);
         if (this.state.formData.benef === null) {
-          this.setState({ errorMessage: "Il faut rentrer des valeurs" });
-          return;
+        this.setState({ errorMessage: "Il faut rentrer un bénéfice" });
+        return;
+        }
+        if (isNaN(gaine)) {
+        this.setState({ errorMessage: "Il faut que le bénéfice soit un nombre" });
+        this.setState({
+            formData: {
+                benef: "",
+                mois: "",
+            }});
+        return;
         }
         console.log("avant switch", this.myRef3.current.value)
             switch (this.myRef3.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
@@ -178,6 +188,8 @@ class Graphique extends Component {
                   </Button>
 
                     </div>
+                    <br />
+                    <p style={{ color: "#FBC86A", fontSize: "80%"}}>{this.state.errorMessage}</p>
                 </Form>
 
                 <br></br>

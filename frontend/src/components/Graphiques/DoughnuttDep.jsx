@@ -15,7 +15,7 @@ class DoughnuttDep extends Component {
       
     render() {
       var datasets= {
-        labels: ["Matières Premières", "Charges Salariés", "Charges", "Autre"],
+        labels: ["Charges Salariés", "Matières Premières",  "Charges", "Autre"],
 
         datasets: 
           [{
