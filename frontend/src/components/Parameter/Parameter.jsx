@@ -4,6 +4,7 @@ import  Event from "./Event";
 import  Graphique from "./Graphique";
 import  Gain from "./Gain";
 import  Com from "./Com";
+import  Gain from "./Gain";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 // import FormControl from 'react-bootstrap/FormControl'
@@ -23,8 +24,7 @@ class parameter extends Component {
       _id : this.props.user._id,
       mois: null,
       benef: null,
-      gain: null,
-      typegain: null,
+
       dep: null,
       typedep: null,
 
@@ -126,7 +126,7 @@ class parameter extends Component {
           </div>
           <div className="row">
             <div className="App-headerMilieu style">
-              <Gain user={id}/>
+            <Gain user={id}/>
             </div>
           </div>
           {/*----------------------------------------------------------dépense*/}

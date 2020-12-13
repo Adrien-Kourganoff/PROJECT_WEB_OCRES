@@ -3,11 +3,16 @@ const express = require("express");
 const router = express.Router();
 const addEventEntreprise = require('../services/entreprise/addEventEntreprise');
 const addComEntreprise = require('../services/entreprise/addComEntreprise');
+const deleteTaskEntreprise = require('../services/entreprise/deleteTaskEntreprise');
+const addTaskEntreprise = require('../services/entreprise/addTaskEntreprise');
 const addGainEntreprise = require('../services/entreprise/addGainEntreprise');
 
 router.put('/event/:id', addEventEntreprise)
 router.put('/commentaire/:id', addComEntreprise)
-router.put('/gain/:id', addGainEntreprise)
+router.put('/task/add/:id', addTaskEntreprise)
+router.put('/gain/:id/:typeg', addGainEntreprise)
+
+router.delete('/task/delete/:id/:key', deleteTaskEntreprise)
 
 router.get('/:id', async (req, res) => {
   try {
