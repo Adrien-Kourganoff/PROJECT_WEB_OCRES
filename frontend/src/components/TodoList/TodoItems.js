@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import API from "../../api";
 
 class TodoItems extends Component {
+  
+
   createTasks = item => {
+
     return (
       <li key={item.key} onClick={() => this.props.deleteItem(item)}>
         {item.text}

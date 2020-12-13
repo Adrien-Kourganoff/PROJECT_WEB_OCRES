@@ -60,7 +60,7 @@ class App extends Component {
     const thisBoundedIncrementer = this.incrementCounter.bind(this);
     
     const response = await API.get(`/entreprises/${id || 1}`);
-    console.log(response);
+    //console.log(response);
     this.setState({ entreprise: response.data.entreprise, loading: false});
     setInterval(thisBoundedIncrementer, 1000);
   };

@@ -6,7 +6,9 @@ const deleteTaskEntreprise = async (req, res) => {
     const idEntreprise = req.params.id;
 
     try { 
-      await Entreprise.findOneAndUpdate({ _id: idEntreprise},{ $pull: { items : { text : req.params.text, key : req.params.key }  }})
+      const entreprise = await Entreprise.findOne({ _id: idEntreprise})
+      const items = entreprise.items
+      res.json(items)
         res.status(200).json({ message: "succes"})
 
     } catch (error) {

@@ -6,10 +6,10 @@ import API from "../../api";
 class Graph extends Component {
   inputElement = React.createRef();
   constructor(props) {
-	super(props);
-  this.addItem = this.addItem.bind(this);
-  this.deleteItem = this.deleteItem.bind(this);
-	//this.handleInput = this.handleInput.bind(this);
+    super(props);
+    this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
+    //this.handleInput = this.handleInput.bind(this);
     this.state = {
       items: this.props.user.items,
       currentItem: {
@@ -19,24 +19,21 @@ class Graph extends Component {
     };
   }
 
-
-/*deleteItem = key => {
-	const filteredItems = this.state.items.filter(item => {
-	  return item.key !== key
-	})
-	this.setState({
-	  items: filteredItems,
-	})
-  }*/
   async deleteItem(item) {
 
     try {
       console.log("item current todoitem",item)
       await API.delete(`/entreprises/task/delete/${this.props.user._id}/${item.key}/${item.text}`);
+      const itemsEntreprise = await API.get(`/entreprises/${this.props.user._id}`);
+      console.log("itemsEntreprise", itemsEntreprise.data.entreprise.items)
+      this.setState({
+        items: itemsEntreprise.data.entreprise.items
+      })
     }catch (error) {
       console.log(error);
       }
     }
+
   handleInput = (e) => {
     const itemText = e.target.value;
     const currentItem = { text: itemText, key: Date.now() };
@@ -49,27 +46,27 @@ class Graph extends Component {
     try {
       const newItem = this.state.currentItem;
       if (newItem.text !== "") {
-		const items = [...this.state.items, newItem];
-		await API.put(`/entreprises/task/add/${this.props.user._id}`, newItem);
+        const items = [...this.state.items, newItem];
+        await API.put(`/entreprises/task/add/${this.props.user._id}`, newItem);
         this.setState({
-			items: items,
-			currentItem: { text: '', key: '' },
-		  })
-        
+            items: items,
+            currentItem: { text: '', key: '' },
+          })
+
       }
     } catch (error) {
       console.log(error);
     }
   }
   render() {
-    /*this.state.items = this.props.user.items.map(function (item){
-		return {
-			currentItem: {
-				text: item.text,
-				key:item.key,
-			  }
-		}
-	});*/
+    {/*this.state.items = this.props.user.items.map(function (item){
+        return {
+            currentItem: {
+                text: item.text,
+                key:item.key,
+              }
+        }
+    });*/}
     return (
       <div className="App">
         <div class="row">
@@ -81,7 +78,7 @@ class Graph extends Component {
           />
         </div>
         <div class="row">
-          <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
+          <TodoItems entries={this.state.items} deleteItem={this.deleteItem} id={this.props.user._id} />
         </div>
       </div>
     );

@@ -37,12 +37,10 @@ class Linee extends Component {
           fill: true,
           backgroundColor: "rgb(121,94,255,0.1 )",
           data: this.state.benef,
-          //data: [65, 59, 80, 81, 56, 55, 40, 55, 62,10, 1 ,66],
+
         },
       ],
     };
-      //datas.datasets.data=this.state.benef;
-      console.log(datas);
         return (
             <Line data={datas} />
             
