@@ -11,6 +11,7 @@ import AjoutMotivation from './AjoutMotivation';
 import SupprimerAstuces from './SupprimerAstuces';
 import axios from 'axios';
 import './SupprimerAstuces.css';
+import SupprimerMotivation from './SupprimerMotivation';
 
 const Admin = () => {
     return (
@@ -22,6 +23,7 @@ const Admin = () => {
             </div>
              
   <AjoutMotivation/>
+  <SupprimerMotivation/>
   <AdminAstuce/>
   <div className="Centrer">
   <SupprimerAstuces/>
