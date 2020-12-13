@@ -6,13 +6,9 @@ import { Button } from "react-bootstrap";
 // import FormCheck from 'react-bootstrap/FormCheck'
 // import FormFile from 'react-bootstrap/FormFile'
 import { isNaN } from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+
 //import {API_URL} from "../../config";
 import API from "../../api";
-
-import moment from "moment";
-import axios from "axios";
 
 class Depense extends Component {
   constructor(props) {
@@ -110,7 +106,7 @@ console.log("avant switch", this.myRef2.current.value)
               </div>
               <br />
               <Form onSubmit={this.mySubmitHandler}>
-                <div class="row">
+                <div className="row">
                 <Form.Label style={{ color: "#89D761" }} >Quel type?</Form.Label>
                   <Form.Control
                     as="select"
@@ -126,7 +122,7 @@ console.log("avant switch", this.myRef2.current.value)
                   </Form.Control>
                 </div>
                 <br />
-                <div class="row">
+                <div className="row">
                 <Form.Label style={{ color: "#89D761" }} >Combien?</Form.Label>
                   <Form.Control
                   
@@ -139,7 +135,7 @@ console.log("avant switch", this.myRef2.current.value)
                   />
                 </div>
                 <br />
-                <div clas="row">
+                <div className="row">
                   <Button variant="flat3" type="submit">
                     Envoyer
                   </Button>

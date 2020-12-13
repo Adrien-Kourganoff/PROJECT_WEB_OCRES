@@ -72,11 +72,11 @@ class App extends Component {
   render() {
     if (this.state.loading) return <p>loading...</p>
     return (
-      <div class="container" style={{ maxWidth: "2000px" }}>
-        <div class="row">
-          <div class="col-sm-2" style={{ fontWeight: "bold" }}>
-            <header class="App-header">
-              <div class="row">
+      <div className="container" style={{ maxWidth: "2000px" }}>
+        <div className="row">
+          <div className="col-sm-2" style={{ fontWeight: "bold" }}>
+            <header className="App-header">
+              <div className="row">
                 <img
                   src={Logo1}
                   style={{ margin: "auto", maxWidth: "75%" }}
@@ -85,10 +85,10 @@ class App extends Component {
               </div>
               <br />
               <br />
-              <div class="row">
-                <div class="choixEntre">
-                  <div class="col-sm-12">
-                    <div class="row">
+              <div className="row">
+                <div className="choixEntre">
+                  <div className="col-sm-12">
+                    <div className="row">
                     
                       <Form.Control as="select" size="lg" value={this.state.buisness} onChange={this.handleBuisness} >
                         <option value="1">Mathilde</option>
@@ -105,14 +105,14 @@ class App extends Component {
                 /* btn page 1*/
                 <div>
                   <div
-                    class="row"
+                    className="row"
                     onClick={this.dashboard}
                     style={{ marginTop: "40%", cursor: "pointer" }}
                   >
-                    <div class="col-sm-2">
+                    <div className="col-sm-2">
                       <img  src={DashA}></img>
                     </div>
-                    <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
+                    <div className="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
                       
                       <a style={{ color: "#FDE1DE", fontSize: "125%" }}>
                         Mon DashBoard
@@ -121,14 +121,14 @@ class App extends Component {
                   </div>
 
                   <div
-                    class="row"
+                    className="row"
                     onClick={this.parameter}
                     style={{ marginTop: "10%", cursor: "pointer" }}
                   >
-                    <div class="col-sm-2">
+                    <div className="col-sm-2">
                       <img  src={Param}></img>
                     </div>
-                    <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
+                    <div className="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
                       <a style={{ fontSize: "125%" }}> Mes Paramètres</a>
                     </div>
                   </div>
@@ -137,26 +137,26 @@ class App extends Component {
                   /*btn page 2 */
                   <div>
                     <div
-                      class="row"
+                      className="row"
                       onClick={this.dashboard}
                       style={{ marginTop: "40%", cursor: "pointer" }}
                     >
-                      <div class="col-sm-2 col-xs-2">
+                      <div className="col-sm-2 col-xs-2">
                         <img src={Dash}></img>
                       </div>
-                      <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
+                      <div className="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
                         <a style={{ fontSize: "100%" }}>Mon DashBoard</a>
                       </div>
                     </div>
                     <div
-                      class="row"
+                      className="row"
                       onClick={this.parameter}
                       style={{ marginTop: "10%", cursor: "pointer" }}
                     >
-                      <div class="col-sm-2">
+                      <div className="col-sm-2">
                         <img src={ParamA}></img>
                       </div>
-                      <div class="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
+                      <div className="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
                         <a style={{ color: "#78E6D0", fontSize: "100%" }}>
                           {" "}
                         Mes Paramètres
@@ -171,15 +171,15 @@ class App extends Component {
             /* Page 1 */
             <div
               v-if="this.state.page == 1"
-              class="col-sm-10"
+              className="col-sm-10"
               style={{ fontWeight: "bold" }}
             >
               <Dashboard entreprise={this.state.entreprise} />
             </div>
           ) : (
               /* Page 2 */
-              <div class="col-sm-10">
-                <div class="row">
+              <div className="col-sm-10">
+                <div className="row">
 
                     <div className="page2" style={{width:"100%"}}>
 

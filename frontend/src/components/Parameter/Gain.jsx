@@ -6,13 +6,11 @@ import { Button } from "react-bootstrap";
 // import FormCheck from 'react-bootstrap/FormCheck'
 // import FormFile from 'react-bootstrap/FormFile'
 import { isNaN } from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+
 //import {API_URL} from "../../config";
 import API from "../../api";
 
-import moment from "moment";
-import axios from "axios";
+
 
 class Gain extends Component {
   constructor(props) {
@@ -107,7 +105,7 @@ class Gain extends Component {
         </div>
         <br />
         <Form onSubmit={this.mySubmitHandlerGain}>
-          <div class="row">
+          <div className="row">
             <Form.Label style={{ color: "#795EFF" }}>Quel type? </Form.Label>
             <Form.Control
             type="text"
@@ -125,7 +123,7 @@ class Gain extends Component {
             </Form.Control>
           </div>
           <br />
-          <div class="row">
+          <div className="row">
             <Form.Label style={{ color: "#795EFF" }}>Combien?</Form.Label>
             <Form.Control
               type="text"
@@ -137,7 +135,7 @@ class Gain extends Component {
             />
           </div>
           <br />
-          <div class="row">
+          <div className="row">
             <Button variant="flat2" type="submit">
               Envoyer
             </Button>

@@ -69,7 +69,7 @@ class Graph extends Component {
     });*/}
     return (
       <div className="App">
-        <div class="row">
+        <div className="row">
           <Graphi
             addItem={this.addItem}
             inputElement={this.inputElement}
@@ -77,7 +77,7 @@ class Graph extends Component {
             currentItem={this.state.currentItem}
           />
         </div>
-        <div class="row">
+        <div className="row">
           <TodoItems entries={this.state.items} deleteItem={this.deleteItem} id={this.props.entreprise._id} />
         </div>
       </div>

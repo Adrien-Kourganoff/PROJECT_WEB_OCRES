@@ -6,13 +6,10 @@ import { Button } from "react-bootstrap";
 // import FormCheck from 'react-bootstrap/FormCheck'
 // import FormFile from 'react-bootstrap/FormFile'
 import { isNaN } from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+
 //import {API_URL} from "../../config";
 import API from '../../api';
 
-import moment from "moment";
-import axios from "axios";
 
 
 class Graphique extends Component {
@@ -146,7 +143,7 @@ class Graphique extends Component {
                 </div>
                 <br></br>
                 <Form onSubmit={this.handleSubmit}>
-                    <div class="row">
+                    <div className="row">
                         <Form.Label style={{ color: "#FBC86A" }} >Quel mois?  </Form.Label>
                         <Form.Control
                             as="select"
@@ -170,7 +167,7 @@ class Graphique extends Component {
                         </Form.Control>
                     </div>
                     <br />
-                    <div class="row">
+                    <div className="row">
                         <Form.Label style={{ color: "#FBC86A" }} >Combien?</Form.Label>
                         <Form.Control
                             type="text"
@@ -182,7 +179,7 @@ class Graphique extends Component {
                         />
                     </div>
                     <br />
-                    <div class="row">
+                    <div className="row">
                         <Button variant="flat1" type="submit">
                             Envoyer
                   </Button>

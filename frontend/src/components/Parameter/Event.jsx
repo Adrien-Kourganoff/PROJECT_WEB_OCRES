@@ -5,14 +5,13 @@ import { Button } from "react-bootstrap";
 // import FormControl from 'react-bootstrap/FormControl'
 // import FormCheck from 'react-bootstrap/FormCheck'
 // import FormFile from 'react-bootstrap/FormFile'
-import { isNaN } from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
+
 import TextField from "@material-ui/core/TextField";
 //import {API_URL} from "../../config";
 import API from '../../api';
 
 import moment from "moment";
-import axios from "axios";
+
 
 
 class Event extends Component {
@@ -122,7 +121,7 @@ class Event extends Component {
                         />
                     </div>
                     <br />
-                    <div class="row">
+                    <div className="row">
                         <Form.Label style={{ color: "#F271D9" }}>Quelle description?</Form.Label>
                         <Form.Control
                             type="text"
@@ -134,7 +133,7 @@ class Event extends Component {
                         />
                     </div>
                     <br />
-                    <div class="row">
+                    <div className="row">
                         <Button variant="flat4" type="submit">
                             Envoyer
                         </Button>

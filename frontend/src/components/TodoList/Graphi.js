@@ -10,8 +10,8 @@ class Graphi extends Component {
       <div className="todoListMain" style={{width:"100%"}}>
         <div className="header">
           <form onSubmit={this.props.addItem}>
-            <div class="row">
-              <div class="col-sm-7">
+            <div className="row">
+              <div className="col-sm-7">
               <input
                 placeholder="Tâches"
                 ref={this.props.inputElement}
@@ -19,7 +19,7 @@ class Graphi extends Component {
                 onChange={this.props.handleInput}
               />
             </div>
-            <div class="col-sm-5">
+            <div className="col-sm-5">
               <button type="submit"> Ajouter </button>
             </div>
             </div>
