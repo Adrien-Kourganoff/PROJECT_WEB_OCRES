@@ -63,7 +63,7 @@ class Com extends Component {
         <div className="row">
           <div className="col-sm-1"></div>
           <div className="col-sm-10">
-            <titre style={{ fontWeight: "bold" }}>Ajout d'un commentaire</titre>
+            <titre style={{ fontWeight: "bold", color: "#8CA3D7" }}>Ajout d'un commentaire</titre>
           </div>
           <div className="col-sm-1"></div>
         </div>

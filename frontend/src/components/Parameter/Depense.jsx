@@ -95,7 +95,7 @@ class Depense extends Component {
         <div className="row">
           <div className="col-sm-1"></div>
           <div className="col-sm-10">
-            <titre style={{ fontWeight: "bold" }}>Ajout d'une dépense</titre>
+            <titre style={{ fontWeight: "bold",color: "#89D761" }}>Ajout d'une dépense</titre>
           </div>
           <div className="col-sm-1"></div>
         </div>

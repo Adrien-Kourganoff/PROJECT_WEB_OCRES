@@ -136,7 +136,7 @@ class Graphique extends Component {
                 <div className="row">
                     <div className="col-sm-1"></div>
                     <div className="col-sm-10">
-                        <titre style={{ fontWeight: "bold" }}>Ajout d'un chiffre d'affaire</titre>
+                        <titre style={{ fontWeight: "bold", color: "#FBC86A" }}>Ajout d'un chiffre d'affaire</titre>
                     </div>
                     <div className="col-sm-1"></div>
                 </div>

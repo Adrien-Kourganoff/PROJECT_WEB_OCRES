@@ -83,7 +83,7 @@ class Event extends Component {
                 <div className="row">
                     <div className="col-sm-1"></div>
                     <div className="col-sm-10">
-                        <titre style={{ fontWeight: "bold" }}>Ajout d'un évènement</titre>
+                        <titre style={{ fontWeight: "bold",color: "#F271D9" }}>Ajout d'un évènement</titre>
                     </div>
                     <div className="col-sm-1"></div>
                 </div>

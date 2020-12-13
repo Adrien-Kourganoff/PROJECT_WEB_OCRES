@@ -97,7 +97,7 @@ class Gain extends Component {
         <div className="row">
           <div className="col-sm-1"></div>
           <div className="col-sm-10">
-            <titre style={{ fontWeight: "bold" }}>Ajout d'un gain</titre>
+            <titre style={{ fontWeight: "bold", color: "#795EFF" }}>Ajout d'un gain</titre>
           </div>
           <div className="col-sm-1"></div>
         </div>
