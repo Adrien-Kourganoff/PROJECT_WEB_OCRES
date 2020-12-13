@@ -105,7 +105,7 @@ class Graphique extends Component {
         try {
             
           await API.put(
-            `/entreprises/benef/${this.props.user}/${mois}`,
+            `/entreprises/benef/${this.props.entreprise_id}/${mois}`,
             this.state.formData
           );
           this.setState({

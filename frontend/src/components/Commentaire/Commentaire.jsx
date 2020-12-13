@@ -15,7 +15,7 @@ class Commentaire extends Component {
                         className='message-list'
                         lockable={true}
                         toBottomHeight={'100%'}
-                        dataSource={this.props.user.commentaire} />
+                        dataSource={this.props.entreprise.commentaire} />
                 </div>
             </div>
         );

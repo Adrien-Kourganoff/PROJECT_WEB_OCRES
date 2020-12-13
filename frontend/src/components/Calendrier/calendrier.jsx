@@ -8,7 +8,7 @@ import "./calendrier.css";
 class Calend extends Component {
     constructor(props) {
         super(props);
-        this.state = { benef : this.props.user.event };
+        this.state = { benef : this.props.entreprise.event };
         //this.state = { null:null }
     }
     

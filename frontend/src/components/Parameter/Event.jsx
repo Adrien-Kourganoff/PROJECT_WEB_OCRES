@@ -55,7 +55,7 @@ class Event extends Component {
             return;
         }
         try {
-            await API.put(`/entreprises/event/${this.props.user}`, this.state.formData);
+            await API.put(`/entreprises/event/${this.props.entreprise_id}`, this.state.formData);
             console.log("test");
 
             this.setState({

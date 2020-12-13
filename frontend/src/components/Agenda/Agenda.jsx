@@ -18,13 +18,16 @@ const localizer = momentLocalizer(moment);// or globalizeLocalizer
 
 
 class Agenda extends Component {
- 
+    constructor(props) {
+        super(props);
+        this.state = { events: this.props.entreprise.myEventsList };
+    }
     render() {
         return (
             <div className="AgendaContainer" style={{ width: "100%" }}>
                 <Calendar
                     localizer={localizer}
-                    events={this.props.user.myEventsList}
+                    events={this.state.events}
                     startAccessor="start"
                     endAccessor="end"
                     style={{ height: "35vh" }} />
