@@ -22,7 +22,7 @@ class Agenda extends Component {
     render() {
         const eventElements = this.props.user.myEventsList.map(function (eventElement) {
             return {
-                title: eventElement.content,
+                title: eventElement.title,
                 start: new Date(eventElement.start),
                 end: new Date(eventElement.end),
                 allDay: false

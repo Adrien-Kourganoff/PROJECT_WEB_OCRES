@@ -27,9 +27,7 @@ class parameter extends Component {
       typegain: null,
       dep: null,
       typedep: null,
-      
-      pseudo: null,
-      commentaire: null,
+
     };
   }
 
@@ -110,19 +108,7 @@ class parameter extends Component {
     this.setState({ dateEnd: e.target.value });
   };
   /*----------------------------------------------------------commentaire*/
-  mySubmitHandlerCommentaire = (e) => {
-    e.preventDefault();
-    let commentaire = this.state.commentaire;
-    let pseudo = this.state.pseudo;
-    console.log(commentaire);
-    console.log(pseudo);
-  };
-  handleCommentaireChange = (e) => {
-    this.setState({ commentaire: e.target.value });
-  };
-  handleCommentairePseudoChange = (e) => {
-    this.setState({ pseudo: e.target.value });
-  };
+
   render() {
     var id=this.state._id;
     

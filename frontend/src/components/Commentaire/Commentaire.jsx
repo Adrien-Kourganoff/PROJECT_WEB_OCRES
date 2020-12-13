@@ -4,15 +4,19 @@ import "./Commentaire.css";
 import 'react-chat-elements/dist/main.css';
 
 class Commentaire extends Component {
-    constructor(props) {
-        super(props);
-         this.state = { benef : this.props.user.commentaire };
-    }
-    
+
 
     render() {
-        var data =this.state.benef;
-    
+        
+        const comElements = this.props.user.commentaire.map(function (comElements) {
+            return {
+                position: "left",
+                comType: "text",
+                title: comElements.title,
+                text: comElements.text,
+                date: new Date(),
+            }
+        });
         return (
             <div className="container-commentaire">
                 <div className="message-list-container">
@@ -20,7 +24,7 @@ class Commentaire extends Component {
                         className='message-list'
                         lockable={true}
                         toBottomHeight={'100%'}
-                        dataSource={data} />
+                        dataSource={comElements} />
                 </div>
             </div>
         );
