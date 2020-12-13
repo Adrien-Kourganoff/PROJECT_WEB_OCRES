@@ -7,7 +7,8 @@ class Graph extends Component {
   inputElement = React.createRef();
   constructor(props) {
 	super(props);
-	this.addItem = this.addItem.bind(this);
+  this.addItem = this.addItem.bind(this);
+  this.deleteItem = this.deleteItem.bind(this);
 	//this.handleInput = this.handleInput.bind(this);
     this.state = {
       items: this.props.user.items,
@@ -27,6 +28,15 @@ class Graph extends Component {
 	  items: filteredItems,
 	})
   }*/
+  async deleteItem(item) {
+
+    try {
+      console.log("item current todoitem",item)
+      await API.delete(`/entreprises/task/delete/${this.props.user._id}/${item.key}/${item.text}`);
+    }catch (error) {
+      console.log(error);
+      }
+    }
   handleInput = (e) => {
     const itemText = e.target.value;
     const currentItem = { text: itemText, key: Date.now() };
@@ -71,7 +81,7 @@ class Graph extends Component {
           />
         </div>
         <div class="row">
-          <TodoItems entries={this.state.items} id={this.props.user._id} />
+          <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
         </div>
       </div>
     );
