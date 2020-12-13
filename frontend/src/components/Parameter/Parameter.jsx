@@ -21,7 +21,7 @@ class parameter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      _id : this.props.user._id,
+      _id : this.props.entreprise._id,
       mois: null,
       benef: null,
 
@@ -120,19 +120,19 @@ class parameter extends Component {
             <div className="App-headerMilieu style">
               
               
-            <Graphique user={id}/> 
+            <Graphique entreprise_id={id}/> 
               
             </div>
           </div>
           <div className="row">
             <div className="App-headerMilieu style">
-            <Gain user={id}/>
+            <Gain entreprise_id={id}/>
             </div>
           </div>
           {/*----------------------------------------------------------dépense*/}
           <div className="row">
             <div className="App-headerMilieu style">
-            <Depense user={id}/>
+            <Depense entreprise_id={id}/>
             </div>
           </div>
         </div>
@@ -141,13 +141,13 @@ class parameter extends Component {
           <div className="row">
             <div className="App-headerMilieu style">
     
-              <Event user={id}/> 
+              <Event entreprise_id={id}/> 
             </div>
           </div>
           {/*----------------------------------------------------------Commentaire  style={{ justify-content: center }}*/}
           <div className="row">
             <div className="App-headerMilieu style">
-              <Com user={id}/> 
+              <Com entreprise_id={id}/> 
             </div>
           </div>
         </div>
