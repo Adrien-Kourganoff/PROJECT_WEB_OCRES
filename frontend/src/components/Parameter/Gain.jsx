@@ -46,7 +46,7 @@ class Gain extends Component {
       this.setState({ errorMessage: "Il faut rentrer des valeurs" });
       return;
     }
-console.log("avant switch", this.myRef.current.value)
+    console.log("avant switch", this.myRef.current.value)
         switch (this.myRef.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
           case "Marchandise":
             console.log("marchandise")

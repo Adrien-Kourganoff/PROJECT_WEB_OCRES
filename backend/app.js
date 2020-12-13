@@ -9,15 +9,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const entrepriseRouter = require("./routes/entrprise");
-
-
 var app = express();
-
-
 const uri =
 "mongodb://localhost:27017/entrepriseDb";
 mongoose.connect(uri, {useNewUrlParser: true,useUnifiedTopology: true });
-
 const db = mongoose.connection;
 
 

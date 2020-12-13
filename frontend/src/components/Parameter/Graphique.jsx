@@ -18,6 +18,7 @@ import axios from "axios";
 class Graphique extends Component {
     constructor(props) {
         super(props);
+        this.myRef3 = React.createRef();
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
@@ -40,34 +41,82 @@ class Graphique extends Component {
     }
     async handleSubmit(event) {
         event.preventDefault();
-        // if (this.state.formData.event === null) {
-        //     this.setState({ errorMessage: "Test" })
-        //     return;
-        // }
-        // if (this.state.formData.dateEnd === null) {
-        //     return;
-        // }
-        // if (this.state.formData.dateStart === null) {
-        //     return;
-        // }
-        // if (moment(this.state.formData.dateStart).isAfter(moment(this.state.formData.dateEnd))) {
-        //     return;
-        // }
-        try {
-            await API.put(`/entreprises/graphique/${this.props.user}`, this.state.formData);
-            console.log("test");
-
-            this.setState({
-                formData: {
-                    mois: "",
-                    benef: "",
-                },
-                errorMessage: "",
-            });
-
+        var mois = 1;
+        if (this.state.formData.benef === null) {
+          this.setState({ errorMessage: "Il faut rentrer des valeurs" });
+          return;
         }
-        catch (error) {
-            console.log(error);
+        console.log("avant switch", this.myRef3.current.value)
+            switch (this.myRef3.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
+              case "Janvier":
+                console.log("Janvier")
+                   mois=1;
+                   break;
+              case "Février":
+                  console.log("Février")
+                 mois=2;
+                 
+                break;
+              case "Mars":
+                console.log("Février")
+                mois=3;
+                break;
+              case "Avril":
+                console.log("Février")
+                mois=4;
+                break;
+
+            case "Mai":
+                console.log("Mai")
+                mois=5;
+                break;
+            case "Juin":
+                console.log("Juin")
+                mois=6;
+                break;
+            case "Juillet":
+                console.log("Juillet")
+                mois=7;
+                break;
+            case "Aout":
+                console.log("Aout")
+                mois=8;
+                break;
+            case "Septembre":
+                console.log("Septembre")
+                mois=9;
+                break;
+            case "Octobre":
+                console.log("Octobre")
+                mois=10;
+                break;
+            case "Novembre":
+                console.log("Novembre")
+                mois=11;
+                break;
+            case "Décembre":
+                console.log("Décembre")
+                mois=12;
+                break;
+              default:
+                mois=1;
+                break;
+            }
+        try {
+            
+          await API.put(
+            `/entreprises/benef/${this.props.user}/${mois}`,
+            this.state.formData
+          );
+          this.setState({
+            formData: {
+                mois: "",
+                benef: "",
+            },
+            errorMessage: "",
+          });
+        } catch (error) {
+          console.log(error);
         }
 
 
@@ -92,7 +141,8 @@ class Graphique extends Component {
                         <Form.Control
                             as="select"
                             size="lg"
-                            value={this.state.mois}
+                            value={this.state.formData.mois}
+                            ref = {this.myRef3}
                             onChange={this.handleChange}
                         >
                             <option value="Janvier">Janvier</option>
@@ -102,7 +152,7 @@ class Graphique extends Component {
                             <option value="Mai">Mai</option>
                             <option value="Juin">Juin</option>
                             <option value="Juillet">Juillet</option>
-                            <option value="Août">Août</option>
+                            <option value="Aout">Août</option>
                             <option value="Septembre">Septembre</option>
                             <option value="Octobre">Octobre</option>
                             <option value="Novembre">Novembre</option>
@@ -117,7 +167,7 @@ class Graphique extends Component {
                             placeholder="bénéfice en K€"
                             name="benef"
                             size="lg"
-                            value={this.state.benef}
+                            value={this.state.formData.benef}
                             onChange={this.handleChange}
                         />
                     </div>
