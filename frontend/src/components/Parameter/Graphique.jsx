@@ -2,17 +2,12 @@ import React, { Component, Fragment } from "react";
 import "./Parameter.css";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-// import FormControl from 'react-bootstrap/FormControl'
-// import FormCheck from 'react-bootstrap/FormCheck'
-// import FormFile from 'react-bootstrap/FormFile'
+
 import { isNaN } from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-//import {API_URL} from "../../config";
+
+
 import API from '../../api';
 
-import moment from "moment";
-import axios from "axios";
 
 
 class Graphique extends Component {
@@ -42,88 +37,99 @@ class Graphique extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         var mois = 1;
+        let gaine = parseInt(this.state.formData.benef, 10);
         if (this.state.formData.benef === null) {
-          this.setState({ errorMessage: "Il faut rentrer des valeurs" });
-          return;
+            this.setState({ errorMessage: "Il faut rentrer un bénéfice" });
+            return;
         }
-        console.log("avant switch", this.myRef3.current.value)
-            switch (this.myRef3.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
-              case "Janvier":
-                console.log("Janvier")
-                   mois=1;
-                   break;
-              case "Février":
-                  console.log("Février")
-                 mois=2;
-                 
+        if (isNaN(gaine)) {
+            this.setState({ errorMessage: "Il faut que le bénéfice soit un nombre" });
+            this.setState({
+                formData: {
+                    benef: "",
+                    mois: "",
+                }
+            });
+            return;
+        }
+        
+        switch (this.myRef3.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
+            case "Janvier":
+                
+                mois = 1;
                 break;
-              case "Mars":
-                console.log("Février")
-                mois=3;
+            case "Février":
+                
+                mois = 2;
+
                 break;
-              case "Avril":
-                console.log("Février")
-                mois=4;
+            case "Mars":
+                
+                mois = 3;
+                break;
+            case "Avril":
+                
+                mois = 4;
                 break;
 
             case "Mai":
-                console.log("Mai")
-                mois=5;
+               
+                mois = 5;
                 break;
             case "Juin":
-                console.log("Juin")
-                mois=6;
+                
+                mois = 6;
                 break;
             case "Juillet":
-                console.log("Juillet")
-                mois=7;
+                
+                mois = 7;
                 break;
             case "Aout":
-                console.log("Aout")
-                mois=8;
+                
+                mois = 8;
                 break;
             case "Septembre":
-                console.log("Septembre")
-                mois=9;
+                
+                mois = 9;
                 break;
             case "Octobre":
-                console.log("Octobre")
-                mois=10;
+                
+                mois = 10;
                 break;
             case "Novembre":
-                console.log("Novembre")
-                mois=11;
+                
+                mois = 11;
                 break;
             case "Décembre":
-                console.log("Décembre")
-                mois=12;
+                
+                mois = 12;
                 break;
-              default:
-                mois=1;
+            default:
+                mois = 1;
                 break;
-            }
+        }
         try {
-            
-          await API.put(
-            `/entreprises/benef/${this.props.entreprise_id}/${mois}`,
-            this.state.formData
-          );
-          this.setState({
-            formData: {
-                mois: "",
-                benef: "",
-            },
-            errorMessage: "",
-          });
+
+            await API.put(
+                `/entreprises/benef/${this.props.entreprise_id}/${mois}`,
+                this.state.formData
+            );
+            this.setState({
+                formData: {
+                    mois: "",
+                    benef: "",
+                },
+                errorMessage: "",
+            });
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
 
 
     }
 
     render() {
-        console.log("hello");
+        
         return (
 
             <Fragment>
@@ -136,13 +142,13 @@ class Graphique extends Component {
                 </div>
                 <br></br>
                 <Form onSubmit={this.handleSubmit}>
-                    <div class="row">
+                    <div className="row">
                         <Form.Label style={{ color: "#FBC86A" }} >Quel mois?  </Form.Label>
                         <Form.Control
                             as="select"
                             size="lg"
                             value={this.state.formData.mois}
-                            ref = {this.myRef3}
+                            ref={this.myRef3}
                             onChange={this.handleChange}
                         >
                             <option value="Janvier">Janvier</option>
@@ -160,7 +166,7 @@ class Graphique extends Component {
                         </Form.Control>
                     </div>
                     <br />
-                    <div class="row">
+                    <div className="row">
                         <Form.Label style={{ color: "#FBC86A" }} >Combien?</Form.Label>
                         <Form.Control
                             type="text"
@@ -172,12 +178,14 @@ class Graphique extends Component {
                         />
                     </div>
                     <br />
-                    <div class="row">
+                    <div className="row">
                         <Button variant="flat1" type="submit">
                             Envoyer
                   </Button>
 
                     </div>
+                    <br />
+                    <p style={{ color: "#FBC86A", fontSize: "80%" }}>{this.state.errorMessage}</p>
                 </Form>
 
                 <br></br>

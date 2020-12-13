@@ -2,17 +2,14 @@ import React, { Component, Fragment } from "react";
 import "./Parameter.css";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-// import FormControl from 'react-bootstrap/FormControl'
-// import FormCheck from 'react-bootstrap/FormCheck'
-// import FormFile from 'react-bootstrap/FormFile'
-import { isNaN } from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
+
+
 import TextField from "@material-ui/core/TextField";
-//import {API_URL} from "../../config";
+
 import API from '../../api';
 
 import moment from "moment";
-import axios from "axios";
+
 
 
 class Event extends Component {
@@ -26,7 +23,7 @@ class Event extends Component {
                 dateStart: null,
                 dateEnd: null,
             },
-           
+
             errorMessage: ""
         };
     }
@@ -42,21 +39,24 @@ class Event extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         if (this.state.formData.event === null) {
-            this.setState({errorMessage:"Test"})
+            this.setState({ errorMessage: "Il faut mettre un titre" })
             return;
         }
         if (this.state.formData.dateEnd === null) {
+            this.setState({ errorMessage: "Il faut mettre une date de fin" })
             return;
         }
         if (this.state.formData.dateStart === null) {
+            this.setState({ errorMessage: "Il faut mettre une date de début" })
             return;
         }
         if (moment(this.state.formData.dateStart).isAfter(moment(this.state.formData.dateEnd))) {
+            this.setState({ errorMessage: "Il faut que la date de fin soit après la date de début" })
             return;
         }
         try {
             await API.put(`/entreprises/event/${this.props.entreprise_id}`, this.state.formData);
-            console.log("test");
+            
 
             this.setState({
                 formData: {
@@ -65,7 +65,7 @@ class Event extends Component {
                     dateStart: "",
                     dateEnd: "",
                 },
-                errorMessage:"",
+                errorMessage: "",
             });
 
         }
@@ -119,7 +119,7 @@ class Event extends Component {
                         />
                     </div>
                     <br />
-                    <div class="row">
+                    <div className="row">
                         <Form.Label style={{ color: "#F271D9" }}>Quelle description?</Form.Label>
                         <Form.Control
                             type="text"
@@ -131,13 +131,14 @@ class Event extends Component {
                         />
                     </div>
                     <br />
-                    <div class="row">
+                    <div className="row">
                         <Button variant="flat4" type="submit">
                             Envoyer
                         </Button>
 
                     </div>
-                    <p>{this.state.errorMessage}</p>
+                    <br />
+                    <p style={{ color: "#F271D9", fontSize: "80%" }} >{this.state.errorMessage}</p>
 
                     <br />
                 </Form>

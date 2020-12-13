@@ -1,22 +1,18 @@
 import React, { Component } from "react";
-//import { Doughnut } from "react-chartjs-2";
 import DoughnuttGain from "./components/Graphiques/DoughnuttGain.jsx";
 import DoughnuttDep from "./components/Graphiques/DoughnuttDep.jsx";
 
 import Linee from "./components/Graphiques/Linee.jsx";
 import Graph from "./components/TodoList/Graph";
-import DayPicker from "react-day-picker";
+
 import Commentaire from "./components/Commentaire/Commentaire.jsx";
-import Parameter from "./components/Parameter/Parameter.jsx";
-import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
-import Calend from "./components/Calendrier/calendrier.jsx";
+
 import Agenda from "./components/Agenda/Agenda";
 
 import MapChart from "./components/Map/MapChart.js";
 
 import "./Dashboard.css";
-import "react-day-picker/lib/style.css";
+
 
 
 //on a une etreprise en user
@@ -34,176 +30,176 @@ class Dashboard extends Component {
     this.setState({ page: 1 });
   }
 
-  
+
   render() {
     return (
-      <div class="contain">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-8">
-          <div class="row">
-            <div class="App-headerMilieu">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-10">
-                  <titre>Chiffre d'Affaire</titre>
+      <div className="contain">
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-8">
+            <div className="row">
+              <div className="App-headerMilieu">
+                <div className="row">
+                  <div className="col-sm-1"></div>
+                  <div className="col-sm-10">
+                    <div className="titre">Chiffre d'Affaire</div>
+                  </div>
+                  <div className="col-sm-1"></div>
                 </div>
-                <div class="col-sm-1"></div>
+                <div className="row">
+                  <Linee entreprise={this.props.entreprise} />
+                </div>
+                <br></br>
               </div>
-              <div class="row">
-                <Linee entreprise={this.props.entreprise} />
-              </div>
-              <br></br>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="row">
-                <div class="App-headerMilieu">
-                  <div class="row">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10">
-                      <titre>Gains</titre>
+            <div className="row">
+              <div className="col-sm-6">
+                <div className="row">
+                  <div className="App-headerMilieu">
+                    <div className="row">
+                      <div className="col-sm-1"></div>
+                      <div className="col-sm-10">
+                        <div className="titre">Gains</div>
+                      </div>
+                      <div className="col-sm-1"></div>
                     </div>
-                    <div class="col-sm-1"></div>
-                  </div>
 
-                  <div class="row">
-                    <DoughnuttGain gain={this.props.entreprise.donut.gain} entreprise={this.props.entreprise}/>
-    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="row">
-                <div class="App-headerMilieu">
-                  <div class="row">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10">
-                      <titre>Dépenses</titre>
+                    <div className="row">
+                      <DoughnuttGain gain={this.props.entreprise.donut.gain} entreprise={this.props.entreprise} />
                     </div>
-                    <div class="col-sm-1"></div>
                   </div>
-                  <div class="row">
-                    <DoughnuttDep dep={this.props.entreprise.donut.dep} entreprise={this.props.entreprise}/>
-    </div>
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="row">
+                  <div className="App-headerMilieu">
+                    <div className="row">
+                      <div className="col-sm-1"></div>
+                      <div className="col-sm-10">
+                        <div className="titre">Dépenses</div>
+                      </div>
+                      <div className="col-sm-1"></div>
+                    </div>
+                    <div className="row">
+                      <DoughnuttDep dep={this.props.entreprise.donut.dep} entreprise={this.props.entreprise} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="App-headerMilieu">
+                  <div className="row">
+                    <div className="col-sm-1"></div>
+                    <div className="col-sm-10">
+                      <div className="titre">Commentaires</div>
+                    </div>
+                    <div className="col-sm-1"></div>
+                  </div>
+
+                  <div className="row">
+                    <Commentaire entreprise={this.props.entreprise} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 visible-lg-* hidden-md hidden-sm hidden-xs " >
+            <div className="row">
+              <div className="App-headerMilieu">
+                <div className="row">
+                  <div className="col-sm-1"></div>
+                  <div className="col-sm-10">
+                    <div className="titre">Emploi du temps</div>
+                  </div>
+                  <div className="col-sm-1"></div>
+                </div>
+                <div className="row">
+                  <Agenda entreprise={this.props.entreprise} />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="App-headerMilieu">
+                <div className="row">
+                  <div className="col-sm-1"></div>
+                  <div className="col-sm-10">
+                    <div className="titre">À Faire</div>
+                  </div>
+                  <div className="col-sm-1"></div>
+                </div>
+                <div className="row">
+                  <Graph entreprise={this.props.entreprise} />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="App-headerMilieu">
+                <div className="row">
+                  <div className="col-sm-3"></div>
+                  <div className="col-sm-7">
+                    <div className="titre">Map</div>
+                  </div>
+                </div>
+                <div className="row">
+                  <MapChart />
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="App-headerMilieu">
-                <div class="row">
-                  <div class="col-sm-1"></div>
-                  <div class="col-sm-10">
-                    <titre>Commentaires</titre>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div className="row">
+          <div className="col-sm-8 hidden-lg col-md-12" >
+            <div className="row">
+              <div className="App-headerMilieu">
+                <div className="row">
+                  <div className="col-sm-1"></div>
+                  <div className="col-sm-10">
+                    <div className="titre">Emploi du temps</div>
                   </div>
-                  <div class="col-sm-1"></div>
+                  <div className="col-sm-1"></div>
                 </div>
+                <div className="row">
+                  <Agenda entreprise={this.props.entreprise} />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="App-headerMilieu">
+                <div className="row">
+                  <div className="col-sm-1"></div>
+                  <div className="col-sm-10">
+                    <div className="titre">À Faire</div>
+                  </div>
+                  <div className="col-sm-1"></div>
+                </div>
+                <div className="row">
+                  <Graph entreprise={this.props.entreprise} />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="App-headerMilieu">
+                <div className="row">
+                  <div className="col-sm-3"></div>
+                  <div className="col-sm-7">
+                    <div className="titre">Map</div>
+                  </div>
+                </div>
+                <div className="row">
+                  <MapChart />
+                </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="row">
-                  <Commentaire entreprise={this.props.entreprise} />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="col-md-4 visible-lg-* hidden-md hidden-sm hidden-xs " > 
-          <div class="row">
-            <div class="App-headerMilieu">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-10">
-                  <titre>Emploi du temps</titre>
-                </div>
-                <div class="col-sm-1"></div>
-              </div>
-              <div class="row">
-                    <Agenda entreprise={this.props.entreprise} />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="App-headerMilieu">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-10">
-                  <titre>À Faire</titre>
-                </div>
-                <div class="col-sm-1"></div>
-              </div>
-              <div class="row">
-                <Graph entreprise={this.props.entreprise} />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="App-headerMilieu">
-              <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-7">
-                  <titre>Map</titre>
-                </div>
-              </div>
-              <div class="row">
-                <MapChart />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      <br/>
-      <br/>
-      <br/>
-      <div class="row">
-      <div class="col-sm-8 hidden-lg col-md-12" > 
-          <div class="row">
-            <div class="App-headerMilieu">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-10">
-                  <titre>Emploi du temps</titre>
-                </div>
-                <div class="col-sm-1"></div>
-              </div>
-              <div class="row">
-                    <Agenda entreprise={this.props.entreprise} />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="App-headerMilieu">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-10">
-                  <titre>À Faire</titre>
-                </div>
-                <div class="col-sm-1"></div>
-              </div>
-              <div class="row">
-                <Graph entreprise={this.props.entreprise} />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="App-headerMilieu">
-              <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-7">
-                  <titre>Map</titre>
-                </div>
-              </div>
-              <div class="row">
-                <MapChart />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
       </div>
     );
   }

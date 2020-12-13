@@ -3,18 +3,18 @@ import { Line } from "react-chartjs-2";
 
 
 class Linee extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = { benef : this.props.entreprise.benef };
-        
-    }
-    render() {
-      var datas = {
+  constructor(props) {
+    super(props);
+
+    this.state = { benef: this.props.entreprise.benef };
+
+  }
+  render() {
+    var datas = {
       labels: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"],
 
 
-      
+
       datasets: [
         {
           fill: false,
@@ -41,11 +41,11 @@ class Linee extends Component {
         },
       ],
     };
-        return (
-            <Line data={datas} />
-            
-        )
-    }
+    return (
+      <Line data={datas} />
+
+    )
+  }
 }
 
 export default Linee;

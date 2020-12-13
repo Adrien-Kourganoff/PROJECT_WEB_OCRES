@@ -2,17 +2,12 @@ import React, { Component, Fragment } from "react";
 import "./Parameter.css";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-// import FormControl from 'react-bootstrap/FormControl'
-// import FormCheck from 'react-bootstrap/FormCheck'
-// import FormFile from 'react-bootstrap/FormFile'
+
 import { isNaN } from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-//import {API_URL} from "../../config";
+
 import API from "../../api";
 
-import moment from "moment";
-import axios from "axios";
+
 
 class Gain extends Component {
   constructor(props) {
@@ -37,46 +32,57 @@ class Gain extends Component {
         [e.target.name]: e.target.value,
       },
     });
-    
+
   }
   async mySubmitHandlerGain(event) {
     event.preventDefault();
     var typeg = 1;
+    let gaine = parseInt(this.state.formData.gain, 10);
     if (this.state.formData.gain === null) {
-      this.setState({ errorMessage: "Il faut rentrer des valeurs" });
+      this.setState({ errorMessage: "Il faut rentrer un gain" });
       return;
     }
-    console.log("avant switch", this.myRef.current.value)
-        switch (this.myRef.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
-          case "Marchandise":
-            console.log("marchandise")
-               typeg=1;
-               break;
-          case "Immobilier":
-              console.log("Immobilier")
-             typeg=2;
-             
-            break;
-          case "Investissement":
-            typeg=3;
-            break;
-          case "Autres":
-            typeg=4;
-            break;
-          default:
-            typeg=1;
-            break;
+    if (isNaN(gaine)) {
+      this.setState({ errorMessage: "Il faut que le gain soit un nombre" });
+      this.setState({
+        formData: {
+          gain: "",
+          typegain: "",
         }
-    try {
+      });
+      return;
+    }
+    
+    switch (this.myRef.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
+      case "Marchandise":
         
+        typeg = 1;
+        break;
+      case "Immobilier":
+       
+        typeg = 2;
+
+        break;
+      case "Investissement":
+        typeg = 3;
+        break;
+      case "Autres":
+        typeg = 4;
+        break;
+      default:
+        typeg = 1;
+        break;
+    }
+    try {
+
       await API.put(
         `/entreprises/gain/${this.props.entreprise_id}/${typeg}`,
         this.state.formData
       );
       this.setState({
         formData: {
-            gain: "",
-            typegain: "",
+          gain: "",
+          typegain: "",
         },
         errorMessage: "",
       });
@@ -97,15 +103,15 @@ class Gain extends Component {
         </div>
         <br />
         <Form onSubmit={this.mySubmitHandlerGain}>
-          <div class="row">
+          <div className="row">
             <Form.Label style={{ color: "#795EFF" }}>Quel type? </Form.Label>
             <Form.Control
-            type="text"
+              type="text"
               as="select"
               size="lg"
               name="typegain"
               value={this.state.formData.typegain}
-              ref = {this.myRef}
+              ref={this.myRef}
               onChange={this.handleGainChange}
             >
               <option value="Marchandise">Marchandise</option>
@@ -115,7 +121,7 @@ class Gain extends Component {
             </Form.Control>
           </div>
           <br />
-          <div class="row">
+          <div className="row">
             <Form.Label style={{ color: "#795EFF" }}>Combien?</Form.Label>
             <Form.Control
               type="text"
@@ -127,13 +133,14 @@ class Gain extends Component {
             />
           </div>
           <br />
-          <div class="row">
+          <div className="row">
             <Button variant="flat2" type="submit">
               Envoyer
             </Button>
           </div>
 
           <br />
+          <p style={{ color: "#795EFF", fontSize: "80%" }}>{this.state.errorMessage}</p>
         </Form>
 
         <br></br>

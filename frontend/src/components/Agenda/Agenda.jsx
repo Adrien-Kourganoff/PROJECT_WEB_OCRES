@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
 import {
     Calendar,
-    DateLocalizer,
     momentLocalizer,
-    globalizeLocalizer,
-    move,
-    Views,
-    Navigate,
-    components,
 } from 'react-big-calendar';
 import moment from 'moment';
-import API from '../../api';
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-const localizer = momentLocalizer(moment);// or globalizeLocalizer
+const localizer = momentLocalizer(moment);
 
 
 class Agenda extends Component {

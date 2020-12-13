@@ -9,7 +9,7 @@ class Graph extends Component {
     super(props);
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
-    //this.handleInput = this.handleInput.bind(this);
+
     this.state = {
       items: this.props.entreprise.items,
       currentItem: {
@@ -22,17 +22,17 @@ class Graph extends Component {
   async deleteItem(item) {
 
     try {
-      console.log("item current todoitem",item)
+      
       await API.delete(`/entreprises/task/delete/${this.props.entreprise._id}/${item.key}/${item.text}`);
       const itemsEntreprise = await API.get(`/entreprises/${this.props.entreprise._id}`);
-      console.log("itemsEntreprise", itemsEntreprise.data.entreprise.items)
+      
       this.setState({
         items: itemsEntreprise.data.entreprise.items
       })
-    }catch (error) {
+    } catch (error) {
       console.log(error);
-      }
     }
+  }
 
   handleInput = (e) => {
     const itemText = e.target.value;
@@ -49,9 +49,9 @@ class Graph extends Component {
         const items = [...this.state.items, newItem];
         await API.put(`/entreprises/task/add/${this.props.entreprise._id}`, newItem);
         this.setState({
-            items: items,
-            currentItem: { text: '', key: '' },
-          })
+          items: items,
+          currentItem: { text: '', key: '' },
+        })
 
       }
     } catch (error) {
@@ -59,17 +59,9 @@ class Graph extends Component {
     }
   }
   render() {
-    {/*this.state.items = this.props.entreprise.items.map(function (item){
-        return {
-            currentItem: {
-                text: item.text,
-                key:item.key,
-              }
-        }
-    });*/}
     return (
       <div className="App">
-        <div class="row">
+        <div className="row">
           <Graphi
             addItem={this.addItem}
             inputElement={this.inputElement}
@@ -77,7 +69,7 @@ class Graph extends Component {
             currentItem={this.state.currentItem}
           />
         </div>
-        <div class="row">
+        <div className="row">
           <TodoItems entries={this.state.items} deleteItem={this.deleteItem} id={this.props.entreprise._id} />
         </div>
       </div>

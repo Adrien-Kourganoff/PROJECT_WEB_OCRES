@@ -271,12 +271,10 @@ client.connect(err => {
         },
       ];
   
-  // perform actions on the collection object
   
   client.db("entrepriseDb").collection("entreprises").remove({})
   client.db("entrepriseDb").collection("entreprises").insertMany(entreprise, function(res) {
     if (err) throw err;
-    //console.log("Number of documents inserted: " + res.insertedCount);
     client.close();
 
 });

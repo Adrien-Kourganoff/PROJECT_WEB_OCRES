@@ -2,12 +2,9 @@ import React, { Component, Fragment } from "react";
 import "./Parameter.css";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-
-import TextField from "@material-ui/core/TextField";
-//import {API_URL} from "../../config";
 import API from "../../api";
 
-import moment from "moment";
+
 
 class Com extends Component {
   constructor(props) {
@@ -35,29 +32,29 @@ class Com extends Component {
 
     e.preventDefault();
     if (this.state.formData.title === null) {
-      this.setState({ errorMessage: "Il faut un texte" });
+      this.setState({ errorMessage: "Il faut un pseudo" });
       return;
     }
     if (this.state.formData.text === null) {
-      this.setState({ errorMessage: "Il faut un texte" });
+      this.setState({ errorMessage: "Il faut un commentaire" });
       return;
     }
 
     try {
-      await API.put(`/entreprises/commentaire/${this.props.entreprise_id}`,this.state.formData);
-      console.log("test");
+      await API.put(`/entreprises/commentaire/${this.props.entreprise_id}`, this.state.formData);
+      
       this.setState({
         formData: {
           title: "",
           text: "",
         },
         errorMessage: "",
-        
+
       });
     } catch (error) {
       console.log(error);
     }
-    
+
   }
 
   render() {
@@ -102,9 +99,12 @@ class Com extends Component {
             Envoyer
           </Button>
           <br />
+          <br />
+
+          <p style={{ color: "#8CA3D7", fontSize: "80%" }}>{this.state.errorMessage}</p>
         </Form>
 
-        <br></br>
+        <br />
       </Fragment>
     );
   }

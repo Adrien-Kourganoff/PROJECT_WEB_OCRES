@@ -4,23 +4,23 @@ import Graph from "chart.js";
 class Graphi extends Component {
   render() {
     return (
-      <div className="todoListMain" style={{width:"100%"}}>
+      <div className="todoListMain" style={{ width: "100%" }}>
         <div className="header">
           <form onSubmit={this.props.addItem}>
-            <div class="row">
-              <div class="col-sm-7">
-              <input
-                placeholder="Tâches"
-                ref={this.props.inputElement}
-                value={this.props.currentItem.text}
-                onChange={this.props.handleInput}
-              />
+            <div className="row">
+              <div className="col-sm-7">
+                <input
+                  placeholder="Tâches"
+                  ref={this.props.inputElement}
+                  value={this.props.currentItem.text}
+                  onChange={this.props.handleInput}
+                />
+              </div>
+              <div className="col-sm-5">
+                <button type="submit"> Ajouter </button>
+              </div>
             </div>
-            <div class="col-sm-5">
-              <button type="submit"> Ajouter </button>
-            </div>
-            </div>
-            
+
           </form>
         </div>
       </div>
