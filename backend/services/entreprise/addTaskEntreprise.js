@@ -4,9 +4,8 @@ const addTaskEntreprise = async (req, res) => {
     const idEntreprise = req.params.id;
     
     try {
-        const currentI = {text: req.body.text, key : req.body.key}
       await Entreprise.findOneAndUpdate({ _id: idEntreprise},
-        { $push: { items : { currentItem :  currentI} }});
+        { $push: { items : {text: req.body.text, key : req.body.key} }});
            
         res.status(200).json({ message: "succes"})
   

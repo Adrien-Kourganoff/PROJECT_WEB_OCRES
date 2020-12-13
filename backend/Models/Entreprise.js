@@ -28,10 +28,8 @@ const entreprisechema = mongoose.Schema({
   ],
   items: [
     {
-      currentItem: {
 		  text: String,
 		  key: String,
-		}
     }
 		],
 });

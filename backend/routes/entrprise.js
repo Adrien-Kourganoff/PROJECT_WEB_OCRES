@@ -12,7 +12,7 @@ router.put('/commentaire/:id', addComEntreprise)
 router.put('/task/add/:id', addTaskEntreprise)
 router.put('/gain/:id/:typeg', addGainEntreprise)
 
-router.delete('/task/delete/:id/:key', deleteTaskEntreprise)
+router.delete('/task/delete/:id/:key/:text', deleteTaskEntreprise)
 
 router.get('/:id', async (req, res) => {
   try {

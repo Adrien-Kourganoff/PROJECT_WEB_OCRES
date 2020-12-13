@@ -8,7 +8,7 @@ class Graph extends Component {
   constructor(props) {
 	super(props);
 	this.addItem = this.addItem.bind(this);
-	this.handleInput = this.handleInput.bind(this);
+	//this.handleInput = this.handleInput.bind(this);
     this.state = {
       items: this.props.user.items,
       currentItem: {
@@ -52,14 +52,14 @@ class Graph extends Component {
     }
   }
   render() {
-	const items = this.props.user.items.map(function (item){
+    /*this.state.items = this.props.user.items.map(function (item){
 		return {
 			currentItem: {
-				text: item.currentItem.text,
-				key:item.currentItem.key,
+				text: item.text,
+				key:item.key,
 			  }
 		}
-	});
+	});*/
     return (
       <div className="App">
         <div class="row">
@@ -71,7 +71,7 @@ class Graph extends Component {
           />
         </div>
         <div class="row">
-          <TodoItems entries={items} id={this.props.user._id} />
+          <TodoItems entries={this.state.items} id={this.props.user._id} />
         </div>
       </div>
     );

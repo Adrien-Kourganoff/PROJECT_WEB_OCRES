@@ -10,7 +10,7 @@ class TodoItems extends Component {
 
     try {
       console.log("item current todoitem",item)
-      await API.delete(`/entreprises/task/delete/${this.props.id}/${item.key}`);
+      await API.delete(`/entreprises/task/delete/${this.props.id}/${item.key}/${item.text}`);
     }catch (error) {
       console.log(error);
       }
@@ -19,8 +19,8 @@ class TodoItems extends Component {
   createTasks = item => {
     
     return (
-      <li key={item.currentItem.key} onClick={() => this.deleteItem(item.currentItem)}>
-        {item.currentItem.text}
+      <li key={item.key} onClick={() => this.deleteItem(item)}>
+        {item.text}
       </li>
     )
   }
