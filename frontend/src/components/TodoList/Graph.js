@@ -9,7 +9,6 @@ class Graph extends Component {
 	super(props);
 	this.addItem = this.addItem.bind(this);
 	this.handleInput = this.handleInput.bind(this);
-	this.deleteItem = this.deleteItem.bind(this);
     this.state = {
       items: this.props.user.items,
       currentItem: {
@@ -18,28 +17,16 @@ class Graph extends Component {
       },
     };
   }
-  /*async deleteItem(key) {
 
-    await API.delete(
-      `/entreprises/task/${this.props.user._id}`,
-      this.state.formData
-    );
-    const filteredItems = this.state.items.filter((item) => {
-      return item.key !== key;
-    });
-    this.setState({
-      items: filteredItems,
-    });
-  }
-*/
-deleteItem = key => {
+
+/*deleteItem = key => {
 	const filteredItems = this.state.items.filter(item => {
 	  return item.key !== key
 	})
 	this.setState({
 	  items: filteredItems,
 	})
-  }
+  }*/
   handleInput = (e) => {
     const itemText = e.target.value;
     const currentItem = { text: itemText, key: Date.now() };
@@ -53,7 +40,7 @@ deleteItem = key => {
       const newItem = this.state.currentItem;
       if (newItem.text !== "") {
 		const items = [...this.state.items, newItem];
-		await API.put(`/entreprises/task/${this.props.user._id}`, newItem);
+		await API.put(`/entreprises/task/add/${this.props.user._id}`, newItem);
         this.setState({
 			items: items,
 			currentItem: { text: '', key: '' },
@@ -84,7 +71,7 @@ deleteItem = key => {
           />
         </div>
         <div class="row">
-          <TodoItems entries={items} deleteItem={this.deleteItem} />
+          <TodoItems entries={items} id={this.props.user._id} />
         </div>
       </div>
     );

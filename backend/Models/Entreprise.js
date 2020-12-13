@@ -5,24 +5,8 @@ const entreprisechema = mongoose.Schema({
   nom: String,
   benef: [Number],
   donut: {
-    gain: {
-      labels: [String],
-
-      datasets: [{
-        data: [Number],
-        backgroundColor: [String],
-        hoverBackgroundColor: [String],
-      }],
-    },
-    dep: {
-      labels: [String],
-
-      datasets: [{
-        data: [Number],
-        backgroundColor: [String],
-        hoverBackgroundColor: [String],
-      }],
-    },
+    gain:  [Number],
+    dep: [Number],
   },
   commentaire: [
     {

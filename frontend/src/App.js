@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 //import { Doughnut } from "react-chartjs-2";
-import Doughnutt from "./components/Graphiques/Doughnutt.jsx";
-import Linee from "./components/Graphiques/Linee.jsx";
-import Graph from "./components/TodoList/Graph";
-import DayPicker from "react-day-picker";
-import Commentaire from "./components/Commentaire/Commentaire.jsx";
+
 import Parameter from "./components/Parameter/Parameter.jsx";
 import Form from "react-bootstrap/Form";
 import Button from "./components/Bouton.jsx";
@@ -39,8 +35,10 @@ class App extends Component {
     super(props);
     this.parameter = this.parameter.bind(this);
     this.dashboard = this.dashboard.bind(this);
+    this.incrementCounter = this.incrementCounter.bind(this);
     this.handleBuisness = this.handleBuisness.bind(this);
-    this.state = { page: 1, buisness: id, entreprise: null, loading: true};
+    
+    this.state = { counter : 0, page: 1, buisness: id, entreprise: null, loading: true};
     
   }
   parameter() {
@@ -54,10 +52,17 @@ class App extends Component {
     window.location.href = "/"+e.target.value;
   }
 
+  incrementCounter() {
+    const { counter } = this.state.counter;
+    this.setState({ counter: counter + 1 });
+  }
   async componentDidMount() {
+    const thisBoundedIncrementer = this.incrementCounter.bind(this);
+    
     const response = await API.get(`/entreprises/${id || 1}`);
     console.log(response);
-    this.setState({ entreprise: response.data.entreprise, loading: false})
+    this.setState({ entreprise: response.data.entreprise, loading: false});
+    setInterval(thisBoundedIncrementer, 1000);
   };
 
 

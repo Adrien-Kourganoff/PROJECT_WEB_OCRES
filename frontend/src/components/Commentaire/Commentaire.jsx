@@ -7,16 +7,7 @@ class Commentaire extends Component {
 
 
     render() {
-        
-        const comElements = this.props.user.commentaire.map(function (comElements) {
-            return {
-                position: "left",
-                comType: "text",
-                title: comElements.title,
-                text: comElements.text,
-                date: new Date(),
-            }
-        });
+
         return (
             <div className="container-commentaire">
                 <div className="message-list-container">
@@ -24,7 +15,7 @@ class Commentaire extends Component {
                         className='message-list'
                         lockable={true}
                         toBottomHeight={'100%'}
-                        dataSource={comElements} />
+                        dataSource={this.props.user.commentaire} />
                 </div>
             </div>
         );

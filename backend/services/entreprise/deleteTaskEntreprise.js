@@ -1,19 +1,19 @@
 const Entreprise = require("../../Models/Entreprise.js");
 
 const deleteTaskEntreprise = async (req, res) => {
-    console.log("req.bodu", req.body)
-    console.log("req.params", req.params.id)
-    const idUser = req.params.id;
+    console.log("req.bodu.key", req.params.key)
     
-    try {
-      await Entreprise.deleteOne({ _id: idUser},
-        { $push: { myEventsList: { title: event, start: dateStart, end: dateEnd, allDay: false} } });
-           
+    const idEntreprise = req.params.id;
+    
+    try { 
+      await Entreprise.findOneAndUpdate({ _id: idEntreprise},{ $pull: { items : { currentItem : { $elemMatch : { key : {$eq : req.params.key}} }}}})
+      
         res.status(200).json({ message: "succes"})
   
     } catch (error) {
         res.status(500).json({ error})
     }
+
 }
 
 module.exports = deleteTaskEntreprise;

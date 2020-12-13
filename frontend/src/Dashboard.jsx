@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 //import { Doughnut } from "react-chartjs-2";
-import Doughnutt from "./components/Graphiques/Doughnutt.jsx";
+import DoughnuttGain from "./components/Graphiques/DoughnuttGain.jsx";
+import DoughnuttDep from "./components/Graphiques/DoughnuttDep.jsx";
 
 import Linee from "./components/Graphiques/Linee.jsx";
 import Graph from "./components/TodoList/Graph";
@@ -35,7 +36,6 @@ class Dashboard extends Component {
 
   
   render() {
-    console.log("this.props.user.donut.gain", this.props.user.donut.gain)
     return (
       <div class="contain">
       <div class="row">
@@ -69,7 +69,7 @@ class Dashboard extends Component {
                   </div>
 
                   <div class="row">
-                    <Doughnutt user={this.props.user.donut.gain} entreprise={this.props.user}/>
+                    <DoughnuttGain gain={this.props.user.donut.gain} entreprise={this.props.user}/>
     </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@ class Dashboard extends Component {
                     <div class="col-sm-1"></div>
                   </div>
                   <div class="row">
-                    <Doughnutt user={this.props.user.donut.dep} />
+                    <DoughnuttDep dep={this.props.user.donut.dep} entreprise={this.props.user}/>
     </div>
                 </div>
               </div>

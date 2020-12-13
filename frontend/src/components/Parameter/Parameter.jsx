@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Parameter.css";
 import  Event from "./Event";
 import  Com from "./Com";
+import  Gain from "./Gain";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 // import FormControl from 'react-bootstrap/FormControl'
@@ -21,8 +22,7 @@ class parameter extends Component {
       _id : this.props.user._id,
       mois: null,
       benef: null,
-      gain: null,
-      typegain: null,
+
       dep: null,
       typedep: null,
 
@@ -172,52 +172,7 @@ class parameter extends Component {
           </div>
           <div className="row">
             <div className="App-headerMilieu style">
-              <div className="row">
-                <div className="col-sm-1"></div>
-                <div className="col-sm-10">
-                  <titre style={{ fontWeight: "bold" }}>Ajout d'un gain</titre>
-                </div>
-                <div className="col-sm-1"></div>
-              </div>
-              <br />
-              <Form onSubmit={this.mySubmitHandlerGain}>
-                <div class="row">
-                <Form.Label style={{ color: "#795EFF" }} >Quel type? </Form.Label>
-                  <Form.Control
-                    as="select"
-                    size="lg"
-                    value={this.state.typegain}
-                    onChange={this.handleTypeGainChange}
-                  >
-                    <option value="Marchandise">Marchandise</option>
-                    <option value="Immobilier">Immobilier</option>
-                    <option value="Investissement">Investissement</option>
-                    <option value="Autres">Autres</option>
-                  </Form.Control>
-                </div>
-                <br />
-                <div class="row">
-                <Form.Label style={{ color: "#795EFF" }} >Combien?</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="gain en K€"
-                    name="gain"
-                    size="lg"
-                    value={this.state.gain}
-                    onChange={this.handleGainChange}
-                  />
-                </div>
-                <br />
-                <div class="row">
-                  <Button variant="flat2" type="submit">
-                    Envoyer
-                  </Button>
-                </div>
-
-                <br />
-              </Form>
-
-              <br></br>
+            <Gain user={id}/>
             </div>
           </div>
           {/*----------------------------------------------------------dépense*/}

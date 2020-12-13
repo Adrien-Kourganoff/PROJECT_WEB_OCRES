@@ -10,28 +10,8 @@ client.connect(err => {
           benef: [15, 10, 16, 10, 20, 65, 40, 50, 60, 15, 51, 70],
           donut: 
             {
-              gain:
-              {
-                  labels: ["Immobillier", "Marchandise", "Investissement", "Autre"],
-      
-                  datasets: 
-                    [{
-                      data: [300, 50, 100,200],
-                      backgroundColor: ["#FFADCF", "#FFD0D0", "#FFF0CF","#FFFFD6"],
-                      hoverBackgroundColor:  ["#D993B0", "#D9B1B1", "#D9CCB0","#D9D9B6"],
-                    }],
-                },
-              dep: 
-                {
-                  labels:  ["Matières Premières", "Charges Salariés", "Charges", "Autre"],
-      
-                  datasets: 
-                    [{
-                      data: [150, 450, 200, 154],
-                      backgroundColor: ["#CEACCE", "#CFBECF", "#D0E1D1","#CFFFD0"],
-                      hoverBackgroundColor: ["#B79FB7", "#B7ACB7", "#B8C4B9","#B7D9B8"],
-                    }],
-                },
+              gain:[300, 50, 100,200],
+              dep:[150, 450, 200, 154],
             },
           commentaire: [
             {
@@ -159,28 +139,8 @@ client.connect(err => {
           benef: [65, 59, 80, 81, 56, 55, 40, 55, 62, 10, 1, 66],
           donut: 
             {
-              gain:
-              {
-                  labels: ["Immobillier", "Marchandise", "Investissement", "Autre"],
-      
-                  datasets: 
-                    [{
-                      data: [200, 520, 110, 50],
-                      backgroundColor: ["#FFADCF", "#FFD0D0", "#FFF0CF","#FFFFD6"],
-                      hoverBackgroundColor:  ["#D993B0", "#D9B1B1", "#D9CCB0","#D9D9B6"],
-                    }],
-                },
-              dep: 
-                {
-                  labels:  ["Matières Premières", "Charges Salariés", "Charges", "Autre"],
-      
-                  datasets: 
-                    [{
-                      data: [50, 450, 150, 200],
-                      backgroundColor: ["#CEACCE", "#CFBECF", "#D0E1D1","#CFFFD0"],
-                      hoverBackgroundColor: ["#B79FB7", "#B7ACB7", "#B8C4B9","#B7D9B8"],
-                    }],
-                },
+              gain: [200, 520, 110, 50],
+              dep: [50, 450, 150, 200],
             },
           commentaire: [
             {
