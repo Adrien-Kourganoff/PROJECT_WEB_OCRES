@@ -37,12 +37,13 @@ class Gain extends Component {
         [e.target.name]: e.target.value,
       },
     });
+    
   }
   async mySubmitHandlerGain(event) {
     event.preventDefault();
     var typeg = 1;
     if (this.state.formData.gain === null) {
-      this.setState({ errorMessage: "Le Gain n'est pas le bon" });
+      this.setState({ errorMessage: "Il faut rentrer des valeurs" });
       return;
     }
 console.log("avant switch", this.myRef.current.value)

@@ -3,8 +3,8 @@ import "./Parameter.css";
 import  Event from "./Event";
 import  Graphique from "./Graphique";
 import  Gain from "./Gain";
+import  Depense from "./Depense";
 import  Com from "./Com";
-import  Gain from "./Gain";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 // import FormControl from 'react-bootstrap/FormControl'
@@ -132,51 +132,7 @@ class parameter extends Component {
           {/*----------------------------------------------------------dépense*/}
           <div className="row">
             <div className="App-headerMilieu style">
-              <div className="row">
-                <div className="col-sm-1"></div>
-                <div className="col-sm-10">
-                  <titre style={{ fontWeight: "bold" }}>Ajout d'une dépense</titre>
-                </div>
-                <div className="col-sm-1"></div>
-              </div>
-              <br />
-              <Form onSubmit={this.mySubmitHandlerDep}>
-                <div class="row">
-                <Form.Label style={{ color: "#89D761" }} >Quel type?</Form.Label>
-                  <Form.Control
-                    as="select"
-                    size="lg"
-                    value={this.state.typedep}
-                    onChange={this.handleTypeDepChange}
-                  >
-                    <option value="Salaire">Charges employés</option>
-                    <option value="MatierePremiere">Matières Premières</option>
-                    <option value="Charges">Charges</option>
-                    <option value="Autres">Autres</option>
-                  </Form.Control>
-                </div>
-                <br />
-                <div class="row">
-                <Form.Label style={{ color: "#89D761" }} >Combien?</Form.Label>
-                  <Form.Control
-                  
-                    type="text"
-                    placeholder="dépense en K€"
-                    name="dep"
-                    size="lg"
-                    value={this.state.dep}
-                    onChange={this.handleDepChange}
-                  />
-                </div>
-                <br />
-                <div clas="row">
-                  <Button variant="flat3" type="submit">
-                    Envoyer
-                  </Button>
-                </div>
-              </Form>
-
-              <br></br>
+            <Depense user={id}/>
             </div>
           </div>
         </div>
