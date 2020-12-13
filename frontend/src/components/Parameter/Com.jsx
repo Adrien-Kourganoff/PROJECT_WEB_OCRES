@@ -44,7 +44,7 @@ class Com extends Component {
     }
 
     try {
-      await API.put(`/entreprises/commentaire/${this.props.entreprise_id}`,this.state.formData);
+      await API.put(`/entreprises/commentaire/${this.props.entreprise_id}`, this.state.formData);
       console.log("test");
       this.setState({
         formData: {
@@ -52,12 +52,12 @@ class Com extends Component {
           text: "",
         },
         errorMessage: "",
-        
+
       });
     } catch (error) {
       console.log(error);
     }
-    
+
   }
 
   render() {
@@ -104,7 +104,7 @@ class Com extends Component {
           <br />
           <br />
 
-          <p style={{ color: "#8CA3D7", fontSize: "80%"}}>{this.state.errorMessage}</p>
+          <p style={{ color: "#8CA3D7", fontSize: "80%" }}>{this.state.errorMessage}</p>
         </Form>
 
         <br />

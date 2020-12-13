@@ -7,33 +7,33 @@ const addDepEntreprise = async (req, res) => {
   const idEntreprise = req.params.id;
   const entreprise = await Entreprise.findOne({ _id: idEntreprise });
   var typeD = parseInt(req.params.typedep);
-  
+
   switch (typeD) {
     case 1:
-        console.log("JE SUIS 1")
+      console.log("JE SUIS 1")
       try {
-          console.log("dep body", req.body.dep);
-          console.log("type param", entreprise.donut.dep);
+        console.log("dep body", req.body.dep);
+        console.log("type param", entreprise.donut.dep);
         await Entreprise.findOneAndUpdate(
-            
+
           { _id: idEntreprise },
           {
-            
+
             $set: {
               donut: {
                 gain: [
-                    entreprise.donut.gain[0],
-                    entreprise.donut.gain[1],
-                    entreprise.donut.gain[2],
-                    entreprise.donut.gain[3],
+                  entreprise.donut.gain[0],
+                  entreprise.donut.gain[1],
+                  entreprise.donut.gain[2],
+                  entreprise.donut.gain[3],
                 ],
 
                 dep: [
-                    req.body.dep,
-                    entreprise.donut.dep[0],
-                    entreprise.donut.dep[1],
-                    entreprise.donut.dep[2],
-                    entreprise.donut.dep[3],
+                  req.body.dep,
+                  entreprise.donut.dep[0],
+                  entreprise.donut.dep[1],
+                  entreprise.donut.dep[2],
+                  entreprise.donut.dep[3],
                 ],
               },
             },
@@ -52,15 +52,15 @@ const addDepEntreprise = async (req, res) => {
             $set: {
               donut: {
                 gain: [
-                entreprise.donut.gain[0],
-                entreprise.donut.gain[1],
-                  
+                  entreprise.donut.gain[0],
+                  entreprise.donut.gain[1],
+
                   entreprise.donut.gain[2],
                   entreprise.donut.gain[3],
                 ],
 
                 dep: [
-                    
+
                   entreprise.donut.dep[0],
                   req.body.dep,
                   entreprise.donut.dep[2],
@@ -82,7 +82,7 @@ const addDepEntreprise = async (req, res) => {
           {
             $set: {
               donut: {
-                gain: [ 
+                gain: [
                   entreprise.donut.gain[0],
                   entreprise.donut.gain[1],
                   entreprise.donut.gain[2],
@@ -112,12 +112,12 @@ const addDepEntreprise = async (req, res) => {
             $set: {
               donut: {
                 gain: [
-                  
+
                   entreprise.donut.gain[0],
                   entreprise.donut.gain[1],
                   entreprise.donut.gain[2],
                   entreprise.donut.gain[3],
-                  
+
                 ],
 
                 dep: [

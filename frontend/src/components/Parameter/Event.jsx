@@ -25,7 +25,7 @@ class Event extends Component {
                 dateStart: null,
                 dateEnd: null,
             },
-           
+
             errorMessage: ""
         };
     }
@@ -41,19 +41,19 @@ class Event extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         if (this.state.formData.event === null) {
-            this.setState({errorMessage:"Il faut mettre un titre"})
+            this.setState({ errorMessage: "Il faut mettre un titre" })
             return;
         }
         if (this.state.formData.dateEnd === null) {
-            this.setState({errorMessage:"Il faut mettre une date de fin"})
+            this.setState({ errorMessage: "Il faut mettre une date de fin" })
             return;
         }
         if (this.state.formData.dateStart === null) {
-            this.setState({errorMessage:"Il faut mettre une date de début"})
+            this.setState({ errorMessage: "Il faut mettre une date de début" })
             return;
         }
         if (moment(this.state.formData.dateStart).isAfter(moment(this.state.formData.dateEnd))) {
-            this.setState({errorMessage:"Il faut que la date de fin soit après la date de début"})
+            this.setState({ errorMessage: "Il faut que la date de fin soit après la date de début" })
             return;
         }
         try {
@@ -67,7 +67,7 @@ class Event extends Component {
                     dateStart: "",
                     dateEnd: "",
                 },
-                errorMessage:"",
+                errorMessage: "",
             });
 
         }
@@ -140,7 +140,7 @@ class Event extends Component {
 
                     </div>
                     <br />
-                    <p style={{ color: "#F271D9", fontSize: "80%"}} >{this.state.errorMessage}</p>
+                    <p style={{ color: "#F271D9", fontSize: "80%" }} >{this.state.errorMessage}</p>
 
                     <br />
                 </Form>

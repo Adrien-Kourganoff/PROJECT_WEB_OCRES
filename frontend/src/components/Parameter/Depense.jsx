@@ -33,7 +33,7 @@ class Depense extends Component {
         [e.target.name]: e.target.value,
       },
     });
-    
+
   }
   async mySubmitHandler(event) {
     event.preventDefault();
@@ -47,45 +47,46 @@ class Depense extends Component {
       this.setState({ errorMessage: "Il faut que la dépense soit un nombre" });
       this.setState({
         formData: {
-            dep: "",
-            typedep: "",
-        }});
+          dep: "",
+          typedep: "",
+        }
+      });
       return;
     }
-    
-console.log("avant switch", this.myRef2.current.value)
-        switch (this.myRef2.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
-          case "Salaire":
-            console.log("Salaire")
-               typedep=1;
-               break;
-          case "MatierePremiere":
-              console.log("MatierePremiere")
-             typedep=2;
-             
-            break;
-          case "Charges":
-            console.log("charges")
-            typedep=3;
-            break;
-          case "Autres":
-            console.log("Autres")
-            typedep=4;
-            break;
-          default:
-            typedep=1;
-            break;
-        }
+
+    console.log("avant switch", this.myRef2.current.value)
+    switch (this.myRef2.current.value) { // on aurait pu mettre dans la BDD typegain en int mais on trouvait ca plus simple pour se reperer de mettre des string
+      case "Salaire":
+        console.log("Salaire")
+        typedep = 1;
+        break;
+      case "MatierePremiere":
+        console.log("MatierePremiere")
+        typedep = 2;
+
+        break;
+      case "Charges":
+        console.log("charges")
+        typedep = 3;
+        break;
+      case "Autres":
+        console.log("Autres")
+        typedep = 4;
+        break;
+      default:
+        typedep = 1;
+        break;
+    }
     try {
-        
+
       await API.put(
         `/entreprises/dep/${this.props.entreprise_id}/${typedep}`,
         this.state.formData
       );
       this.setState({
         formData: {
-            dep: "",
-            typedep: "",
+          dep: "",
+          typedep: "",
         },
         errorMessage: "",
       });
@@ -98,53 +99,53 @@ console.log("avant switch", this.myRef2.current.value)
     return (
       <Fragment>
         <div className="row">
-                <div className="col-sm-1"></div>
-                <div className="col-sm-10">
-                  <titre style={{ fontWeight: "bold" }}>Ajout d'une dépense</titre>
-                </div>
-                <div className="col-sm-1"></div>
-              </div>
-              <br />
-              <Form onSubmit={this.mySubmitHandler}>
-                <div className="row">
-                <Form.Label style={{ color: "#89D761" }} >Quel type?</Form.Label>
-                  <Form.Control
-                    as="select"
-                    size="lg"
-                    value={this.state.formData.typedep}
-                    ref = {this.myRef2}
-                    onChange={this.handleChange}
-                  >
-                    <option value="Salaire">Charges Salariés</option>
-                    <option value="MatierePremiere">Matières Premières</option>
-                    <option value="Charges">Charges</option>
-                    <option value="Autres">Autres</option>
-                  </Form.Control>
-                </div>
-                <br />
-                <div className="row">
-                <Form.Label style={{ color: "#89D761" }} >Combien?</Form.Label>
-                  <Form.Control
-                  
-                    type="text"
-                    placeholder="dépense en K€"
-                    name="dep"
-                    size="lg"
-                    value={this.state.formData.dep}
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <br />
-                <div className="row">
-                  <Button variant="flat3" type="submit">
-                    Envoyer
-                  </Button>
-                </div>
-                <br />
-                <p style={{ color: "#89D761", fontSize: "80%"}}>{this.state.errorMessage}</p>
-              </Form>
+          <div className="col-sm-1"></div>
+          <div className="col-sm-10">
+            <titre style={{ fontWeight: "bold" }}>Ajout d'une dépense</titre>
+          </div>
+          <div className="col-sm-1"></div>
+        </div>
+        <br />
+        <Form onSubmit={this.mySubmitHandler}>
+          <div className="row">
+            <Form.Label style={{ color: "#89D761" }} >Quel type?</Form.Label>
+            <Form.Control
+              as="select"
+              size="lg"
+              value={this.state.formData.typedep}
+              ref={this.myRef2}
+              onChange={this.handleChange}
+            >
+              <option value="Salaire">Charges Salariés</option>
+              <option value="MatierePremiere">Matières Premières</option>
+              <option value="Charges">Charges</option>
+              <option value="Autres">Autres</option>
+            </Form.Control>
+          </div>
+          <br />
+          <div className="row">
+            <Form.Label style={{ color: "#89D761" }} >Combien?</Form.Label>
+            <Form.Control
 
-              <br></br>
+              type="text"
+              placeholder="dépense en K€"
+              name="dep"
+              size="lg"
+              value={this.state.formData.dep}
+              onChange={this.handleChange}
+            />
+          </div>
+          <br />
+          <div className="row">
+            <Button variant="flat3" type="submit">
+              Envoyer
+                  </Button>
+          </div>
+          <br />
+          <p style={{ color: "#89D761", fontSize: "80%" }}>{this.state.errorMessage}</p>
+        </Form>
+
+        <br></br>
       </Fragment>
     );
   }

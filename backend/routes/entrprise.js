@@ -23,9 +23,9 @@ router.delete('/task/delete/:id/:key/:text', deleteTaskEntreprise)
 
 router.get('/:id', async (req, res) => {
   try {
-     const entreprise = await Entreprise.findOne({ _id : req.params.id});
-     console.log("entreprise", entreprise)
-     res.status(200).json({ entreprise })
+    const entreprise = await Entreprise.findOne({ _id: req.params.id });
+    console.log("entreprise", entreprise)
+    res.status(200).json({ entreprise })
   } catch (err) {
     res.status(500).json({ error: err })
   }

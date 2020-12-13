@@ -5,7 +5,7 @@ const entreprisechema = mongoose.Schema({
   nom: String,
   benef: [Number],
   donut: {
-    gain:  [Number],
+    gain: [Number],
     dep: [Number],
   },
   commentaire: [
@@ -28,10 +28,10 @@ const entreprisechema = mongoose.Schema({
   ],
   items: [
     {
-		  text: String,
-		  key: String,
+      text: String,
+      key: String,
     }
-		],
+  ],
 });
 
 const Entreprise = mongoose.model("entreprise", entreprisechema);

@@ -22,17 +22,17 @@ class Graph extends Component {
   async deleteItem(item) {
 
     try {
-      console.log("item current todoitem",item)
+      console.log("item current todoitem", item)
       await API.delete(`/entreprises/task/delete/${this.props.entreprise._id}/${item.key}/${item.text}`);
       const itemsEntreprise = await API.get(`/entreprises/${this.props.entreprise._id}`);
       console.log("itemsEntreprise", itemsEntreprise.data.entreprise.items)
       this.setState({
         items: itemsEntreprise.data.entreprise.items
       })
-    }catch (error) {
+    } catch (error) {
       console.log(error);
-      }
     }
+  }
 
   handleInput = (e) => {
     const itemText = e.target.value;
@@ -49,9 +49,9 @@ class Graph extends Component {
         const items = [...this.state.items, newItem];
         await API.put(`/entreprises/task/add/${this.props.entreprise._id}`, newItem);
         this.setState({
-            items: items,
-            currentItem: { text: '', key: '' },
-          })
+          items: items,
+          currentItem: { text: '', key: '' },
+        })
 
       }
     } catch (error) {

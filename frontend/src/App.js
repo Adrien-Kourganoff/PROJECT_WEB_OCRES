@@ -36,9 +36,9 @@ class App extends Component {
     this.dashboard = this.dashboard.bind(this);
     this.incrementCounter = this.incrementCounter.bind(this);
     this.handleBuisness = this.handleBuisness.bind(this);
-    
-    this.state = { counter : 0, page: 1, buisness: id, entreprise: null, loading: true};
-    
+
+    this.state = { counter: 0, page: 1, buisness: id, entreprise: null, loading: true };
+
   }
   parameter() {
     this.setState({ page: 2 });
@@ -48,24 +48,24 @@ class App extends Component {
     this.setState({ page: 1 });
   }
   handleBuisness(e) {
-    window.location.href = "/"+e.target.value;
+    window.location.href = "/" + e.target.value;
   }
 
   async incrementCounter() {
     const { counter } = this.state.counter;
     const response = await API.get(`/entreprises/${id || 1}`);
-    this.setState({entreprise: response.data.entreprise, counter: counter + 1 });
+    this.setState({ entreprise: response.data.entreprise, counter: counter + 1 });
 
   }
   async componentDidMount() {
     const thisBoundedIncrementer = this.incrementCounter.bind(this);
-    
+
     const response = await API.get(`/entreprises/${id || 1}`);
     //console.log(response);
-    this.setState({ entreprise: response.data.entreprise, loading: false});
+    this.setState({ entreprise: response.data.entreprise, loading: false });
     setInterval(thisBoundedIncrementer, 1000);
-    
-    
+
+
   };
 
 
@@ -81,7 +81,7 @@ class App extends Component {
                   src={Logo1}
                   style={{ margin: "auto", maxWidth: "75%" }}
                 ></img>
-                
+
               </div>
               <br />
               <br />
@@ -89,14 +89,14 @@ class App extends Component {
                 <div className="choixEntre">
                   <div className="col-sm-12">
                     <div className="row">
-                    
+
                       <Form.Control as="select" size="lg" value={this.state.buisness} onChange={this.handleBuisness} >
                         <option value="1">Mathilde</option>
                         <option value="2">Jade</option>
                       </Form.Control>
                     </div>
-                    
-                    
+
+
                   </div>
                 </div>
               </div>
@@ -110,10 +110,10 @@ class App extends Component {
                     style={{ marginTop: "40%", cursor: "pointer" }}
                   >
                     <div className="col-sm-2">
-                      <img  src={DashA}></img>
+                      <img src={DashA}></img>
                     </div>
                     <div className="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
-                      
+
                       <a style={{ color: "#FDE1DE", fontSize: "125%" }}>
                         Mon DashBoard
                       </a>
@@ -126,7 +126,7 @@ class App extends Component {
                     style={{ marginTop: "10%", cursor: "pointer" }}
                   >
                     <div className="col-sm-2">
-                      <img  src={Param}></img>
+                      <img src={Param}></img>
                     </div>
                     <div className="col-sm-9 visible-lg-* hidden-md hidden-sm hidden-xs">
                       <a style={{ fontSize: "125%" }}> Mes Paramètres</a>
@@ -181,9 +181,9 @@ class App extends Component {
               <div className="col-sm-10">
                 <div className="row">
 
-                    <div className="page2" style={{width:"100%"}}>
+                  <div className="page2" style={{ width: "100%" }}>
 
-                      <Parameter entreprise={this.state.entreprise}/>
+                    <Parameter entreprise={this.state.entreprise} />
 
                   </div>
                 </div>

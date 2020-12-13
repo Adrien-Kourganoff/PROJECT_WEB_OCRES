@@ -7,12 +7,12 @@ const addGainEntreprise = async (req, res) => {
   const idEntreprise = req.params.id;
   const entreprise = await Entreprise.findOne({ _id: idEntreprise });
   var typeG = parseInt(req.params.typeg);
-  
+
   switch (typeG) {
     case 1:
       try {
-          console.log("gain body", req.body.gain);
-          console.log("type param", entreprise.donut.gain);
+        console.log("gain body", req.body.gain);
+        console.log("type param", entreprise.donut.gain);
         await Entreprise.findOneAndUpdate(
           { _id: idEntreprise },
           {
@@ -48,7 +48,7 @@ const addGainEntreprise = async (req, res) => {
             $set: {
               donut: {
                 gain: [
-                entreprise.donut.gain[0],
+                  entreprise.donut.gain[0],
                   req.body.gain,
                   entreprise.donut.gain[2],
                   entreprise.donut.gain[3],
@@ -76,7 +76,7 @@ const addGainEntreprise = async (req, res) => {
           {
             $set: {
               donut: {
-                gain: [ 
+                gain: [
                   entreprise.donut.gain[0],
                   entreprise.donut.gain[1],
                   req.body.gain,
@@ -106,7 +106,7 @@ const addGainEntreprise = async (req, res) => {
             $set: {
               donut: {
                 gain: [
-                  
+
                   entreprise.donut.gain[0],
                   entreprise.donut.gain[1],
                   entreprise.donut.gain[2],
