@@ -63,10 +63,16 @@ npm install react-playlist-player
 npm install react-router-dom
 
 Make sure you installed all theses librairies.
-After the installation, type "npm start" in the terminal.
+
 
 ### PLAYER
 npm install react-player
+
+
+
+After the installation, type "npm start" in the terminal.
+
+
 
 ### Struggles
 
