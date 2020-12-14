@@ -9,6 +9,7 @@ https://www.figma.com/file/JO5KLA3Tad7fQrgSAsAQfk/Projet-WEB?node-id=7%3A7
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -64,13 +65,21 @@ npm install react-router-dom
 
 Make sure you installed all theses librairies.
 
-
 ### PLAYER
 npm install react-player
 
 
-
 After the installation, type "npm start" in the terminal.
+
+# To Open the server
+
+
+`npm install express cors mongoose dotenv`
+
+`npm install -g nodemon `
+
+`nodemon server`
+
 
 
 
