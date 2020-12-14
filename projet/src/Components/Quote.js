@@ -101,7 +101,7 @@ useEffect(
             <Arrows nextQuote={nextQuote}
                     prevQuote={prevQuote} />
           </div>
-          <Dots dotQty={quoteD} 
+          <Dots dotQty={quoteD}  // variables pour garder la quote actuelles
                 current={current}
                 dotPicksQuote={dotPicksQuote} />
       
@@ -130,11 +130,11 @@ useEffect(
       )
     }
     
-    function Dots({dotQty, current, dotPicksQuote}) {
+    function Dots({dotQty, current, dotPicksQuote}) { // prend en élément les variables qui gardent une trace des citations actuelles//
       return (
         <div className="dot-container">
           {
-            dotQty.map((dot, i) => {
+            dotQty.map((dot, i) => {    //Parcourir le tableau pour garder afficher la citation en fonction de l'id que l'on souhaite
               return <span id={i} className={current === i ? "dot active" : "dot"}
                             onClick={dotPicksQuote}></span>
             })

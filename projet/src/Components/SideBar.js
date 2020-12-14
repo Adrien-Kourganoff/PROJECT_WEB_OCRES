@@ -41,7 +41,7 @@ class SideBar extends React.Component{
       
     }}
 
-    style={{ height: '1300px' }}
+    style={{ height: '3000px' }}
 >
 
     <SideNav.Toggle />

@@ -8,14 +8,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter,Route} from 'react-router-dom';
 import { Grid } from 'grommet';
 
+
+
 class  App extends Component {
   render (){
     return (
       <BrowserRouter>
+      <div className="Page">
       <Menu/>
       <Route path="/Accueil" component={Accueil}/>
       <Route path="/Admin" component={Admin}/>
-
+    
+      
+      </div>
       </BrowserRouter>
     );
   }

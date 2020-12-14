@@ -20,7 +20,7 @@ import {faTrash,faHome,faUser,faMusic,faHeadphones} from '@fortawesome/free-soli
 import { Grid } from '@material-ui/core';
 import SideBar from './SideBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Son from './Son';
 
 <link
   rel="stylesheet"
@@ -38,7 +38,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Accueil =() => {
     return (
-    
+    <div className="Alpha">
       <Container maxWidth>
         <Grid container spacing={4}>
 
@@ -47,7 +47,6 @@ const Accueil =() => {
         <h4 className="goal">MOTIVATION</h4>
         <Quote/>
         </Grid>
-        
      
         <Grid item lg={5} sm={6} md={5} xs={12}>
         <h4 className="graphique">GRAPHIQUE</h4>
@@ -79,19 +78,27 @@ const Accueil =() => {
         <h4 className="feeling">ASTUCES</h4>
         <Astuce/>
         </Grid>
-        
+        <Grid item lg={5} sm={6} md={5} xs={12}>
+    <Son/>
+    </Grid>
        <Grid item lg={5} sm={6} md={5} xs={12}>
         <h4 className="goal">GOAL OF THE DAY</h4>
         <ToDoList/>
+       
+    
       </Grid>
 
       
 
         <Grid item lg={5} sm={6} md={5} xs={12}></Grid>
       <Audio/>
+
   
   </Grid>
+
+ 
   </Container>
+  </div>
 
       
     )

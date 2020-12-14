@@ -7,7 +7,7 @@ import Audio from './Audio';
 
 export default{
 
-    title: 'Acceuil',
+    title: 'Audio',
     component: Audio,
     argTypes:{
         variantcolor :{control : 'text'}
@@ -15,8 +15,8 @@ export default{
 }
 
  const aud = args => <Audio {...args}/> 
- export const acceuil = aud.bind({})
- acceuil.args={
+ export const audio = aud.bind({})
+ audio.args={
      variantcolor : 'purple',
      label :'audio'
  }
