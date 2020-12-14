@@ -54,17 +54,19 @@ npm i @bit/recharts.recharts.responsive-container
 
 npm install react-bootstrap bootstrap
 
-### Audio 
+### AUDIO
 
 npm install react-playlist-player
 
-### Routes
+### ROUTES
 
 npm install react-router-dom
 
 Make sure you installed all theses librairies.
 After the installation, type "npm start" in the terminal.
 
+### PLAYER
+npm install react-player
 
 ### Struggles
 
