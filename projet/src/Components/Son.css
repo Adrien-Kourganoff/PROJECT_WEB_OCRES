@@ -1,0 +1,21 @@
+.addnew {
+    margin: 1em 0 0.5em 0;
+      font-weight: 100;
+      text-transform: uppercase;
+      color:indigo;
+      font-style:bold;
+    font-family:  'Hoefler Text';
+      font-size: 30px;
+    line-height: 54px;
+      letter-spacing: .2em;
+      line-height: 1.1em;
+      margin:1;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+      text-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+  }
+
+.card {
+    width:300px;
+}

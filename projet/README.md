@@ -81,7 +81,13 @@ After the installation, type "npm start" in the terminal.
 `nodemon server`
 
 
+### LIENS POUR RECEVOIR LA DATABASE :
 
+## Lien MongoRestore :
+ mongorestore --uri mongodb+srv://Cyril:root@cluster0.zwbhg.mongodb.net
+
+## Lien MongoDump :
+lien : mongodump --uri mongodb+srv://Cyril:root@cluster0.zwbhg.mongodb.net/test
 
 ### Struggles
 

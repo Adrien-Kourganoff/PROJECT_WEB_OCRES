@@ -1,22 +1,21 @@
 import {storiesOf}  from '@storybook/react'
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import Audio from './Audio';
-
+import Son from './Son';
 
 
 export default{
 
-    title: 'Audio',
-    component: Audio,
+    title: 'Son',
+    component: Son,
     argTypes:{
         variantcolor :{control : 'text'}
     }
 }
 
- const aud = args => <Audio {...args}/> 
- export const audio = aud.bind({})
- audio.args={
+ const so = args => <Son {...args}/> 
+ export const son = so.bind({})
+ son.args={
      variantcolor : 'purple',
-     label :'audio'
+     label :'accueil'
  }

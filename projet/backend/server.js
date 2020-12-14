@@ -19,11 +19,14 @@ const astucesRouter = require('./routes/astuces');
 const GoalRouter = require('./routes/goal');
 const BatonRouter = require('./routes/baton');
 const MotivationRouter = require('./routes/motivation');
+const sonRouter = require('./routes/son');
 
+app.use('/son',sonRouter);
 app.use('/astuces',astucesRouter);
 app.use('/goal',GoalRouter);
 app.use('/baton',BatonRouter);
 app.use('/motivation',MotivationRouter);
+
 
 app.listen(port, () => {
     console.log("Server is running on port: ${port}");

@@ -14,8 +14,8 @@ export default{
 }
 
  const acc = args => <Accueil {...args}/> 
- export const acceuil = acc.bind({})
- acceuil.args={
+ export const accueil = acc.bind({})
+ accueil.args={
      color : 'purple',
      label :'accueil'
  }

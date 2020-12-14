@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import { Component } from "react";
-
+import Son from './Son.js';
 import {XAxis, YAxis ,CartesianGrid, Tooltip, Legend,ResponsiveContainer} from 'recharts';
 import {Card} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
@@ -13,7 +13,6 @@ import Astuce from './Astuce';
 import './Astuce.css';
 import ToDoList from './ToDoList';
 import Digital from './Digital';
-import Audio from './Audio';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faTrash,faHome,faUser,faMusic,faHeadphones} from '@fortawesome/free-solid-svg-icons';
@@ -70,9 +69,9 @@ const Accueil =() => {
 
       
 
-        <Grid item lg={5} sm={6} md={5} xs={12}></Grid>
-      <Audio/>
-  
+        <Grid item lg={5} sm={6} md={5} xs={12}>
+        <Son/>
+        </Grid>
   </Grid>
   </Container>
   </div>

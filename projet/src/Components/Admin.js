@@ -17,10 +17,6 @@ const Admin = () => {
     return (
         <main>
             <Container>
-            <div class="form-group">
-            <label for="exampleFormControlTextarea1">Ajout et suppression de musiques</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
              
   <AjoutMotivation/>
   <SupprimerMotivation/>
