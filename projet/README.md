@@ -1,36 +1,41 @@
 Cyril BOPOUNGO      cyril.bopoungo@edu.ece.fr      TD2A
 Joanélia RAPSODE    joanelia.rapsode@edu.ece.fr    TD2B
 
-## Link to Figma :
+## Lien vers Figma :
 
 https://www.figma.com/file/JO5KLA3Tad7fQrgSAsAQfk/Projet-WEB?node-id=7%3A7
 
-# Getting Started with Create React App
+# Pour commencer, créez une application React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet a été lancé avec [Create React App] (https://github.com/facebook/create-react-app).
 
+`npx create-react-app mon-app`
+`cd mon-app`
+`npm start`
 
-## Available Scripts
+## Scripts disponibles
 
-In the project directory, you can run:
+Dans le répertoire du projet, vous pouvez courir :
 
-### `npm start`
+# `npm start`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Exécute l'application en mode développement.
+Ouvrez [http://localhost:3000](http://localhost:3000) pour le visualiser dans le navigateur.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+La page se rechargera si vous effectuez des modifications.\
+Vous verrez également les éventuelles erreurs de peluche dans la console.
 
-###  `npx sb init`
-To install storybook.
+# `npx sb init`
+Pour installer le storybook.
 
-### `npm run storybook`
-To load the storybook page.
-### Before installing the librairies 
+# `npm run storybook``.
+Pour charger la page du storybook.
 
-type "cd projet" in the terminal.
-## INSTALL LIBRARIES
+### Avant d'installer les librairies 
+
+tapez "cd projet" dans le terminal.
+
+## INSTALLER LES BIBLIOTHÈQUES
 
 ### ICONS
 npm i --save @fortawesome/fontawesome-svg-core
@@ -39,7 +44,7 @@ npm install --save @fortawesome/free-solid-svg-icons
 
 npm install --save @fortawesome/react-fontawesome
 
-### FLIP CARD
+### FLIPCARD
 
 npm install react-flipcard
 
@@ -48,6 +53,7 @@ npm install grommet styled-components
 ### CHARTS
 
 npm install recharts
+
 
 ### RESPONSIVE CONTAINERS
 
@@ -63,32 +69,38 @@ npm install react-playlist-player
 
 npm install react-router-dom
 
-Make sure you installed all theses librairies.
+Assurez-vous que vous avez installé toutes ces bibliothèques.
 
 ### PLAYER
 npm install react-player
 
 
-After the installation, type "npm start" in the terminal.
+Après l'installation, tapez "npm start" dans le terminal.
 
-# To Open the server
-
-
-`npm install express cors mongoose dotenv`
-
-`npm install -g nodemon `
-
-`nodemon server`
-
-Local server : http://localhost:5000 
+# Pour ouvrir le serveur
 
 
+`npm install express cors mongoose dotenv``.
+
+npm install -g nodemon
+
+Serveur Nodemon
+
+Serveur local : http://localhost:5000 
 
 
 
-### Struggles
 
-We had difficulties to use Github. We didn't understood well the features (Pull, push, fetch and everything else).
-We couldn't display our widgets on  Storybook. When we tried to, we had many errors on the terminal.
-It was difficult to make this project only through telephone and Discord.
-It was also difficult to manage our time with all the deadlines we had in other classes.
+
+### Difficultés frontend
+
+Nous avons eu des difficultés à utiliser Github. Nous n'avons pas bien compris les fonctionnalités (tirer, pousser, aller chercher et tout le reste).
+Nous ne pouvions pas afficher nos widgets sur Storybook. Lorsque nous avons essayé, nous avons eu de nombreuses erreurs sur le terminal.
+Il était difficile de réaliser ce projet uniquement par téléphone et par Discord.
+Il était également difficile de gérer notre temps avec tous les délais que nous avions dans les autres classes et projets.
+
+### Difficultés backend
+
+
+Fisrt, it was a challenge to undertand how MongoDB works, then 
+
