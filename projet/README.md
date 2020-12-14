@@ -84,7 +84,7 @@ Après l'installation, tapez "npm start" dans le terminal.
 
 npm install -g nodemon
 
-Serveur Nodemon
+Nodemon server
 
 Serveur local : http://localhost:5000 
 
@@ -101,6 +101,6 @@ Il était également difficile de gérer notre temps avec tous les délais que n
 
 ### Difficultés backend
 
+Nous avons eu des difficultés à comprendre comment relier la base de donnée MongoDB à l'application React, par ailleurs, même en ayant compris, il s'est avéré difficile d'implémenter un code pour faire le lien entre le backend et le frontend. En effet, nous avons rencontré une difficulté majeure dans l'implémentation du Widget "Audio", le le composant que nous avions choisi ne nous permettait pas d'avoir le contrôle sur les différents paramètres ainsi nous ne pouvions pas effectuer de requête selon différents états (pause, play,suivant,précédent...). Nous avons donc décidé de créer un autre widget en parallèle nous permettant d'afficher une vidéo via un lien et de récupérer cet URL dans la base de données mongodB. Cependant, lors de la mise en commun des fichiers, l'un d'entre nous ne pouvait pas accéder aux données de ce Widget.
 
-Fisrt, it was a challenge to undertand how MongoDB works, then 
 
