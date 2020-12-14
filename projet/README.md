@@ -1,36 +1,41 @@
 Cyril BOPOUNGO      cyril.bopoungo@edu.ece.fr      TD2A
 Joanélia RAPSODE    joanelia.rapsode@edu.ece.fr    TD2B
 
-## Link to Figma :
+## Lien vers Figma :
 
 https://www.figma.com/file/JO5KLA3Tad7fQrgSAsAQfk/Projet-WEB?node-id=7%3A7
 
-# Getting Started with Create React App
+# Pour commencer, créez une application React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet a été lancé avec [Create React App] (https://github.com/facebook/create-react-app).
 
+`npx create-react-app mon-app`
+`cd mon-app`
+`npm start`
 
-## Available Scripts
+## Scripts disponibles
 
-In the project directory, you can run:
+Dans le répertoire du projet, vous pouvez courir :
 
-### `npm start`
+# `npm start`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Exécute l'application en mode développement.
+Ouvrez [http://localhost:3000](http://localhost:3000) pour le visualiser dans le navigateur.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+La page se rechargera si vous effectuez des modifications.\
+Vous verrez également les éventuelles erreurs de peluche dans la console.
 
-###  `npx sb init`
-To install storybook.
+# `npx sb init`
+Pour installer le storybook.
 
-### `npm run storybook`
-To load the storybook page.
-### Before installing the librairies 
+# `npm run storybook``.
+Pour charger la page du storybook.
 
-type "cd projet" in the terminal.
-## INSTALL LIBRARIES
+### Avant d'installer les librairies 
+
+tapez "cd projet" dans le terminal.
+
+## INSTALLER LES BIBLIOTHÈQUES
 
 ### ICONS
 npm i --save @fortawesome/fontawesome-svg-core
@@ -39,7 +44,7 @@ npm install --save @fortawesome/free-solid-svg-icons
 
 npm install --save @fortawesome/react-fontawesome
 
-### FLIP CARD
+### FLIPCARD
 
 npm install react-flipcard
 
@@ -48,6 +53,7 @@ npm install grommet styled-components
 ### CHARTS
 
 npm install recharts
+
 
 ### RESPONSIVE CONTAINERS
 
@@ -63,22 +69,35 @@ npm install react-playlist-player
 
 npm install react-router-dom
 
-Make sure you installed all theses librairies.
+Assurez-vous que vous avez installé toutes ces bibliothèques.
 
 ### PLAYER
 npm install react-player
 
 
-After the installation, type "npm start" in the terminal.
+Après l'installation, tapez "npm start" dans le terminal.
 
-# To Open the server
+# Pour ouvrir le serveur
 
 
-`npm install express cors mongoose dotenv`
+`npm install express cors mongoose dotenv``.
 
-`npm install -g nodemon `
+npm install -g nodemon
 
-`nodemon server`
+Nodemon server
+
+Serveur local : http://localhost:5000 
+
+
+
+
+
+### Difficultés frontend
+
+Nous avons eu des difficultés à utiliser Github. Nous n'avons pas bien compris les fonctionnalités (tirer, pousser, aller chercher et tout le reste).
+Nous ne pouvions pas afficher nos widgets sur Storybook. Lorsque nous avons essayé, nous avons eu de nombreuses erreurs sur le terminal.
+Il était difficile de réaliser ce projet uniquement par téléphone et par Discord.
+Il était également difficile de gérer notre temps avec tous les délais que nous avions dans les autres classes et projets.
 
 
 ### LIENS POUR RECEVOIR LA DATABASE :
@@ -89,9 +108,9 @@ After the installation, type "npm start" in the terminal.
 ## Lien MongoDump :
 lien : mongodump --uri mongodb+srv://Cyril:root@cluster0.zwbhg.mongodb.net/test
 
-### Struggles
+### DIFFICULTES BACKEND !
 
-We had difficulties to use Github. We didn't understood well the features (Pull, push, fetch and everything else).
-We couldn't display our widgets on  Storybook. When we tried to, we had many errors on the terminal.
-It was difficult to make this project only through telephone and Discord.
-It was also difficult to manage our time with all the deadlines we had in other classes.
+Nous avons eu des difficultés à comprendre comment relier la base de donnée MongoDB à l'application React, par ailleurs, même en ayant compris, il s'est avéré difficile d'implémenter un code pour faire le lien entre le backend et le frontend. En effet, nous avons rencontré une difficulté majeure dans l'implémentation du Widget "Audio", le le composant que nous avions choisi ne nous permettait pas d'avoir le contrôle sur les différents paramètres ainsi nous ne pouvions pas effectuer de requête selon différents états (pause, play,suivant,précédent...). Nous avons donc décidé de créer un autre widget en parallèle nous permettant d'afficher une vidéo via un lien et de récupérer cet URL dans la base de données mongodB. Cependant, lors de la mise en commun des fichiers, l'un d'entre nous ne pouvait pas accéder aux données de ce Widget.
+
+
+
