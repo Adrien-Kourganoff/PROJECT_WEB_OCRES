@@ -80,6 +80,9 @@ After the installation, type "npm start" in the terminal.
 
 `nodemon server`
 
+Local server : http://localhost:5000 
+
+
 
 
 
