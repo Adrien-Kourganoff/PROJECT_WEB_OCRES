@@ -1,0 +1,21 @@
+.flipcard
+{
+    background-color: midnightblue;
+    color: black;
+}
+.flip-card-inner
+{
+    color: oldlace;
+    background-color: mediumpurple;
+}
+.flip-card-back
+{
+    background-color: rgba(148, 0, 211, 0.363)
+}
+
+
+@media screen and (max-width: 700px){
+    .Alpha {
+        margin-left:50px;
+    }
+}
