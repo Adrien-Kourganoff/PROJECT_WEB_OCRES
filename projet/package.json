@@ -37,6 +37,7 @@
     "react-flippy": "^0.1.5",
     "react-h5-audio-player": "^3.5.0",
     "react-icons": "^4.1.0",
+    "react-player": "^2.7.0",
     "react-playlist-player": "^1.0.11",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",

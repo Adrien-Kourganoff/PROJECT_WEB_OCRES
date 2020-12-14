@@ -10,6 +10,8 @@ import PropsTypes from 'prop-types';
 import { render } from 'react-dom';
 import Sound from 'react-sound';
 import { Component } from 'react';
+import ReactPlayer from 'react-player'
+import './Son.css';
 
 
 export default class Son extends React.Component
@@ -62,8 +64,9 @@ export default class Son extends React.Component
       }
     
       return (
-        <div>
-          <h3>Add New Musique</h3>
+        <div >
+<div className="card">
+          <h3 className="addnew">Add New Musique</h3>
           <form onSubmit={this.onSubmit}>
             <div className="form-group"> 
               <label>URL </label>
@@ -74,19 +77,13 @@ export default class Son extends React.Component
                   onChange={this.onChangeUsername}
                   />
             </div>
+            
             <div className="form-group">
-              <input type="submit" value="Create User" className="btn btn-primary" />
+              <input type="submit" value="Add Music" className="btn btn-primary" />
             </div>
           </form>
-
-
-
-
-          <button variant="light" onClick={start}>Play</button>
-      <button variant="light" onClick={stop}>Pause</button>
-
-
-
+</div>
+      <ReactPlayer url={this.state.url} playing />
 
         </div>
       )

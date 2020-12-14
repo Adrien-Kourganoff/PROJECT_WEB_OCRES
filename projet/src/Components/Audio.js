@@ -161,7 +161,7 @@ class Audio extends Component {
       }
     }
   
-    
+
     render() {
       const { musicList, index, currentTime, pause } = this.state;
       const currentSong = musicList[index];

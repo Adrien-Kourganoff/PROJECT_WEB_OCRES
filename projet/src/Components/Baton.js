@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Component} from 'react';
 import { BarChart, Bar, XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
 import './Baton.css';
+
 import {Card} from 'react-bootstrap';
 
 const data = [
@@ -41,4 +42,5 @@ class Baton extends React.Component {
   <Baton />,
   document.getElementById('root')
 );*/
+
 export default Baton;

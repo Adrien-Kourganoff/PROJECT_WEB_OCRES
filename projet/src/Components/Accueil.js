@@ -9,6 +9,7 @@ import {Card} from 'react-bootstrap';
 import {Container, Row, Col} from 'react-bootstrap';
 import Baton from './Baton';
 import Quote from'./Quote';
+
 import Astuce from './Astuce';
 import './Astuce.css';
 import ToDoList from './ToDoList';
@@ -17,6 +18,7 @@ import Audio from './Audio';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faTrash,faHome,faUser,faMusic,faHeadphones} from '@fortawesome/free-solid-svg-icons';
+
 import { Grid } from '@material-ui/core';
 import SideBar from './SideBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,8 +38,9 @@ import Son from './Son';
 />
 
 
+
 const Accueil =() => {
-    return (
+  return (
     <div className="Alpha">
       <Container maxWidth>
         <Grid container spacing={4}>
@@ -74,29 +77,27 @@ const Accueil =() => {
         <Digital/>
        </Grid>
       
+     
        <Grid item lg={5} sm={6} md={5} xs={12}>
         <h4 className="feeling">ASTUCES</h4>
         <Astuce/>
         </Grid>
-        <Grid item lg={5} sm={6} md={5} xs={12}>
-    <Son/>
-    </Grid>
+        
        <Grid item lg={5} sm={6} md={5} xs={12}>
         <h4 className="goal">GOAL OF THE DAY</h4>
         <ToDoList/>
-       
-    
       </Grid>
 
       
-
-        <Grid item lg={5} sm={6} md={5} xs={12}></Grid>
-      <Audio/>
-
-  
+      <Grid item lg={5} sm={6} md={5} xs={12}>
+   <Son/>
+    </Grid>
+    
+       
   </Grid>
 
- 
+  
+
   </Container>
   </div>
 
