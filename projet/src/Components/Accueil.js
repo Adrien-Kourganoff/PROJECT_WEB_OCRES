@@ -51,22 +51,6 @@ const Accueil =() => {
         <Grid item lg={5} sm={6} md={5} xs={12}>
         <h4 className="graphique">GRAPHIQUE</h4>
         <Baton/>
-        <form class="form-inline">
-        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Notez votre du jour humeur sur 8</label>
-  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-    <option selected>Choose...</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-  </select>
-  <button type="submit" class="btn btn-primary my-1">Submit</button>
-  </form>
-        
         </Grid>
 
         <Grid item lg={5} sm={6} md={5} xs={12}>

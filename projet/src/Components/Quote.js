@@ -1,6 +1,8 @@
+import Axios from 'axios';
 import React, { useState,useEffect,Component } from 'react';
 import {Card,Button} from 'react-bootstrap';
 import './Quote.css'
+import axios from 'axios';
 
 
 function Quote(){
@@ -64,15 +66,42 @@ id :1
 
 //UTILISATION DES HOOKS
 
-const [quoteD, getQuoteD] = useState(citations);
+const [quoteD, getQuoteD] = useState([]); 
+const [astuce,getAstuce]=useState([]);
 const [current, setCurrent] = useState(0); 
 const [quote, getQuote] = useState(quoteD[current])
 
+const getData = () => {
+  axios.get('http://localhost:5000/motivation/')  //On va chercher les données dans BDD
+          .then (response => {
+            getAstuce(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      }
 
+if(astuce.length>0){                      //On créé un id pour chaque élément de la BDD
+  for(let i = 0; i<astuce.length ; i++){
+    const obj= {
+      ...astuce[i],
+      id:i
+    }
+    quoteD.push(obj);
+  }
+  
+}
+
+useEffect(
+  () => {
+    getData();
+  }
+)
 useEffect(
     () => getQuote(quoteD[current]), 
     [current, quote]
-)
+    )
+
     const nextQuote = () => {
         current === quoteD.length-1 ?
           setCurrent(0)
@@ -89,34 +118,43 @@ useEffect(
       
       const dotPicksQuote = (e) => setCurrent(Number(e.target.id))
       
-      console.log(current)
+     let bool=false;
+     
+     if(quoteD.length>0 && quote!=undefined){
+       bool=true;
+     }
       return (
-
         
         <section>
-            <Card>
-  <Card.Body>
-          <div className="slideshow-container">
-            <Slide quote={quote} />
-            <Arrows nextQuote={nextQuote}
-                    prevQuote={prevQuote} />
-          </div>
-          <Dots dotQty={quoteD} 
-                current={current}
-                dotPicksQuote={dotPicksQuote} />
-      
-     
-  </Card.Body>
-    </Card>
+          {
+            bool && <Card>
+            <Card.Body>
+                <div className="slideshow-container">
+                  <Slide quote={quote}/>
+                  <Arrows nextQuote={nextQuote}
+                          prevQuote={prevQuote} />
+                </div>
+                <Dots dotQty={quoteD} 
+                      current={current}
+                      dotPicksQuote={dotPicksQuote} />
+            
+           
+        </Card.Body>
+          </Card>
+          }
+
         </section>  
+
       )
     }
     
-    function Slide({quote}) {
+    function Slide({quote,quoteD}) {
+      console.log(quote);
+      console.log(quoteD);
       return (
         <div className="mySlides">
-          <q>{quote.quote}</q>
-          <p className="author">  <br /> &mdash;{quote.author}</p>
+          <q>{quote.quote}.</q>
+          <p className="author">  <br /> &mdash;{quote.auteur}</p>
         </div>
       )
     }
@@ -136,7 +174,7 @@ useEffect(
           {
             dotQty.map((dot, i) => {
               return <span id={i} className={current === i ? "dot active" : "dot"}
-                            onClick={dotPicksQuote}></span>
+                      onClick={dotPicksQuote}></span>
             })
           }
         </div>

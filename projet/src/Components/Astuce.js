@@ -2,21 +2,54 @@ import React, { Component } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import {Card} from 'react-bootstrap';
+import axios from 'axios';
 
 
 class Astuce extends React.Component {
   constructor(props){
     super(props);
+    this.CurrentArriere=this.CurrentArriere.bind(this);
+    this.CurrentAvant=this.CurrentAvant.bind(this);
     this.onChangePhrase=this.onChangePhrase.bind(this);
     this.state = {
-      phrase:''
+      phrase:'',
+      Listes:[],
+      i:0
     }
   }
 
   componentDidMount(){
-    this.setState = {
-      phrase :"Le plus important c'est le principal et c'est ça l'essentiel"
+    axios.get('http://localhost:5000/astuces/')
+    .then(response => {
+      this.setState({
+      Listes:response.data.map(element=>element.phrase)
+    })
+    })
+  }
+
+  CurrentAvant(){
+    if(this.state.i==this.state.Listes.length){
+      this.setState({
+        i:0
+      })
+
+    }else{
+      this.setState({
+        i:this.state.i+1
+      })
     }
+    
+  }
+  CurrentArriere(){
+    if(this.state.i ==0){
+      this.setState({
+        i:this.state.Listes.length-1
+      })
+    }else{
+      this.setState({
+        i:this.state.i-1
+      })
+    };
   }
    onChangePhrase(e){
      this.setState({
@@ -46,15 +79,15 @@ class Astuce extends React.Component {
       
    >
       <FrontSide className="flip-card-inner">
-        Cliquez vite pour decouvir une Astuce !!!
+        Cliquez ici
       </FrontSide>
 
       <BackSide className="flip-card-back" >
-        <h4>Astuce pour être heureux</h4>
-        <h5>Savoir lâcher-prise quand il le faut</h5>
-        <p> Le plus grand secret pour le bonheur, c’est d’être bien avec soi. <br />- Bernard Fontenelle </p>
+        <h4>Astuce</h4>
+        <h5>{this.state.Listes[this.state.i]}</h5>
       </BackSide>
     </Flippy>
+    
     </Card.Body>
 </Card>
       );

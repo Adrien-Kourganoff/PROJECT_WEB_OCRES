@@ -4,6 +4,8 @@ import {Component} from 'react';
 import { BarChart, Bar, XAxis, YAxis ,CartesianGrid, Tooltip, Legend} from 'recharts';
 import './Baton.css';
 import {Card} from 'react-bootstrap';
+import axios from 'axios';
+import ModifBaton from './ModifBaton';
 
 const data = [
   {name: 'Lu', happiness: 3,  amt: 24},
@@ -15,14 +17,36 @@ const data = [
   {name: 'Di', happiness: 5,  amt: 21},
 ];
 
-class Baton extends React.Component {
+ class Baton extends React.Component {
+  constructor(props){
+  super(props);
+  this.state = {
+    jour:"",
+    happiness:0,
+    amt:0,
+    semaines:[],
+    semaines2:[]
+  }
+  }
+
+  componentDidMount(){
+    axios.get(`http://localhost:5000/baton/`)  //On va chercher les données dans BDD
+          .then (response =>{
+            console.log(response.data);
+            this.setState({
+              semaines:response.data
+            })
+          })
+  }
+  
+  
+
 	render () {
   	return (
       <Card style={{ width : '500px' }
-      
       } >
       <Card.Body>
-    	<BarChart width={400} height={150} data={data}
+    	<BarChart width={400} height={150} data={this.state.semaines}
             margin={{top: 5, center: 30, left: 20, bottom: 5}}>
        <CartesianGrid strokeDasharray="3 3"/>
        <XAxis dataKey="name"/>
@@ -31,14 +55,11 @@ class Baton extends React.Component {
        <Legend />
        <Bar dataKey="happiness" fill="#9370db" />
       </BarChart>
-      
   </Card.Body>
+  <ModifBaton/>
   </Card>
+  
     );
   }
 }
-/*ReactDOM.render(
-  <Baton />,
-  document.getElementById('root')
-);*/
 export default Baton;
