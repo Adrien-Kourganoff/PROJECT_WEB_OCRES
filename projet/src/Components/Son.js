@@ -49,20 +49,50 @@ export default class Son extends React.Component
         url: ''
       })
     }
-  
-    
-    render() {
 
-      let audio = new Audio('music.mp3');
+
+    //FETCH LA DATA
+  /*
+    state ={
+      url :'',
+      posts:[]
+    }
     
-      const start = () => {
-        audio.play()
-      }
+    componentDidMount = () =>{
+      this.getUrl();
+    };
+
+getUrl = () => {
+    axios.get('/')
+    .then((response)=>{
+      const data = response.data;
+      this.setState({posts:data})
+      console.log("Data has been received");
+  
+  })
+
+  .catch(()=>{
     
-      const stop=()=>{
-        audio.pause()
-      }
-    
+      console.log(" ERROR : Data has not been received");
+  
+    });
+  
+}
+
+
+displayBlogPost = (posts) =>{
+
+  if (!posts.length) return null;
+
+ posts.map((post,index)=>{
+  
+  <div key={index}>
+    {post.url}
+  </div>
+  });
+};*/
+    render() {
+          
       return (
         <div >
 <div className="card">
@@ -82,6 +112,7 @@ export default class Son extends React.Component
               <input type="submit" value="Add Music" className="btn btn-primary" />
             </div>
           </form>
+          
 </div>
       <ReactPlayer url={this.state.url} playing />
 
