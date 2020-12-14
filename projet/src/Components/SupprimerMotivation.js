@@ -14,10 +14,12 @@ const Motivation = props => (
   <div class="card">
     <div class="card-body">
   <tr>
-    <td>{props.motivation.auteur}</td> 
+    <h6>Auteur</h6>
+    <p>{props.motivation.auteur}</p> 
  </tr>
  <tr>
-    <td>{props.motivation.quote}</td> 
+   <h6>Citation</h6>
+    <p>{props.motivation.quote}</p> 
  </tr>
     <td><input type="submit" value="Supprimer Citation" className="btn btn-primary" onClick={() => props.onSubmit(props.motivation._id)}/></td>
 
@@ -42,7 +44,7 @@ class SupprimerMotivation extends React.Component {
           .then(response => {
             if (response.data.length > 0) {
               this.setState({
-                listeMotivation: response.data
+                listeMotivation:response.data
               })
             }
           })
@@ -60,7 +62,6 @@ class SupprimerMotivation extends React.Component {
                 listeMotivation: this.state.listeMotivation.filter(el=>el._id !=id)
               })
             }
-        
       }
       Laliste(){
         return this.state.listeMotivation.map(currentmotivation => {
