@@ -1,6 +1,16 @@
 Cyril BOPOUNGO      cyril.bopoungo@edu.ece.fr      TD2A
 Joanélia RAPSODE    joanelia.rapsode@edu.ece.fr    TD2B
 
+## `Nous avons oublié de le dire au début du readme : Nous avons oublié de remettre le projet dans les deux parties respectives font-end et back-end`
+
+### Le frontend se trouve au niveau de projet
+    ### cd projet
+    
+### Le backend se trouve au niveau de projet backend
+    ### cd projet
+    ### cd backend
+    
+
 ## Lien vers Figma :
 
 https://www.figma.com/file/JO5KLA3Tad7fQrgSAsAQfk/Projet-WEB?node-id=7%3A7
