@@ -1,0 +1,65 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /Users/theoperrier/opt/anaconda3/bin:/Users/theoperrier/opt/anaconda3/condabin:/Applications/MAMP/Library/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.9.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+
+npm manifest: 
+  {
+    "name": "frontend",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "react": "^16.11.0",
+      "react-dom": "^16.11.0",
+      "react-scripts": "3.2.0"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject",
+      "storybook": "start-storybook -p 9009 -s public",
+      "build-storybook": "build-storybook -s public"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    },
+    "devDependencies": {
+      "@storybook/addon-actions": "^5.2.6",
+      "@storybook/addon-links": "^5.2.6",
+      "@storybook/addons": "^5.2.6",
+      "@storybook/react": "^5.2.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
