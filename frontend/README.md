@@ -15,3 +15,7 @@ Inspirez-vous des grands repos open sources qui existent sur github. Les informa
 
 Lien dashboard figma : https://www.figma.com/file/cBtosBQ8OPEw1zLAtO2jgE/Dashboard?node-id=0%3A1
 Lien suivi de projet Trello : https://trello.com/b/ZtJaO1Un/projetweb
+
+
+Sources : 
+https://www.youtube.com/watch?v=THZyM2z8s-o
