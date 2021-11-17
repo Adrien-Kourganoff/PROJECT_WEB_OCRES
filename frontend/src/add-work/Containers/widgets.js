@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../index.css';
+import '../../css/widgets.css';
 
 export default class User extends React.Component {
     constructor(props) {

@@ -1,0 +1,5 @@
+.user{
+    display: flex;
+    border: 2px solid black; /*arrondi noir autour*/
+    background-color: darkturquoise;
+}

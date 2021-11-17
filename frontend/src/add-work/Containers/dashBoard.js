@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../index.css';
+import '../css/dashBoard.css';
 
 export default class User extends React.Component {
     constructor(props) {
@@ -12,7 +12,8 @@ export default class User extends React.Component {
     render() {
         return (
             <div class='user'>
-                <h2>Essaie</h2>
+                <h2 class="salut">Essaie</h2>
+                
             </div>)
     }
 }
