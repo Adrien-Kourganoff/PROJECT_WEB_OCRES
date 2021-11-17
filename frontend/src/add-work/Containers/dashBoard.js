@@ -12,7 +12,7 @@ export default class User extends React.Component {
     render() {
         return (
             <div class='user'>
-                <h2 class="salut">Essaie</h2>
+                <h2 class="salutccool">Essaie</h2>
                 
             </div>)
     }
