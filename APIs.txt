@@ -5,13 +5,12 @@ APIs prises sur internet :
  -> (2) pays les plus visités (carte avec des bulles) choix de l'année
  -> (3) traduction dans la langue souhaitée (Cloud Translation ou Deepl API Free)
  -> (4) toutes les infos sur un pays (Rest Countries)
- -> (5) meteo dans la ville choisie (OpenWeather Map)
+ -> (5) température sur l'année dans la ville choisie
 
 API crée :
  -> mes pays visités
 
-Largeur écran : 1536px
-Marge de 20px gauche-droite entre APIs
+
 
  
 

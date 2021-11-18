@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function(){
     const listePays = document.getElementById("listePays");
     let pays;
 
-    console.log(document.getElementById("listePays"));
     listePays.addEventListener("change", choixPays);
  
     function choixPays(event){
@@ -19,29 +18,27 @@ document.addEventListener("DOMContentLoaded", function(){
         pays = infoPays;
         let option = "";
 
-        pays.forEach(country => option+=`<option value="${country.alpha3Code}">${country.name}</option>`);
-        
-        listePays.innerHTML = option;
-        listePays.selectedIndex = Math.floor(Math.random()*listePays.length);
+        console.log(pays);
+        //pays.forEach(country => option+=`<option value="${country.alpha3Code}">${country.translations.fra.common}</option>`);
+        pays.forEach(country => option+=`<option value="${country.alpha3Code}">${country.name.common}</option>`);
 
-        console.log("value = " + listePays.selectedIndex)
-        //afficherInfosPays(listePays[listePays.selectedIndex].value);  
+        listePays.innerHTML = option;
+        //listePays.selectedIndex = Math.floor(Math.random()*listePays.length);
+        listePays.selectedIndex = 120;
+
         afficherInfosPays(listePays.selectedIndex);
     }
 
     function afficherInfosPays(countryByAlpha3Code){
-        const info = pays.find(country => country.alpha3Code === countryByAlpha3Code);
+        let info=pays[listePays.selectedIndex];
 
-        console.log("alpha3Code : " + countryByAlpha3Code);
-        console.log("find :");
-        console.log(country => country.alpha3Code);
-
-        document.querySelector("#Drapeau img").src = info.flag;
-        document.querySelector("#Drapeau img").alt = `Flag of ${info.name}`;
+        document.querySelector("img").src = info.flags.png;
+        document.querySelector("img").alt = `Flag of ${info.name.common}`;
         document.getElementById("capitale").innerHTML = info.capital;
-        document.getElementById("langue").innerHTML = info.languages;
+        document.getElementById("langue").innerHTML = info.languages[Object.keys(info.languages)[0]];
         document.getElementById("population").innerHTML = info.population.toLocaleString("en-US");
-        document.getElementById("monnaie").innerHTML = info.currencies.filter(c => c.name).map(c => `${c.name} (${c.code})`).join(", ");
+        document.getElementById("monnaie").innerHTML = info.currencies[Object.keys(info.currencies)[0]].name;
+        document.getElementById("symbole").innerHTML = info.currencies[Object.keys(info.currencies)[0]].symbol;
         document.getElementById("continent").innerHTML = info.region;
         document.getElementById("sous-continent").innerHTML = info.subregion;
     }

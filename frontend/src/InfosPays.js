@@ -11,12 +11,12 @@ export default class InfoPays extends React.Component{
                 </div>
                 <div className="Info_box">
                     <select id="listePays"></select>
-                    <p id="capitale">Capitale : </p>
-                    <p id="langue">Langue : </p>
-                    <p id="population">Population : </p>
-                    <p id="monnaie">Monnaie : </p>
-                    <p id="continent">Continent : </p>
-                    <p id="sous-continent">Sous-continent : </p>
+                    <p>Capitale : <span id="capitale"></span></p>
+                    <p>Langue : <span  id="langue"></span></p>
+                    <p>Population : <span id="population"></span></p>
+                    <p>Monnaie : <span id="monnaie"></span> (<span id="symbole"></span>)</p>
+                    <p>Continent : <span id="continent"></span></p>
+                    <p>Sous-continent : <span id="sous-continent"></span></p>
                 </div>
             </div>
         )
