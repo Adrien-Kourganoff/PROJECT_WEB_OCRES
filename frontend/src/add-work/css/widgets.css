@@ -1,7 +1,6 @@
 .widgets {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #61dafb;
+    border-radius: 15px;
+    background-color: rgba(299, 299, 299, 0.4);
+    border: #282c34 solid 5px;
 
 }

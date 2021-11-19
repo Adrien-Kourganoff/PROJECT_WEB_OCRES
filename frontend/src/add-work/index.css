@@ -7,7 +7,9 @@
     max-width: 900px;
     margin: auto;
 }
-
+.mainContainer{
+    background-color: #282c34;
+}
 .firstWidgets {
     display: flex;
     flex-direction: row;

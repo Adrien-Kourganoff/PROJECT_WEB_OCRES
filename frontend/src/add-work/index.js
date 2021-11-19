@@ -15,7 +15,7 @@ export default class App extends React.Component {
             <div class="mainContainer">
                     <h1>TEST</h1>
                 <div class="firstWidgets">
-                    <Widgets width={"100px"} height={"100px"} title={"CRYPTO"}/>
+                    <Widgets width={"10%"} height={"10%"} title={"CRYPTO"}/>
                     <Widgets width={"200px"} height={"200px"} title={"AUTRE"}/>
                     <Widgets width={"200px"} height={"200px"} title={"essaie"}/>
                 </div>
