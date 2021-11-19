@@ -14,7 +14,7 @@ export default class InfoPays extends React.Component{
                     <p>Capitale : <span id="capitale"></span></p>
                     <p>Langue : <span  id="langue"></span></p>
                     <p>Population : <span id="population"></span></p>
-                    <p>Monnaie : <span id="monnaie"></span> (<span id="symbole"></span>)</p>
+                    <p>Monnaie : <span id="monnaie"></span> <span id="symbole"></span></p>
                     <p>Continent : <span id="continent"></span></p>
                     <p>Sous-continent : <span id="sous-continent"></span></p>
                 </div>
