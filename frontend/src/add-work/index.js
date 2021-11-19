@@ -1,6 +1,7 @@
 import React from 'react';
 import User from './Containers/dashBoard';
 import Harold from './img/harold.jpg';
+import './index.css';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -8,11 +9,14 @@ export default class App extends React.Component {
 
     }
 
+
     render() {
         return (
             <div class="mainContainer">
-                    <h1>TEST</h1>
+                <h1>DASHBOARD CRYPTO</h1>
                 <User />
+
+
 
             </div>)
     }
