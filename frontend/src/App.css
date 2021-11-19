@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.App-logo {
+  height: 40vmin;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -13,16 +17,6 @@
   color: white;
 }
 
-
-body {
-  margin: 0.7rem;
-  padding: 0;
-  box-sizing: border-box;
+.App-link {
+  color: #09d3ac;
 }
-
-h1,h2,h3,h4,h5,h6,ul,li {
-  margin: 0;
-  padding: 0;
-}
-
-div {}
