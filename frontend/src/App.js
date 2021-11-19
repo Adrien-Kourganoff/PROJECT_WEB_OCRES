@@ -17,6 +17,8 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React Max test
+          test2
+          Learn React Max
         </a>
       </header>
     </div>
