@@ -7,10 +7,10 @@ export default class Widgets extends React.Component {
     }
 
     render() {
-        const { width, heigth, title } = this.props;
+        const { width, height, title } = this.props;
 
         return (
-            <div class='widgets' style={{width : {width}, height: {heigth}}}>
+            <div class='widgets' style={{width : width, height: height}}>
                 <h1>{title}</h1>
             </div>
             )

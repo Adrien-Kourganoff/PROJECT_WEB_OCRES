@@ -8,57 +8,8 @@
     margin: auto;
 }
 
-.nav {
+.firstWidgets {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 5%;
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 25px 10%;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-.profileInfos {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.profileInfo {
-    min-width: 50%;
-    margin-bottom: 40px;
-}
-
-.publication {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-    margin-right: 10%;
-    margin-left: 10%;
-    border: 1px solid black;
-}
-
-.button {
-    padding: 3px 5px;
-    margin: 5px;
-    border: 1px solid black;
-
-}
-
-.button:hover{
-    background: #ccc;
-    cursor: pointer;
-}
-
-.img {
-    max-width: 200px;
-    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
 }
