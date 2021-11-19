@@ -22,10 +22,7 @@
     
     /*padding: 1em;*/
     border-radius: 30px;
-    margin-top: 1%;
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-bottom: 1%; 
+    margin: 1%;
     cursor: pointer; /*souris plus jolie*/
 }
 
@@ -52,7 +49,14 @@
 }
 
 @keyframes animate {
-  0% { background-position: 0 0; }
-  50% { background-position: 300% 0; }
-  100% { background-position: 0 0; }
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 300% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
+

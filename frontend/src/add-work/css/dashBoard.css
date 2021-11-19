@@ -1,45 +1,18 @@
-.user{
-    position: relative;
-    background-color: rgb(255, 174, 0);
-    width: 30%;
-    height: 50%;
-    margin-left: 5%;
-    margin-right: 5%;
+.widgetsContainer{
     display: flex;
-    justify-content: center;
-    margin-bottom: 18%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.user1,.user2,.user3{
 
     /*flip card*/
     transform-style: preserve-3d;
-    border-radius: 15px;
     transition: 2s;
-    box-shadow: 0 45px 100px rgba(14,21,47,0.4), 0 16px 40px rgba(14,21,47,0.4); 
 
-    
+    box-shadow: 0 45px 100px rgba(14,21,47,0.4), 0 16px 40px rgba(14,21,47,0.4);
 }
 
-
-.meswid{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(79, 42, 165);
-    margin-bottom: 1%;
-    /*visibility: hidden; /* NE PAS OUBLIER D ENLEVER SI CACHE*/
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    border-radius: 15px;
-
-}
-
-.widavant{
-    
-}
-
-.widarriere{
-    transform: rotateY(180deg);
-}
-
-.user.flip{
+.user1.flip, .user2.flip, .user3.flip{
     transform: rotateY(180deg);
 }
