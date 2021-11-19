@@ -16,6 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          test2
           Learn React Max
         </a>
       </header>
