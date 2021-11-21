@@ -16,7 +16,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React Max test
+          test2
+          Learn React Max
+          test
         </a>
       </header>
     </div>
