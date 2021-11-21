@@ -8,15 +8,15 @@ import Contact from './pages/Contact';
 
 const App = () => {
 
-  // const [anchorE1, setAnchorE1] = React.useState(null);
+   const [anchorE1, setAnchorE1] = React.useState(null);
 
-  // const handleClose = () => {
-  //   setAnchorE1(null);
-  // };
+   const handleClose = () => {
+     setAnchorE1(null);
+   };
 
-  // const handleClick = (event) => {
-  //   setAnchorE1(event.currentTarget);
-  // }
+   const handleClick = (event) => {
+    setAnchorE1(event.currentTarget);
+  }
   return (
     <Router>
 
