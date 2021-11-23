@@ -1,5 +1,4 @@
 import React from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -8,15 +7,6 @@ import Contact from './pages/Contact';
 
 const App = () => {
 
-   const [anchorE1, setAnchorE1] = React.useState(null);
-
-   const handleClose = () => {
-     setAnchorE1(null);
-   };
-
-   const handleClick = (event) => {
-    setAnchorE1(event.currentTarget);
-  }
   return (
     <Router>
 

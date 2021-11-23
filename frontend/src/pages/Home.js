@@ -1,10 +1,12 @@
 import React from 'react';
-import Navigation from '../components/Navigation';
+import Affichage from './Affichage';
+import LineChartComponent from '../linechart';
 
 const Home = () =>{
     return (
         <div>
-            <Navigation/>
+            <Affichage />
+            <LineChartComponent />
         </div>
     );
 };

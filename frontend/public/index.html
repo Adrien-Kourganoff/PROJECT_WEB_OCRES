@@ -7,6 +7,10 @@
  
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="index.js"></script>
    
     <title>Quel temps fera-t-il demain ?</title>
   </head>
@@ -14,7 +18,31 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <div id="map"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9b_bCGhJEV309mZh4xNm5WFjYW1IY8Is&callback=initMap&v=weekly"
+      async
+    ></script>
     
+  </body>
+</html>
+
+<!--<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Click LatLng</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    Async script executes immediately and must be after any DOM elements used in callback. -->
+    <!--<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9b_bCGhJEV309mZh4xNm5WFjYW1IY8Is&callback=initMap&v=weekly"
+      async
+    ></script>
   </body>
 </html>
