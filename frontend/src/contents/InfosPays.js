@@ -1,11 +1,11 @@
 import React from "react";
-import "./InfosPays.css";
-import "./APIs/API_RestCountries";
+import "../contents/css/InfosPays.css";
+import "../APIs/API_RestCountries";
 
 export default class InfoPays extends React.Component{
     render(){
         return(
-            <div className="Box">
+            <div className="Box1">
                 <div className="Drapeau">
                     <img src="" alt=""></img>
                 </div>
