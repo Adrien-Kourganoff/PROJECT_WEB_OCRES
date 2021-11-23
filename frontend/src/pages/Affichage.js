@@ -1,7 +1,6 @@
 import React from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
-
 const google = window.google;
 
 
@@ -16,6 +15,7 @@ function MyMap() {
         lat: -3.745,
         lng: -38.523
     };
+
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyB9b_bCGhJEV309mZh4xNm5WFjYW1IY8Is"
@@ -36,7 +36,7 @@ function MyMap() {
 
     window.onload = () => {
         // Create the initial InfoWindow.
-        let infoWindow = new google.maps.InfoWindow({
+        /*let infoWindow = new google.maps.InfoWindow({
             content: "Click the map to get Lat/Lng!",
             position: myLatlng,
         });

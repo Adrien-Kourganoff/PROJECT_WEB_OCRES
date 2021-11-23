@@ -1,6 +1,7 @@
 import { Component } from "react";
 import React from "react";
-import Affichage from "../pages/Affichage";
+import {myLatlng} from ('./Affichage.js');
+//import {myLatlng} from 'cd..';
 import {
     LineChart,
     Line,
@@ -12,10 +13,13 @@ import {
 
 //import weatherData from "./data";
 
-class LineChartComponent extends Component {
+export class LineChartComponent extends Component {
     state = {
-        chartData: []
+        chartData: [],
+        lat : myLatlng.lat(),
+        lon : myLatlng.lon()
     };
+
 
     formatData = (data) =>
         data.map(({ dt_txt, main }) => ({
@@ -32,7 +36,7 @@ class LineChartComponent extends Component {
             // But here you can have logic of fetching the data and
             //add listeners etc
             let res = await fetch(
-            "api.openweathermap.org/data/2.5/forecast?lat=&lon=45.62565574467891&appid=ca148f5dc67f12aafaa56d1878bb6db2#"
+            "api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=ca148f5dc67f12aafaa56d1878bb6db2#"
             );
             res = await res.json();
 
