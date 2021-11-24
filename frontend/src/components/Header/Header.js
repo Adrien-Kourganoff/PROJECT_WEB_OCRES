@@ -13,7 +13,7 @@ function Header() {
         <Navbar className="Header">
             <Container>
             <Navbar.Brand href="#home" >
-                <img src={Logo}  alt="Logo" width="30"  height="30" className="d-inline-block align-top"/> <span className="TextColor">INVESTORS DASHBOARD</span>
+               <span className="TextColor">INVESTORS DASHBOARD</span>
             </Navbar.Brand>
             </Container>
         </Navbar>

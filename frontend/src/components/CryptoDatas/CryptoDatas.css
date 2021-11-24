@@ -1,0 +1,66 @@
+.CryptoDatas
+{
+    margin-top: 50px;
+}
+
+.logo
+{
+    height: 50px;
+    width: 50px;
+}
+
+.usdtLogo
+{
+    height: 35px;
+    width: 35px;
+}
+
+
+.navbar {
+    position: relative;
+}
+
+.card
+{
+
+background-color: #C09A5934!important;
+}
+.centerCrypto
+{
+    display: inline-block;
+    margin-top :3%;
+    margin-left :3%;
+}
+
+.centerUsdt
+{
+    display: inline-block;
+    margin-top :1%;
+    margin-left :10%;
+}
+
+
+.usdtSize
+{
+    font-size: 16px;
+}
+.usdtPadding
+{
+    padding-left:20%;
+}
+.mcMargin
+{
+    margin-bottom: 3%;
+}
+.fontmcD
+{
+    font-size: 15px;
+
+}
+.list-group-item
+{
+    background-color :#C09A5934 ;
+    color:white;
+    border-bottom: 1px solid rgba(192, 154, 89, 0.4);;
+
+}
