@@ -27,7 +27,7 @@ export default function EthDatas() {
         return <div>Loading...</div>;
     return (
         <div>
-            <CryptoDatas test="test" data={data}/>
+            <CryptoDatas data={data}/>
         </div>
     )
 }

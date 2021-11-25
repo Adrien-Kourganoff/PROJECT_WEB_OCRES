@@ -1,5 +1,5 @@
 import React from 'react';
-import  {Card ,ListGroup,Navbar} from 'react-bootstrap';
+import  {Card ,ListGroup} from 'react-bootstrap';
 import './CryptoDatas.css';
 
 export default function CryptoDatas(props) {
@@ -7,38 +7,37 @@ export default function CryptoDatas(props) {
     var Newprice = Math.round(props.data[0].price * 100) / 100;
 
     return( 
-        <div className="CryptoDatas">
 
-            <Card style={{ width: '18rem' }}>
+            <Card className ="h100" >
                     <ListGroup variant="flush">
                         <ListGroup.Item>
-                            <Navbar.Brand>
-                                <img src={props.data[0].logo_url} alt={props.data[0].name} className="logo d-inline-block align-top"/>
-                                <div className="centerCrypto">&nbsp;{props.data[0].name} : {props.data[0].symbol} </div>
-                            </Navbar.Brand>
+                            <div className="row align-items-center">
+                                <div className="col-3">
+                                    <img src={props.data[0].logo_url} alt={props.data[0].name} className="logo"/>
+                                </div>
+                                <div className="col-9 crypto">
+                                     {props.data[0].name} : {props.data[0].symbol}
+                                </div>
+                            </div>
+
                         </ListGroup.Item>
-                        <ListGroup.Item className="usdtPadding">
-                        <Navbar.Brand>
-                                <div className="centerUsdt"> <span className="usdtSize"> <b>{Newprice} </b>: {'usdt'}&nbsp;</span></div>
-                                <img src={'https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/usdt.svg'} alt={'usdt'} className="usdtLogo d-inline-block align-top"/>
-                        </Navbar.Brand>
+                        <ListGroup.Item >
+                            <div className="row align-items-center">
+                                <div className="col-9 usdt">
+                                    <span className="usdtSize"> <b>{Newprice} </b>: {'usdt'}&nbsp;</span>
+                                </div>
+                                <div className="col-3">
+                                <img src={'https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/usdt.svg'} alt={'usdt'} className="usdtLogo"/>
+                                </div>
+                            </div>
                         </ListGroup.Item>
                         <ListGroup.Item>
                         <div className="fontmcD mcMargin">Market cap : {props.data[0].market_cap}{'$'}</div>
-                        <div className="fontmcD">Dominance : {props.data[0].market_cap_dominance*100}%</div> 
+                        <div className="text-nowrap fontmcD">Dominance : {props.data[0].market_cap_dominance*100}%</div> 
                         </ListGroup.Item>
                     </ListGroup>
             </Card>
        
-       
-       
-       
-       
-        </div>
-
-        
-        
-
-
+    
         )
 }
