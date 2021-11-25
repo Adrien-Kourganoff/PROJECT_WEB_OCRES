@@ -35,7 +35,7 @@ class API_Geocode{
     fetchLongLat(){
         const axios = require('axios').default;
         return axios
-        .get(`${API_URL_gg_json}?address=${this.ville},+CA&key=${API_KEY_gg}`,{
+        .get(`${API_URL_gg_json}?address=${this.ville},&key=${API_KEY_gg}`,{
             crossdomain : true
         })
     }
@@ -79,8 +79,13 @@ export default function start(){
             var heure = actuel[0];
             var minute = actuel[1];
 
-            document.getElementById("heure").innerHTML = heure;
-            document.getElementById("minute").innerHTML = minute;
+            heure = heure*30;
+            minute = minute*6;
+            document.getElementById("heure").style.transform = `rotate(${heure}deg)`;
+            document.getElementById("minute").style.transform = `rotate(${minute}deg)`;
+
+            //document.getElementById("heure").innerHTML = heure;
+            //document.getElementById("minute").innerHTML = minute;
         })
     })
 }
