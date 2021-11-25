@@ -20,9 +20,7 @@ export default function EthDatas() {
         fetchData();
 
     })
-    console.log(typeof data);
 
-    //console.log(data);
     if (data.length===0) //Si tableau vide cad api pas encore fetch
         return <div>Loading...</div>;
     return (

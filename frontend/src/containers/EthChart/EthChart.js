@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import CryptoChart from '../../components/CryptoChart/CryptoChart';
 
-
 export default function EthChart() {
    
     const [data, setData] = useState([]);
@@ -20,9 +19,7 @@ export default function EthChart() {
         fetchData();
 
     })
-    console.log(typeof data);
 
-    //console.log(data);
     if (data.length===0) //Si tableau vide cad api pas encore fetch
         return <div>Loading...</div>;
     return (
