@@ -6,7 +6,8 @@
 //Ensuite on peut utiliser l'API timezonedb pour récupere l'heure de la ville à partir de sa longitude/latitude.
 
 //Clé API Google
-const API_KEY_gg = "AIzaSyBLPHz3LcO2MiR7Y-mA7B3YKPmfl8o5FwE";
+//const API_KEY_gg = "AIzaSyBLPHz3LcO2MiR7Y-mA7B3YKPmfl8o5FwE";
+const API_KEY_gg_none = "";
 
 //URL API google xml
 //const API_URL_gg = "https://maps.googleapis.com/maps/api/geocode/xml";
@@ -35,7 +36,7 @@ class API_Geocode{
     fetchLongLat(){
         const axios = require('axios').default;
         return axios
-        .get(`${API_URL_gg_json}?address=${this.ville},&key=${API_KEY_gg}`,{
+        .get(`${API_URL_gg_json}?address=${this.ville},&key=${API_KEY_gg_none}`,{
             crossdomain : true
         })
     }
