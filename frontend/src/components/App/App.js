@@ -4,7 +4,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import  {Container} from 'react-bootstrap';
 
 import Header from '../Header/Header';
-import EthDatas from '../../containers/EthDatas/EthDatas';
+//import EthDatas from '../../containers/EthDatas/EthDatas';
 import Widgets from '../../containers/Widgets/Widgets';
   
 
