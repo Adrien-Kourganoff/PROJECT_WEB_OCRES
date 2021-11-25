@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function(){
         pays = infoPays;
         let option = "";
 
-        console.log(pays);
         //pays.forEach(country => option+=`<option value="${country.alpha3Code}">${country.translations.fra.common}</option>`);
         pays.forEach(country => option+=`<option value="${country.alpha3Code}">${country.name.common}</option>`);
 
