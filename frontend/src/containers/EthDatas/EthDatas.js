@@ -18,7 +18,6 @@ export default function EthDatas() {
             setData(result.data);
         };
         fetchData();
-
     })
 
     if (data.length===0) //Si tableau vide cad api pas encore fetch

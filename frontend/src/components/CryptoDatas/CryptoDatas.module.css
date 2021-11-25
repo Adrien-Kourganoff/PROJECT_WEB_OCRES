@@ -29,11 +29,6 @@
     text-align:right;
 }
 
-.card
-{
-
-background-color: #C09A5934!important;
-}
 
 .mcMargin
 {
@@ -43,12 +38,5 @@ background-color: #C09A5934!important;
 {
     font-size: 15px;
     text-align:center;
-
-}
-.list-group-item
-{
-    background-color :#C09A5934 ;
-    color:white;
-    border-bottom: 1px solid rgba(192, 154, 89, 0.4);;
 
 }
