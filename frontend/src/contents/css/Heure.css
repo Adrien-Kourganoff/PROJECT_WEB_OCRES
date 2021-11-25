@@ -31,10 +31,41 @@
     box-shadow: inset 2px 3px 8px 0 rgba(0,0,0,0.1);
 }
 
+.Horloge p{
+    font-size: 0.8em;
+}
+
+.Horloge .Douze{
+    margin-top: 0%;
+    text-align: center;
+}
+
+.Horloge .Center{
+    width: 100%;
+    display: flex;
+    margin-top: 28%;
+}
+
+.Horloge .Center .Neuf{
+    float: left;
+    margin-left: 2%;
+}
+
+.Horloge .Center .Trois{
+    float: right;
+    margin-left: 88%;
+}
+
+.Horloge .Six{
+    margin-top: 30%;
+    text-align: center;
+}
+
 .Wrap{
     position: relative;
     width: 100%;
     height: 100%;
+    margin-top: -107%;
 }
 
 #heure{

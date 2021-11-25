@@ -12,6 +12,12 @@ export default class Heure extends React.Component{
                 </div>
                 <div className="HorlogeBox">
                     <div className="Horloge">
+                        <p className="Douze">12</p>
+                        <div className="Center">
+                            <p className="Neuf">9</p>
+                            <p className="Trois">3</p>
+                        </div>
+                        <p className="Six">6</p>
                         <div className="Wrap">
                             <span id="heure"></span>
                             <span id="minute"></span>
