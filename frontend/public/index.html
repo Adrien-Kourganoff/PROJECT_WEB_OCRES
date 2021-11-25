@@ -1,117 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>TP 3</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <!-- bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
     />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Axios -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
   </head>
-  <body onload='start()'>
-    <div
-      class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
-    >
-      <h5 class="my-0 mr-md-auto font-weight-normal">METEO PREDICTION TP3</h5>
-    </div>
-
-    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h2 class="display-4">Méteo App</h2>
-      <p class="lead">
-        Application de prédiction méteo
-      </p>
-    </div>
-
-    <div class="container">
-      <div class="input-group mb-5 offset-4 col-4">
-        <input id="city-input" type="text" class="form-control" placeholder="Rentrer le nom d'une ville">
-        <div class="input-group-append">
-          <button id="city-input-button" class="btn btn-success" type="submit" onclick='start()'>Actualiser</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <h3 class="text-center" id="city-name"></h3>
-        <div class="card-deck mb-3 text-center">
-          <div class="card mb-4 shadow-sm offset-sm-1">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Aujourd'hui</h4>
-            </div>
-            <div class="card-body">
-              <h2 id="day1-forecast-main" class="card-title">
-              </h2>
-              <div>
-                <p id="day1-forecast-more-info"></p>
-                <div id="icon1-weather-container" ></div>
-                <h3 id="day1-forecast-temp"> </h3>
-              </div>
-              <!--button type="button" class="btn btn-lg btn-block btn-primary button-load-forecast" onclick='start()'>
-                Quel temps fait'il aujourd'hui ?
-              </button-->
-            </div>
-          </div>
-        </div>
-
-    <div class="container">
-      <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 shadow-sm offset-sm-1">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Demain</h4>
-          </div>
-          <div class="card-body">
-            <h2 id="day2-forecast-main" class="card-title">
-            </h2>
-            <div>
-              <p id="day2-forecast-more-info"></p>
-              <div id="icon2-weather-container" ></div>
-              <h3 id="day2-forecast-temp"> </h3>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-4 shadow-sm offset-sm-1">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Après demain</h4>
-          </div>
-          <div class="card-body">
-            <h2 id="day3-forecast-main" class="card-title">
-            </h2>
-            <div>
-              <p id="day3-forecast-more-info"></p>
-              <div id="icon3-weather-container" ></div>
-              <h3 id="day3-forecast-temp"> </h3>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-4 shadow-sm offset-sm-1">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Encore après demain</h4>
-          </div>
-          <div class="card-body">
-            <h2 id="day4-forecast-main" class="card-title">
-            </h2>
-            <div>
-              <p id="day4-forecast-more-info"></p>
-              <div id="icon4-weather-container" ></div>
-              <h3 id="day4-forecast-temp"> </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="js/API_Weather.js"></script>
-    <script src="js/script.js"></script>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
