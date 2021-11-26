@@ -3,40 +3,50 @@ import {
     GoogleMap,
     useLoadScript,
     Marker,
-    InfoWindow,
+    InfoWindow
 } from "@react-google-maps/api";
-
-//import { formatRelative } from "date-fns";
-
-import usePlacesAutocomplete, {
-    getGeocode,
-    getLatLng,
-} from "use-places-autocomplete";
-
-import {
-    Combobox,
-    ComboboxInput,
-    ComboboPopover,
-    ComboboxList,
-    ComboboxOption,
-} from "@reach/combobox";
 
 const librairies = ["places"];
 
 const mapContainerStyle = {
-    width: '100vw',
-    height: '100vh',
+    width: '1700px',
+    height: '400px',
 }
+
+var google = require('@google/maps').createClient({
+    key: 'REACT_APP_GOOGLE_MAPS_API_KEY'
+});
 
 const center = {
     lat: 48.856613,
     lng: 2.352222,
 }
 
-const options = {
-    disableDefaultUI: true,
-    zoomControl: true,
+const cities = [{
+    lat: 51.507351,
+    lng: -0.127758,
+    time: new Date(),
+    nameCities: "Londres"
+},
+{
+    lat: 40.416775,
+    lng: -3.703790,
+    time: new Date(),
+    nameCities: "Madrid"
+},
+{
+    lat: 48.856613,
+    lng: 2.352222,
+    time: new Date(),
+    nameCities: "Paris"
+},
+{
+    lat: 55.755871,
+    lng: 37.617680,
+    time: new Date(),
+    nameCities: "Moscou"
 }
+]
 
 export default function Map() {
     const { isLoaded, loadError } = useLoadScript({
@@ -44,18 +54,23 @@ export default function Map() {
         librairies,
     });
 
-    const [markers, setMarkers] = React.useState([]);
+    const [markers, setMarkers] = React.useState(cities);
     const [selected, setSelected] = React.useState(null);
 
     const onMapClick = React.useCallback((event) => {
-        setMarkers(current => [
-            ...current,
+        const latlng =
+        {
+            lat: event.latLng.lat(),
+            lng: event.latLng.lng(),
+        }
+
+        for(var i=0; i<cities.length(); ++i)
+        {
+            if (cities[i].lat == latlng.lat && cities[i].lng == latlng.lng)
             {
-                lat: event.latLng.lat(),
-                lng: event.latLng.lng(),
-                time: new Date(),
-            },
-        ]);
+                return cities[i].nameCities
+            }
+        }
     }, []);
 
     const mapRef = React.useRef();
@@ -70,12 +85,9 @@ export default function Map() {
         <div>
             <h1>Villes disponibles</h1>
 
-            <Search />
-
             <GoogleMap mapContainerStyle={mapContainerStyle}
                 zoom={8}
                 center={center}
-                options={options}
                 onClick={onMapClick}
                 onLoad={onMapLoad}
             >
@@ -106,37 +118,39 @@ export default function Map() {
 
 }
 
-function Search() {
-    const {
-        ready,
-        value,
-        suggestions: { status, data },
-        setValue,
-        clearSuggestion,
-    } = usePlacesAutocomplete({
-        requestOptions: {
-            location: {
-                lat: () => 48.856613,
-                lng: () => 2.352222,
-            },
-            radius: 200 * 1000,
-        },
-    });
-    return (
-    <Combobox
-        onSelect={(adress) => {
-            console.log(adress);
+/* function getCity(latlng) {
 
-        }}
-    >
-        <ComboboxInput
-            value={value}
-            onChange={(e) => {
-                setValue(e.target.value);
-            }} 
-            disabled={!ready}
-            placeholder= "Entrer une adresse"
-        />
-    </Combobox>
-    );
-}
+    new google.maps.Geocoder().geocode({ 'latLng': latlng }, function (results, status) {
+
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+                var city = null;
+                var c, lc, component;
+                for (var r = 0, rl = results.length; r < rl; r += 1) {
+                    var result = results[r];
+
+                    if (!city && result.types[0] === 'locality') {
+                        for (c = 0, lc = result.address_components.length; c < lc; c += 1) {
+                            component = result.address_components[c];
+
+                            if (component.types[0] === 'locality') {
+                                city = component.long_name;
+                                break;
+                            }
+                        }
+                    }
+                    else if (!city && result.types[0] === 'administrative_area_level_1') {
+                        for (c = 0, lc = result.address_components.length; c < lc; c += 1) {
+                            component = result.address_components[c];
+                        }
+                    }
+                    if (city) {
+                        break;
+                    }
+                }
+
+                console.log("City: " + city );
+            }
+        }
+    });
+} */
