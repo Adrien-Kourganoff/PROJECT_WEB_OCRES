@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "@react-google-maps/api": "^2.7.0",
+    "axios": "^0.24.0",
+    "google-maps-react": "^2.0.6",
+    "react-google-maps": "9.4.5",
+    "link": "^0.1.5",
+    "link-react": "^3.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^6.0.2",

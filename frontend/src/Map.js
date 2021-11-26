@@ -1,66 +1,26 @@
 import React from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import {GoogleMap , withScriptjs, withGoogleMap} from 'react-google-maps'
 
-
-const google = window.google;
-
-function MyMap() {
-
-    const containerStyle = {
-        width: '400px',
-        height: '400px'
-    };
-
-    const myLatlng = {
-        lat: -3.745,
-        lng: -38.523
-    };
-    const { isLoaded } = useJsApiLoader({
-        id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyB9b_bCGhJEV309mZh4xNm5WFjYW1IY8Is"
-    })
-
-
-    const [map, setMap] = React.useState(null)
-
-    const onLoad = React.useCallback(function callback(map) {
-        const bounds = new window.google.maps.LatLngBounds();
-        map.fitBounds(bounds);
-        setMap(map)
-    }, [])
-
-    const onUnmount = React.useCallback(function callback(map) {
-        setMap(null)
-    }, [])
-
-    window.onload = () => {
-        // Create the initial InfoWindow.
-        let infoWindow = new google.maps.InfoWindow({
-            content: "Click the map to get Lat/Lng!",
-            position: myLatlng,
-        });
-
-        infoWindow.open(map);
-
-        map.addListener('click', (mapsMouseEvent) => {
-
-            alert("Latitude: " + mapsMouseEvent.latLng.lat() + " " + ", longitude: " + mapsMouseEvent.latLng.lng());
-        });
-
-    }
-
-    return isLoaded ? (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={myLatlng}
-            zoom={10}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
-        >
-            { }
-            <></>
-        </GoogleMap>
-    ) : <></>
+function Map() {
+    return ( 
+        <GoogleMap 
+            defaultZoom={10} 
+            defaultCenter={{lat:48.856613,lng:2.352222}}
+        />
+    );
 }
 
-export default React.memo(MyMap)
+const WrappedMap = withScriptjs(withGoogleMap(Map));
+
+export default function Page() {
+    return(
+        <div style={{width:'100vw' , height:'100vh'}}>
+            <WrappedMap 
+                googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAej6sNIR6DCokBaYAL1AvVfpwToodjdUs'}
+                loadingElement={<div style={{height: '100%'}}/>}
+                containerElement={<div style={{height: '100%'}}/>}
+                mapElement={<div style={{height: '100%'}}/>}
+            />
+        </div>
+    )
+};

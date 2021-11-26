@@ -1,9 +1,11 @@
-import {React , Redirect} from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
         <div>
-            <Redirect to="./Map" push />
+            <h1>Weather App</h1>
+            <Link to="/dashboard">Dashboard</Link>
         </div>
     );
 };

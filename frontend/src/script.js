@@ -1,8 +1,7 @@
 
 // Fonction appelée lors du click du bouton
-function start() {
-    var city=null;
-    city = document.getElementById('city-input').value;
+function start(city) {
+
     console.log(city);
     // Création de l'objet apiWeather
     const apiWeather = new API_WEATHER(city);
