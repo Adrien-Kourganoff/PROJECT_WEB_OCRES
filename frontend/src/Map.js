@@ -6,6 +6,8 @@ import {
     InfoWindow
 } from "@react-google-maps/api";
 
+import Dashboard from "./Dashboard";
+
 const librairies = ["places"];
 
 const mapContainerStyle = {
@@ -25,25 +27,25 @@ const center = {
 const cities = [{
     lat: 51.507351,
     lng: -0.127758,
-    time: new Date(),
+    time: 0,
     nameCities: "Londres"
 },
 {
     lat: 40.416775,
     lng: -3.703790,
-    time: new Date(),
+    time: 1,
     nameCities: "Madrid"
 },
 {
     lat: 48.856613,
     lng: 2.352222,
-    time: new Date(),
+    time: 2,
     nameCities: "Paris"
 },
 {
     lat: 55.755871,
     lng: 37.617680,
-    time: new Date(),
+    time: 3,
     nameCities: "Moscou"
 }
 ]
@@ -64,11 +66,12 @@ export default function Map() {
             lng: event.latLng.lng(),
         }
 
-        for(var i=0; i<cities.length(); ++i)
+        for(var i=0; i<cities.length; ++i)
         {
-            if (cities[i].lat == latlng.lat && cities[i].lng == latlng.lng)
+            if (cities[i].lat === latlng.lat && cities[i].lng === latlng.lng)
             {
-                return cities[i].nameCities
+                console.log(cities[i].nameCities)
+                Dashboard ({city: cities[i].nameCities})
             }
         }
     }, []);
@@ -93,10 +96,11 @@ export default function Map() {
             >
                 {markers.map((marker) => (
                     <Marker
-                        key={marker.time.toISOString()}
+                        key={marker.time}
                         position={{ lat: marker.lat, lng: marker.lng }}
                         onClick={() => {
                             setSelected(marker);
+                            Dashboard({city : marker.nameCities})
                         }}
                     />
 
@@ -109,7 +113,7 @@ export default function Map() {
                         }}
                     >
                         <div>
-                            <h2>Ville disponible</h2>
+                            <h2>{selected.nameCities}</h2>
                         </div>
                     </InfoWindow>) : null}
             </GoogleMap>
@@ -117,40 +121,3 @@ export default function Map() {
     );
 
 }
-
-/* function getCity(latlng) {
-
-    new google.maps.Geocoder().geocode({ 'latLng': latlng }, function (results, status) {
-
-        if (status == google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-                var city = null;
-                var c, lc, component;
-                for (var r = 0, rl = results.length; r < rl; r += 1) {
-                    var result = results[r];
-
-                    if (!city && result.types[0] === 'locality') {
-                        for (c = 0, lc = result.address_components.length; c < lc; c += 1) {
-                            component = result.address_components[c];
-
-                            if (component.types[0] === 'locality') {
-                                city = component.long_name;
-                                break;
-                            }
-                        }
-                    }
-                    else if (!city && result.types[0] === 'administrative_area_level_1') {
-                        for (c = 0, lc = result.address_components.length; c < lc; c += 1) {
-                            component = result.address_components[c];
-                        }
-                    }
-                    if (city) {
-                        break;
-                    }
-                }
-
-                console.log("City: " + city );
-            }
-        }
-    });
-} */
