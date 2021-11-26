@@ -1,45 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Slider.css'
-import BtnSlider from './BtnSlider'
-import dataSlider from './dataSlider'
 import  {Card ,Button} from 'react-bootstrap';
 import classNames from 'classnames';
-//Thank's to https://www.youtube.com/watch?v=og3wCO98HkQ&ab_channel=LearntoCreate
 
 export default function Slider(props) {
-
-    const [slideIndex, setSlideIndex] = useState(1)
-
-    const nextSlide = () => {
-        if(slideIndex !== dataSlider.length){
-            setSlideIndex(slideIndex + 1)
-        } 
-        else if (slideIndex === dataSlider.length){
-            setSlideIndex(1)
-        }
-    }
-
-    const prevSlide = () => {
-        if(slideIndex !== 1){
-            setSlideIndex(slideIndex - 1)
-        }
-        else if (slideIndex === 1){
-            setSlideIndex(dataSlider.length)
-        }
-    }
-
     const moveDot = index => {
         setSlideIndex(index)
     }
-//On prend les 5 premiers articles
-/*
-props.data.articles.map(article => (
-    console.log(article.author)
-))
-*/
-//console.log(props.data);
 
-var articles=[];
+    var articles=[];
 for (let i = 0; i < 5 ; i++) {
    
     var onearticle = {};
@@ -54,7 +23,6 @@ for (let i = 0; i < 5 ; i++) {
 
    var dateStringBefore=props.data.articles[i].publishedAt;
    var elem = dateStringBefore.split('T');
-    console.log(elem);
 
  
     //Date 
@@ -77,57 +45,67 @@ onearticle.publishedAt=newDatePublication;
 articles.push(onearticle);
   }
 
-console.log(articles);
+    const [slideIndex, setSlideIndex] = useState(1);
+    const [index, setIndex] = useState(0);
+    
+    const [urlToImage, setUrlToImage] = useState(articles[0].urlToImage);
+    const [titre, setTitre] = useState(articles[0].title);
+    const [description, setDescription] = useState(articles[0].description);
+    const [url, setUrl] = useState(articles[0].url);
+    const [dateOld, setDateOld] = useState(articles[0].publishedAt);
+ 
+
+function refreshCard(newIndex)
+{
+    document.getElementById("articleImage").src=articles[newIndex].urlToImage;
+    document.getElementById("articleTitle2").innerHTML=articles[newIndex].title;
+    console.log(articles[newIndex].title);
+    document.getElementById("articleDescription").innerHTML=articles[newIndex].description;
+    document.getElementById("articleURL").href=articles[newIndex].url;
+    document.getElementById("articleDate").innerHTML=articles[newIndex].publishedAt;
+
+    
+}
 
 
     return (
         <div className="container-slider">
-            {dataSlider.map((obj, index) => {
-                return (
-                    <Card  className={classNames("h100",slideIndex === index + 1 ? "slide active-anim" : "slide")} >
-                        <Card.Img variant="top" src={process.env.PUBLIC_URL + articles[index].urlToImage} />
-                        
-                        <Card.Body>
-                          
-                        <Card.Title className="articleTitle">{articles[index].title}
-                        </Card.Title>
-                        
-                        <div className="desc"> {articles[index].description}
-                        </div>
-                           {
-                           /*<Card.Text>
-                             {articles[index].description}
-                           </Card.Text>
-                           */}  
+             <div>
+                <div className="Card CarDisplay">
+                        <div>
+            <img src={process.env.PUBLIC_URL + articles[index].urlToImage} id="articleImage" className="card-img-top" alt="postImg"/>
+         </div>
+         <div className="card-body">
+            <h4 id="articleTitle2" className="card-title articleTitle font-weight-bold mb-2">{articles[index].title}</h4>
 
-                        </Card.Body>
-                        <Card.Footer>
-                        <small className="text-muted">{articles[index].publishedAt}</small>
-                        </Card.Footer>  
-  
-                        <a className="btn button-color" target="_blank" href={articles[index].url} role="button">Voir l'article</a>
+            <p id="articleDescription" className="card-text desc">{articles[index].description} </p>
+            <div className="row">
+                <div className="col text-center">
+                <a className="btn button-color" rel="noreferrer" target="_blank" id="articleURL" href={articles[index].url} role="button">Voir l'article</a>
+                </div>
+             </div>
+         </div>
+         <div className="card-footer d-flex justify-content-between">
+            <div>
+            <small id="articleDate" className="dateStyle">{articles[index].publishedAt}</small>
+            </div>
+         </div>
+         <div className="d-flex justify-content-center container-dots">
+   
+    {Array.from({length: 5}).map((item, index) => (
+        <div 
+                onClick={() =>{ 
+                    moveDot(index + 1);
+                    refreshCard(index);
+                    console.log(index + 1);
+                }}
+                className={classNames(slideIndex === index + 1 ? "dot active" : "dot","dot"+index)}>
+         </div>
+            ))}
+        </div>
 
-
-                        <div className="d-flex justify-content-center container-dots">
-                            {Array.from({length: 5}).map((item, index) => (
-                                <div 
-                                onClick={() => moveDot(index + 1)}
-                                className={slideIndex === index + 1 ? "dot active" : "dot"}
-                                ></div>
-                            ))}
-                        </div>
-                        
-                     {/* <img 
-                        src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} 
-                     />*/}  
-                        
-                    </Card>
-                )
-            })}
-           {/* <BtnSlider moveSlide={nextSlide} direction={"next"} />
-            <BtnSlider moveSlide={prevSlide} direction={"prev"}/> */}
-
-          
+      </div>
+                  </div>
         </div>
     )
 }
