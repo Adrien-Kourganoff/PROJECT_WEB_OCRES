@@ -49,10 +49,10 @@ articles.push(onearticle);
     const [index, setIndex] = useState(0);
     
     const [urlToImage, setUrlToImage] = useState(articles[0].urlToImage);
-    const [titre, setTitre] = useState(articles[0].title);
+    const [title, setTitre] = useState(articles[0].title);
     const [description, setDescription] = useState(articles[0].description);
     const [url, setUrl] = useState(articles[0].url);
-    const [dateOld, setDateOld] = useState(articles[0].publishedAt);
+    const [newDate, setDateOld] = useState(articles[0].publishedAt);
  
 
 function refreshCard(newIndex)
@@ -73,21 +73,21 @@ function refreshCard(newIndex)
              <div>
                 <div className="Card CarDisplay">
                         <div className="imgContainer">
-                            <img src={process.env.PUBLIC_URL + articles[index].urlToImage} id="articleImage" className="img-fluid card-img-top imgStyle" alt="postImg"/>
+                            <img src={process.env.PUBLIC_URL + urlToImage} id="articleImage" className="img-fluid card-img-top imgStyle" alt="postImg"/>
                          </div>
          <div className="card-body">
-            <h4 id="articleTitle2" className="card-title articleTitle font-weight-bold mb-2">{articles[index].title}</h4>
+            <h4 id="articleTitle2" className="card-title articleTitle font-weight-bold mb-2">{title}</h4>
 
-            <p id="articleDescription" className="card-text desc">{articles[index].description} </p>
+            <p id="articleDescription" className="card-text desc">{description} </p>
             <div className="row">
                 <div className="col text-center">
-                <a className="btn button-color" rel="noreferrer" target="_blank" id="articleURL" href={articles[index].url} role="button">Voir l'article</a>
+                <a className="btn button-color" rel="noreferrer" target="_blank" id="articleURL" href={url} role="button">Voir l'article</a>
                 </div>
              </div>
          </div>
          <div className="card-footer d-flex justify-content-between">
             <div>
-            <small id="articleDate" className="dateStyle">{articles[index].publishedAt}</small>
+            <small id="articleDate" className="dateStyle">{newDate}</small>
             </div>
          </div>
          <div className="d-flex justify-content-center container-dots">
