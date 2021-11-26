@@ -38,7 +38,6 @@ function setDateAbs(i)
     d.setDate(d.getDate()+i);
     
     var dateString = moment(d);
-    console.log(dateString);
     return dateString;
 }
 
@@ -138,7 +137,7 @@ useEffect(() => {
             <ListGroup.Item>
             <div className="row align-items-center">
                     <div>
-                        <span className={classNames(CryptoChartStyle.crypto)}>{props.name} &nbsp; : {props.symbol}/USD &nbsp; : 60 Last Days </span>
+                        <span className={classNames(CryptoChartStyle.crypto)}>{props.name} &nbsp; : {props.symbol}/USD &nbsp;<br/> <span className={classNames(CryptoChartStyle.timeInterval)}> 60 Last Days </span></span>
                     </div>
                 </div>
             </ListGroup.Item>

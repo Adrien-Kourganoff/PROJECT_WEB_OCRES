@@ -1,6 +1,7 @@
 import React from 'react';
 import EthDatas from '../EthDatas/EthDatas';
 import EthChart from '../EthChart/EthChart';
+import EthNews from '../EthNews/EthNews'
 import  '../../GlobalCss/Card.css';
 
 export default function Widgets() {
@@ -11,20 +12,18 @@ export default function Widgets() {
 
         <div className="row">
                 
-            <div className="col">
+            <div className="col-4">
                 <EthDatas/>
             </div>
 
-            <div className="col">
+            <div className="col-4">
                 <EthChart/>
             </div>
-
-            <div className="col">
-                <EthDatas/>
+           
+            <div className="col-4">
+                <EthNews/>
             </div>
 
-           
-       
         </div>
      </div>
 </div>

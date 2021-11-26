@@ -1,4 +1,8 @@
 .crypto{
     font-size:19px;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
+}
+.timeInterval
+{
+    font-size:15px;
 }
