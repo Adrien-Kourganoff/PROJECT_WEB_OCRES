@@ -7,14 +7,17 @@
  
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-   
-    <title>Quel temps fera-t-il demain ?</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- bootstrap -->
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
   </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
+  <body onload="start()">
     <div id="root"></div>
-    
   </body>
 </html>

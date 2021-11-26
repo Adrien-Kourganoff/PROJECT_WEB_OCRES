@@ -1,0 +1,15 @@
+.weather-icon {
+    width: 100px;
+  }
+  
+  #today-forecast-more-info {
+    margin: 0px;
+  }
+  
+  @media screen and (min-width: 425px) {
+    .button-load-forecast {
+      width: 50% !important;
+      margin: auto;
+    }
+  }
+  

@@ -1,10 +1,10 @@
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Affichage from './pages/Affichage';
-import Contact from './pages/Contact';
+import { BrowserRouter , Router, Routes, Route } from 'react-router-dom';
+import Home from './Home.js';
+import Map from './Map';
+import Dashboard from './Dashboard';
 
 const App = () => {
 
@@ -18,16 +18,14 @@ const App = () => {
     setAnchorE1(event.currentTarget);
   }
   return (
-    <Router>
-
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/affichage" element={<Affichage />} />
-        <Route exact path="/contact" element={<Contact />} />
-      </Routes>
-
-    </Router>
     
+    <BrowserRouter>
+      <Routes> 
+        <Route path="/" exact element={<Dashboard/>} />
+        <Route exact path="/map" element={<Map />} />
+        <Route exact path="/dashboard" element={<Dashboard/>} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 export default App;
