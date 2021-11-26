@@ -1,26 +1,156 @@
-import React from 'react';
-import {GoogleMap , withScriptjs, withGoogleMap} from 'react-google-maps'
+import React from "react";
+import {
+    GoogleMap,
+    useLoadScript,
+    Marker,
+    InfoWindow
+} from "@react-google-maps/api";
 
-function Map() {
-    return ( 
-        <GoogleMap 
-            defaultZoom={10} 
-            defaultCenter={{lat:48.856613,lng:2.352222}}
-        />
-    );
+const librairies = ["places"];
+
+const mapContainerStyle = {
+    width: '1700px',
+    height: '400px',
 }
 
-const WrappedMap = withScriptjs(withGoogleMap(Map));
+var google = require('@google/maps').createClient({
+    key: 'REACT_APP_GOOGLE_MAPS_API_KEY'
+});
 
-export default function Page() {
-    return(
-        <div style={{width:'100vw' , height:'100vh'}}>
-            <WrappedMap 
-                googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAej6sNIR6DCokBaYAL1AvVfpwToodjdUs'}
-                loadingElement={<div style={{height: '100%'}}/>}
-                containerElement={<div style={{height: '100%'}}/>}
-                mapElement={<div style={{height: '100%'}}/>}
-            />
+const center = {
+    lat: 48.856613,
+    lng: 2.352222,
+}
+
+const cities = [{
+    lat: 51.507351,
+    lng: -0.127758,
+    time: new Date(),
+    nameCities: "Londres"
+},
+{
+    lat: 40.416775,
+    lng: -3.703790,
+    time: new Date(),
+    nameCities: "Madrid"
+},
+{
+    lat: 48.856613,
+    lng: 2.352222,
+    time: new Date(),
+    nameCities: "Paris"
+},
+{
+    lat: 55.755871,
+    lng: 37.617680,
+    time: new Date(),
+    nameCities: "Moscou"
+}
+]
+
+export default function Map() {
+    const { isLoaded, loadError } = useLoadScript({
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        librairies,
+    });
+
+    const [markers, setMarkers] = React.useState(cities);
+    const [selected, setSelected] = React.useState(null);
+
+    const onMapClick = React.useCallback((event) => {
+        const latlng =
+        {
+            lat: event.latLng.lat(),
+            lng: event.latLng.lng(),
+        }
+
+        for(var i=0; i<cities.length(); ++i)
+        {
+            if (cities[i].lat == latlng.lat && cities[i].lng == latlng.lng)
+            {
+                return cities[i].nameCities
+            }
+        }
+    }, []);
+
+    const mapRef = React.useRef();
+    const onMapLoad = React.useCallback((map) => {
+        mapRef.current = map;
+    }, []);
+
+    if (loadError) return "Error loading maps";
+    if (!isLoaded) return "Loading Maps";
+
+    return (
+        <div>
+            <h1>Villes disponibles</h1>
+
+            <GoogleMap mapContainerStyle={mapContainerStyle}
+                zoom={8}
+                center={center}
+                onClick={onMapClick}
+                onLoad={onMapLoad}
+            >
+                {markers.map((marker) => (
+                    <Marker
+                        key={marker.time.toISOString()}
+                        position={{ lat: marker.lat, lng: marker.lng }}
+                        onClick={() => {
+                            setSelected(marker);
+                        }}
+                    />
+
+                ))}
+
+                {selected ? (
+                    <InfoWindow position={{ lat: selected.lat, lng: selected.lng }}
+                        onCloseClick={() => {
+                            setSelected(null);
+                        }}
+                    >
+                        <div>
+                            <h2>Ville disponible</h2>
+                        </div>
+                    </InfoWindow>) : null}
+            </GoogleMap>
         </div>
-    )
-};
+    );
+
+}
+
+/* function getCity(latlng) {
+
+    new google.maps.Geocoder().geocode({ 'latLng': latlng }, function (results, status) {
+
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+                var city = null;
+                var c, lc, component;
+                for (var r = 0, rl = results.length; r < rl; r += 1) {
+                    var result = results[r];
+
+                    if (!city && result.types[0] === 'locality') {
+                        for (c = 0, lc = result.address_components.length; c < lc; c += 1) {
+                            component = result.address_components[c];
+
+                            if (component.types[0] === 'locality') {
+                                city = component.long_name;
+                                break;
+                            }
+                        }
+                    }
+                    else if (!city && result.types[0] === 'administrative_area_level_1') {
+                        for (c = 0, lc = result.address_components.length; c < lc; c += 1) {
+                            component = result.address_components[c];
+                        }
+                    }
+                    if (city) {
+                        break;
+                    }
+                }
+
+                console.log("City: " + city );
+            }
+        }
+    });
+} */
