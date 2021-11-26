@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import './Slider.css'
-import  {Card ,Button} from 'react-bootstrap';
 import classNames from 'classnames';
 
 export default function Slider(props) {
+    
+    const [slideIndex, setSlideIndex] = useState(1);
+
     const moveDot = index => {
         setSlideIndex(index)
     }
@@ -44,16 +46,13 @@ onearticle.publishedAt=newDatePublication;
 
 articles.push(onearticle);
   }
-
-    const [slideIndex, setSlideIndex] = useState(1);
-    const [index, setIndex] = useState(0);
     
-    const [urlToImage, setUrlToImage] = useState(articles[0].urlToImage);
-    const [title, setTitre] = useState(articles[0].title);
-    const [description, setDescription] = useState(articles[0].description);
-    const [url, setUrl] = useState(articles[0].url);
-    const [newDate, setDateOld] = useState(articles[0].publishedAt);
  
+    var urlToImage = articles[0].urlToImage;
+    var  title = articles[0].title;
+    var description = articles[0].description;
+    var url = articles[0].url;
+    var newDate = articles[0].publishedAt;
 
 function refreshCard(newIndex)
 {
