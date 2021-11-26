@@ -8,7 +8,7 @@ const Dashboard = ({city}) => {
       <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h2 class="display-4">{city}</h2>
       </div>
-      <TodayBox name={"Aujourd'hui"}/>
+    <TodayBox name={"Aujourd'hui"}/>
       <div class="App-header">
       <Box name={"demain"}/>
       <Box name={"après-demain"}/>

@@ -8,9 +8,8 @@ import Dashboard from './Dashboard';
 const App = () => {
 
   return (
-    
     <BrowserRouter>
-      <Routes> 
+      <Routes>
         <Route path="/" exact element={<Dashboard/>} />
         <Route exact path="/map" element={<Map />} />
         <Route exact path="/dashboard" element={<Dashboard/>} />
