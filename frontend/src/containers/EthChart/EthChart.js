@@ -28,7 +28,7 @@ export default function EthChart() {
         };
         fetchData();
         setState();
-    })
+    },[])
 
     if (data.length===0) //Si tableau vide cad api pas encore fetch
         return <div>Loading...</div>;
