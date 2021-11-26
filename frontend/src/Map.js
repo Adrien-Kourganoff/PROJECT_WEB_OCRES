@@ -1,66 +1,142 @@
-import React from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import React from "react";
+import {
+    GoogleMap,
+    useLoadScript,
+    Marker,
+    InfoWindow,
+} from "@react-google-maps/api";
 
-const google = window.google;
+//import { formatRelative } from "date-fns";
 
-function MyMap() {
+import usePlacesAutocomplete, {
+    getGeocode,
+    getLatLng,
+} from "use-places-autocomplete";
 
-    const containerStyle = {
-        width: '400px',
-        height: '400px'
-    };
+import {
+    Combobox,
+    ComboboxInput,
+    ComboboPopover,
+    ComboboxList,
+    ComboboxOption,
+} from "@reach/combobox";
 
-    const myLatlng = {
-        lat: -3.745,
-        lng: -38.523
-    };
+const librairies = ["places"];
 
-    const { isLoaded } = useJsApiLoader({
-        id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyB9b_bCGhJEV309mZh4xNm5WFjYW1IY8Is"
-    })
-
-
-    const [map, setMap] = React.useState(null)
-
-    const onLoad = React.useCallback(function callback(map) {
-        const bounds = new window.google.maps.LatLngBounds();
-        map.fitBounds(bounds);
-        setMap(map)
-    }, [])
-
-    const onUnmount = React.useCallback(function callback(map) {
-        setMap(null)
-    }, [])
-
-    window.onload = () => {
-        // Create the initial InfoWindow.
-        /*let infoWindow = new google.maps.InfoWindow({
-            content: "Click the map to get Lat/Lng!",
-            position: myLatlng,
-        });
-
-        infoWindow.open(map);
-
-        map.addListener('click', (mapsMouseEvent) => {
-
-            alert("Latitude: " + mapsMouseEvent.latLng.lat() + " " + ", longitude: " + mapsMouseEvent.latLng.lng());
-        });
-
-    }
-
-    return isLoaded ? (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={myLatlng}
-            zoom={10}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
-        >
-            { }
-            <></>
-        </GoogleMap>
-    ) : <></>
+const mapContainerStyle = {
+    width: '100vw',
+    height: '100vh',
 }
 
-export default React.memo(MyMap)
+const center = {
+    lat: 48.856613,
+    lng: 2.352222,
+}
+
+const options = {
+    disableDefaultUI: true,
+    zoomControl: true,
+}
+
+export default function Map() {
+    const { isLoaded, loadError } = useLoadScript({
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        librairies,
+    });
+
+    const [markers, setMarkers] = React.useState([]);
+    const [selected, setSelected] = React.useState(null);
+
+    const onMapClick = React.useCallback((event) => {
+        setMarkers(current => [
+            ...current,
+            {
+                lat: event.latLng.lat(),
+                lng: event.latLng.lng(),
+                time: new Date(),
+            },
+        ]);
+    }, []);
+
+    const mapRef = React.useRef();
+    const onMapLoad = React.useCallback((map) => {
+        mapRef.current = map;
+    }, []);
+
+    if (loadError) return "Error loading maps";
+    if (!isLoaded) return "Loading Maps";
+
+    return (
+        <div>
+            <h1>Villes disponibles</h1>
+
+            <Search />
+
+            <GoogleMap mapContainerStyle={mapContainerStyle}
+                zoom={8}
+                center={center}
+                options={options}
+                onClick={onMapClick}
+                onLoad={onMapLoad}
+            >
+                {markers.map((marker) => (
+                    <Marker
+                        key={marker.time.toISOString()}
+                        position={{ lat: marker.lat, lng: marker.lng }}
+                        onClick={() => {
+                            setSelected(marker);
+                        }}
+                    />
+
+                ))}
+
+                {selected ? (
+                    <InfoWindow position={{ lat: selected.lat, lng: selected.lng }}
+                        onCloseClick={() => {
+                            setSelected(null);
+                        }}
+                    >
+                        <div>
+                            <h2>Ville disponible</h2>
+                        </div>
+                    </InfoWindow>) : null}
+            </GoogleMap>
+        </div>
+    );
+
+}
+
+function Search() {
+    const {
+        ready,
+        value,
+        suggestions: { status, data },
+        setValue,
+        clearSuggestion,
+    } = usePlacesAutocomplete({
+        requestOptions: {
+            location: {
+                lat: () => 48.856613,
+                lng: () => 2.352222,
+            },
+            radius: 200 * 1000,
+        },
+    });
+    return (
+    <Combobox
+        onSelect={(adress) => {
+            console.log(adress);
+
+        }}
+    >
+        <ComboboxInput
+            value={value}
+            onChange={(e) => {
+                setValue(e.target.value);
+            }} 
+            disabled={!ready}
+            placeholder= "Entrer une adresse"
+        />
+    </Combobox>
+    );
+}
