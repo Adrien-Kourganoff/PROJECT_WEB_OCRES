@@ -1,0 +1,31 @@
+{
+    "coord": { "lon": 2.35, "lat": 48.86 },
+    "weather": [
+      { "id": 501, "main": "Rain", "description": "moderate rain", "icon": "10n" }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 15.71,
+      "pressure": 1006,
+      "humidity": 87,
+      "temp_min": 14.44,
+      "temp_max": 17.22
+    },
+    "visibility": 10000,
+    "wind": { "speed": 5.1, "deg": 210 },
+    "clouds": { "all": 100 },
+    "dt": 1571085173,
+    "sys": {
+      "type": 1,
+      "id": 6550,
+      "message": 0.0074,
+      "country": "FR",
+      "sunrise": 1571033314,
+      "sunset": 1571072670
+    },
+    "timezone": 7200,
+    "id": 2988507,
+    "name": "Paris",
+    "cod": 200
+  }
+  

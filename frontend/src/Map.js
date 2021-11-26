@@ -3,7 +3,6 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const google = window.google;
 
-
 function MyMap() {
 
     const containerStyle = {
@@ -42,22 +41,6 @@ function MyMap() {
         });
 
         infoWindow.open(map);
-
-        // Configure the click listener.
-        /*map.addListener('click', (mapsMouseEvent) => {
-            // Close the current InfoWindow.
-            infoWindow.close();
-            // Create a new InfoWindow.
-            infoWindow = new google.maps.InfoWindow({
-                position: mapsMouseEvent.latLng,
-            });
-            infoWindow.setContent(
-                JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
-            );
-            infoWindow.open(map);
-
-  
-        });*/
 
         map.addListener('click', (mapsMouseEvent) => {
 

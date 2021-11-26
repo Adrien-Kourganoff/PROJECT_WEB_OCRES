@@ -7,24 +7,18 @@
  
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script src="index.js"></script>
-   
-    <title>Quel temps fera-t-il demain ?</title>
+    <!-- bootstrap -->
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
   </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="map"></div>
-
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9b_bCGhJEV309mZh4xNm5WFjYW1IY8Is&callback=initMap&v=weekly"
-      async
-    ></script>
-    
+  <body onload="start()">
+    <div id="root"></div>
   </body>
 </html>
 
