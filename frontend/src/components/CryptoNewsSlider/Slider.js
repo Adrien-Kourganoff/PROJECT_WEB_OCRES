@@ -72,9 +72,9 @@ function refreshCard(newIndex)
         <div className="container-slider">
              <div>
                 <div className="Card CarDisplay">
-                        <div>
-            <img src={process.env.PUBLIC_URL + articles[index].urlToImage} id="articleImage" className="card-img-top imgStyle" alt="postImg"/>
-         </div>
+                        <div className="imgContainer">
+                            <img src={process.env.PUBLIC_URL + articles[index].urlToImage} id="articleImage" className="img-fluid card-img-top imgStyle" alt="postImg"/>
+                         </div>
          <div className="card-body">
             <h4 id="articleTitle2" className="card-title articleTitle font-weight-bold mb-2">{articles[index].title}</h4>
 
