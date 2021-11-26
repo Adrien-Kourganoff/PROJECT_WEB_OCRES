@@ -89,10 +89,11 @@ console.log(articles);
                         
                         <Card.Body>
                           
-                          <div className="articleTitle">
-                                     {articles[index].title}
-
-                          </div>
+                        <Card.Title className="articleTitle">{articles[index].title}
+                        </Card.Title>
+                        
+                        <div className="desc"> {articles[index].description}
+                        </div>
                            {
                            /*<Card.Text>
                              {articles[index].description}

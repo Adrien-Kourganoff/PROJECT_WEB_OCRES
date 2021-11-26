@@ -79,19 +79,18 @@
 .articleTitle
 {
   color : white;
-  font-size : 17px;
+  font-size : 16px;
 
   overflow:hidden; 
   text-overflow: ellipsis;
-  margin : 0 auto;
-
+  margin-bottom: 20px;
 }
-.card-title
+.desc
 {
-  margin : 0 auto;
-  width: 300px;
         overflow:hidden; 
         white-space:nowrap; 
         text-overflow: ellipsis;
-        color: red;
+        color:white;
+        font-size:13px;
+        
 }
