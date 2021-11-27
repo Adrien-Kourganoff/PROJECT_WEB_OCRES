@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import './Meteo.css';
 
 class Meteo extends Component {
-    constructor(props){
+    /*constructor(props){
         super(props);
-    }
+    }*/
     render() {
         return (
-        <div class="card mb-4 shadow-sm offset-sm-1">
+        <div class="meteo-widget">
             <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Aujourd'hui</h4>
+              <h4 class="my-0 font-weight-normal">Météo Actuelle</h4>
             </div>
             <div class="card-body">
               <h2 id="day1-forecast-main" class="card-title">
