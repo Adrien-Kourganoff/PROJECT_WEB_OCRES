@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import './Meteo.css';
+import './Widget.css';
 
-class Meteo extends Component {
+class Widget extends Component {
     /*constructor(props){
         super(props);
     }*/
     render() {
         return (
-        <div class="meteo-widget">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Météo Actuelle</h4>
+        <div class="widget">
+            <div class="widget-header">
+              <h4 class="widget-title">Météo Actuelle</h4>
             </div>
             <div class="card-body">
               <h2 id="day1-forecast-main" class="card-title">
@@ -25,4 +25,4 @@ class Meteo extends Component {
     }
 }
 
-export default Meteo;
+export default Widget;

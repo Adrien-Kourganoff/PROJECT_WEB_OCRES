@@ -1,8 +1,8 @@
 import React from 'react';
-import Meteo from '../widgets/Meteo.js';
+import Widget from '../widgets/Widget.js';
 
 export default {
     title: 'Widgets',
   };
 
-export const meteo = () => <Meteo/> ;
+export const meteo = () => <Widget/> ;
