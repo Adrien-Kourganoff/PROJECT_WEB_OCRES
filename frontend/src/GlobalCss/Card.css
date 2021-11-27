@@ -12,3 +12,8 @@ background-color: #C09A5934!important;
 border:1px solid #c9d0d878;
   
 }
+
+.grid-row-end
+{
+    grid-row-end: 0!important;
+}

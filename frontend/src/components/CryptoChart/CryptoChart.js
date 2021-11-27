@@ -12,18 +12,6 @@ export default function CryptoChart(props) {
 
     const chartRef = useRef();
 
-    //console.log(props.data.Data.Data[31].close);
-//console.log(props.data.Data.Data);
-
-   /* function dayPrint()
-    {
-      props.data.Data.Data.map( day => (
-            console.log(day.close)
-        ))
-    }
-*/
-
-
 let days = props.data.Data.Data.map(day => {
     return day.close
 });

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect, useRef} from 'react'
 import './Slider.css'
 import classNames from 'classnames';
 
@@ -7,7 +7,7 @@ export default function Slider(props) {
     const [slideIndex, setSlideIndex] = useState(1);
 
     const moveDot = index => {
-        setSlideIndex(index)
+        setSlideIndex(index);
     }
 
     var articles=[];
@@ -46,8 +46,6 @@ onearticle.publishedAt=newDatePublication;
 
 articles.push(onearticle);
   }
-    
- 
     var urlToImage = articles[0].urlToImage;
     var  title = articles[0].title;
     var description = articles[0].description;
@@ -58,21 +56,19 @@ function refreshCard(newIndex)
 {
     document.getElementById("articleImage").src=articles[newIndex].urlToImage;
     document.getElementById("articleTitle2").innerHTML=articles[newIndex].title;
-    console.log(articles[newIndex].title);
     document.getElementById("articleDescription").innerHTML=articles[newIndex].description;
     document.getElementById("articleURL").href=articles[newIndex].url;
     document.getElementById("articleDate").innerHTML=articles[newIndex].publishedAt;
-
-    
 }
-
+  
 
     return (
-        <div className="container-slider">
+        <div className="container-slider" >
              <div>
+              
                 <div className="Card CarDisplay">
                         <div className="imgContainer">
-                            <img src={process.env.PUBLIC_URL + urlToImage} id="articleImage" className="img-fluid card-img-top imgStyle" alt="postImg"/>
+                         <img src={process.env.PUBLIC_URL + urlToImage} id="articleImage" className="img-fluid card-img-top imgStyle" alt="postImg"/>
                          </div>
          <div className="card-body">
             <h4 id="articleTitle2" className="card-title articleTitle font-weight-bold mb-2">{title}</h4>
@@ -94,9 +90,8 @@ function refreshCard(newIndex)
     {Array.from({length: 5}).map((item, index) => (
         <div 
                 onClick={() =>{ 
-                    moveDot(index + 1);
-                    refreshCard(index);
-                    console.log(index + 1);
+                moveDot(index + 1);
+                refreshCard(index);
                 }}
                 className={classNames(slideIndex === index + 1 ? "dot active" : "dot","dot"+index)}>
          </div>
