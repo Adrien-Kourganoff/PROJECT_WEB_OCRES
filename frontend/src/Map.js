@@ -1,4 +1,34 @@
+<<<<<<< Updated upstream
+import React from 'react';
+import {GoogleMap , withScriptjs, withGoogleMap} from 'react-google-maps'
+
+function Map() {
+    return ( 
+        <GoogleMap 
+            defaultZoom={10} 
+            defaultCenter={{lat:48.856613,lng:2.352222}}
+        />
+    );
+}
+
+const WrappedMap = withScriptjs(withGoogleMap(Map));
+
+export default function Page() {
+    return(
+        <div style={{width:'100vw' , height:'100vh'}}>
+            <WrappedMap 
+                googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAej6sNIR6DCokBaYAL1AvVfpwToodjdUs'}
+                loadingElement={<div style={{height: '100%'}}/>}
+                containerElement={<div style={{height: '100%'}}/>}
+                mapElement={<div style={{height: '100%'}}/>}
+            />
+=======
 import React from "react";
+import Box from './components/Box.js';
+import Box2 from './components/Box2.js';
+import Box3 from './components/Box3.js';
+import axios from "axios";
+import TodayBox from './components/TodayBox.js';
 import {
     GoogleMap,
     useLoadScript,
@@ -9,6 +39,10 @@ import {
 import Dashboard from "./Dashboard";
 
 const librairies = ["places"];
+
+const API_KEY = "4081444b7b90198136fefe6ed4ccf35b";
+const API_URL_ICON = "http://openweathermap.org/img/wn/";
+const API_URL_DAY3 = "http://api.openweathermap.org/data/2.5/forecast/daily";
 
 const mapContainerStyle = {
     width: '1700px',
@@ -58,6 +92,7 @@ export default function Map() {
 
     const [markers, setMarkers] = React.useState(cities);
     const [selected, setSelected] = React.useState(null);
+    const [city, setCity] = React.useState("Londres");
 
     const onMapClick = React.useCallback((event) => {
         const latlng =
@@ -71,7 +106,9 @@ export default function Map() {
             if (cities[i].lat === latlng.lat && cities[i].lng === latlng.lng)
             {
                 console.log(cities[i].nameCities)
-                Dashboard ({city: cities[i].nameCities})
+                //Dashboard ({city: cities[i].nameCities})
+                setCity(cities[i].nameCities);
+                callAPI();
             }
         }
     }, []);
@@ -81,8 +118,55 @@ export default function Map() {
         mapRef.current = map;
     }, []);
 
+    const callAPI = () => {
+        // Call API
+        console.log(city);
+        axios
+          .get(`${API_URL_DAY3}?q=${city}&cnt=4&units=metric&appid=${API_KEY}`)
+          .then(({ data }) => {
+            // Récupère la donnée d'une API
+            console.log(data);
+            for(let i=0;i<4;i++)
+            {
+              // On récupère l'information principal
+              const main = data.list[i].weather[0].main;
+              const description = data.list[i].weather[0].description;
+              const temp = data.list[i].temp.day;
+              const icon = `<img src=${API_URL_ICON}${data.list[i].weather[0].icon}@2x.png class="weather-icon"/>`;
+      
+              // Modifier le DOM
+              document.getElementById('day'+i+'-forecast-main').innerHTML = main;
+              document.getElementById('day'+i+'-forecast-more-info').innerHTML = description;
+              document.getElementById('day'+i+'-icon-weather-container').innerHTML = icon;
+              document.getElementById('day'+i+'-forecast-temp').innerHTML = `${temp}°C`;
+            }
+          })
+          .catch(console.error);
+      };
+  
+    callAPI(city);
+
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading Maps";
+
+    //API pour trafic 
+    const options = {
+        method: 'GET',
+        url: 'https://traffic-incident-report.p.rapidapi.com/get_report',
+        params: {country: '<REQUIRED>', region: 'virginia'},
+        headers: {
+          'x-rapidapi-host': 'traffic-incident-report.p.rapidapi.com',
+          'x-rapidapi-key': '9759435ffbmshf8ad02052e5d525p1811a9jsncc1ca5606eba'
+        }
+      };
+      
+      axios.request(options).then(function (response) {
+          console.log("test");
+          console.log(response.data);
+      }).catch(function (error) {
+          console.error(error);
+      });
+      
 
     return (
         <div>
@@ -100,7 +184,9 @@ export default function Map() {
                         position={{ lat: marker.lat, lng: marker.lng }}
                         onClick={() => {
                             setSelected(marker);
-                            Dashboard({city : marker.nameCities})
+                            setCity(marker.nameCities);
+                            callAPI();
+                            //Dashboard({city : marker.nameCities})
                         }}
                     />
 
@@ -117,7 +203,16 @@ export default function Map() {
                         </div>
                     </InfoWindow>) : null}
             </GoogleMap>
+            <div>
+                <h2>{city}</h2>
+            </div>
+            <TodayBox name={"Aujourd'hui"}/>
+            <div class="App-header">
+                <Box name={"Demain"}/>
+                <Box2 name={"Après-demain"}/>
+                <Box3 name={"Le jour d'après"}/>
+            </div>
+>>>>>>> Stashed changes
         </div>
-    );
-
-}
+    )
+};
