@@ -114,7 +114,7 @@ export default function Map() {
         mapRef.current = map;
     }, []);
 
-    /*const callAPI = () => {
+    const callAPI = () => {
         // Call API
         console.log(city);
         axios
@@ -138,9 +138,9 @@ export default function Map() {
             }
           })
           .catch(console.error);
-      };*/
+      };
 
-    //callAPI(city);
+    callAPI(city);
 
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading Maps";
@@ -310,7 +310,7 @@ export default function Map() {
                         onClick={() => {
                             setSelected(marker);
                             setCity(marker.nameCities);
-                            //callAPI();
+                            callAPI();
                             //Dashboard({city : marker.nameCities})
                             callAPI2(marker.nameCities);
                             callAPI3();
