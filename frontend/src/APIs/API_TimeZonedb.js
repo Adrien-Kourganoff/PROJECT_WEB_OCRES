@@ -5,13 +5,13 @@
 //Pour récuperer l'heure d'une ville il faut d'abbord récupérer sa longitude/latitude grace à l'API google.
 //Ensuite on peut utiliser l'API timezonedb pour récupere l'heure de la ville à partir de sa longitude/latitude.
 
-//Clé API Google
+//Clé API Google geocode
 //const API_KEY_gg = "AIzaSyBLPHz3LcO2MiR7Y-mA7B3YKPmfl8o5FwE";
 const API_KEY_gg_none = "";
 
-//URL API google xml
+//URL API google geocode xml
 //const API_URL_gg = "https://maps.googleapis.com/maps/api/geocode/xml";
-//URL API google json
+//URL API google geocode json
 const API_URL_gg_json = "https://maps.googleapis.com/maps/api/geocode/json";
 
 

@@ -21,3 +21,6 @@ Les instructions sont à retrouver dans le pdf instruction.pdf.
 **Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
 
 Pour rappel, la probabilité de recevoir une réponse à un mail envoyé quelques heures avant le rendu est très proche de 0.
+
+
+Concernant l'API Heure, nous utilisons l'APi Geocoding de Google. Pour utiliser cet API nous bénéficions d'un essai gratuit qui se terminera soit après un certain nombre de requêtes soit au bout de 90 jours (24 février 2022). Il ne faudra donc pas trop tester cette API (bouton Actualiser) sous peine de dépasser le nombre de requêtes disponibles et que l'API cesse de fonctionner.

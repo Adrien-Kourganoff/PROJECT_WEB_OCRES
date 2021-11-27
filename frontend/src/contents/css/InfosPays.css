@@ -6,7 +6,7 @@
 
 .Drapeau{
     width: 80%;
-    height: 150px;
+    height: 25%;
     margin-left: 10%;
     margin-top: 50px;
     border: 1px solid black;
@@ -19,6 +19,7 @@
 
 .Info_box{
     width: 80%;
+    height: 60%;
     margin-left: 10%;
     margin-top: 30px;
 }

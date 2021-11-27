@@ -20,3 +20,5 @@ Lien suivi de projet Trello : https://trello.com/b/ZtJaO1Un/projetweb
 Sources : 
 https://www.youtube.com/watch?v=THZyM2z8s-o
 https://github.com/public-apis/public-apis#geocoding
+https://rapidapi.com/search/travel
+https://developers.google.com/

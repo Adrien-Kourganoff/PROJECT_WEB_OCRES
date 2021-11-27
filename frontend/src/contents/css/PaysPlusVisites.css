@@ -3,3 +3,29 @@
     height: 100%;
     border: 1px solid black;
 }
+
+#map_area{
+    width: 100%;
+    height: 100%;
+}
+
+.Box2 .Input{
+    position: relative;
+    width: 30%;
+    height: 10%;
+    display: flex;
+    margin-top: -4%;
+    z-index: 10;
+}
+
+.Box2 .Input #city-input{
+    float: left;
+    width: 50%;
+}
+
+.Box2 .Input #city-input-button{
+    float: right;
+    margin-right: 0%;
+    margin-left: 5%;
+}
+
