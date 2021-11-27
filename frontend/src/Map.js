@@ -3,6 +3,9 @@ import Box from './components/Box.js';
 import Box2 from './components/Box2.js';
 import Box3 from './components/Box3.js';
 import Box4 from './components/Box4.js';
+import Box5 from './components/Box5.js';
+import Box6 from './components/Box6.js';
+import Box7 from './components/Box7.js';
 import axios from "axios";
 import TodayBox from './components/TodayBox.js';
 import {
@@ -142,24 +145,6 @@ export default function Map() {
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading Maps";
 
-    //API pour trafic 
-    /*const options = {
-        method: 'GET',
-        url: 'https://traffic-incident-report.p.rapidapi.com/get_report',
-        params: {country: 'France', region: 'île-de-france'},
-        headers: {
-          'x-rapidapi-host': 'traffic-incident-report.p.rapidapi.com',
-          'x-rapidapi-key': '9759435ffbmshf8ad02052e5d525p1811a9jsncc1ca5606eba'
-        }
-      };
-      
-      axios.request(options).then(function (response) {
-          console.log("test");
-          console.log(response.data);
-      }).catch(function (error) {
-          console.error(error);
-      });*/
-
     const callAPI2 = (city) => {
         // Call API
 
@@ -170,9 +155,14 @@ export default function Map() {
 
                     // Récupère la donnée d'une API
                     const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
 
                     // Modifier le DOM
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
         }
@@ -183,9 +173,13 @@ export default function Map() {
 
                     // Récupère la donnée d'une API
                     const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
 
                     // Modifier le DOM
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
         }
@@ -196,9 +190,14 @@ export default function Map() {
 
                     // Récupère la donnée d'une API
                     const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
 
                     // Modifier le DOM
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
         }
@@ -209,9 +208,13 @@ export default function Map() {
 
                     // Récupère la donnée d'une API
                     const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
 
                     // Modifier le DOM
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
         }
@@ -222,9 +225,14 @@ export default function Map() {
 
                     // Récupère la donnée d'une API
                     const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
 
                     // Modifier le DOM
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
         }
@@ -235,9 +243,13 @@ export default function Map() {
 
                     // Récupère la donnée d'une API
                     const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
 
                     // Modifier le DOM
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
         }
@@ -248,37 +260,38 @@ export default function Map() {
 
                     // Récupère la donnée d'une API
                     const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
 
                     // Modifier le DOM
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
-        } 
+        }
     };
 
     const callAPI3 = () => {
-        var axios = require("axios").default;
+        axios
+            .get(`http://api.icndb.com/jokes/random?exclude=[nerdy,explicit]`)
+            .then((data) => {
 
-        var options = {
-            method: 'GET',
-            url: 'https://world-population.p.rapidapi.com/allcountriesname',
-            headers: {
-                'x-rapidapi-host': 'world-population.p.rapidapi.com',
-                'x-rapidapi-key': '9759435ffbmshf8ad02052e5d525p1811a9jsncc1ca5606eba'
-            }
-        };
+                // Récupère la donnée d'une API
+                const joke = data.data.value.joke;
 
-        axios.request(options).then(function (response) {
-            console.log(response.data);
-        }).catch(function (error) {
-            console.error(error);
-        });
+                // Modifier le DOM
+                document.getElementById('joke').innerHTML = joke;
+            })
+            .catch(console.error);
     }
 
     callAPI2();
     callAPI3();
     return (
         callAPI2(),
+        callAPI3(),
         <div>
             <center>
                 <h1>Carte du monde, cliquez sur une ville</h1>
@@ -300,6 +313,7 @@ export default function Map() {
                             //callAPI();
                             //Dashboard({city : marker.nameCities})
                             callAPI2(marker.nameCities);
+                            callAPI3();
                         }}
                     />
 
@@ -327,8 +341,13 @@ export default function Map() {
                 <Box2 name={"Après-demain"} />
                 <Box3 name={"Le jour d'après"} />
             </div>
-            <div class="App-Body">
+            <div class="App-header">
                 <Box4 name={"Vitesse du vent"} />
+                <Box5 name={"Pression"} />
+                <Box7 name={"Humidité"} />
+            </div>
+            <div>
+                <Box6 name={"Blague sur Chuck Norris"} />
             </div>
         </div>
     )
