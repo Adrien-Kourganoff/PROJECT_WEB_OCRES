@@ -5,14 +5,14 @@ import Box3 from './components/Box3.js';
 import axios from "axios";
 import TodayBox from './components/TodayBox.js';
 
-const API_KEY = "4081444b7b90198136fefe6ed4ccf35b";
+const API_KEY = "859f0256e4490b568c5dc9cbcdc2f59a";
 const API_URL_ICON = "http://openweathermap.org/img/wn/";
 const API_URL_DAY3 = "http://api.openweathermap.org/data/2.5/forecast/daily";
 
 const Dashboard = ({city}) => {
 
   city="Paris";
-    const callAPI = ({city}) => {
+    /*const callAPI = ({city}) => {
       // Call API
       console.log(city);
       axios
@@ -36,10 +36,10 @@ const Dashboard = ({city}) => {
           }
         })
         .catch(console.error);
-    };
+    };*/
 
-    callAPI(city);
-  
+    //callAPI(city);
+    callAPI2();
     return (
     <div>
       <div>
@@ -57,3 +57,25 @@ const Dashboard = ({city}) => {
 };
 
 export default Dashboard;
+
+const callAPI2 = () => {
+  // Call API
+  axios
+    .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=48.86272&lon=2.28759&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+    .then((data ) => {
+      // Récupère la donnée d'une API
+      console.log( "data" +data);
+ 
+        // On récupère l'information principal
+        //const main = data.list[0].weather[0].main;
+        //const description = data.list[i].weather[0].description;
+        //const windSpeed = data.list[].temp.day;
+
+        // Modifier le DOM
+        //document.getElementById('day'+i+'-forecast-main').innerHTML = main;
+        //document.getElementById('day'+i+'-forecast-more-info').innerHTML = description;
+        //document.getElementById('day'+i+'-icon-weather-container').innerHTML = icon;
+        //document.getElementById('day'+i+'-forecast-temp').innerHTML = `${temp}°C`;
+    })
+    .catch(console.error);
+};
