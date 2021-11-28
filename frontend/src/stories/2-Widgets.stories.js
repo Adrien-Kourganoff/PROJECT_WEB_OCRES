@@ -5,6 +5,7 @@ import React from 'react';
 import Meteo from '../widgets/Meteo.js';
 import Suggestion from '../widgets/Suggestion.js';
 import Makeup from "../widgets/Makeup.js";
+import Nasa from "./widgets/Nasa.js";
 
 export default {
     title: 'Widgets',
@@ -15,3 +16,5 @@ export const meteo = () => <Meteo/> ;
 export const suggest = () => <Suggestion/>;
 
 export const makeup = () => <Makeup/>;
+
+export const nasa = () => <Nasa/>;

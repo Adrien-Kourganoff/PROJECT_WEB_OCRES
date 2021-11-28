@@ -5,7 +5,8 @@ import './App.css';
 import Meteo from './widgets/Meteo.js';
 import Suggestion from './widgets/Suggestion.js';
 import Makeup from "./widgets/Makeup.js";
-import Nasa from "./widgets/Nasa.js"
+import Nasa from "./widgets/Nasa.js";
+import Rates from "./widgets/Rates.js";
 
 
 class App extends Component {
@@ -18,7 +19,9 @@ class App extends Component {
         <div className="grid-nasa">
           <Nasa/>
         </div>
-        <div className="grid-mail">Mail</div>
+        <div className="grid-rates">
+          <Rates/>
+        </div>
         <div className="grid-suggestions">
           <Suggestion/>
         </div>

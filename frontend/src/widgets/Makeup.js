@@ -8,7 +8,8 @@ class Makeup extends Component {
             price: "",
             image: "",
             rating: "",
-            search: false,
+            request: false,
+            refresh: true,
         }
     }
 
@@ -21,7 +22,7 @@ class Makeup extends Component {
                 price: data[0].price,
                 image: data[0].image_link,
                 rating: data[0].rating,
-                search: true,
+                request: true,
             });
         },
         (error) =>{
@@ -30,9 +31,11 @@ class Makeup extends Component {
     }
 
     render(){
-        this.useAPI();
+        if(this.state.refresh){
+            this.useAPI();
+        }
 
-        if(this.state.search){
+        if(this.state.request){
             return(
                  <div className = "Makeup_infos">
                     <h4 className="widget-title">Makeup</h4>
@@ -45,7 +48,10 @@ class Makeup extends Component {
         }
         else{
             return(
-                <p>Couldn't find anything...</p>
+                <div className = "Makeup_infos">
+                    <h4 className="widget-title">Makeup</h4>
+                    <p>Can't find anything...</p>
+                </div>
             );
         }
     }

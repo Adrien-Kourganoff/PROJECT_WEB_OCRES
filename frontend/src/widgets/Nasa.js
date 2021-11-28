@@ -6,10 +6,11 @@ class Nasa extends Component {
         super(props);
         this.state = {
             image: "",
-            request: false,
             year: "",
             month: "",
             day: "",
+            request: false,
+            refresh: true,
         }
     }
 
@@ -20,6 +21,7 @@ class Nasa extends Component {
             this.setState({
                 image: data.url,
                 request: true,
+                refresh: false,
             });
         },
         (error) =>{
@@ -28,7 +30,9 @@ class Nasa extends Component {
     }
 
     render(){
-        this.useAPI();
+        if (this.state.refresh){
+            this.useAPI();
+        }
 
         if (this.state.request){
             return(
@@ -42,7 +46,7 @@ class Nasa extends Component {
             return(
                 <div className="Nasa_picture">
                     <h4 className="widget-title">NASA Picture of the day</h4>
-                    <p>can't find anything...</p>
+                    <p>Can't find anything...</p>
                 </div>
             );
         }

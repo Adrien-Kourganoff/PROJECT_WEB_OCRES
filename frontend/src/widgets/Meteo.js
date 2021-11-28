@@ -14,7 +14,6 @@ class Meteo extends Component {
             city: "Paris",
             info: "Nuageux",
             temp: "2°C",
-            isLoaded: false,
         }
     }
 

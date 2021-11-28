@@ -6,7 +6,7 @@ class Suggestion extends Component {
         this.state = {
             activity: "Nothing to suggest",
             participants: 0,
-            reload: true,
+            refresh: true,
         };
     }
     useAPI(){
@@ -16,18 +16,16 @@ class Suggestion extends Component {
             this.setState({
                 activity: data.activity,
                 participants: data.participants,
+                refresh: false,
             });
         },
         (error) =>{
             console.error(error);
         })
-        this.setState({
-            reload: false,
-        })
     }
 
     render(){
-        if (this.state.reload){
+        if (this.state.refresh){
             this.useAPI();
         }
 
