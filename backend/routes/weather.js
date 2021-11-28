@@ -16,6 +16,8 @@ const API_URL_ICON = "http://openweathermap.org/img/wn/";
 */
 router.get('/', async function(req, res, next) {
     
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+
     var response;
 
     var city = "Paris";//Default city = Paris
@@ -25,7 +27,7 @@ router.get('/', async function(req, res, next) {
     if(req.query.city)
         city = req.query.city;
 
-    //If city give and not null
+    //If day give and not null
     if(req.query.day)
         day = req.query.day;
 
@@ -38,6 +40,34 @@ router.get('/', async function(req, res, next) {
         .catch(err => res.send(err));
 
     res.status(200).send(response);
+});
+
+//get icons for next *day* days
+router.get('/icon', async function(req, res, next) {
+
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    
+    var icons = [];
+    var day = 1;//default 1
+    var city = "Paris";//Default city = Paris
+
+    //If city give and not null
+    if(req.query.city)
+    city = req.query.city;
+
+    //If days give and not null
+    if(req.query.day)
+        day = req.query.day;
+
+        await axios.get(API_URL+city+"&cnt="+day+"&units=metric&appid="+API_KEY)
+            .then(allData => {
+                for (let i = 0; i < day; i++) {
+                    icons.push(API_URL_ICON+allData.data.list[i].weather[0].icon+"@2x.png");
+                }
+            })
+            .catch(err => res.send(err));
+        
+    res.status(200).send(icons);
 });
 
 module.exports = router;

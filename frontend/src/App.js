@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CardWeather from './card';
 
 import Map from './map';
 
 function App() {
   return (
-    <Map/>
+    <CardWeather/>
   );
 }
 
