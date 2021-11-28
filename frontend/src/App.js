@@ -12,7 +12,9 @@ class App extends Component {
         </div>
         <div className="grid-stats">Stats</div>
         <div className="grid-mail">Mail</div>
-        <div className="grid-suggestions">Suggestions</div>
+        <div className="grid-suggestions">
+          <Widget type="Suggestion"/>
+        </div>
         <div className="grid-musique">Musique</div>
         <div className="grid-shopping">Shopping</div>
       </div>

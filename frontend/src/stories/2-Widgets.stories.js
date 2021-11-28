@@ -6,3 +6,5 @@ export default {
   };
 
 export const meteo = () => <Widget type="Météo"/> ;
+
+export const suggest = () => <Widget type="Suggestion"/>;
