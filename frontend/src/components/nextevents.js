@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 const { default: axios } = require('axios');
 
-
-//Give the next workers for the next events
-export default function NextWorker(){
+// A card used to contain all data from api
+export default function NextEvents(){
 
     const [events, setEvents] = useState([]);
 
@@ -17,16 +16,14 @@ export default function NextWorker(){
     }, []);
 
     return (
-
         <div className='container'>
             {events.map(event => (
                 <div className='event'>
-                    <h1 className='eventTitle'>{event.event}</h1>
-                    <h5 className='couvreurs'>Couvert par : {event.couvreurs}</h5>
-                    <h5 className='position'>Lieu : {event.position.name}</h5>
+                    <h5 className='lieu'>Lieu : {event.position.name}</h5>
+                    <h6 className='date'>Date : {event.date}</h6>
                 </div>
             ))}
         </div>
+    )
 
-    );
 }
