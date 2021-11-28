@@ -28,25 +28,25 @@ export default function CardWeather(){
         <section className='container'>
             <div className='today'>
                 <h1 className='title'>Today</h1>
-                <img  className='icon'/>
-                <h2 className='temp'>19°C</h2>
+                <img src={icons[0]} className='icon'/>
+                <h2 className='temp'>3°C</h2>
             </div>
-            <div className='tmr'>
-                <h1 className='title'>Today</h1>
-                <img  className='icon'/>
-                <h2 className='temp'>19°C</h2>
-            </div>
-            <div className='tmr2'>
-                <h1 className='title'>Today</h1>
-                <img  className='icon'/>
-                <h2 className='temp'>19°C</h2>
+            <div className='tommorow'>
+                <div className='tmr'>
+                    <h1 className='title'>Today</h1>
+                    <img src={icons[1]} className='icon'/>
+                    <h2 className='temp'>5°C</h2>
+                </div>
+                <div className='tmr2'>
+                    <h1 className='title'>Today</h1>
+                    <img src={icons[2]} className='icon'/>
+                    <h2 className='temp'>-2°C</h2>
+                </div>
             </div>
         </section>
     );    
 }
 
-/*
-
-<img src={icons[0]} className='icon'/>
+/* will be used after with the back end
                 <h2 className='temp'>{data.list[0].temp.day}</h2>
 */
