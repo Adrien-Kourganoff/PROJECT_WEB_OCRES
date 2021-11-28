@@ -6,7 +6,7 @@ import  '../../GlobalCss/Card.css';
 import  './Widgets.css';
 import Snuggle from 'react-snuggle';
 
-import CryptoConverter from '../../components/CryptoConverter/CryptoConverter';
+import EthConverter from '../EthConverter/EthConverter';
 import Masonry from 'react-masonry-css'
 
 
@@ -40,9 +40,7 @@ export default function Widgets() {
                               <EthChart  />
                           
                               <EthNews  />
-                                <CryptoConverter   />
-
-
+                              <EthConverter/>
               </Masonry>
 
      </div>
