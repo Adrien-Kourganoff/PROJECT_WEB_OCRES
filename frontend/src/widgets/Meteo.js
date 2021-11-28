@@ -59,7 +59,7 @@ class Meteo extends Component {
         this.useAPI();
 
         return(
-            <div>
+            <div className="Meteo">
                 <p id="day1-forecast-more-info">{this.state.info}</p>
                 <div id="icon1-weather-container" ></div>
                 <h3 id="day1-forecast-temp">{this.state.temp}</h3>

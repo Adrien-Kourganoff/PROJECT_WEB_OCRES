@@ -16,22 +16,39 @@ class Widget extends Component {
           return (
             <Meteo/>
           );
+  default:
       }
     }
 
     render() {
         return (
-        <div class="widget">
-            <div class="widget-header">
-              <h4 class="widget-title">{this.state.title}</h4>
-            </div>
-              
-            <div class="widget-body">
-              {this.selectType()}
-            </div>
-        </div>
+          <div className="widget">
+              <div className="grid-meteo">
+              <h4 className="widget-title">{this.state.title}{this.selectType()}</h4>
+              </div>
+              <div className="grid-stats">Stats</div>
+              <div className="grid-mail">Mail</div>
+              <div className="grid-suggestions">Suggestions</div>
+              <div className="grid-musique">Musique</div>
+              <div className="grid-shopping">Shopping</div>
+          </div>
+
+          // <div className="widget">
+          //     <div className="widget-header">
+          //       <h4 className="widget-title">{this.state.title}</h4>
+          //     </div>
+          //     <div className="widget-body">
+          //       {this.selectType()}
+          //     </div>
+          // </div>
+
         );
     }
+
+
+    // eslint-disable-next-line no-dupe-class-members
+
 }
+
 
 export default Widget;
