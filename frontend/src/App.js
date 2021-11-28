@@ -1,30 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Widget from './widgets/Widget.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-<<<<<<< HEAD
-=======
-        
-        <img src={logo} className="App-logo" alt="logo" />
->>>>>>> 57d13e43c8b803801706ba6d23dc213667e1756a
-        <p>
-          Edit <code>src/App.js</code> and save to reload. teeeeest?
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Widget type = "Météo"/>
+      </div>
+    );
+  }
 }
 
 export default App;

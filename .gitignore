@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 *.json
 *.json.gz
+*.DS_Store
 =======
 node_modules
 >>>>>>> 57d13e43c8b803801706ba6d23dc213667e1756a
