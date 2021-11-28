@@ -16,7 +16,9 @@ class App extends Component {
           <Widget type="Suggestion"/>
         </div>
         <div className="grid-musique">Musique</div>
-        <div className="grid-shopping">Shopping</div>
+        <div className="grid-shopping">
+          <Widget type="Makeup"/>
+        </div>
       </div>
     );
   }

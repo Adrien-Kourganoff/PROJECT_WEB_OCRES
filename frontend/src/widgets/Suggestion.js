@@ -33,9 +33,9 @@ class Suggestion extends Component {
 
         return(
             <div className = "activity_suggestion">
-                <h6>
+                <p>
                     Activity suggestion: {this.state.activity}
-                </h6>
+                </p>
                 <p>
                     Nb of participants: {this.state.participants}
                 </p>
