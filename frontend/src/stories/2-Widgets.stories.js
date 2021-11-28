@@ -5,4 +5,4 @@ export default {
     title: 'Widgets',
   };
 
-export const meteo = () => <Widget type="Météo"/> ;
+export const meteo = () => <Widget type="Mété"/> ;

@@ -16,6 +16,11 @@ class Widget extends Component {
           return (
             <Meteo/>
           );
+        
+          default:
+            return(
+              <p>Undefined widget</p>
+            )
       }
     }
 
