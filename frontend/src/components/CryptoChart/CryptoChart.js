@@ -71,6 +71,7 @@ useEffect(() => {
                         ],
                         borderWidth: 1,
                         pointRadius : 0,
+                        
                     }]
                 },
                 options: {
@@ -81,7 +82,6 @@ useEffect(() => {
                      lineHeightAnnotation: {
                         always: true,
                         hover: false,
-                        lineWeight: 1.5,
                       },
                     
                       animation: {
@@ -89,8 +89,10 @@ useEffect(() => {
                       },
                       maintainAspectRatio: false,
                       responsive: true,
+                   
                       tooltips: {enabled: false},
                       hover: {mode: null},
+                     
                       scales: {
                         xAxes: [
                           {
@@ -131,7 +133,7 @@ useEffect(() => {
             </ListGroup.Item>
             <div>
                 <div >
-                        <canvas style={{marginTop: "10px"}} className="canvasMargin" ref ={chartRef}  id="myChart"></canvas>
+                        <canvas height="200" style={{marginTop: "10px"}} className="canvasMargin" ref ={chartRef}  id="myChart"></canvas>
                 </div>
 
 
