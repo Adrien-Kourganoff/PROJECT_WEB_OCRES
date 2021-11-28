@@ -17,3 +17,16 @@ border:1px solid #c9d0d878;
 {
     grid-row-end: 0!important;
 }
+button{
+    background-color: #e9ecef!important;
+    border-color:#ced4da!important;
+}
+
+.btn-outline-primary {
+    color: black!important;
+    border-color: #0d6efd;
+}
+.dropdown-toggle::after
+{
+    color:black!important;
+}

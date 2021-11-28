@@ -16,6 +16,7 @@
     "dateformat": "^5.0.2",
     "faker": "^5.5.3",
     "flexmasonry": "^0.2.3",
+    "jquery": "^3.6.0",
     "masonry-layout": "^4.2.2",
     "mdbootstrap": "^4.20.0",
     "moment": "^2.29.1",
