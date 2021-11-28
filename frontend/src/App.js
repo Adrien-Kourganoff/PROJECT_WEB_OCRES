@@ -5,6 +5,7 @@ import './App.css';
 import Meteo from './widgets/Meteo.js';
 import Suggestion from './widgets/Suggestion.js';
 import Makeup from "./widgets/Makeup.js";
+import Nasa from "./widgets/Nasa.js"
 
 
 class App extends Component {
@@ -14,7 +15,9 @@ class App extends Component {
         <div className="grid-meteo">
           <Meteo/>
         </div>
-        <div className="grid-stats">Stats</div>
+        <div className="grid-nasa">
+          <Nasa/>
+        </div>
         <div className="grid-mail">Mail</div>
         <div className="grid-suggestions">
           <Suggestion/>
