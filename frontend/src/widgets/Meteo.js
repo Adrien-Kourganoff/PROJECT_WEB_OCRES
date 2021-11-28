@@ -15,7 +15,6 @@ class Meteo extends Component {
             info: "Nuageux",
             temp: "2°C",
             isLoaded: false,
-            error: null,
         }
     }
 
@@ -26,7 +25,6 @@ class Meteo extends Component {
             this.setState({
                 info: data.weather[0].description,
                 temp: data.main.temp + "°C",
-                isLoaded: true,
             });
         },
         (error) =>{

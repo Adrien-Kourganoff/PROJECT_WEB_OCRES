@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './Widget.css';
 import Meteo from './Meteo.js';
+import Suggestion from './Suggestion.js';
 
 class Widget extends Component {
     constructor(props){
@@ -16,6 +17,11 @@ class Widget extends Component {
           return (
             <Meteo/>
           );
+
+          case "Suggestion":
+            return(
+              <Suggestion/>
+            );
         
           default:
             return(
