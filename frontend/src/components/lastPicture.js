@@ -21,7 +21,7 @@ export default function LastPictures(){
     return (
         <div className='container'>
             <img src={URL[nb]} onClick={() => { 
-                if(nb==URL.length-1)
+                if(nb===URL.length-1)
                     setNB(0);
                 else setNB(nb + 1);
             }}></img>

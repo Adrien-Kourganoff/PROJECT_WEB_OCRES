@@ -7,6 +7,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var galerieRouter = require("./routes/galerie");
 var weatherRouter = require("./routes/weather");
+var eventsRouter = require("./routes/events");
 
 var app = express();
 
@@ -19,5 +20,6 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/galerie", galerieRouter);
 app.use("/weather", weatherRouter);
+app.use("/events", eventsRouter);
 
 module.exports = app;

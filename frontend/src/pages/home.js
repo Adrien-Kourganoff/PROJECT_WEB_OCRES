@@ -1,6 +1,7 @@
 import React from 'react';
-import LastPictures from '../components/lastPicture';
 import Navigation from '../components/navigation';
+import NextEvents from '../components/nextevents';
+import NextWorker from '../components/nextWorker';
 import "../styles/settings.css";
 
 function Home() {
@@ -11,7 +12,7 @@ function Home() {
                 <div className="Page">
                     <h1>This is home page</h1>
                     <div class="container events">
-                        <h2> I am the event card </h2>
+                        <NextWorker/>
                     </div>
                     <div class="container photo">
                         <h2> I am the photo card </h2>
@@ -20,7 +21,7 @@ function Home() {
                         <h2> I am the meteo card </h2>
                     </div>
                     <div class="container list">
-                        <h2> I am the list card </h2>
+                        <NextEvents/>
                     </div>
                     <div class="container map">
                         <h2> I am the map card </h2>
