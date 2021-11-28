@@ -23,14 +23,7 @@ class Widget extends Component {
     render() {
         return (
           <div className="widget">
-              <div className="grid-meteo">
               <h4 className="widget-title">{this.state.title}{this.selectType()}</h4>
-              </div>
-              <div className="grid-stats">Stats</div>
-              <div className="grid-mail">Mail</div>
-              <div className="grid-suggestions">Suggestions</div>
-              <div className="grid-musique">Musique</div>
-              <div className="grid-shopping">Shopping</div>
           </div>
 
           // <div className="widget">

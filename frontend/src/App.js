@@ -7,7 +7,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Widget type = "Météo"/>
+        <div className="grid-meteo">
+          <Widget type = "Météo"/>
+        </div>
+        <div className="grid-stats">Stats</div>
+        <div className="grid-mail">Mail</div>
+        <div className="grid-suggestions">Suggestions</div>
+        <div className="grid-musique">Musique</div>
+        <div className="grid-shopping">Shopping</div>
       </div>
     );
   }
