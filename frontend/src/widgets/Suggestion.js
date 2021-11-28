@@ -33,6 +33,7 @@ class Suggestion extends Component {
 
         return(
             <div className = "activity_suggestion">
+                <h4 className="widget-title">Suggestion</h4>
                 <p>
                     Activity suggestion: {this.state.activity}
                 </p>

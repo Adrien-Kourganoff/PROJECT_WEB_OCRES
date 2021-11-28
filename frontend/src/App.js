@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Widget from './widgets/Widget.js';
+//import Widget from './widgets/Widget.js';
+
+import Meteo from './widgets/Meteo.js';
+import Suggestion from './widgets/Suggestion.js';
+import Makeup from "./widgets/Makeup.js";
 
 
 class App extends Component {
@@ -8,16 +12,16 @@ class App extends Component {
     return (
       <div className="App">
         <div className="grid-meteo">
-          <Widget type = "Météo"/>
+          <Meteo/>
         </div>
         <div className="grid-stats">Stats</div>
         <div className="grid-mail">Mail</div>
         <div className="grid-suggestions">
-          <Widget type="Suggestion"/>
+          <Suggestion/>
         </div>
         <div className="grid-musique">Musique</div>
         <div className="grid-shopping">
-          <Widget type="Makeup"/>
+          <Makeup/>
         </div>
       </div>
     );

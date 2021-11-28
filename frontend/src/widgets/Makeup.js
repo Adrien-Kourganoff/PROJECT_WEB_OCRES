@@ -35,6 +35,7 @@ class Makeup extends Component {
         if(this.state.search){
             return(
                  <div className = "Makeup_infos">
+                    <h4 className="widget-title">Makeup</h4>
                     <img src= {this.state.image} className="Item_icon" alt = ""/>
                     <p>Name: {this.state.name}</p>
                     <p>Price: {this.state.price} €</p>
