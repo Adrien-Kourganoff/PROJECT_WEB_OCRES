@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import Box from './components/Box.js';
 import Box2 from './components/Box2.js';
 import Box3 from './components/Box3.js';
@@ -6,6 +6,7 @@ import Box4 from './components/Box4.js';
 import Box5 from './components/Box5.js';
 import Box6 from './components/Box6.js';
 import Box7 from './components/Box7.js';
+import Box8 from './components/Box8.js';
 import axios from "axios";
 import TodayBox from './components/TodayBox.js';
 import {
@@ -16,6 +17,12 @@ import {
 } from "@react-google-maps/api";
 
 import Dashboard from "./Dashboard";
+
+import { Chart, PieController, ArcElement, Legend, Tooltip, Title } from 'chart.js';
+
+import { Line } from 'react-chartjs-2';
+
+Chart.register(PieController, ArcElement, Title, Legend, Tooltip);
 
 const librairies = ["places"];
 
@@ -81,6 +88,15 @@ const cities = [{
 }
 ]
 
+const labels = [
+    "Aujourd'hui",
+    'Demain',
+    'Après-Demain',
+    "Le jour d'après",
+];
+
+//console.log(myChart);
+
 export default function Map() {
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -114,33 +130,71 @@ export default function Map() {
         mapRef.current = map;
     }, []);
 
-    const callAPI = () => {
+    var callAPI = () => {
         // Call API
         console.log(city);
         axios
-          .get(`${API_URL_DAY3}?q=${city}&cnt=4&units=metric&appid=${API_KEY}`)
-          .then(({ data }) => {
-            // Récupère la donnée d'une API
-            console.log(data);
-            for(let i=0;i<4;i++)
-            {
-              // On récupère l'information principal
-              const main = data.list[i].weather[0].main;
-              const description = data.list[i].weather[0].description;
-              const temp = data.list[i].temp.day;
-              const icon = `<img src=${API_URL_ICON}${data.list[i].weather[0].icon}@2x.png class="weather-icon"/>`;
-      
-              // Modifier le DOM
-              document.getElementById('day'+i+'-forecast-main').innerHTML = main;
-              document.getElementById('day'+i+'-forecast-more-info').innerHTML = description;
-              document.getElementById('day'+i+'-icon-weather-container').innerHTML = icon;
-              document.getElementById('day'+i+'-forecast-temp').innerHTML = `${temp}°C`;
-            }
-          })
-          .catch(console.error);
-      };
+            .get(`${API_URL_DAY3}?q=${city}&cnt=4&units=metric&appid=${API_KEY}`)
+            .then(({ data }) => {
+                // Récupère la donnée d'une API
+                //console.log(data);
+                for (let i = 0; i < 4; i++) {
+                    // On récupère l'information principal
+                    const main = data.list[i].weather[0].main;
+                    const description = data.list[i].weather[0].description;
+                    const temp = data.list[i].temp.day;
+                    const icon = `<img src=${API_URL_ICON}${data.list[i].weather[0].icon}@2x.png class="weather-icon"/>`;
 
-    callAPI(city);
+                    // Modifier le DOM
+                    document.getElementById('day' + i + '-forecast-main').innerHTML = main;
+                    document.getElementById('day' + i + '-forecast-more-info').innerHTML = description;
+                    document.getElementById('day' + i + '-icon-weather-container').innerHTML = icon;
+                    document.getElementById('day' + i + '-forecast-temp').innerHTML = `${temp}°C`;
+
+                    //console.log(main);
+                }
+                const temp1 = data.list[0].temp.day;
+                console.log(temp1);
+                const temp2 = data.list[1].temp.day;
+                console.log(temp2);
+                const temp3 = data.list[2].temp.day;
+                console.log(temp3);
+                const temp4 = data.list[3].temp.day;
+                console.log(temp4);
+
+                const dataGraphe = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Graphe des températures',
+                        data: [temp1, temp2, temp3, temp4],
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        tension: 0.1
+                    }]
+                };
+                const config = {
+                    type: 'line',
+                    data: dataGraphe,
+                };
+                const myChart = new Chart(
+
+                    config,
+                    document.getElementById('myChart').getContext('2d'),
+                    console.log("pouet"),
+  
+                    console.log(config),
+                    console.log(myChart)
+                );
+
+            })
+            .catch(console.error);
+    };
+
+    //callAPI(city);
+    //console.log("Api" + callAPI());
+    //var graphe = callAPI(city);
+    //console.log(graphe);
+    //console.log("Api " + callAPI);
 
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading Maps";
@@ -311,7 +365,6 @@ export default function Map() {
                             setSelected(marker);
                             setCity(marker.nameCities);
                             callAPI();
-                            //Dashboard({city : marker.nameCities})
                             callAPI2(marker.nameCities);
                             callAPI3();
                         }}
@@ -336,15 +389,18 @@ export default function Map() {
                 </center>
             </div>
             <TodayBox name={"Aujourd'hui"} />
-            <div class="App-header">
+            <div className="App-header">
                 <Box name={"Demain"} />
                 <Box2 name={"Après-demain"} />
                 <Box3 name={"Le jour d'après"} />
             </div>
-            <div class="App-header">
+            <div className="App-header">
                 <Box4 name={"Vitesse du vent"} />
                 <Box5 name={"Pression"} />
                 <Box7 name={"Humidité"} />
+            </div>
+            <div>
+                <Box8 name={"Graphe des températures"} />
             </div>
             <div>
                 <Box6 name={"Blague sur Chuck Norris"} />
