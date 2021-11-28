@@ -9,7 +9,12 @@
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
+            "env": {
+                "API_KEY": "41kmQnuVG5azV2MZj4GviKX1CwqGR8Rr",
+                "API_SECRET": "zuvwj1euFtA7bJQS",
+                "apiKey": "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo"
+            },
         }
     ]
 }
