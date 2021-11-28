@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../components/navigation';
+import NextWorker from '../components/nextWorker';
 import "../styles/settings.css";
 
 function Home() {
@@ -8,7 +9,7 @@ function Home() {
             <body>
                 <Navigation/>
                 <div className="Page">
-                    <h1>This is home page</h1>
+                    <NextWorker/>
                 </div>
             </body>
       </div>
