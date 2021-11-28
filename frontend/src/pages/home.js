@@ -1,13 +1,16 @@
 import React from 'react';
 import Navigation from '../components/navigation';
+import "../styles/settings.css";
 
 function Home() {
     return (
       <div className="App">
-        <Navigation/>
-        <header className="App-header">
-           <h1>This is home page</h1>
-        </header>
+            <body>
+                <Navigation/>
+                <div className="Page">
+                    <h1>This is home page</h1>
+                </div>
+            </body>
       </div>
     );
 }
