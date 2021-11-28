@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.App{
+    display: flex;
+    margin: 0;
+}
+
+/* Settings for the navigation */
+.navigation {    
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 500ms ease;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Set the colors and settings of the list of pages */
+.navigation a {
+    text-decoration: none;
+    color: #5d5d63;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    width: 100%;
+}
+
+/* Set the color of the text while hovering */
+.navigation a:hover{
+    color: white;
+    transition: 0.5s;
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    width: 100%;
+}
+
+/* Set the colors of the icons when hovering */
+.navigation a:hover .material-icons{
+    color: #df49a6;
+    transition: 0.5s;
+}
+
+.navbar {
+  height: 100%;
+}
+  
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .link-text{
+      display: none;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+  
+  /* When not hovering the logo is grey */
+  .nav-link {
+    display: flex;
+    height: 5rem;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 0.5s;
+  }
+  
+  /* When hovering the text is white and we see the colors of the logo */
+  .nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    transition: 0.5s;
+    color: white;
+  }
+  
+  /* Set the size of the logo */
+  .nav-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+  
+  /* We set the settings and colors of our logo */
+  .logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+  }
+  
+  /* We set the time of the transition */
+  .logo svg {
+    transition: 0.5s;
+  }
+  
+  /* We don't show it while it's not hovering */
+  .logo-text
+  {
+    display: inline;
+    position: absolute;
+    left: -999px;
+  }
+  
+  /* Annimation of the logo */
+  .navbar:hover .logo svg {
+    transform: rotate(-180deg);
+  }
+
+  /* Colors for the logo */
+  .fa-primary {
+    color: #ff7eee;
+  }
+  
+  .fa-secondary {
+    color: #df49a6;
+  }
+
+    /* Settings for the page */
+  .Page {
+    background-color: #282c34;
+    margin-left: 5rem;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    height: 100vh;
+  }
+
+/* Set the color of our icons */
+.material-icons{
+    margin: 20px;
+    width:auto;
+    color: #5d5d63;
+}
+  
+.material-icons.md-36 { font-size: 36px; }
+  
+  /* For small screens like mobiles */
+@media only screen and (max-width: 600px) {
+    /* Set the navigation bar to the bottom */
+    .navigation {
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+    }
+
+    /* We don't show the logo */
+    .logo {
+      display: none;
+    }
+  
+    /* We change the flew direction */
+    .navbar-nav {
+      flex-direction: row;
+    }
+  
+    .nav-link {
+      justify-content: center;
+    }
+  
+    /* No more margin for the page */
+    .Page {
+      margin: 0;
+    }
+  }
+  
+  /* For large screens like computers */
+  @media only screen and (min-width: 600px) {
+
+    .navigation {
+      top: 0;
+      width: 5rem;
+      height: 100vh;
+    }
+
+    /* Size of the navigation */
+    .navigation:hover{
+        width: 220px;
+    }
+
+    .navigation a:last-child {
+        margin-top: auto;
+      }
+  
+    /* We show the text */
+    .navbar:hover .link-text {
+      display: inline;
+      margin: auto;
+      width: auto;
+    }
+  
+    .navbar:hover .logo svg, .navbar:hover .logo span 
+    {
+      margin-left: 11rem;
+    }
+  
+    /* We move the logo text with an animation */
+    .navbar:hover .logo-text
+    {
+      left: 0px;
+      margin-left: 36px;
+      transition: 0.7s;
+    }
+  }
+  
+
+
+ 

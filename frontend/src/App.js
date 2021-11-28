@@ -1,33 +1,24 @@
 import React from 'react';
 import './App.css';
-import CardWeather from './card';
-
-import Map from './map';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import Galerie from './pages/galerie';
+import Contact from './pages/contact';
+import Concours from './pages/concours';
+import Event from './pages/event';
+import NotFound from './pages/notFound';
 
 function App() {
   return (
-    <CardWeather/>
-  );
-}
-
-export default App;
-
-/*
-<div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bigApp">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/galerie" element={<Galerie/>} />
+          <Route path="/event" element={<Event/>} />
+          <Route path="/contact" element={<Contact/>} />
+          <Route path="/games" element={<Concours/>} />
+          <Route path='*' element={<NotFound/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
-*/
