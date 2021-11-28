@@ -8,7 +8,7 @@ import Concours from './pages/concours';
 import Event from './pages/event';
 import NotFound from './pages/notFound';
 
-function App() {
+export default function App() {
   return (
     <div className="bigApp">
       <BrowserRouter>
@@ -21,4 +21,5 @@ function App() {
           <Route path='*' element={<NotFound/>} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </div>)
+}

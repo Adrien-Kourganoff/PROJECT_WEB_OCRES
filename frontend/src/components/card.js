@@ -5,7 +5,7 @@ const { default: axios } = require('axios');
 export default function CardWeather(){
 
     const [data, setData] = useState([]);
-    var [icons, setIcons] = useState([]);
+    const [icons, setIcons] = useState([]);
 
     const fetchData = async () => {
         await axios.get('http://localhost:9000/weather?day=3').then(all => setData(all.data));
