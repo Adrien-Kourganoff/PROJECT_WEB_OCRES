@@ -1,6 +1,6 @@
 import React from 'react';
+import LastPictures from '../components/lastPicture';
 import Navigation from '../components/navigation';
-import NextWorker from '../components/nextWorker';
 import "../styles/settings.css";
 
 function Home() {
