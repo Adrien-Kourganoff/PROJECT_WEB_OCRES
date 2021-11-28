@@ -80,7 +80,7 @@ function refreshCard(newIndex)
                 </div>
              </div>
          </div>
-         <div className="card-footer d-flex justify-content-between">
+         <div style={{border : "1px solid #C09A5934"}} className="card-footer d-flex justify-content-between">
             <div>
             <small id="articleDate" className="dateStyle">{newDate}</small>
             </div>
