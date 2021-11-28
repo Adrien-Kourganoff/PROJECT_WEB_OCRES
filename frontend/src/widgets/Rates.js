@@ -4,8 +4,8 @@ class Rates extends Component{
     constructor(props){
         super(props);
         this.state = {
-            base: 'EUR',
-            change: 'USD',
+            base: "EUR",
+            change: "USD",
             value: 0,
             request: false,
         }

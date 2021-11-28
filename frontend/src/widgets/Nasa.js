@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
 class Nasa extends Component {
     constructor (props){

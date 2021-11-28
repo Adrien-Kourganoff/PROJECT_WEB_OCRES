@@ -25,7 +25,7 @@ class App extends Component {
         <div className="grid-suggestions">
           <Suggestion/>
         </div>
-        <div className="grid-musique">Musique</div>
+        <div className="grid-films">Films</div>
         <div className="grid-shopping">
           <Makeup/>
         </div>
