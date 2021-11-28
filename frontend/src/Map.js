@@ -18,11 +18,11 @@ import {
 
 import Dashboard from "./Dashboard";
 
-import { Chart, PieController, ArcElement, Legend, Tooltip, Title } from 'chart.js';
+import { Chart, PieController, ArcElement, Legend, Tooltip, Title, CategoryScale, LinearScale, PointElement, LineElement} from 'chart.js';
 
 import { Line } from 'react-chartjs-2';
 
-Chart.register(PieController, ArcElement, Title, Legend, Tooltip);
+Chart.register(LinearScale, CategoryScale, PieController, ArcElement, Title, Legend, Tooltip, PointElement, LineElement);
 
 const librairies = ["places"];
 
@@ -31,7 +31,7 @@ const API_URL_ICON = "http://openweathermap.org/img/wn/";
 const API_URL_DAY3 = "http://api.openweathermap.org/data/2.5/forecast/daily";
 
 const mapContainerStyle = {
-    width: '1700px',
+    width: '1500px',
     height: '400px',
 }
 
@@ -88,14 +88,7 @@ const cities = [{
 }
 ]
 
-const labels = [
-    "Aujourd'hui",
-    'Demain',
-    'Après-Demain',
-    "Le jour d'après",
-];
-
-//console.log(myChart);
+var myChart = new Chart();
 
 export default function Map() {
     const { isLoaded, loadError } = useLoadScript({
@@ -105,7 +98,7 @@ export default function Map() {
 
     const [markers, setMarkers] = React.useState(cities);
     const [selected, setSelected] = React.useState(null);
-    const [city, setCity] = React.useState("Londres");
+    const [city, setCity] = React.useState("la ville que vous souhaitez !");
 
     const onMapClick = React.useCallback((event) => {
         const latlng =
@@ -130,7 +123,7 @@ export default function Map() {
         mapRef.current = map;
     }, []);
 
-    var callAPI = () => {
+    var callAPI = (city) => {
         // Call API
         console.log(city);
         axios
@@ -151,51 +144,33 @@ export default function Map() {
                     document.getElementById('day' + i + '-icon-weather-container').innerHTML = icon;
                     document.getElementById('day' + i + '-forecast-temp').innerHTML = `${temp}°C`;
 
-                    //console.log(main);
                 }
                 const temp1 = data.list[0].temp.day;
-                console.log(temp1);
                 const temp2 = data.list[1].temp.day;
-                console.log(temp2);
                 const temp3 = data.list[2].temp.day;
-                console.log(temp3);
                 const temp4 = data.list[3].temp.day;
-                console.log(temp4);
-
-                const dataGraphe = {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Graphe des températures',
-                        data: [temp1, temp2, temp3, temp4],
-                        backgroundColor: 'rgb(255, 99, 132)',
-                        borderColor: 'rgb(255, 99, 132)',
-                        tension: 0.1
-                    }]
-                };
-                const config = {
+                
+                const ctx = document.getElementById('myChart').getContext('2d');
+                myChart = new Chart(ctx, {
                     type: 'line',
-                    data: dataGraphe,
-                };
-                const myChart = new Chart(
-
-                    config,
-                    document.getElementById('myChart').getContext('2d'),
-                    console.log("pouet"),
-  
-                    console.log(config),
-                    console.log(myChart)
-                );
+                    data: {
+                        labels: ["Aujourd'hui", "Demain", "Après-Demain", "Le jour d'après"],
+                        datasets: [{
+                            label: 'Graphe des températures',
+                            data: [temp1, temp2, temp3, temp4],
+                            backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            tension: 0.1
+                        }]
+                    },
+                    
+                
+                });       
 
             })
             .catch(console.error);
     };
-
-    //callAPI(city);
-    //console.log("Api" + callAPI());
-    //var graphe = callAPI(city);
-    //console.log(graphe);
-    //console.log("Api " + callAPI);
-
+   
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading Maps";
 
@@ -340,7 +315,6 @@ export default function Map() {
             })
             .catch(console.error);
     }
-
     callAPI2();
     callAPI3();
     return (
@@ -364,9 +338,10 @@ export default function Map() {
                         onClick={() => {
                             setSelected(marker);
                             setCity(marker.nameCities);
-                            callAPI();
+                            callAPI(marker.nameCities);
                             callAPI2(marker.nameCities);
                             callAPI3();
+                            myChart.destroy();
                         }}
                     />
 
@@ -403,7 +378,7 @@ export default function Map() {
                 <Box8 name={"Graphe des températures"} />
             </div>
             <div>
-                <Box6 name={"Blague sur Chuck Norris"} />
+                <Box6 name={"Blague du jour !"} />
             </div>
         </div>
     )

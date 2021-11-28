@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <h1>Weather App</h1>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/map">Dashboard</Link>
         </div>
     );
 };
