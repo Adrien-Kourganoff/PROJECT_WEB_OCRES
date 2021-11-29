@@ -4,6 +4,7 @@ import NextEvents from '../components/nextevents';
 import NextWorker from '../components/nextWorker';
 import Map from '../components/map';
 import CardWeather from '../components/card';
+import LastPictures from '../components/lastPicture';
 import "../styles/settings.css";
 
 function Home() {
@@ -17,7 +18,7 @@ function Home() {
                         <NextWorker/>
                     </div>
                     <div class="container big photo">
-                        <h2> I am the photo card </h2>
+                        <LastPictures/>
                     </div>
                     <div class="container small meteo">
                         <CardWeather/>

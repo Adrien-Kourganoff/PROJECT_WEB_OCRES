@@ -220,16 +220,21 @@ body{
 }
 
 /* List event */
-.Page .list .couvreurs{
+.Page .events .couvreurs{
   color: #23232e;
 }
 
-.Page .list .list_events{
+.Page .list_events{
   height: 100%;
   justify-content: space-around;
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+/* Photo */
+.Page .photo .cont_photo{
+  height: 100%;
 }
 
 .Page h3{
@@ -323,7 +328,7 @@ body{
   /* For large screens like computers */
   @media only screen and (min-width: 750px) {
     .Page .container{
-      min-height: 335px;
+      min-height: 300px;
     }
 
     .Page .big{

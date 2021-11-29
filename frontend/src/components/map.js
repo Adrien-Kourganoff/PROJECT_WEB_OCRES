@@ -11,11 +11,9 @@ export default class Map extends React.Component{
                     mapContainerStyle={ {height: '100%', width: '100%'} }
                     zoom={14}
                     center={ { lat: 48.851913, lng: 2.286672 } }>
-
                     <Marker 
                         position={{ lat: 48.851913, lng: 2.286672 }} 
                         label="18/12"/>
-
                 </GoogleMap>
             </LoadScript>
             </div>
