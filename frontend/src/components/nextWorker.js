@@ -13,7 +13,7 @@ export default function NextWorker(){
 
     return (
 
-        <div>
+        <div className="list_events">
             {data.map(data => (
                 <div className='event'>
                     <h3 className='eventTitle'>{data.event}</h3>
