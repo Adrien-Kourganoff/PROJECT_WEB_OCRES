@@ -19,7 +19,7 @@ export default function CryptoConverter(props) {
 
     calculInit();
             
-  },[]);
+  });
 
 
 
@@ -85,8 +85,8 @@ export default function CryptoConverter(props) {
                    
                     <InputGroup className="mb-3">
                   
-                    <DropdownButton       onSelect={handleSelect}
- aria-labelledby="drop4" id="currencySelector" className="custom-colorBtn" title={<img id={"titleSelector"} src={props.data[0].image} alt={props.data[0].symbol} className={classNames(CryptoConverterStyle.logoSize)}/>} id="input-group-dropdown-1"
+                    <DropdownButton onSelect={handleSelect}
+ aria-labelledby="drop4" id="input-group-dropdown-1 currencySelector" className="custom-colorBtn" title={<img id={"titleSelector"} src={props.data[0].image} alt={props.data[0].symbol} className={classNames(CryptoConverterStyle.logoSize)}/>}
                     >
                          {Array.from({length: props.data.length}).map((crypto,index) => (
                            
@@ -94,12 +94,16 @@ export default function CryptoConverter(props) {
                          ))}
                     </DropdownButton>
                     <FormControl value={"0.000"} id="montantConverti" disabled aria-label="Text input with dropdown button" />
-                   
-                    <div className="container">
+        
+ 
+        <div className="container" style={{marginTop: "13px"}}>
+
         <div className="col-md-12 text-center">
             <button className={classNames("btn",CryptoConverterStyle.btnStyle)} type="button"  onClick={calcul} >Convertir</button>
         </div>
+
     </div>
+
                 </InputGroup>
                     
                     

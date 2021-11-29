@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import CryptoDatas from '../../components/CryptoDatas/CryptoDatas';
+import CryptoDatas from '../../components/DashboardComponents/CryptoDatas/CryptoDatas';
 
 
-export default function EthDatas() {
+export default function EthDatas(props) {
    
     const [data, setData] = useState([]);
 
+    console.log();
+
     useEffect(() => {
+
+        
         const fetchData = async () => {
         
             const result = await axios(

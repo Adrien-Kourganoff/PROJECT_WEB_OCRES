@@ -41,8 +41,8 @@
   color:white;
 }
 .container-dots {
-  margin-bottom: 8px;
-    margin-top: 15px;
+  padding-bottom: 8px;
+  padding-top: 14px;
 }
 .dot {
   width: 16px;

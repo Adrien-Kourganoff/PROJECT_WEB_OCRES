@@ -30,3 +30,11 @@ button{
 {
     color:black!important;
 }
+.titleAdminCards
+{
+    color : white;
+    font-size:15px;
+}
+.btn:hover{
+    color:black!important;
+}

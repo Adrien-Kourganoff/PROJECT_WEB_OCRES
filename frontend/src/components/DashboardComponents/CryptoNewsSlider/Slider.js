@@ -1,4 +1,6 @@
-import React, {useState,useEffect, useRef} from 'react'
+import React, {useState} from 'react';
+import  {ListGroup} from 'react-bootstrap';
+
 import './Slider.css'
 import classNames from 'classnames';
 
@@ -66,36 +68,46 @@ function refreshCard(newIndex)
         <div className="container-slider" >
              <div>
               
-                <div className="Card CarDisplay">
+      <div className="card CarDisplay">
+      <ListGroup.Item style={{padding: "0"}}>     
+
+          
                         <div className="imgContainer">
                          <img src={process.env.PUBLIC_URL + urlToImage} id="articleImage" className="img-fluid card-img-top imgStyle" alt="postImg"/>
                          </div>
+                         </ListGroup.Item>
+
+         <ListGroup.Item style={{padding: "0"}} >     
          <div className="card-body">
             <h4 id="articleTitle2" className="card-title articleTitle font-weight-bold mb-2">{title}</h4>
 
-            <p id="articleDescription" className="card-text desc">{description} </p>
+            <p style={{marginTop :"12px"}}id="articleDescription" className="card-text desc">{description} </p>
             <div className="row">
                 <div className="col text-center">
-                <a className="btn button-color" rel="noreferrer" target="_blank" id="articleURL" href={url} role="button">Voir l'article</a>
+                <a href="#"  rel="noreferrer" target="_blank" id="articleURL">
+                    <button style={{marginTop:"8px"}}type="button" class="btn">Voir l'article</button>
+                </a>             
                 </div>
              </div>
          </div>
-         <div style={{border : "1px solid #C09A5934"}} className="card-footer d-flex justify-content-between">
-            <div>
+         </ListGroup.Item>
+
+         <ListGroup.Item>
+
             <small id="articleDate" className="dateStyle">{newDate}</small>
-            </div>
-         </div>
-         <div className="d-flex justify-content-center container-dots">
+         </ListGroup.Item>
+       
+         <div style={{backgroundColor:"#C09A5934"}}className="d-flex justify-content-center container-dots">
    
-    {Array.from({length: 5}).map((item, index) => (
-        <div 
-                onClick={() =>{ 
-                moveDot(index + 1);
-                refreshCard(index);
-                }}
-                className={classNames(slideIndex === index + 1 ? "dot active" : "dot","dot"+index)}>
-         </div>
-            ))}
+            {Array.from({length: 5}).map((item, index) => (
+                <div 
+                        onClick={() =>{ 
+                        moveDot(index + 1);
+                        refreshCard(index);
+                        }}
+                        className={classNames(slideIndex === index + 1 ? "dot active" : "dot","dot"+index)}>
+                </div>
+                    ))}
         </div>
 
       </div>

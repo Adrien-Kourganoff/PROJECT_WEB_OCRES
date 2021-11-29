@@ -1,13 +1,13 @@
 import React, {useRef} from 'react';
-import EthDatas from '../EthDatas/EthDatas';
-import EthChart from '../EthChart/EthChart';
-import EthNews from '../EthNews/EthNews'
-import  '../../GlobalCss/Card.css';
+import EthDatas from '../../containers/EthDatas/EthDatas';
+import EthChart from '../../containers/EthChart/EthChart';
+import EthNews from '../../containers/EthNews/EthNews'
+import  '../../globalCss/Card.css';
 import  './Widgets.css';
-import Snuggle from 'react-snuggle';
 
-import EthConverter from '../EthConverter/EthConverter';
+import EthConverter from '../../containers/EthConverter/EthConverter';
 import Masonry from 'react-masonry-css'
+import Metamask from '../../containers/Metamask/Metamask';
 
 
 export default function Widgets() {
@@ -37,11 +37,15 @@ export default function Widgets() {
 
                 <EthDatas />
                     
-                              <EthChart  />
+                <EthChart  />
                           
-                              <EthNews  />
-                              <EthConverter/>
-              </Masonry>
+                <EthNews/>
+                
+                <EthConverter/>
+
+                <Metamask/>
+             
+                </Masonry>
 
      </div>
 </div>

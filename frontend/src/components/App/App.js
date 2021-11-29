@@ -1,22 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import  {Container} from 'react-bootstrap';
 
 import Header from '../Header/Header';
-//import EthDatas from '../../containers/EthDatas/EthDatas';
-import Widgets from '../../containers/Widgets/Widgets';
-  
+import Widgets from '../../pages/Widgets/Widgets';
 
 function App() {
+
   return (
     <div>
       <Header/>
-      <Container fluid className="App">
-        <Widgets/>
-      </Container>
-    </div>
+    <div Container fluid className="App">  
+
+       <Widgets/>
+    
+    </div> </div>
   );
 }
-
 export default App;

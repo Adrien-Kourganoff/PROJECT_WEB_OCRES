@@ -1,0 +1,49 @@
+.MetamDatasStyle
+{
+    margin-top: 50px;
+}
+
+.logo
+{
+    height: 50px;
+    width: 50px;
+}
+
+.usdtLogo
+{
+    height: 35px;
+    width: 35px;
+}
+
+.crypto{
+    text-align:left;
+    font-size:19px;
+}
+
+.usdtSize
+{
+    font-size: 17px;
+}
+
+.usdt{
+    text-align:right;
+}
+
+
+.mcMargin
+{
+    margin-bottom: 3%;
+}
+.fontmcD
+{
+    font-size: 15px;
+    text-align:center;
+
+}
+
+.ethScanTitle {
+
+margin-bottom: 12px;
+margin-top: 5px;
+
+}

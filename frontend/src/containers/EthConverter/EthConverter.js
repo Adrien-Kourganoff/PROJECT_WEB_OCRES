@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import CryptoConverter from '../../components/CryptoConverter/CryptoConverter';
+import CryptoConverter from '../../components/DashboardComponents/CryptoConverter/CryptoConverter';
 
 export default function EthDatas() {
    

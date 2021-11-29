@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import CryptoChart from '../../components/CryptoChart/CryptoChart';
+import CryptoChart from '../../components/DashboardComponents/CryptoChart/CryptoChart';
 
 export default function EthChart() {
    
