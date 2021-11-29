@@ -173,6 +173,7 @@ body{
   height: 45vh;
   border-radius: 25px;
   box-shadow: 5px 5px 10px rgb(15, 15, 15);
+  transition: 1s;
 }
 
 .Page .container:hover{
