@@ -41,4 +41,23 @@ router.get('/pokemonStat/:pokemonName', async (req, res) => {
     res.json(response);
 });
 
+router.get('/pokemonNameFr/:pokemonId', async (req, res) => {
+    console.log("/pokemonColor endpoint called");
+    const url = `https://pokeapi.co/api/v2/pokemon-species/${req.params.pokemonId}`;
+    const options = {
+        "method": "GET",
+    };
+
+    const response = await fetch(url, options)
+        .then(res => res.json())
+        .catch(err => {
+            console.error({
+                "message": "there is an issue to get /pokemonColor",
+                error: e,
+            });
+        });
+    console.log("response: ", response);
+    res.json(response);
+});
+
 module.exports = router;

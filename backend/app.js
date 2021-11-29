@@ -10,6 +10,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var testAPIRouter = require("./routes/testAPI");
 var getPokemonRouter = require("./routes/getPokemon");
+var getPokemonByGenerationRouter = require("./routes/getPokemonByGeneration");
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //app.use("/users", usersRouter);
 app.use("/testAPI", testAPIRouter);
 app.use("/getPokemon", getPokemonRouter);
+app.use("/getPokemonByGeneration", getPokemonByGenerationRouter);
 
 app.use(function (req, res, next) {
     next(createError(404));
