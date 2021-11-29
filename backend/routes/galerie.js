@@ -15,6 +15,8 @@ var URLs = [];
 /* GET all photos IDs. */
 router.get('/', async function(req, res, next) {
 
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+
     var all;
     await axios.get(URLAPI+"method="+method+"&APIKey="+APIKey+"&AlbumID="+AlbumID+"&AlbumKey="+AlbumKey)
         .then( allPhoto => all = allPhoto )
@@ -38,7 +40,7 @@ async function getURLPhoto(IDKey){
     /* Get all url for the 20 first pictures in the seveur */
     for (let i = 0; i < lenght; i++) {
         await axios.get(URLAPI+"method="+method2+"&APIKey="+APIKey+"&ImageID="+IDKey[i].id+"&ImageKey="+IDKey[i].Key)
-        .then( allData => URLs.push(allData.data.Image.URL)  )
+        .then( allData => URLs.push(allData.data.Image.LargeURL)  )
     }
 
     /*

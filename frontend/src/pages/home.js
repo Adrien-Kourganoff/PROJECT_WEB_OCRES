@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../components/navigation';
+import NextEvents from '../components/nextevents';
 import NextWorker from '../components/nextWorker';
 import Map from '../components/map';
 import CardWeather from '../components/card';
@@ -13,7 +14,7 @@ function Home() {
                 <div className="Page">
                     <h1>This is home page</h1>
                     <div class="container big events">
-                        <h2> I am the event card </h2>
+                        <NextWorker/>
                     </div>
                     <div class="container big photo">
                         <h2> I am the photo card </h2>
@@ -22,7 +23,7 @@ function Home() {
                         <CardWeather/>
                     </div>
                     <div class="container small list">
-                        <NextWorker/>
+                        <NextEvents/>
                     </div>
                     <div class="container big map">
                         <Map/>
