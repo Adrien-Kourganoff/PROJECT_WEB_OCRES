@@ -145,39 +145,40 @@ export default function Map() {
                     document.getElementById('day' + i + '-icon-weather-container').innerHTML = icon;
                     document.getElementById('day' + i + '-forecast-temp').innerHTML = `${temp}°C`;
 
-                    if (data.list[i].temp.day < 5) {
-                        var emoji1 = String.fromCodePoint(129508); //Gants
-                        document.getElementById('emoji1').innerHTML = emoji1;
-                        var emoji2 = String.fromCodePoint(129509); //Manteau
-                        document.getElementById('emoji2').innerHTML = emoji2;
-                        var emoji3 = String.fromCodePoint(128086);//Jean
-                        document.getElementById('emoji3').innerHTML = emoji3;
-                    }
-
-                    if (5 < data.list[i].temp.day < 15) {
-                        var emoji1 = String.fromCodePoint(129507); //Echarpe
-                        document.getElementById('emoji1').innerHTML = emoji1;
-                        var emoji2 = String.fromCodePoint(128085); //T-shirt
-                        document.getElementById('emoji2').innerHTML = emoji2;
-                        var emoji3 = String.fromCodePoint(128086);//Jean
-                        document.getElementById('emoji3').innerHTML = emoji3;
-                    }
-
-                    if (15 < data.list[i].temp.day) {
-                        var emoji1 = String.fromCodePoint(129506); //Casquette
-                        document.getElementById('emoji1').innerHTML = emoji1;
-                        var emoji2 = String.fromCodePoint(128374); //Lunettes de soleil
-                        document.getElementById('emoji2').innerHTML = emoji2;
-                        var emoji3 = String.fromCodePoint(129651); //Short
-                        document.getElementById('emoji3').innerHTML = emoji3;
-                    }
-
 
                 }
                 const temp1 = data.list[0].temp.day;
                 const temp2 = data.list[1].temp.day;
                 const temp3 = data.list[2].temp.day;
                 const temp4 = data.list[3].temp.day;
+
+                if (temp1< 10) {
+                    var emoji1 = String.fromCodePoint(129508); //Gants
+                    document.getElementById('emoji1').innerHTML = emoji1;
+                    var emoji2 = String.fromCodePoint(129509); //Manteau
+                    document.getElementById('emoji2').innerHTML = emoji2;
+                    var emoji3 = String.fromCodePoint(128086);//Jean
+                    document.getElementById('emoji3').innerHTML = emoji3;
+                }
+
+                else if (10 <temp1 < 20) {
+                    var emoji1 = String.fromCodePoint(129507); //Echarpe
+                    document.getElementById('emoji1').innerHTML = emoji1;
+                    var emoji2 = String.fromCodePoint(128085); //T-shirt
+                    document.getElementById('emoji2').innerHTML = emoji2;
+                    var emoji3 = String.fromCodePoint(128086);//Jean
+                    document.getElementById('emoji3').innerHTML = emoji3;
+                }
+
+                else if (20 < temp1) {
+                    var emoji1 = String.fromCodePoint(129506); //Casquette
+                    document.getElementById('emoji1').innerHTML = emoji1;
+                    var emoji2 = String.fromCodePoint(128374); //Lunettes de soleil
+                    document.getElementById('emoji2').innerHTML = emoji2;
+                    var emoji3 = String.fromCodePoint(129651); //Short
+                    document.getElementById('emoji3').innerHTML = emoji3;
+                }
+
 
 
                 const ctx = document.getElementById('myChart').getContext('2d');
