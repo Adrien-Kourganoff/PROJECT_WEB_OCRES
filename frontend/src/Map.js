@@ -7,6 +7,7 @@ import Box5 from './components/Box5.js';
 import Box6 from './components/Box6.js';
 import Box7 from './components/Box7.js';
 import Box8 from './components/Box8.js';
+import BoxEmojis from './components/BoxEmojis.js';
 import axios from "axios";
 import TodayBox from './components/TodayBox.js';
 import {
@@ -18,7 +19,7 @@ import {
 
 import Dashboard from "./Dashboard";
 
-import { Chart, PieController, ArcElement, Legend, Tooltip, Title, CategoryScale, LinearScale, PointElement, LineElement} from 'chart.js';
+import { Chart, PieController, ArcElement, Legend, Tooltip, Title, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
 
 import { Line } from 'react-chartjs-2';
 
@@ -144,12 +145,41 @@ export default function Map() {
                     document.getElementById('day' + i + '-icon-weather-container').innerHTML = icon;
                     document.getElementById('day' + i + '-forecast-temp').innerHTML = `${temp}°C`;
 
+                    if (data.list[i].temp.day < 5) {
+                        var emoji1 = String.fromCodePoint(129508); //Gants
+                        document.getElementById('emoji1').innerHTML = emoji1;
+                        var emoji2 = String.fromCodePoint(129509); //Manteau
+                        document.getElementById('emoji2').innerHTML = emoji2;
+                        var emoji3 = String.fromCodePoint(128086);//Jean
+                        document.getElementById('emoji3').innerHTML = emoji3;
+                    }
+
+                    if (5 < data.list[i].temp.day < 15) {
+                        var emoji1 = String.fromCodePoint(129507); //Echarpe
+                        document.getElementById('emoji1').innerHTML = emoji1;
+                        var emoji2 = String.fromCodePoint(128085); //T-shirt
+                        document.getElementById('emoji2').innerHTML = emoji2;
+                        var emoji3 = String.fromCodePoint(128086);//Jean
+                        document.getElementById('emoji3').innerHTML = emoji3;
+                    }
+
+                    if (15 < data.list[i].temp.day) {
+                        var emoji1 = String.fromCodePoint(129506); //Casquette
+                        document.getElementById('emoji1').innerHTML = emoji1;
+                        var emoji2 = String.fromCodePoint(128374); //Lunettes de soleil
+                        document.getElementById('emoji2').innerHTML = emoji2;
+                        var emoji3 = String.fromCodePoint(129651); //Short
+                        document.getElementById('emoji3').innerHTML = emoji3;
+                    }
+
+
                 }
                 const temp1 = data.list[0].temp.day;
                 const temp2 = data.list[1].temp.day;
                 const temp3 = data.list[2].temp.day;
                 const temp4 = data.list[3].temp.day;
-                
+
+
                 const ctx = document.getElementById('myChart').getContext('2d');
                 myChart = new Chart(ctx, {
                     type: 'line',
@@ -163,14 +193,14 @@ export default function Map() {
                             tension: 0.1
                         }]
                     },
-                    
-                
-                });       
+
+
+                });
 
             })
             .catch(console.error);
     };
-   
+
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading Maps";
 
@@ -373,6 +403,9 @@ export default function Map() {
                 <Box4 name={"Vitesse du vent"} />
                 <Box5 name={"Pression"} />
                 <Box7 name={"Humidité"} />
+            </div>
+            <div>
+                <BoxEmojis name={"Conseils pour s'habiller"} />
             </div>
             <div>
                 <Box8 name={"Graphe des températures"} />
