@@ -14,11 +14,11 @@ function Home() {
                 <Navigation/>
                 <div className="Page">
                     <h1>This is home page</h1>
+                    <div class="container very photo">
+                        <LastPictures/>
+                    </div>
                     <div class="container big events">
                         <NextWorker/>
-                    </div>
-                    <div class="container big photo">
-                        <LastPictures/>
                     </div>
                     <div class="container small meteo">
                         <CardWeather/>
