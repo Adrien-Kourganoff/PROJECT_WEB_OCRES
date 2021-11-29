@@ -3,16 +3,30 @@
     padding: 0;
     width: 100%;
     text-align: center;
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
-    --bg-primary: #23232e;
-    --bg-secondary: #141418;
+}
+
+:root{
+  --bg-secondary: #141418;
+  --bg-primary: #23232e;
+  --bg: #282c34;
+}
+
+.dark{
+  --bg-secondary: #141418;
+  --bg-primary: #23232e;
+  --bg: #282c34;
+}
+
+.light{
+  --bg-secondary: rgb(235, 140, 62);
+  --bg-primary: #e2e2e2;
+  --bg: #ffffff;
 }
 
 body{
     margin: 0;
     padding: 0;
-    background-color: #282c34;
+    background-color: var(--bg);
 }
 
 /* Settings for the navigation */
@@ -244,7 +258,7 @@ body{
 
 /* Photo */
 .Page .photo{
-  background-color: var(--bg-primary);
+  background-color: var(--bg);
 }
 
 .Page .photo .cont_photo{
@@ -257,7 +271,7 @@ body{
 }
 
 .Page .map{
-  background-color: var(--bg-primary);
+  background-color: var(--bg);
 }
 
 .Page .map div{
@@ -322,6 +336,19 @@ body{
     flex-direction: column;
   }
 } 
+
+/* For the navigation bar depending on the height */
+@media only screen and (min-width: 800px) and (max-height: 400px) {
+  .nav-link{
+    height: 3rem;
+  }
+}
+
+@media only screen and (min-width: 800px) and (min-height: 401px) and (max-height: 550px) {
+  .nav-link{
+    height: 3.5rem;
+  }
+}
 
   /* For small screens like tablets */
 @media only screen and (min-width: 601px) and (max-width: 799px) {
@@ -409,7 +436,7 @@ body{
         width: 220px;
     }
 
-    .navigation a:last-child {
+    .navigation .nav-item:last-child {
         margin-top: auto;
       }
   
