@@ -84,7 +84,7 @@ function refreshCard(newIndex)
             <p style={{marginTop :"12px"}}id="articleDescription" className="card-text desc">{description} </p>
             <div className="row">
                 <div className="col text-center">
-                <a href="#"  rel="noreferrer" target="_blank" id="articleURL">
+                <a href={url}  rel="noreferrer" target="_blank" id="articleURL">
                     <button style={{marginTop:"8px"}}type="button" class="btn">Voir l'article</button>
                 </a>             
                 </div>
