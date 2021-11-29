@@ -18,10 +18,10 @@ export default function NextWorker(){
 
     return (
 
-        <div className='container'>
+        <div className='list_events'>
             {events.map(event => (
                 <div className='event'>
-                    <h1 className='eventTitle'>{event.event}</h1>
+                    <h3 className='eventTitle'>{event.event}</h3>
                     <h5 className='couvreurs'>Couvert par : {event.couvreurs}</h5>
                     <h5 className='position'>Lieu : {event.position.name}</h5>
                 </div>

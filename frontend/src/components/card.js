@@ -25,22 +25,25 @@ export default function CardWeather(){
     }, [icons[3],data]);
 
     return(
-        <section className='container'>
+        <section className='cont_meteo'>
             <div className='today'>
-                <h1 className='title'>Today</h1>
-                <img src={icons[0]} className='icon'/>
-                <h2 className='temp'>3°C</h2>
-            </div>
-            <div className='tommorow'>
-                <div className='tmr'>
-                    <h1 className='title'>Today</h1>
-                    <img src={icons[1]} className='icon'/>
-                    <h2 className='temp'>5°C</h2>
+                <h3 className='title'>Today</h3>
+                <div className="meteo_data">
+                    <img src={icons[0]} className='icon' alt=''/>
+                    <h4 className='temp'>3°C</h4>
                 </div>
-                <div className='tmr2'>
-                    <h1 className='title'>Today</h1>
-                    <img src={icons[2]} className='icon'/>
-                    <h2 className='temp'>-2°C</h2>
+            </div>
+            <div className='tomorrow'>
+                <h3 className='title'>Next days</h3>
+                <div className="forecast">
+                    <div className='tmr'>
+                        <img src={icons[1]} className='icon' alt=''/>
+                        <h4 className='temp'>5°C</h4>
+                    </div>
+                    <div className='tmr2'>
+                        <img src={icons[2]} className='icon' alt=''/>
+                        <h4 className='temp'>-2°C</h4>
+                    </div>
                 </div>
             </div>
         </section>
