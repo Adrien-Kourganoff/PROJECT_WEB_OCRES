@@ -32,7 +32,6 @@ router.get('/', async function(req, res, next) {
         await axios.get(URLAPI+'method='+method+'&APIKey='+APIKey+'&AlbumID='+response[i].id+'&AlbumKey='+response[i].key)
             .then(all => {
                 allData.push(all.data)
-                console.log(allData[allData.length-1]);
             });
     }
 
