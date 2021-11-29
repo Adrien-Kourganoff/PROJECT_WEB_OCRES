@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from '../components/navigation';
 import NextEvents from '../components/nextevents';
 import NextWorker from '../components/nextWorker';
+import Map from '../components/map';
 import "../styles/settings.css";
 
 function Home() {
@@ -24,7 +25,7 @@ function Home() {
                         <NextEvents/>
                     </div>
                     <div class="container map">
-                        <h2> I am the map card </h2>
+                        <Map/>
                     </div>
                     <div class="fix"></div>
                 </div>
