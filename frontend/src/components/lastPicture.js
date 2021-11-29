@@ -20,7 +20,7 @@ export default function LastPictures(){
 
     return (
         <div className="cont_photo">
-            <img style={ {width: '100%',height: '100%' } } src={URL[nb]} onClick={() => { 
+            <img style={ {width: '100%', height: '100%'} } src={URL[nb]} onClick={() => { 
                 if(nb===URL.length-1)
                     setNB(0);
                 else setNB(nb + 1);

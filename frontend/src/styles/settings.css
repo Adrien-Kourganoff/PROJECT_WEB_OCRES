@@ -21,7 +21,7 @@ body{
     background-color: var(--bg-primary);
     transition: width 500ms ease;
     height: 100%;
-    z-index: 2;
+    z-index: 10;
 }
 
 /* Set the colors and settings of the list of pages */
@@ -171,6 +171,15 @@ body{
   margin: 5px;
   float: left;
   height: 45vh;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px rgb(15, 15, 15);
+  transition: 1s;
+}
+
+.Page .container:hover{
+  transform: scale(1.05);
+  transition: 1s;
+  z-index: 5;
 }
 
 /* Meteo card */
@@ -234,8 +243,25 @@ body{
 }
 
 /* Photo */
+.Page .photo{
+  background-color: var(--bg-primary);
+}
+
 .Page .photo .cont_photo{
   height: 100%;
+}
+
+.Page .photo .cont_photo img{
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.Page .map{
+  background-color: var(--bg-primary);
+}
+
+.Page .map div{
+  border-radius: 25px;
 }
 
 .Page h3{
@@ -250,14 +276,20 @@ body{
 }
 
 /* For small screens like mobile phones */
-@media only screen and (max-width: 500px){
-  
+@media only screen and (max-width: 600px){
+  /* Changes the components size */
   .Page .container{
     margin: 5px;
     height: 300px;
     width: 97%;
     min-width: 300px;
     z-index: 1;
+  }
+
+  .Page .container:hover{
+    transform: scale(1.02);
+    transition: 1s;
+    z-index: 5;
   }
 
   /* Set the navigation bar to the bottom */
@@ -292,8 +324,8 @@ body{
 } 
 
   /* For small screens like tablets */
-@media only screen and (min-width: 500px) and (max-width: 749px) {
-  
+@media only screen and (min-width: 601px) and (max-width: 799px) {
+  /* Changes the components size */
   .Page .very{
     width: 98%;
   }
@@ -302,6 +334,12 @@ body{
     max-width: 48%;
     min-width: 225px;
     height: 15em;
+  }
+
+  .Page .container:hover{
+    transform: scale(1.025);
+    transition: 1s;
+    z-index: 5;
   }
 
     /* No more margin for the page */
@@ -331,9 +369,26 @@ body{
       justify-content: center;
     }
   }
+
+  /* Changes the small component size */
+  @media only screen and (max-width: 900px) and (min-width: 800px){
+    .Page .small{
+      max-width: 23.5%;
+      min-width: 145px;
+    }
+  }
+
+  @media only screen and (min-width: 900px){
+    .Page .small{
+      max-width: 23.8%;
+      min-width: 145px;
+    }
+  }
   
   /* For large screens like computers */
-  @media only screen and (min-width: 750px) {
+  @media only screen and (min-width: 800px) {
+
+    /* Changes the components size */
     .Page .container{
       min-height: 300px;
     }
@@ -341,11 +396,6 @@ body{
     .Page .big, .Page .very{
       max-width: 48.5%;
       min-width: 300px;
-    }
-
-    .Page .small{
-      max-width: 23.5%;
-      min-width: 145px;
     }
 
     .navigation {
