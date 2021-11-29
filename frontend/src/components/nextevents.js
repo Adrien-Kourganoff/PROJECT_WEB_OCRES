@@ -16,11 +16,11 @@ export default function NextEvents(){
     }, []);
 
     return (
-        <div className='container'>
+        <div className='list_events'>
             {events.map(event => (
                 <div className='event'>
-                    <h5 className='lieu'>Lieu : {event.position.name}</h5>
-                    <h6 className='date'>Date : {event.date}</h6>
+                    <h3 className='lieu'>Lieu : {event.position.name}</h3>
+                    <h5 className='date'>Date : {event.date}</h5>
                 </div>
             ))}
         </div>

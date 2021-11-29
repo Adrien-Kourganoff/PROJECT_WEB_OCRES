@@ -20,7 +20,7 @@ export default function Map(){
         <div style={ {width: '100%',height: '100%' } } >
             <LoadScript googleMapsApiKey="AIzaSyBp3yj-pQJb3wB9RfdJ4VTKkjMhvDPxuBg"> 
                 <GoogleMap
-                    mapContainerStyle={ {height: `400px`} }
+                    mapContainerStyle={ {height: '100%', width: '100%'} }
                     zoom={12}
                     center={ { lat: 48.851913, lng: 2.286672 } }>
                     
@@ -33,7 +33,6 @@ export default function Map(){
                         <Marker position={pin.position.coord} 
                             label={pin.date}/>
                     })}
-
                 </GoogleMap>
             </LoadScript>
         </div>
