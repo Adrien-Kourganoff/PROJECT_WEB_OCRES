@@ -27,12 +27,13 @@ export default function Map(){
                     <Marker position={ { lat: 48.851913, lng: 2.286672 } } 
                         label={ "ECE" }/>
 
-                    <MarkerMaker pins={pins}/>
-
                     {pins.map( pin =>{
                         <Marker position={pin.position.coord} 
                             label={pin.date}/>
                     })}
+
+                    <MarkerMaker pins={pins}/>
+
                 </GoogleMap>
             </LoadScript>
         </div>
