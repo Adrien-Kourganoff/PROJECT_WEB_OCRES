@@ -13,10 +13,10 @@ export default function NextWorker(){
 
     return (
 
-        <div className='container'>
+        <div>
             {data.map(data => (
                 <div className='event'>
-                    <h1 className='eventTitle'>{data.event}</h1>
+                    <h3 className='eventTitle'>{data.event}</h3>
                     <h5 className='couvreurs'>Couvert par : {data.couvreurs}</h5>
                     <h5 className='position'>Lieu : {data.position.name}</h5>
                 </div>

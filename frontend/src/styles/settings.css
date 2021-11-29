@@ -172,29 +172,60 @@ body{
   height: 45vh;
 }
 
-.Page .events{
-  max-width: 48.5%;
-  min-width: 300px;
+/* Meteo card */
+.Page .meteo section{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.Page .photo{
-  max-width: 48.5%;
-  min-width: 300px;
+/* Today */
+.Page .meteo section .today{
+  height: 40%;
+  display: flex;
+  flex-direction: column;
 }
 
-.Page .meteo{
-  max-width: 23.5%;
-  min-width: 145px;
+.Page .meteo section .today .meteo_data{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.Page .list{
-  min-width: 145px;
-  max-width: 23.5%;
+.Page .meteo section .today .meteo_data .temp{
+  width: auto;
 }
 
-.Page .map{
-  max-width: 48.5%;
-  min-width: 300px;
+.Page .meteo section .today .icon{
+  height: auto;
+  width: auto;
+}
+
+/* Tomorrow */
+.Page .meteo section .tomorrow{
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Page .meteo section .tomorrow .icon{
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 90px;
+  width: 90px;
+}
+
+.Page .meteo section .tomorrow .forecast{
+  display: flex;
+}
+
+/* List event */
+.Page .list .couvreurs{
+  color: #23232e;
+}
+
+.Page h3{
+  color: #141418;
 }
 
 .Page .fix{
@@ -207,9 +238,9 @@ body{
 @media only screen and (max-width: 500px){
   
   .Page .container{
-    width: 97vh;
-    height: 250px;
-    position: inherit;
+    margin: 5px;
+    height: 300px;
+    width: 97%;
     z-index: 1;
   }
 
@@ -245,12 +276,12 @@ body{
 } 
 
   /* For small screens like mobiles */
-@media only screen and (min-width: 500px) and (max-width: 750px) {
+@media only screen and (min-width: 500px) and (max-width: 749px) {
   
   .Page .container{
     max-width: 48%;
     min-width: 225px;
-    height: 200px;
+    height: 15em;
   }
 
     /* Set the navigation bar to the bottom */
@@ -283,6 +314,19 @@ body{
   
   /* For large screens like computers */
   @media only screen and (min-width: 750px) {
+    .Page .container{
+      min-height: 335px;
+    }
+
+    .Page .big{
+      max-width: 48.5%;
+      min-width: 300px;
+    }
+
+    .Page .small{
+      max-width: 23.5%;
+      min-width: 145px;
+    }
 
     .navigation {
       top: 0;
