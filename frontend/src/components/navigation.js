@@ -1,27 +1,68 @@
-import { classBody } from 'jscodeshift';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import "../styles/settings.css";
 
-const themeMap = {
-    dark: "light",
-    light: "dark",
-  };
+var autoTheme = true;
 
+//To automaticaly change the theme
+const autoThemeo = async () => {
+    //Get the date
+    const time = new Date(Date.now());
+    var dark=false;
+    const body = document.body;
 
+    if(autoTheme==true){
+        //Check the time to set the darkmode depending on the date
+        if(time.getMonth()<3 || time.getMonth()>9){
+            if(time.getHours()<8 || time.getHours()>18){
+                dark=true;
+            }
+        }
+        else{
+            if(time.getHours()<6 || time.getHours()>21){
+                dark=true;
+            }
+        }
+        //If the dark mode is activated we change the theme to dark
+        if(dark==true){
+            if(!body.classList.contains('light') && !body.classList.contains('dark')) 
+                body.classList.add('dark');
+            else if (!body.classList.contains('dark'))
+                body.classList.replace('light','dark');
+        }
+        //Otherwise we change the theme to light
+        else{
+            if(!body.classList.contains('light') && !body.classList.contains('dark')) 
+                body.classList.add('light');
+            else if (!body.classList.contains('light'))
+                body.classList.replace('dark','light');
+        }
+    }
+}
 
-/*bodyClass.add(theme);*/
-
+//When you click the theme button
 function toggleTheme() {
     const body = document.body;
-    if(!body.classList.contains('light') && !body.classList.contains('dark')) body.classList.add('light'); else if (body.classList.contains('light')) body.classList.replace('light','dark'); else body.classList.replace('dark','light');
+
+    //Change the theme depending on the current theme
+    if(!body.classList.contains('light') && !body.classList.contains('dark')) 
+        body.classList.add('light'); 
+    else if (body.classList.contains('light')) 
+        body.classList.replace('light','dark'); 
+    else 
+        body.classList.replace('dark','light');
+
+    //Turn of the autoTheme
+    autoTheme=false;
 }
 
 function Navigation() {
-    const body = document.body;
-    console.log('debut');
-    console.log(body);
-    console.log('fin');
+    
+    //Change the theme automaticaly 
+    useEffect(() => {
+        autoThemeo();
+    }, []);
+
     return (
       <div className="navigation">
         {/*<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet"/>*/}
