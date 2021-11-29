@@ -43,7 +43,7 @@ export default function Map(){
 //return pin array
 function MarkerMaker(props){
 
-    var pinss = [<Pin i={1} pins={props.pins}/>,<Pin i={0} pins={props.pins}/>];
+    const pinss = [];
 
     for (let j = 0; j < props.pins.length; j++) {
         pinss.push(<Pin i={j} pins={props.pins}/>)
