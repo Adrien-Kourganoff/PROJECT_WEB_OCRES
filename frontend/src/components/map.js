@@ -13,7 +13,7 @@ export default function Map(){
 
     useEffect(() => {
         fecthPins();
-        console.log( {pins} );
+        //console.log( {pins} );
     }, []);
 
     return(

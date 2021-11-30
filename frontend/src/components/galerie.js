@@ -82,7 +82,7 @@ export default function Graphs(){
                 <HorizontalGridLines />
                 <XAxis />
                 <YAxis />
-                <VerticalRectSeries data={datasTime} style={{stroke: '#fffff'}} />
+                <VerticalRectSeries data={datasTime} style={{stroke: '#fffff', strokeWidth: 2.5}} />
             </XYPlot>
         </div>
     )
