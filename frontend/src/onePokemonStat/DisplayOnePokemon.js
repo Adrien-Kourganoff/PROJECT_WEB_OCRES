@@ -30,8 +30,7 @@ class DisplayOnePokemon extends Component {
         Axios.get(`http://localhost:5000/getPokemon/pokemonStat/${this.state.pokemonName}`)
             .then(res => {
                 if (res.status === 200 && res != null) {
-                    //this.setState({ pokemonNameAPI: res.data.species.name });
-                    this.setState({ pokemonImgAPI: res.data.sprites.front_default });
+                    this.setState({ pokemonImgAPI: res['data']['sprites']['other']['official-artwork']['front_default'] });
                     this.setState({ pokemonHpAPI: res.data.stats[0].base_stat });
                     this.setState({ pokemonAttackAPI: res.data.stats[1].base_stat });
                     this.setState({ pokemonDefenseAPI: res.data.stats[2].base_stat });
