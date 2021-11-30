@@ -19,14 +19,17 @@ function Header() {
 
 
                   <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
+                  <Link to="/">
                               <button style={{marginRight:"20px"}} className="btn navbar-right float-right" type="submit">
                                     Widgets
                               </button>
-                         
+                  </Link>
+                  <Link to="/AdminControl">
+
                               <button className="float-right btn navbar-right" type="submit" >
                                     Admin
                               </button>
-
+                  </Link>
                 </div>
                           
                   
