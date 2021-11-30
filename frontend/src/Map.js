@@ -152,7 +152,7 @@ export default function Map() {
                 const temp3 = data.list[2].temp.day;
                 const temp4 = data.list[3].temp.day;
 
-                if (temp1< 10) {
+                if (temp1 < 10) {
                     var emoji1 = String.fromCodePoint(129508); //Gants
                     document.getElementById('emoji1').innerHTML = emoji1;
                     var emoji2 = String.fromCodePoint(129509); //Manteau
@@ -161,7 +161,7 @@ export default function Map() {
                     document.getElementById('emoji3').innerHTML = emoji3;
                 }
 
-                else if (10 <temp1 < 20) {
+                else if (10 < temp1 < 20) {
                     var emoji1 = String.fromCodePoint(129507); //Echarpe
                     document.getElementById('emoji1').innerHTML = emoji1;
                     var emoji2 = String.fromCodePoint(128085); //T-shirt
@@ -189,8 +189,8 @@ export default function Map() {
                         datasets: [{
                             label: 'Graphe des températures',
                             data: [temp1, temp2, temp3, temp4],
-                            backgroundColor: 'rgb(255, 99, 132)',
-                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgb(0, 96, 255)',
+                            borderColor: 'rgb(0, 64, 255)',
                             tension: 0.1
                         }]
                     },
@@ -351,11 +351,10 @@ export default function Map() {
     return (
         callAPI2(),
         callAPI3(),
-        <div>
-            <center>
-                <h1>Carte du monde, cliquez sur une ville</h1>
-            </center>
-
+        <div className="Corps">
+            <div className="TitleSite">
+                <h1> Quel temps fait-il dans le monde ?</h1>
+            </div>
             <GoogleMap mapContainerStyle={mapContainerStyle}
                 zoom={2}
                 center={center}
@@ -391,7 +390,9 @@ export default function Map() {
             </GoogleMap>
             <div>
                 <center>
-                    <h3>{"Données météorologiques de " + city}</h3>
+                    <div className="titreDonnee">
+                        <h3>{"Données météorologiques de " + city}</h3>
+                    </div>
                 </center>
             </div>
             <TodayBox name={"Aujourd'hui"} />

@@ -37,3 +37,23 @@
   margin-left: auto;
   margin-right: auto;
 }
+.card-header{
+  background-color: #09d3ac;
+}
+
+.card-body{
+  background-color: aquamarine;
+}
+h1, h3{
+  padding:15px;
+  color:rgb(141, 143, 158);
+  top: 20px;
+  padding-left: 0%;
+  margin:20px;
+}
+body{
+  background-color: #2E4053;
+}
+.TitleSite,.titreDonnee{
+  background-color: #2e3e4e;
+}
