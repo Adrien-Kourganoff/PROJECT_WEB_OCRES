@@ -58,16 +58,16 @@ export default function Graphs(){
             <XYPlot width={500} height={500} margin={70} >
                 <HorizontalGridLines style={{stroke: '#B7E9ED'}} />
                 <VerticalGridLines style={{stroke: '#B7E9ED'}} />
-                <XAxis class="xaxis"
+                <XAxis
                     title="Numéro de l'évènement"
                     style={{
                         fill: 'var(--text)',
                         line: {stroke: '#ADDDE1'},
                         ticks: {stroke: '#ADDDE1'},
-                        text: {stroke: 'none', fill: 'var(--text)', fontWeight: 600}
+                        text: {stroke: 'none', fontWeight: 600}
                     }}
                 />
-                <YAxis class="yaxis" title="Nombre de photos" style={{fill: 'var(--text)', text: {stroke: 'none', fill: 'var(--text)', fontWeight: 600}}}/>
+                <YAxis title="Nombre de photos" style={{fill: 'var(--text)', text: {stroke: 'none', fontWeight: 600}}}/>
                 <LineSeries
                     className="first-series"
                     data={datas}
@@ -95,7 +95,7 @@ export default function Graphs(){
                 
             </div>
             <XYPlot
-                margin={70}
+                margin={100}
                 xType="time"
                 width={1000}
                 height={600}>
@@ -107,8 +107,8 @@ export default function Graphs(){
                         format += new Date(v).toString().split(' ')[i] + ' ';
                     }
                     return format
-                    } } tickLabelAngle={-45}/>
-                <YAxis />
+                    } } tickLabelAngle={-45} style={{fill:'var(--text)'}} />
+                <YAxis style={{fill:'var(--text)'}}/>
                 <VerticalRectSeries data={datasTime} style={{stroke: 'var(--text)', strokeWidth: 1}} />
             </XYPlot>
         </div>

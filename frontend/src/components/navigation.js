@@ -14,12 +14,12 @@ const autoThemeo = async () => {
     if(autoTheme==true){
         //Check the time to set the darkmode depending on the date
         if(time.getMonth()<3 || time.getMonth()>9){
-            if(time.getHours()<8 || time.getHours()>18){
+            if(time.getHours()<8 || time.getHours()>=18){
                 dark=true;
             }
         }
         else{
-            if(time.getHours()<6 || time.getHours()>21){
+            if(time.getHours()<6 || time.getHours()>=21){
                 dark=true;
             }
         }
