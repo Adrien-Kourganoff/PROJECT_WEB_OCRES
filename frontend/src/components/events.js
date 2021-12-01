@@ -68,7 +68,7 @@ export default function EventListTable(){
 
 
     return (
-        <Table columns={columns} data={dat} />
+        <Table className='tableInside' columns={columns} data={dat} />
     );
 }
 
@@ -94,7 +94,7 @@ function Table({ columns, data }) {
   
     return (
       <>
-        <table {...getTableProps()}>
+        <table  {...getTableProps()}>
           <thead>
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
