@@ -13,7 +13,7 @@ export default function NextWorker(){
 
     useEffect(() => {
         fetchEvents();
-        console.log( {events} );
+        //console.log( {events} );
     }, []);
 
     return (

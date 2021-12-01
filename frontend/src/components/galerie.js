@@ -34,7 +34,6 @@ export default function Graphs(){
     for (let i = 0; i < events.length; i++) {
         datas.push({x: i, y: events[i].Album.ImageCount});
     }
-    console.log("coucou");
 
 
     /**
@@ -42,7 +41,7 @@ export default function Graphs(){
      * Elements are stored like that 
      * "LastUpdated": "2021-09-24 04:59:39"
      */
-    var datasTime = [];
+    var datasTime = [],ticks = [];
     for (let i = 0; i < events.length; i++) {
         datasTime.push(
             {
@@ -51,6 +50,7 @@ export default function Graphs(){
                 y:  events[i].Album.ImageCount
             }
         );
+        ticks.push( (new Date(events[i].Album.LastUpdated).getTime()) );
     }
 
     return (
@@ -101,9 +101,15 @@ export default function Graphs(){
                 height={600}>
                 <VerticalGridLines />
                 <HorizontalGridLines />
-                <XAxis tickLabelAngle={-45}/>
+                <XAxis tickValues={ticks} tickFormat={v => {
+                    var format;
+                    for (let i = 0; i < 3; i++) {
+                        format += new Date(v).toString().split(' ')[i] + ' ';
+                    }
+                    return format
+                    } } tickLabelAngle={-45}/>
                 <YAxis />
-                <VerticalRectSeries data={datasTime} style={{stroke: 'var(--text)'}} />
+                <VerticalRectSeries data={datasTime} style={{stroke: 'var(--text)', strokeWidth: 1}} />
             </XYPlot>
         </div>
     )
