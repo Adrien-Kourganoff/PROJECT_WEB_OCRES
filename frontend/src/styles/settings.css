@@ -9,18 +9,21 @@
   --bg-secondary: #141418;
   --bg-primary: #23232e;
   --bg: #282c34;
+  --text: white;
 }
 
 .dark{
   --bg-secondary: #141418;
   --bg-primary: #23232e;
   --bg: #282c34;
+  --text: white;
 }
 
 .light{
   --bg-secondary: rgb(235, 140, 62);
   --bg-primary: #e2e2e2;
   --bg: #ffffff;
+  --text: #23232e;
 }
 
 body{
@@ -288,6 +291,11 @@ body{
   clear: both;
   overflow: auto;
 }
+
+.Page .chart{
+  color: var(--text);
+}
+
 
 /* For small screens like mobile phones */
 @media only screen and (max-width: 600px){

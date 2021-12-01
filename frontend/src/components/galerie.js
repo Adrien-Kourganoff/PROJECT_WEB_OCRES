@@ -6,8 +6,12 @@ import {
   HorizontalGridLines,
   VerticalGridLines,
   LineMarkSeries,
+  LineSeries,
+  MarkSeries,
   VerticalRectSeries,
+  Hint,
 } from 'react-vis';
+
 const { default: axios } = require('axios');
 
 const ONE_DAY = 86400000;
@@ -32,6 +36,7 @@ export default function Graphs(){
     }
     console.log("coucou");
 
+
     /**
      * Same as precedent datas just added the real time to put them in the chart and order them
      * Elements are stored like that 
@@ -50,28 +55,44 @@ export default function Graphs(){
 
     return (
         <div className='chart'>
-            <XYPlot width={500} height={500} margin={70}>
+            <XYPlot width={500} height={500} margin={70} >
                 <HorizontalGridLines style={{stroke: '#B7E9ED'}} />
                 <VerticalGridLines style={{stroke: '#B7E9ED'}} />
-                <XAxis
+                <XAxis class="xaxis"
                     title="Numéro de l'évènement"
                     style={{
+                        fill: 'var(--text)',
                         line: {stroke: '#ADDDE1'},
                         ticks: {stroke: '#ADDDE1'},
-                        text: {stroke: 'none', fill: '#ffffff', fontWeight: 600}
+                        text: {stroke: 'none', fill: 'var(--text)', fontWeight: 600}
                     }}
                 />
-                <YAxis title="Nombre de photos" style={{text: {stroke: 'none', fill: '#ffffff', fontWeight: 600}}}/>
-                <LineMarkSeries
+                <YAxis class="yaxis" title="Nombre de photos" style={{fill: 'var(--text)', text: {stroke: 'none', fill: 'var(--text)', fontWeight: 600}}}/>
+                <LineSeries
                     className="first-series"
                     data={datas}
+                    stroke='var(--text)'
                     style={{
-                        strokeWidth: 2.5
+                        strokeWidth: 2.5,
+                        fill: 'none'
+                    }}
+                />
+                <MarkSeries
+                    className="second-series"
+                    data={datas}
+                    stroke='var(--bg-secondary)'
+                    color='var(--text)'
+                    style={{
+                        strokeWidth: 1,
+                        fill: 'var(--bg-secondary)'
                     }}
                 />
             </XYPlot>
             <div className='list'>
                 <List events={events}/>
+            </div>
+            <div>
+                
             </div>
             <XYPlot
                 margin={70}
@@ -80,9 +101,9 @@ export default function Graphs(){
                 height={600}>
                 <VerticalGridLines />
                 <HorizontalGridLines />
-                <XAxis />
+                <XAxis tickLabelAngle={-45}/>
                 <YAxis />
-                <VerticalRectSeries data={datasTime} style={{stroke: '#fffff'}} />
+                <VerticalRectSeries data={datasTime} style={{stroke: 'var(--text)'}} />
             </XYPlot>
         </div>
     )
