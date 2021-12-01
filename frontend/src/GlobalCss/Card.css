@@ -38,3 +38,43 @@ button{
 .btn:hover{
     color:black!important;
 }
+.card-header
+{
+    color:white;
+    background-color: #C09A5934!important;
+}
+.card-body
+{
+    background-color: #C09A5934!important;
+
+}
+/*
+table
+{
+    color: white!important;
+}
+
+.disponibility tr td
+{
+    color: white!important;
+
+}
+.input-group-text {
+    display: block;
+}
+*/
+
+
+.disponibility
+{
+    color: white!important;
+
+}
+.input-group-text {
+    display: block;
+}
+
+tbody tr td{
+    color: white!important;
+
+}

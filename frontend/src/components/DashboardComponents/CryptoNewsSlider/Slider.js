@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import  {ListGroup} from 'react-bootstrap';
+import  {ListGroup,Card} from 'react-bootstrap';
 
 import './Slider.css'
 import classNames from 'classnames';
@@ -77,8 +77,7 @@ function refreshCard(newIndex)
                          </div>
                          </ListGroup.Item>
 
-         <ListGroup.Item style={{padding: "0"}} >     
-         <div className="card-body">
+         <ListGroup.Item style={{padding: "0"},{backgroundColor:"#11ffee00"},{padding :"15px"}} >     
             <h4 id="articleTitle2" className="card-title articleTitle font-weight-bold mb-2">{title}</h4>
 
             <p style={{marginTop :"12px"}}id="articleDescription" className="card-text desc">{description} </p>
@@ -89,7 +88,6 @@ function refreshCard(newIndex)
                 </a>             
                 </div>
              </div>
-         </div>
          </ListGroup.Item>
 
          <ListGroup.Item>

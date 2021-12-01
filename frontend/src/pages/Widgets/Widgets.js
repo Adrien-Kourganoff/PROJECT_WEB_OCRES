@@ -8,6 +8,7 @@ import  './Widgets.css';
 import EthConverter from '../../containers/EthConverter/EthConverter';
 import Masonry from 'react-masonry-css'
 import Metamask from '../../containers/Metamask/Metamask';
+import Appointment from '../../containers/Appointment/Appointment';
 
 
 export default function Widgets() {
@@ -44,7 +45,9 @@ export default function Widgets() {
                 <EthConverter/>
 
                 <Metamask/>
-             
+        
+                <Appointment/>
+           
                 </Masonry>
 
      </div>

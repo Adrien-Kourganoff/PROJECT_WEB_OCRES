@@ -5,6 +5,11 @@ import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import 'typeface-roboto';
 import {BrowserRouter} from 'react-router-dom';
+import "font-awesome/css/font-awesome.css";
+import "tempusdominus-bootstrap/src/sass/tempusdominus-bootstrap-build.scss"; // Or the one above.
+
+
+
 
 ReactDOM.render(
   <BrowserRouter>

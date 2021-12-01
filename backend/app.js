@@ -1,4 +1,4 @@
-var express = require("express");
+/*var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
@@ -17,3 +17,17 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
 module.exports = app;
+*/
+
+const express = require("express");
+const app = express();
+
+app.get('/hello', (req,res) => {
+
+    res.send('hello world')
+
+})
+
+app.listen(1337, () => {
+    console.log('server started at 1337')
+})
