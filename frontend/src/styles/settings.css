@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    width: 100%;
     text-align: center;
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
@@ -10,6 +9,7 @@
 }
 
 body{
+    width: 100%;
     margin: 0;
     padding: 0;
     background-color: #282c34;
@@ -17,6 +17,7 @@ body{
 
 /* Settings for the navigation */
 .navigation {    
+    width: 100%;
     position: fixed;
     background-color: var(--bg-primary);
     transition: width 500ms ease;
@@ -146,6 +147,7 @@ body{
 
 /* Settings for the page */
 .Page {
+  width: 100%;
   margin-left: 5rem;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -166,6 +168,7 @@ body{
 }
 
 .Page .container{
+  width: 100%;
   background-color: orangered;
   position: relative;
   margin: 5px;
@@ -184,6 +187,7 @@ body{
 
 /* Meteo card */
 .Page .meteo section{
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -191,12 +195,14 @@ body{
 
 /* Today */
 .Page .meteo section .today{
+  width: 100%;
   height: 40%;
   display: flex;
   flex-direction: column;
 }
 
 .Page .meteo section .today .meteo_data{
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,6 +219,7 @@ body{
 
 /* Tomorrow */
 .Page .meteo section .tomorrow{
+  width: 100%;
   height: 60%;
   display: flex;
   flex-direction: column;
@@ -226,6 +233,8 @@ body{
 }
 
 .Page .meteo section .tomorrow .forecast{
+  width: 100%;
+  justify-content: space-around;
   display: flex;
 }
 
