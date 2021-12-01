@@ -167,7 +167,7 @@ body{
   width: 100%;
   margin-left: 5rem;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--text);
   justify-content: center;
   align-items: center;
   width: auto;
@@ -187,6 +187,7 @@ body{
 
 .Page .container{
   width: 100%;
+  color: white;
   background-color: orangered;
   position: relative;
   margin: 5px;
@@ -306,6 +307,16 @@ body{
   color: var(--text);
 }
 
+.Page .chart .list{
+  width: 20%;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  margin-bottom: 5rem;
+}
+
 
 /* For small screens like mobile phones */
 @media only screen and (max-width: 684px){
@@ -322,6 +333,10 @@ body{
     transform: scale(1.02);
     transition: 1s;
     z-index: 5;
+  }
+
+  .Page .chart .list{
+    display: none;
   }
 
   /* Set the navigation bar to the bottom */

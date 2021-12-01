@@ -11,6 +11,7 @@ import {
   VerticalRectSeries,
   Hint,
 } from 'react-vis';
+import '../styles/settings.css'
 
 const { default: axios } = require('axios');
 
@@ -55,7 +56,7 @@ export default function Graphs(){
 
     return (
         <div className='chart'>
-            <XYPlot width={500} height={500} margin={70} >
+            <XYPlot width={500} height={500} margin={70}>
                 <HorizontalGridLines style={{stroke: '#B7E9ED'}} />
                 <VerticalGridLines style={{stroke: '#B7E9ED'}} />
                 <XAxis
@@ -91,14 +92,11 @@ export default function Graphs(){
             <div className='list'>
                 <List events={events}/>
             </div>
-            <div>
-                
-            </div>
             <XYPlot
-                margin={100}
+                margin={70}
                 xType="time"
-                width={1000}
-                height={600}>
+                width={500}
+                height={500}>
                 <VerticalGridLines />
                 <HorizontalGridLines />
                 <XAxis tickValues={ticks} tickFormat={v => {
@@ -135,7 +133,7 @@ function List(props){
                     <h3 className='lieu'>N°{event.id}</h3>
                     <h5 className='date'>Date : {event.date}</h5>
                     <h5 className='nom'>Nom : {event.nom}</h5>
-                    <h5 className='photo'>Nb photos : {event.nb}</h5>
+                    <h5 className='photo_nb'>Nb photos : {event.nb}</h5>
                 </div>
             ))}
         </>

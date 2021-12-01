@@ -104,7 +104,7 @@ function Table({ columns, data }) {
                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                     {column.render('Header')}
                     {/* Add a sort direction indicator */}
-                    <span>
+                    <span >
                       {column.isSorted
                         ? column.isSortedDesc
                           ? ' 🔽'
