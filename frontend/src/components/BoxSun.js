@@ -14,6 +14,14 @@ const BoxSun = ({ name }) => {
                             </h2>
                             <div>
                                 <p id="sunrise"></p>
+                                <div className="clock">
+                                    <div className="wrap">
+                                        <span className="heure"></span>
+                                        <span className="minute"></span>
+                                        <span className="seconde"></span>
+                                        <span className="point"></span>
+                                    </div>
+                                </div>
                                 <p id="sunset"></p>
                                 <p id="solarnoon"></p>
                                 <p id="daylength"></p>

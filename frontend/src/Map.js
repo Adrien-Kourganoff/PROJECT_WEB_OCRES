@@ -242,6 +242,22 @@ export default function Map() {
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
                 })
                 .catch(console.error);
         }
@@ -277,6 +293,23 @@ export default function Map() {
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+
                 })
                 .catch(console.error);
         }
@@ -313,6 +346,23 @@ export default function Map() {
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+
                 })
                 .catch(console.error);
         }
@@ -348,6 +398,23 @@ export default function Map() {
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+
                 })
                 .catch(console.error);
         }
@@ -384,6 +451,22 @@ export default function Map() {
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
                 })
                 .catch(console.error);
         }
@@ -419,6 +502,22 @@ export default function Map() {
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
                 })
                 .catch(console.error);
         }
@@ -449,11 +548,27 @@ export default function Map() {
                     const solarnoon = data.data.results.solar_noon;
                     const daylength = data.data.results.day_length;
 
+                    console.log(sunrise);
+
                     // Modifier le DOM
                     document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise}`;
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 2);
+                    var minutes1 = sunrise.substring(3, 5);
+                    var secondes1 = sunrise.substring(6, 9);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+
                 })
                 .catch(console.error);
         }

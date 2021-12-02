@@ -1,19 +1,31 @@
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const express = require("express");
+const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+require('dotenv/config');
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+//Middlewares
+app.use(cors());
+app.use(bodyParser.json());
 
-var app = express();
+const indexRoute = require('./routes/index')
+const usersRoute = require('./routes/users')
 
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use('/index', indexRoute);
+app.use('/users', usersRoute);
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.get('/', (req, res) => {
+    res.send('coucou');
+})
+
+//Connect to db
+mongoose.connect(
+    process.env.DB_CONNECTION, 
+    () => console.log('Connecté à la base de données')
+
+);
+
+app.listen(3001);
 
 module.exports = app;

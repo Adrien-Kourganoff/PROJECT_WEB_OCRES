@@ -33,7 +33,7 @@
   margin-right: auto;
 }
 .mediumbox{
-  width: 50%;
+  width: 30%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -57,3 +57,64 @@ body{
 .TitleSite,.titreDonnee{
   background-color: #2e3e4e;
 }
+
+.clock {
+  border-radius: 30%;
+  background: #fff;
+  border: 5px solid white;
+}
+
+.wrap {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.minute, .heure {
+  position: absolute;
+  height: 100px; width: 6px;
+  margin: auto;
+  top: -27%; left: 0;	bottom: 0; right: 0;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    background: black;
+}
+
+.minute {
+  position: absolute;
+  height: 130px;
+  width: 4px;
+  top: -38%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  transform: rotate(90deg);
+}
+
+.seconde {
+  position: absolute;
+  height: 90px;
+  width: 2px;
+  margin: auto;
+  top: -26%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 4px;
+  background: #ff4b3e;
+  transform-origin: bottom center;
+  transform: rotate(180deg);
+}
+
+/* .point {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #1b1b1b;
+  border-radius: 50%;
+} */
