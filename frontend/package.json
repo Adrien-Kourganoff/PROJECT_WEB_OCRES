@@ -13,6 +13,7 @@
     "google-maps-react": "^2.0.6",
     "link": "^0.1.5",
     "link-react": "^3.0.0",
+    "mongoose": "^6.0.14",
     "react": "^16.11.0",
     "react-chart.js": "^1.0.0",
     "react-chartjs-2": "^4.0.0",
