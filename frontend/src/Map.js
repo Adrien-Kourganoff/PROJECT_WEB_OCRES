@@ -22,6 +22,7 @@ import Dashboard from "./Dashboard";
 import { Chart, PieController, ArcElement, Legend, Tooltip, Title, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
 
 import { Line } from 'react-chartjs-2';
+import BoxSun from "./components/BoxSun.js";
 
 Chart.register(LinearScale, CategoryScale, PieController, ArcElement, Title, Legend, Tooltip, PointElement, LineElement);
 
@@ -152,7 +153,7 @@ export default function Map() {
                 const temp3 = data.list[2].temp.day;
                 const temp4 = data.list[3].temp.day;
 
-                if (temp1< 10) {
+                if (temp1 < 10) {
                     var emoji1 = String.fromCodePoint(129508); //Gants
                     document.getElementById('emoji1').innerHTML = emoji1;
                     var emoji2 = String.fromCodePoint(129509); //Manteau
@@ -161,7 +162,7 @@ export default function Map() {
                     document.getElementById('emoji3').innerHTML = emoji3;
                 }
 
-                else if (10 <temp1 < 20) {
+                else if (10 < temp1 < 20) {
                     var emoji1 = String.fromCodePoint(129507); //Echarpe
                     document.getElementById('emoji1').innerHTML = emoji1;
                     var emoji2 = String.fromCodePoint(128085); //T-shirt
@@ -189,8 +190,8 @@ export default function Map() {
                         datasets: [{
                             label: 'Graphe des températures',
                             data: [temp1, temp2, temp3, temp4],
-                            backgroundColor: 'rgb(255, 99, 132)',
-                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgb(0, 96, 255)',
+                            borderColor: 'rgb(0, 64, 255)',
                             tension: 0.1
                         }]
                     },
@@ -225,6 +226,40 @@ export default function Map() {
                     document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=48.86272&lng=2.28759&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise}`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
         }
         if (city === "Londres") {
             axios
@@ -240,6 +275,41 @@ export default function Map() {
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
                     document.getElementById('pressure').innerHTML = `${pressure} mb`;
                     document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=51.507351&lng=-0.127758&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise}`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+
                 })
                 .catch(console.error);
         }
@@ -260,6 +330,41 @@ export default function Map() {
                     document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=40.416775&lng=-3.703790&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise}`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+
+                })
+                .catch(console.error);
         }
         if (city === "Moscou") {
             axios
@@ -275,6 +380,41 @@ export default function Map() {
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
                     document.getElementById('pressure').innerHTML = `${pressure} mb`;
                     document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=55.755871&lng=37.617680&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise}`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+
                 })
                 .catch(console.error);
         }
@@ -295,6 +435,40 @@ export default function Map() {
                     document.getElementById('humidity').innerHTML = `${humidity} %`;
                 })
                 .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=52.5170365&lng=13.3888599&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise}`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
         }
         if (city === "Rome") {
             axios
@@ -310,6 +484,40 @@ export default function Map() {
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
                     document.getElementById('pressure').innerHTML = `${pressure} mb`;
                     document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=41.8933203&lng=12.4829321&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise}`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
                 })
                 .catch(console.error);
         }
@@ -328,6 +536,39 @@ export default function Map() {
                     document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
                     document.getElementById('pressure').innerHTML = `${pressure} mb`;
                     document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=40.7127281&lng=-74.0060152&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    console.log(sunrise);
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise}`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset}`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon}`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 2);
+                    var minutes1 = sunrise.substring(3, 5);
+                    var secondes1 = sunrise.substring(6, 9);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+
                 })
                 .catch(console.error);
         }
@@ -351,11 +592,10 @@ export default function Map() {
     return (
         callAPI2(),
         callAPI3(),
-        <div>
-            <center>
-                <h1>Carte du monde, cliquez sur une ville</h1>
-            </center>
-
+        <div className="Corps">
+            <div className="TitleSite">
+                <h1> Quel temps fait-il dans le monde ?</h1>
+            </div>
             <GoogleMap mapContainerStyle={mapContainerStyle}
                 zoom={2}
                 center={center}
@@ -391,7 +631,9 @@ export default function Map() {
             </GoogleMap>
             <div>
                 <center>
-                    <h3>{"Données météorologiques de " + city}</h3>
+                    <div className="titreDonnee">
+                        <h3>{"Données météorologiques de " + city}</h3>
+                    </div>
                 </center>
             </div>
             <TodayBox name={"Aujourd'hui"} />
@@ -406,6 +648,7 @@ export default function Map() {
                 <Box7 name={"Humidité"} />
             </div>
             <div>
+                <BoxSun name={"Données sur la journée (Heure UTC)"} />
                 <BoxEmojis name={"Conseils pour s'habiller"} />
             </div>
             <div>
