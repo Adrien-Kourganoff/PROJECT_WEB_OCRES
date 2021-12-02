@@ -6,18 +6,22 @@ import axios from 'axios';
 import {
     DatePicker,
   } from "react-tempusdominus-bootstrap";
-  
+
+  let moment = require('moment');
+  require('moment/locale/fr.js');
+
 
 export default function UserAppointement() {
 
 
-    const [dateSelected, setDateSelected] = useState(new Date());
+    const [dateSelected, setDateSelected] = useState([]);
     const [meetingsRes, setmeetingsRes] = useState([]);
 
 
-var dateActuelle = new Date;
+    var dateActuelle = new Date;
 
 useEffect(() => {
+
     if(dateSelected.length!=0)
     {
         showDisponibilityByDate();
@@ -31,11 +35,14 @@ useEffect(() => {
 
 const showDisponibilityByDate = async () => {
 
-    console.log(dateSelected);
+   var newDate = moment(new Date(dateSelected));
+
+   //console.log(typeof(dateSelected));
+    console.log(newDate.format('YYYY-MM-DD'));
 
     const response = await axios.get('http://localhost:1337/meetings/getMeetingsByDate', {
         params: {
-            date: dateSelected.toISOString(),
+            date: newDate.format('YYYY-MM-DD'),
           }    
     })
     .catch((error) => console.log(error.resp));
@@ -61,7 +68,6 @@ function getSelectedDate(selectedDate)
                  locale="fr"
                  onChange={ e => {
                        setDateSelected(e.date._d);
-                       getSelectedDate(e.date._d)
                       }
             
             

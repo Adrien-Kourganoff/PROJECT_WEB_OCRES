@@ -14,15 +14,23 @@ router.get('/getMeetings', async (req, res) => {
 /* GET meetings listing by date */
 router.get('/getMeetingsByDate', async (req, res) => {  
 
-  const dateInServer = new Date(req.query.date);
-  console.log(dateInServer);
-  
+  const dateInServer = req.query.date;
 
+  //console.log(dateInServer);
+  newDate=new Date(dateInServer);
+  newDateSTR=newDate.toISOString();
+  console.log(newDateSTR);
+
+
+  newNextDate=newDate;
+  newNextDate.setHours(24,0,0,0);
+  newNextDateSTR=newNextDate.toISOString();
+  console.log(newNextDateSTR);
 
   try {
    const Meetings = await MeetingModel.find( {meetingDate : {
-                                               $gte : new Date(),
-                                               $lt : new Date()
+                                               $gte : new Date(newDateSTR),
+                                               $lt :  new Date(newNextDateSTR)
                                                }
                                               })
     res.send(Meetings)
