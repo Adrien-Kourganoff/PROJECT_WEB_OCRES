@@ -1,0 +1,11 @@
+.myCustomScrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+    padding-right: 10px;
+    }
+
+.tableWrapperScrollY {
+        display: block;
+}
+        

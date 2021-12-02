@@ -74,7 +74,7 @@ table
     display: block;
 }
 
-tbody tr td{
+.tbodyColor tr td{
     color: white!important;
 
 }

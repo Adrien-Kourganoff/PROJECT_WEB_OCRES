@@ -1,32 +1,26 @@
-/*var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-
-var app = express();
-
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-
-module.exports = app;
-*/
-
 const express = require("express");
+const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
 
-app.get('/hello', (req,res) => {
+app.use(cors());
+app.use(express.json());
 
-    res.send('hello world')
-
+mongoose.connect('mongodb+srv://Admin:Admin@cluster0.mitte.mongodb.net/ocres-web', {
+    useNewUrlParser : true,
+    useUnifiedTopology : true
 })
+
+const connection = mongoose.connection;
+connection.once("open", () => {
+    console.log("connection to db");
+});
+
+//Import Routes
+const meetings = require('./routes/meetings');
+app.use('/meetings', meetings);
+
+
 
 app.listen(1337, () => {
     console.log('server started at 1337')
