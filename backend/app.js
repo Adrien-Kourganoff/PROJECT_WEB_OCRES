@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
     res.send('coucou');
 })
 
+//on peut utiliser delete, get et post
+
 //Connect to db
 mongoose.connect(
     process.env.DB_CONNECTION, 
