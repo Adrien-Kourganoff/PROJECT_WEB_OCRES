@@ -6,8 +6,13 @@ import {
   HorizontalGridLines,
   VerticalGridLines,
   LineMarkSeries,
+  LineSeries,
+  MarkSeries,
   VerticalRectSeries,
+  Hint,
 } from 'react-vis';
+import '../styles/settings.css'
+
 const { default: axios } = require('axios');
 
 const ONE_DAY = 86400000;
@@ -30,6 +35,7 @@ export default function Graphs(){
     for (let i = 0; i < events.length; i++) {
         datas.push({x: i, y: events[i].Album.ImageCount});
     }
+
 
     /**
      * Same as precedent datas just added the real time to put them in the chart and order them
@@ -56,17 +62,30 @@ export default function Graphs(){
                 <XAxis
                     title="Numéro de l'évènement"
                     style={{
+                        fill: 'var(--text)',
                         line: {stroke: '#ADDDE1'},
                         ticks: {stroke: '#ADDDE1'},
-                        text: {stroke: 'none', fill: '#ffffff', fontWeight: 600}
+                        text: {stroke: 'none', fontWeight: 600}
                     }}
                 />
-                <YAxis title="Nombre de photos" style={{text: {stroke: 'none', fill: '#ffffff', fontWeight: 600}}}/>
-                <LineMarkSeries
+                <YAxis title="Nombre de photos" style={{fill: 'var(--text)', text: {stroke: 'none', fontWeight: 600}}}/>
+                <LineSeries
                     className="first-series"
                     data={datas}
+                    stroke='var(--text)'
                     style={{
-                        strokeWidth: 2.5
+                        strokeWidth: 2.5,
+                        fill: 'none'
+                    }}
+                />
+                <MarkSeries
+                    className="second-series"
+                    data={datas}
+                    stroke='var(--bg-secondary)'
+                    color='var(--text)'
+                    style={{
+                        strokeWidth: 1,
+                        fill: 'var(--bg-secondary)'
                     }}
                 />
             </XYPlot>
@@ -76,8 +95,8 @@ export default function Graphs(){
             <XYPlot
                 margin={70}
                 xType="time"
-                width={1000}
-                height={600}>
+                width={500}
+                height={500}>
                 <VerticalGridLines />
                 <HorizontalGridLines />
                 <XAxis tickValues={ticks} tickFormat={v => {
@@ -86,9 +105,9 @@ export default function Graphs(){
                         format += new Date(v).toString().split(' ')[i] + ' ';
                     }
                     return format
-                    } } tickLabelAngle={-45}/>
-                <YAxis />
-                <VerticalRectSeries data={datasTime} style={{stroke: '#fff', strokeWidth: 1}} />
+                    } } tickLabelAngle={-45} style={{fill:'var(--text)'}} />
+                <YAxis style={{fill:'var(--text)'}}/>
+                <VerticalRectSeries data={datasTime} style={{stroke: 'var(--text)', strokeWidth: 1}} />
             </XYPlot>
         </div>
     )
@@ -114,7 +133,7 @@ function List(props){
                     <h3 className='lieu'>N°{event.id}</h3>
                     <h5 className='date'>Date : {event.date}</h5>
                     <h5 className='nom'>Nom : {event.nom}</h5>
-                    <h5 className='photo'>Nb photos : {event.nb}</h5>
+                    <h5 className='photo_nb'>Nb photos : {event.nb}</h5>
                 </div>
             ))}
         </>

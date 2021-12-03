@@ -2,17 +2,34 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
-    --bg-primary: #23232e;
-    --bg-secondary: #141418;
+}
+
+:root{
+  --bg-secondary: #141418;
+  --bg-primary: #23232e;
+  --bg: #282c34;
+  --text: white;
+}
+
+.dark{
+  --bg-secondary: #141418;
+  --bg-primary: #23232e;
+  --bg: #282c34;
+  --text: white;
+}
+
+.light{
+  --bg-secondary: rgb(235, 140, 62);
+  --bg-primary: #e2e2e2;
+  --bg: #ffffff;
+  --text: #23232e;
 }
 
 body{
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #282c34;
+    background-color: var(--bg);
 }
 
 /* Settings for the navigation */
@@ -150,11 +167,12 @@ body{
   width: 100%;
   margin-left: 5rem;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--text);
   justify-content: center;
   align-items: center;
   width: auto;
   min-width: 320px;
+  overflow: hidden;
 }
 
 .Page h1{
@@ -169,6 +187,7 @@ body{
 
 .Page .container{
   width: 100%;
+  color: white;
   background-color: orangered;
   position: relative;
   margin: 5px;
@@ -253,7 +272,7 @@ body{
 
 /* Photo */
 .Page .photo{
-  background-color: var(--bg-primary);
+  background-color: var(--bg);
 }
 
 .Page .photo .cont_photo{
@@ -266,7 +285,7 @@ body{
 }
 
 .Page .map{
-  background-color: var(--bg-primary);
+  background-color: var(--bg);
 }
 
 .Page .map div{
@@ -284,8 +303,23 @@ body{
   overflow: auto;
 }
 
+.Page .chart{
+  color: var(--text);
+}
+
+.Page .chart .list{
+  width: 20%;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  margin-bottom: 5rem;
+}
+
+
 /* For small screens like mobile phones */
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 684px){
   /* Changes the components size */
   .Page .container{
     margin: 5px;
@@ -299,6 +333,10 @@ body{
     transform: scale(1.02);
     transition: 1s;
     z-index: 5;
+  }
+
+  .Page .chart .list{
+    display: none;
   }
 
   /* Set the navigation bar to the bottom */
@@ -332,15 +370,28 @@ body{
   }
 } 
 
+/* For the navigation bar depending on the height */
+@media only screen and (min-width: 800px) and (max-height: 400px) {
+  .nav-link{
+    height: 3rem;
+  }
+}
+
+@media only screen and (min-width: 800px) and (min-height: 401px) and (max-height: 550px) {
+  .nav-link{
+    height: 3.5rem;
+  }
+}
+
   /* For small screens like tablets */
-@media only screen and (min-width: 601px) and (max-width: 799px) {
+@media only screen and (min-width: 685px) and (max-width: 1009px) {
   /* Changes the components size */
   .Page .very{
     width: 98%;
   }
 
   .Page .big, .Page .small{
-    max-width: 48%;
+    max-width: 48.5%;
     min-width: 225px;
     height: 15em;
   }
@@ -380,22 +431,22 @@ body{
   }
 
   /* Changes the small component size */
-  @media only screen and (max-width: 900px) and (min-width: 800px){
-    .Page .small{
-      max-width: 23.5%;
-      min-width: 145px;
-    }
-  }
-
-  @media only screen and (min-width: 900px){
+  @media only screen and (max-width: 1070px) and (min-width: 1010px){
     .Page .small{
       max-width: 23.8%;
       min-width: 145px;
     }
   }
+
+  @media only screen and (min-width: 1070px){
+    .Page .small{
+      max-width: 24%;
+      min-width: 145px;
+    }
+  }
   
   /* For large screens like computers */
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: 1010px) {
 
     /* Changes the components size */
     .Page .container{
@@ -403,7 +454,7 @@ body{
     }
 
     .Page .big, .Page .very{
-      max-width: 48.5%;
+      max-width: 48.9%;
       min-width: 300px;
     }
 
@@ -418,7 +469,7 @@ body{
         width: 220px;
     }
 
-    .navigation a:last-child {
+    .navigation .nav-item:last-child {
         margin-top: auto;
       }
   
