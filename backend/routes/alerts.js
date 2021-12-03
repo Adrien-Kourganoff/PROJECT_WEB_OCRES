@@ -1,17 +1,21 @@
 var express = require('express');
 var router = express.Router();
-const MeetingModel = require('../models/meeting.model');
+const AlertModel = require('../models/alert.model');
 const moment = require('moment')
 
 
-/* GET meetings listing. */
-router.get('/getMeetings', async (req, res) => {  
+//GET meetings listing. //
+router.get('/', async (req, res) => {  
+ 
+  const alerts = await AlertModel.find()
+	res.json(alerts)
 
-  const Meetings = await MeetingModel.find()
-	res.send(Meetings)
 })
 
-/* GET meetings listing by date */
+/*
+
+
+// GET meetings listing by date 
 router.get('/getMeetingsByDate', async (req, res) => {  
 
   const dateInServer = req.query.date;
@@ -39,7 +43,7 @@ router.get('/getMeetingsByDate', async (req, res) => {
   {
     console.log(err);
   }
- 
+  
 })
 
 
@@ -53,7 +57,7 @@ router.get('/getMeetingsByDate', async (req, res) => {
 
 
 
-/* POST users listing. */
+// POST users listing. 
 router.post('/add', async (req, res) => {  
 
   const Meetings = new MeetingModel ({lastName : "ilies ", name : "kalcha", email :"db@ece.fr", meeetingDate : "12/12/2021" })
@@ -71,9 +75,11 @@ router.post('/add', async (req, res) => {
 
 
 
-/* GET users listing. */
+// GET users listing. 
 router.get('/', function (req, res) {  
   res.send('hello world');
  });
 
+
+ */
 module.exports = router;

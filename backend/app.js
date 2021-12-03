@@ -17,8 +17,8 @@ connection.once("open", () => {
 });
 
 //Import Routes
-const meetings = require('./routes/meetings');
-app.use('/meetings', meetings);
+const alerts = require('./routes/alerts');
+app.use('/alerts', alerts);
 
 
 
