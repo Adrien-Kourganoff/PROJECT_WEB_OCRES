@@ -12,8 +12,7 @@ function Home() {
       <div>
             <body>
                 <Navigation/>
-                <div className="Page">
-                    <h1>This is home page</h1>
+                <div className="Page cont">
                     <div class="container very photo">
                         <LastPictures/>
                     </div>
