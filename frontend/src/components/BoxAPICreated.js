@@ -1,8 +1,8 @@
 import React from "react";
 
-const Box7 = ({ name }) => {
+const BoxAPICreated = ({ name }) => {
     return (
-        <div className="box">
+        <div className="bigBox">
             <div className="container">
                 <div className="card-deck mb-3 text-center">
                     <div className="card mb-4 shadow-sm offset-sm-1">
@@ -13,7 +13,8 @@ const Box7 = ({ name }) => {
                             <h2 id="day0-forecast-main" className="card-title">
                             </h2>
                             <div>
-                                <p id="humidity"></p>
+                                <p id="titre"></p>
+                                <p id="description"></p>
                             </div>
                         </div>
                     </div>
@@ -22,4 +23,4 @@ const Box7 = ({ name }) => {
         </div>
     );
 };
-export default Box7;
+export default BoxAPICreated;

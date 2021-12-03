@@ -16,8 +16,6 @@ const BoxEmojis = ({ name }) => {
                                 <p id="emoji1"></p>
                                 <p id="emoji2"></p>
                                 <p id="emoji3"></p>
-                                <div id="day0-icon-weather-container" ></div>
-                                <h3 id="day0-forecast-temp"> </h3>
                             </div>
                         </div>
                     </div>

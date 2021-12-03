@@ -14,7 +14,6 @@ const Box6 = ({ name }) => {
                             </h2>
                             <div>
                                 <p id="joke"></p>
-                                <div id="day0-icon-weather-container" ></div>
                             </div>
                         </div>
                     </div>

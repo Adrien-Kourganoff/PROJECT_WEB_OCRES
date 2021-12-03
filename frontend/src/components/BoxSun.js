@@ -25,8 +25,6 @@ const BoxSun = ({ name }) => {
                                 <p id="sunset"></p>
                                 <p id="solarnoon"></p>
                                 <p id="daylength"></p>
-                                <div id="day0-icon-weather-container" ></div>
-                                <h3 id="day0-forecast-temp"> </h3>
                             </div>
                         </div>
                     </div>

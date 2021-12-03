@@ -14,8 +14,6 @@ const Box4 = ({ name }) => {
                             </h2>
                             <div>
                                 <p id="vitesse-vent"></p>
-                                <div id="day0-icon-weather-container" ></div>
-                                <h3 id="day0-forecast-temp"> </h3>
                             </div>
                         </div>
                     </div>

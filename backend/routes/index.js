@@ -14,10 +14,6 @@ router.get("/", async function (req, res, next) {
   }
 });
 
-router.get("/specific", function (req, res, next) {
-  res.send("Specific Page");
-});
-
 //Add a post
 router.post('/', async function (req, res, next) {
   const post = new Post({

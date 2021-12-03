@@ -23,6 +23,7 @@ import { Chart, PieController, ArcElement, Legend, Tooltip, Title, CategoryScale
 
 import { Line } from 'react-chartjs-2';
 import BoxSun from "./components/BoxSun.js";
+import BoxAPICreated from "./components/BoxAPICreated.js";
 
 Chart.register(LinearScale, CategoryScale, PieController, ArcElement, Title, Legend, Tooltip, PointElement, LineElement);
 
@@ -587,11 +588,29 @@ export default function Map() {
             })
             .catch(console.error);
     }
+
+    const callAPICreate = () => {
+        axios
+            .get('http://localhost:3001/index')
+            .then((data)=>{
+
+                var title1 = data.data[0]._id;
+                var description = data.data[0].description;
+                
+                console.log(title1);
+                console.log(description);
+
+                document.getElementById('titre').innerHtml = title1;
+                document.getElementById('description').innerHTML = description;
+            })
+            .catch(console.error);
+    }
     callAPI2();
     callAPI3();
     return (
         callAPI2(),
         callAPI3(),
+        callAPICreate(),
         <div className="Corps">
             <div className="TitleSite">
                 <h1> Quel temps fait-il dans le monde ?</h1>
@@ -612,6 +631,7 @@ export default function Map() {
                             callAPI(marker.nameCities);
                             callAPI2(marker.nameCities);
                             callAPI3();
+                            callAPICreate();
                             myChart.destroy();
                         }}
                     />
@@ -653,6 +673,7 @@ export default function Map() {
             </div>
             <div>
                 <Box8 name={"Graphe des températures"} />
+                <BoxAPICreated name = {"API Créée"} />
             </div>
             <div>
                 <Box6 name={"Blague du jour !"} />

@@ -13,8 +13,6 @@ const Box8 = ({ name }) => {
                         </h2>
                         <div>
                             <canvas id="myChart" width="100" height="100"></canvas>
-                            <div id="day0-icon-weather-container" ></div>
-                            <h3 id="day0-forecast-temp"> </h3>
                         </div>
                     </div>
                 </div>
