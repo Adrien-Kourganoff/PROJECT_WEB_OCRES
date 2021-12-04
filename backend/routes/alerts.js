@@ -38,6 +38,24 @@ router.put("/update", async (req, res) => {
  
 });
 
+//delete by id
+
+router.delete("/delete", async (req, res) => {
+  
+  const id = req.body.id;
+  try {
+
+    const result = await AlertModel.deleteOne({id});
+    console.log(result);
+ 
+  } catch(error)
+    {
+      console.log("error");
+    }
+ 
+});
+
+
 
 /*
 // POST users listing. 
@@ -55,14 +73,6 @@ router.post('/add', async (req, res) => {
 })
 
 
+*/
 
-
-
-// GET users listing. 
-router.get('/', function (req, res) {  
-  res.send('hello world');
- });
-
-
- */
 module.exports = router;

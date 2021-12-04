@@ -35,6 +35,27 @@ export default function InformationsEdit() {
         console.log(response);
 
       };
+    
+      const deleteAlert = async (id) => {
+          
+        
+        const response = await axios.delete('http://localhost:1337/alerts/delete', {  
+            id : id,
+        }
+        )
+        .catch((error) => console.log(error.resp));
+        console.log(response);
+
+      };
+
+      const refresh = async () => {
+
+        const response = await axios.get('http://localhost:1337/alerts', {  
+        })
+        .catch((error) => console.log(error.resp));
+      setData(response);
+      };
+
 
 
        if (data===undefined) //Si tableau vide cad api pas encore fetch
@@ -44,7 +65,7 @@ export default function InformationsEdit() {
 else{
     return ( 
         <div>
-            <InvestAlertsEdit data={data} updateAlert={updateAlert}/>
+            <InvestAlertsEdit data={data} updateAlert={updateAlert} deleteAlert={deleteAlert} refresh={refresh}/>
         </div>
     )
 }

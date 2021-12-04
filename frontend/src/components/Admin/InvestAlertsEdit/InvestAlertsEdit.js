@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect,useReducer} from 'react';
 import  {Card ,ListGroup,Table,Button,Row,Col,Form} from 'react-bootstrap';
 import InvestAlertsEditStyle from './InvestAlertsEdit.module.css';
 import classNames from 'classnames';
@@ -11,10 +11,15 @@ export default function InvestAlertsEdit(props) {
     const [inputTitle, setInputTitle] = useState([]);
     const [inputMessage, setInputMessage] = useState([]);
     const [inputDate, setInputDate] = useState([]);
-
-
-
    
+    const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+    console.log("Rendered! or did I just re-render?");
+
+
+    function handleClick() {
+        forceUpdate();
+      }
+
 
     function onChangeHandler(event) 
     {
@@ -50,8 +55,9 @@ export default function InvestAlertsEdit(props) {
         setInputTitle(titles);
         setInputMessage(messages);
         setInputDate(dates);
+    
 
-      },[]);
+      });
 
 
 
@@ -69,8 +75,10 @@ export default function InvestAlertsEdit(props) {
    function deleteA(id)
    {
 
-
-
+    props.deleteAlert(id)
+    alert("Alerte supprimé");
+    props.refresh();
+    handleClick();
    }
 //                            <DatePicker className={"date"+alert._id} locale="fr" defaultDate={defDate(alert.alertDate) } />
 
@@ -110,7 +118,7 @@ export default function InvestAlertsEdit(props) {
                             <td  className={classNames(InvestAlertsEditStyle.tdStyle,InvestAlertsEditStyle.whiteColor)}>                                   
                                 <Row>
                                     <Col><Button onClick={() => updateA(alert._id)} variant="primary">U</Button></Col>
-                                    <Col><Button onClick={() => updateA(alert._id)} variant="Danger">D</Button></Col>
+                                    <Col><Button onClick={() => deleteA(alert._id)} variant="Danger">D</Button></Col>
                                 </Row>
                             </td>
                         </tr>        
