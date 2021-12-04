@@ -1,33 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Link } from 'react-router-dom';
+import Routs from './Routs.js';
 //import Widget from './widgets/Widget.js';
 
-import Meteo from './widgets/Meteo.js';
+/*import Meteo from './widgets/Meteo.js';
 import Suggestion from './widgets/Suggestion.js';
 import Makeup from "./widgets/Makeup.js";
 import Nasa from "./widgets/Nasa.js";
-import Rates from "./widgets/Rates.js";
+import Rates from "./widgets/Rates.js";*/
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="grid-meteo">
-          <Meteo/>
-        </div>
-        <div className="grid-nasa">
-          <Nasa/>
-        </div>
-        <div className="grid-rates">
-          <Rates/>
-        </div>
-        <div className="grid-suggestions">
-          <Suggestion/>
-        </div>
-        <div className="grid-films">Films</div>
-        <div className="grid-shopping">
-          <Makeup/>
+      <div>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/param">Parametres</Link></li>
+        </ul>
+        <div className = "routes_place">
+          <Routs/>
         </div>
       </div>
     );

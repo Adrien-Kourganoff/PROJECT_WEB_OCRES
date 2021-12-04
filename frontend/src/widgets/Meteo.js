@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-//import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
 // Clé api
 const API_KEY = "4081444b7b90198136fefe6ed4ccf35b";
@@ -28,7 +28,7 @@ class Meteo extends Component {
                 {name: '3th day', uv: 0, pv: 2400, amt: 2400},
                 {name: '4th day', uv: 0, pv: 2400, amt: 2400},
                 {name: '5th day', uv: 0, pv: 2400, amt: 2400}]
-            for (let i = 0; i<this.stats.length; i ++){
+            for (let i = 0; i<5; i ++){
                 stats[i].uv = data.list[i].temp.day;
             }
             this.setState({
