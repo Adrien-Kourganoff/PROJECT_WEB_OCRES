@@ -9,24 +9,37 @@ import Rates from "../widgets/Rates.js";
 
 
 class Home extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      city: this.props.city,
+
+      nasa_parameters: this.props.nasa_parameters,
+
+      rates_parameters: this.props.rates_parameters,
+
+      makeup_parameters: this.props.makeup_parameters,
+    }
+  }
+
   render() {
     return (
       <div className="Home">
         <div className="grid-meteo">
-          <Meteo/>
+          <Meteo city={this.state.city}/>
         </div>
         <div className="grid-nasa">
-          <Nasa/>
+          <Nasa date={this.state.nasa_parameters}/>
         </div>
         <div className="grid-rates">
-          <Rates/>
+          <Rates currencies={this.state.rates_parameters}/>
         </div>
         <div className="grid-suggestions">
           <Suggestion/>
         </div>
         <div className="grid-films">Films</div>
         <div className="grid-shopping">
-          <Makeup/>
+          <Makeup parameters = {this.state.makeup_parameters}/>
         </div>
       </div>
     );

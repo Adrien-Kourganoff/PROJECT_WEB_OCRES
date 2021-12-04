@@ -3,6 +3,14 @@ import React, { Component } from "react";
 class Makeup extends Component {
     constructor(props){
         super(props);
+        let parameters;
+        if(this.props.parameters){
+            parameters = this.props.parameters;
+        }else{
+            parameters = {
+                brand: "maybelline"
+            };
+        }
         this.state = {
             name: "",
             price: "",
@@ -10,11 +18,13 @@ class Makeup extends Component {
             rating: "",
             request: false,
             refresh: true,
+
+            parameters: parameters,
         }
     }
 
     useAPI(){
-        fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline`)
+        fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=${this.state.parameters.brand}`)
         .then(res => res.json())
         .then((data) =>{
             this.setState({
