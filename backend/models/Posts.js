@@ -1,12 +1,28 @@
 const mongoose = require('mongoose');
 
 const PostSchema = mongoose.Schema({
-    title: {
+    tempHaute: {
         type: String,
         required: true
     },
-    description: {
+    lieuTempHaute: {
         type: String,
+        required: true
+    },
+    anneeTempHaute: {
+        type: String, 
+        required: true
+    },
+    tempBasse: {
+        type: String,
+        required: true
+    },
+    lieuTempBasse: {
+        type: String, 
+        required: true
+    },
+    anneeTempBasse: {
+        type: String, 
         required: true
     },
     date: {

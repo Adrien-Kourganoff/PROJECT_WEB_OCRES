@@ -17,8 +17,12 @@ router.get("/", async function (req, res, next) {
 //Add a post
 router.post('/', async function (req, res, next) {
   const post = new Post({
-    title: req.body.title,
-    description: req.body.description
+    tempHaute: req.body.tempHaute,
+    lieuTempHaute: req.body.lieuTempHaute,
+    anneeTempHaute: req.body.anneeTempHaute,
+    tempBasse: req.body.tempBasse,
+    lieuTempBasse: req.body.lieuTempBasse,
+    anneeTempBasse: req.body.anneeTempBasse,
   });
   try {
     const savedPost = await post.save();
@@ -56,7 +60,7 @@ router.patch('/:postId', async function (req, res, next) {
   try {
     const updatedPost = await Post.updateOne(
     { _id: req.params.postId }, 
-    { $set: {title: req.body.title } }
+    { $set: {tempHaute: req.body.tempHaute } }
     );
     res.json(updatedPost);
   } catch (err) {

@@ -13,8 +13,12 @@ const BoxAPICreated = ({ name }) => {
                             <h2 id="day0-forecast-main" className="card-title">
                             </h2>
                             <div>
-                                <p id="titre"></p>
-                                <p id="description"></p>
+                                <p id="tempH"></p>
+                                <p id="lieuTempH"></p>
+                                <p id="anneeTempH"></p>
+                                <p id="tempB"></p>
+                                <p id="lieuTempB"></p>
+                                <p id="anneeTempB"></p>
                             </div>
                         </div>
                     </div>

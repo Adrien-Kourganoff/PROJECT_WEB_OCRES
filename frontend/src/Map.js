@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import Box from './components/Box.js';
 import Box2 from './components/Box2.js';
 import Box3 from './components/Box3.js';
@@ -10,6 +10,7 @@ import Box8 from './components/Box8.js';
 import BoxEmojis from './components/BoxEmojis.js';
 import axios from "axios";
 import TodayBox from './components/TodayBox.js';
+import { Link } from 'react-router-dom';
 import {
     GoogleMap,
     useLoadScript,
@@ -17,11 +18,10 @@ import {
     InfoWindow
 } from "@react-google-maps/api";
 
-import Dashboard from "./Dashboard";
+//import Admin from "./Admin";
 
 import { Chart, PieController, ArcElement, Legend, Tooltip, Title, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
 
-import { Line } from 'react-chartjs-2';
 import BoxSun from "./components/BoxSun.js";
 import BoxAPICreated from "./components/BoxAPICreated.js";
 
@@ -164,20 +164,20 @@ export default function Map() {
                 }
 
                 else if (10 < temp1 < 20) {
-                    var emoji1 = String.fromCodePoint(129507); //Echarpe
+                    emoji1 = String.fromCodePoint(129507); //Echarpe
                     document.getElementById('emoji1').innerHTML = emoji1;
-                    var emoji2 = String.fromCodePoint(128085); //T-shirt
+                    emoji2 = String.fromCodePoint(128085); //T-shirt
                     document.getElementById('emoji2').innerHTML = emoji2;
-                    var emoji3 = String.fromCodePoint(128086);//Jean
+                    emoji3 = String.fromCodePoint(128086);//Jean
                     document.getElementById('emoji3').innerHTML = emoji3;
                 }
 
                 else if (20 < temp1) {
-                    var emoji1 = String.fromCodePoint(129506); //Casquette
+                    emoji1 = String.fromCodePoint(129506); //Casquette
                     document.getElementById('emoji1').innerHTML = emoji1;
-                    var emoji2 = String.fromCodePoint(128374); //Lunettes de soleil
+                    emoji2 = String.fromCodePoint(128374); //Lunettes de soleil
                     document.getElementById('emoji2').innerHTML = emoji2;
-                    var emoji3 = String.fromCodePoint(129651); //Short
+                    emoji3 = String.fromCodePoint(129651); //Short
                     document.getElementById('emoji3').innerHTML = emoji3;
                 }
 
@@ -592,16 +592,26 @@ export default function Map() {
     const callAPICreate = () => {
         axios
             .get('http://localhost:3001/index')
-            .then((data)=>{
+            .then((data) => {
 
-                var title1 = data.data[0]._id;
-                var description = data.data[0].description;
-                
-                console.log(title1);
-                console.log(description);
+                const tempHaute = data.data[0].tempHaute;
+                const lieuTempHaute = data.data[0].lieuTempHaute;
+                const anneeTempHaute = data.data[0].anneeTempHaute;
 
-                document.getElementById('titre').innerHtml = title1;
-                document.getElementById('description').innerHTML = description;
+                const tempBasse = data.data[0].tempBasse;
+                const lieuTempBasse = data.data[0].lieuTempBasse;
+                const anneeTempBasse = data.data[0].anneeTempBasse;
+
+                console.log(tempHaute);
+                console.log(lieuTempHaute);
+
+                document.getElementById('tempH').innerHTML = `Température la plus haute : ${tempHaute}°C`;
+                document.getElementById('lieuTempH').innerHTML = `Lieu : ${lieuTempHaute}`
+                document.getElementById('anneeTempH').innerHTML = `Année : ${anneeTempHaute}`;
+
+                document.getElementById('tempB').innerHTML = `Température la plus basse : ${tempBasse}°C`;
+                document.getElementById('lieuTempB').innerHTML = `Lieu : ${lieuTempBasse}`;
+                document.getElementById('anneeTempB').innerHTML = `Année : ${anneeTempBasse}`;
             })
             .catch(console.error);
     }
@@ -615,40 +625,42 @@ export default function Map() {
             <div className="TitleSite">
                 <h1> Quel temps fait-il dans le monde ?</h1>
             </div>
-            <GoogleMap mapContainerStyle={mapContainerStyle}
-                zoom={2}
-                center={center}
-                onClick={onMapClick}
-                onLoad={onMapLoad}
-            >
-                {markers.map((marker) => (
-                    <Marker
-                        key={marker.time}
-                        position={{ lat: marker.lat, lng: marker.lng }}
-                        onClick={() => {
-                            setSelected(marker);
-                            setCity(marker.nameCities);
-                            callAPI(marker.nameCities);
-                            callAPI2(marker.nameCities);
-                            callAPI3();
-                            callAPICreate();
-                            myChart.destroy();
-                        }}
-                    />
+            <center>
+                <GoogleMap mapContainerStyle={mapContainerStyle}
+                    zoom={2}
+                    center={center}
+                    onClick={onMapClick}
+                    onLoad={onMapLoad}
+                >
+                    {markers.map((marker) => (
+                        <Marker
+                            key={marker.time}
+                            position={{ lat: marker.lat, lng: marker.lng }}
+                            onClick={() => {
+                                setSelected(marker);
+                                setCity(marker.nameCities);
+                                //callAPI(marker.nameCities);
+                                callAPI2(marker.nameCities);
+                                callAPI3();
+                                callAPICreate();
+                                myChart.destroy();
+                            }}
+                        />
 
-                ))}
+                    ))}
 
-                {selected ? (
-                    <InfoWindow position={{ lat: selected.lat, lng: selected.lng }}
-                        onCloseClick={() => {
-                            setSelected(null);
-                        }}
-                    >
-                        <div>
-                            <h2>{selected.nameCities}</h2>
-                        </div>
-                    </InfoWindow>) : null}
-            </GoogleMap>
+                    {selected ? (
+                        <InfoWindow position={{ lat: selected.lat, lng: selected.lng }}
+                            onCloseClick={() => {
+                                setSelected(null);
+                            }}
+                        >
+                            <div>
+                                <h2>{selected.nameCities}</h2>
+                            </div>
+                        </InfoWindow>) : null}
+                </GoogleMap>
+            </center>
             <div>
                 <center>
                     <div className="titreDonnee">
@@ -673,10 +685,15 @@ export default function Map() {
             </div>
             <div>
                 <Box8 name={"Graphe des températures"} />
-                <BoxAPICreated name = {"API Créée"} />
+                <BoxAPICreated name={"Record des températures en France !"} />
             </div>
             <div>
                 <Box6 name={"Blague du jour !"} />
+            </div>
+            <div>
+                <Link to="/admin">
+                    Pour modifier les données de l'API créée, cliquer ici
+                </Link>
             </div>
         </div>
     )

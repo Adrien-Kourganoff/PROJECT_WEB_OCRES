@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Page from './Map';
-import Dashboard from './Dashboard';
+import Admin from './Admin';
 
 const App = () => {
 
@@ -12,7 +12,7 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/map" element={<Page />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );
