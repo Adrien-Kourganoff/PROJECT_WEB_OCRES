@@ -71,8 +71,8 @@ class Meteo extends Component {
             return(
                 <div className="Meteo">
                     <h4 className="widget-title">Météo</h4>
-                    <p id="weather_description">{this.state.info[0]}</p>
-                    <h3 id="weather_temp">{this.state.temp[0]}</h3>
+                    <p id="weather_description">{this.state.info}</p>
+                    <h3 id="weather_temp">{this.state.temp}</h3>
                     <div className="temp_chart">
                         <LineChart width={600} height={300} data={this.state.fiveDays} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                             <Line type="monotone" dataKey="uv" stroke="#8884d8" />

@@ -1,12 +1,12 @@
 .Home {
     text-align: center;
-    display: grid;
+    /*display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 48% 48%;
     grid-gap: 20px;
     grid-auto-rows: minmax(100px, auto);
     height: 100vh;
-    width: 100vw;
+    width: 100vw;*/
   }
   
   .grid-meteo {
@@ -56,23 +56,3 @@
     grid-row: 2;
     margin: 0% 2% 1% 0%;
   }
-  
-  .App-logo {
-    height: 40vmin;
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #09d3ac;
-  }
-  
