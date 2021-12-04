@@ -52,7 +52,7 @@ class Routs extends Component{
                     makeup_parameters = {this.state.makeup_parameters}
                 />}/>
 
-                <Route path = "/param" element = {<Parametres
+                <Route path = "/settings" element = {<Parametres
                     updateMeteo = {this.callbackMeteo}
                     updateNasa = {this.callbackNasa}
                     updateRates = {this.callbackRates}
