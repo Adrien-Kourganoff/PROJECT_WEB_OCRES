@@ -31,13 +31,15 @@ class Meteo extends Component {
         fetch(`${API_URL}?q=${this.state.city}&units=metric&appid=${API_KEY}`)
         .then(res => res.json())
         .then((data) =>{
-            let stats = [{name: 'Today', uv: 0, pv: 2400, amt: 2400},
-                {name: 'Tomorrow', uv: 0, pv: 2400, amt: 2400},
-                {name: '3th day', uv: 0, pv: 2400, amt: 2400},
-                {name: '4th day', uv: 0, pv: 2400, amt: 2400},
-                {name: '5th day', uv: 0, pv: 2400, amt: 2400}]
+            let stats = [{name: 'Today', average: 0, max: 0, min: 0},
+                {name: 'Tomorrow', average: 0, max: 0, min: 0},
+                {name: 'Friday', average: 0, max: 0, min: 0},
+                {name: 'Saturday', average: 0, max: 0, min: 0},
+                {name: 'Sunday', average: 0, max: 0, min: 0}]
             for (let i = 0; i<5; i ++){
-                stats[i].uv = data.list[i].temp.day;
+                stats[i].average = data.list[i].temp.day;
+                stats[i].min = data.list[i].temp.min;
+                stats[i].max = data.list[i].temp.max;
             }
             this.setState({
                 info: data.list[0].weather[0].description,
@@ -66,7 +68,9 @@ class Meteo extends Component {
                     <h3 id="weather_temp">{this.state.temp}</h3>
                     <div className="temp_chart">
                         <LineChart width={600} height={300} data={this.state.fiveDays} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                            <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                            <Line type="monotone" dataKey="average" stroke="#8884d8" />
+                            <Line type="monotone" dataKey="min" stroke="#475dff" />
+                            <Line type="monotone" dataKey="max" stroke="#f55e47" />
                             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                             <XAxis dataKey="name" />
                             <YAxis />
