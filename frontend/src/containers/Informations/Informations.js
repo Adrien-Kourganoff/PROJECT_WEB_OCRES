@@ -8,26 +8,30 @@ export default function Informations() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetchData();        
+
+        const fetchData = async () => {
+
+            const response = await axios.get('http://localhost:1337/alerts', {  
+            })
+            .catch((error) => console.log(error.resp));
+          setData(response);
+          };
+
+          fetchData();
+        
     },[])
 
-    const fetchData = async () => {
 
-     
-     
-         const response = await axios.get('http://localhost:1337/alerts', {  
-         })
-         .catch((error) => console.log(error.resp));
-         setData(response);
-       };
-     
-     
-    
-       if (data.length===0) //Si tableau vide cad api pas encore fetch
-       return <div>Loading...</div>;
-    return (
+    console.log("test");
+       if (data===undefined) //Si tableau vide cad api pas encore fetch
+          return <div>Loading...</div>;
+       else if (data.length===0)
+          return <div>Loading...</div>;
+else{
+    return ( 
         <div>
             <InvestAlerts data={data}/>
         </div>
     )
+}
 }

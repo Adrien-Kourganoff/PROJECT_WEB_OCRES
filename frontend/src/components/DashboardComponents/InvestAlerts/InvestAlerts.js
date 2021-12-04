@@ -1,20 +1,18 @@
-import React, {useState,useEffect} from 'react';
-import  {Card ,ListGroup, Row,Col,Table} from 'react-bootstrap';
+import React from 'react';
+import  {Card ,ListGroup,} from 'react-bootstrap';
 import InvestAlertsStyle from'./InvestAlerts.module.css'
 import classNames from 'classnames';
-import axios from 'axios';
 let moment = require('moment');
 require('moment/locale/fr.js');
 
 
 export default function InvestAlerts(props) {
 
-    const [data,setData]=useState(props.data);
-
+    var data = props.data;
 
     for (var i=0; i<data.data.length; i++)
     {
-           var dateStringBefore=moment(data.data[i].alertDate);          
+           var dateStringBefore=moment((data.data[i].alertDate).format);          
             data.data[i].alertDate=dateStringBefore.format('lll').toString();
     }
     
@@ -27,7 +25,7 @@ export default function InvestAlerts(props) {
             <div className={classNames(InvestAlertsStyle.forceOverflow)}> 
             {
                 data.data.map((alert, index) => (
-                    <ListGroup.Item>
+                    <ListGroup.Item key={index}>
                     <div className={classNames(InvestAlertsStyle.alertStyle)}>
                         <div className={classNames(InvestAlertsStyle.titleStyle)}>{alert.title}</div>
                         <div className={classNames(InvestAlertsStyle.messageStyle)}>{alert.message}</div>

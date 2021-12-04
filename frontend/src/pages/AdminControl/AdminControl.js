@@ -1,13 +1,8 @@
-import React, {useRef} from 'react';
-import EthDatas from '../../containers/EthDatas/EthDatas';
-import EthChart from '../../containers/EthChart/EthChart';
-import EthNews from '../../containers/EthNews/EthNews'
+import React from 'react';
 import  '../../globalCss/Card.css';
 import  './AdminControl.css';
 
-import EthConverter from '../../containers/EthConverter/EthConverter';
 import Masonry from 'react-masonry-css'
-import Metamask from '../../containers/Metamask/Metamask';
 
 
 export default function AdminControl() {
@@ -32,15 +27,8 @@ export default function AdminControl() {
 
 
 
-                <EthDatas />
-                    
-                <EthChart  />
-                          
-                <EthNews/>
-                
-                <EthConverter/>
-
-                <Metamask/>
+             
+             
              
                 </Masonry>
 

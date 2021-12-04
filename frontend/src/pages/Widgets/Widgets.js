@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import EthDatas from '../../containers/EthDatas/EthDatas';
 import EthChart from '../../containers/EthChart/EthChart';
 import EthNews from '../../containers/EthNews/EthNews'

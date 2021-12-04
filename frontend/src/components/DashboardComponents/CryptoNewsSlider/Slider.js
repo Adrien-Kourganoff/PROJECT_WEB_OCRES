@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import  {ListGroup,Card} from 'react-bootstrap';
+import  {ListGroup} from 'react-bootstrap';
 
 import './Slider.css'
 import classNames from 'classnames';
@@ -27,8 +27,6 @@ for (let i = 0; i < 5 ; i++) {
 
    var dateStringBefore=props.data.articles[i].publishedAt;
    var elem = dateStringBefore.split('T');
-
- 
     //Date 
     var dateStringUS = elem[0];
         //Date string us en date string fr
@@ -77,14 +75,14 @@ function refreshCard(newIndex)
                          </div>
                          </ListGroup.Item>
 
-         <ListGroup.Item style={{padding: "0"},{backgroundColor:"#11ffee00"},{padding :"15px"}} >     
+         <ListGroup.Item style={{padding :"15px"}} >     
             <h4 id="articleTitle2" className="card-title articleTitle font-weight-bold mb-2">{title}</h4>
 
             <p style={{marginTop :"12px"}}id="articleDescription" className="card-text desc">{description} </p>
             <div className="row">
                 <div className="col text-center">
                 <a href={url}  rel="noreferrer" target="_blank" id="articleURL">
-                    <button style={{marginTop:"8px"}}type="button" class="btn">Voir l'article</button>
+                    <button style={{marginTop:"8px"}}type="button" className="btn">Voir l'article</button>
                 </a>             
                 </div>
              </div>
@@ -99,6 +97,7 @@ function refreshCard(newIndex)
    
             {Array.from({length: 5}).map((item, index) => (
                 <div 
+                        key={index}
                         onClick={() =>{ 
                         moveDot(index + 1);
                         refreshCard(index);

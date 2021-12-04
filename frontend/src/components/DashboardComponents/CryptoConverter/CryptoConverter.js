@@ -8,12 +8,11 @@ export default function CryptoConverter(props) {
 
     const [index,setIndex]=useState(0);
 
-    const [CurrencyRefIndex,setCurrencyRefIndex]=useState(1);
-    const [CurrencyRefName,setCurrencyRefName]=useState(props.data[1].name);
-    const [CurrencyRefSymbol,setCurrencyRefSymbol]=useState(props.data[1].symbol);
-    const [CurrencyRefImage,setCurrencyRefImage]=useState(props.data[1].image);
-    const [CurrencyRefPrice,setCurrencyRefPrice]=useState(props.data[1].current_price);
-
+  
+    var CurrencyRefName=props.data[1].name;
+    var CurrencyRefSymbol=props.data[1].symbol;
+    var CurrencyRefImage=props.data[1].image;
+    var CurrencyRefPrice=props.data[1].current_price;
 
   useEffect(() => {
 
@@ -90,7 +89,7 @@ export default function CryptoConverter(props) {
                     >
                          {Array.from({length: props.data.length}).map((crypto,index) => (
                            
-                           <Dropdown.Item className={classNames("drop" + index)} eventKey={index} ><img id={"indexIMG" + index} src={props.data[index].image} alt={props.data[1].symbol} className={classNames(CryptoConverterStyle.logoSize)}/>&nbsp;{props.data[index].name}</Dropdown.Item>
+                           <Dropdown.Item key={index} className={classNames("drop" + index)} eventKey={index} ><img id={"indexIMG" + index} src={props.data[index].image} alt={props.data[1].symbol} className={classNames(CryptoConverterStyle.logoSize)}/>&nbsp;{props.data[index].name}</Dropdown.Item>
                          ))}
                     </DropdownButton>
                     <FormControl value={"0.000"} id="montantConverti" disabled aria-label="Text input with dropdown button" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import  {Card ,InputGroup,FormControl, ListGroup, Button} from 'react-bootstrap';
+import  {Card ,InputGroup,FormControl, ListGroup} from 'react-bootstrap';
 import MetamDatasStyle from './MetamDatasStyle.css';
 import classNames from 'classnames';
 
@@ -7,12 +7,6 @@ import classNames from 'classnames';
 export default function MetamDatas(props) {
    
     var Newprice = props.dataBalance.result * 0.000000000000000001;
-
-  /* console.log(props.dataBalance);
-   console.log(props.dataGas);
-   console.log(props.dataTime); */ //test
-
-
 
    function check()
    {

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.css';
 import  {Navbar,Container} from 'react-bootstrap';
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Logo from '../../imgs/logo.png';
 console.log(Logo);
