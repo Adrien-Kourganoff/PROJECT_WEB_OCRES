@@ -3,7 +3,7 @@ import EthDatas from '../../containers/EthDatas/EthDatas';
 import EthChart from '../../containers/EthChart/EthChart';
 import EthNews from '../../containers/EthNews/EthNews'
 import  '../../globalCss/Card.css';
-import  './Widgets.css';
+import  './Dashboard.css';
 
 import EthConverter from '../../containers/EthConverter/EthConverter';
 import Masonry from 'react-masonry-css'

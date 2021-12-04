@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import MetamDatas from '../../components/DashboardComponents/MetamDatas/MetamDatas';
+import MetamDatas from '../../components/Dashboard/MetamDatas/MetamDatas';
 export default function Metamask() {
 
     const [data, setData] = useState([]);

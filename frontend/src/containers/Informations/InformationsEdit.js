@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import InvestAlerts from '../../components/Dashboard/InvestAlerts/InvestAlerts'
+import InvestAlertsEdit from '../../components/Admin/InvestAlertsEdit/InvestAlertsEdit'
 
-export default function Informations() {
+export default function InformationsEdit() {
    
     const [data, setData] = useState([]);
 
@@ -18,11 +18,25 @@ export default function Informations() {
           };
 
           fetchData();
+          console.log(data);
         
     },[])
 
+    const updateAlert = async (id,titre,message,date) => {
+        
+        const response = await axios.put('http://localhost:1337/alerts/update', {  
+            id : id,
+            title : titre,
+            message : message,
+            alertDate : date,
+        }
+        )
+        .catch((error) => console.log(error.resp));
+        console.log(response);
 
-    console.log("test");
+      };
+
+
        if (data===undefined) //Si tableau vide cad api pas encore fetch
           return <div>Loading...</div>;
        else if (data.length===0)
@@ -30,7 +44,7 @@ export default function Informations() {
 else{
     return ( 
         <div>
-            <InvestAlerts data={data}/>
+            <InvestAlertsEdit data={data} updateAlert={updateAlert}/>
         </div>
     )
 }

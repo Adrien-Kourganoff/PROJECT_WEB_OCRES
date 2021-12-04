@@ -3,7 +3,7 @@ import './App.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import Header from '../Header/Header';
-import Widgets from '../../pages/Widgets/Widgets';
+import Widgets from '../../pages/Dashboard/Dashboard';
 import AdminControl from '../../pages/AdminControl/AdminControl';
 
 import {

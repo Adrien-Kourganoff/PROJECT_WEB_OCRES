@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-import CryptoNewsSlider from '../../components/DashboardComponents/CryptoNewsSlider/Slider'
+import CryptoNewsSlider from '../../components/Dashboard/CryptoNewsSlider/Slider'
 
 
 export default function EthNews() {

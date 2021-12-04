@@ -1,8 +1,7 @@
 import React from 'react';
+import InformationsEdit from '../../containers/Informations/InformationsEdit';
 import  '../../globalCss/Card.css';
 import  './AdminControl.css';
-
-import Masonry from 'react-masonry-css'
 
 
 export default function AdminControl() {
@@ -19,18 +18,12 @@ export default function AdminControl() {
             <div className="container">
 
         
-                      <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className="my-masonry-grid"
-                columnClassName="my-masonry-grid_column">
-                {/* array of JSX items */}
+        
 
-
-
+            <InformationsEdit/>
              
              
              
-                </Masonry>
 
      </div>
 </div>

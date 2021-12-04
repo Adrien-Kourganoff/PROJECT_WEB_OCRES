@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import CryptoDatas from '../../components/DashboardComponents/CryptoDatas/CryptoDatas';
+import CryptoDatas from '../../components/Dashboard/CryptoDatas/CryptoDatas';
 
 
 export default function EthDatas(props) {

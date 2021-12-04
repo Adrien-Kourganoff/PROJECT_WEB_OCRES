@@ -12,51 +12,34 @@ router.get('/', async (req, res) => {
 
 })
 
-/*
 
+// Update by ID
 
-// GET meetings listing by date 
-router.get('/getMeetingsByDate', async (req, res) => {  
-
-  const dateInServer = req.query.date;
-
-  //console.log(dateInServer);
-  newDate=new Date(dateInServer);
-  newDateSTR=newDate.toISOString();
-  console.log(newDateSTR);
-
-
-  newNextDate=newDate;
-  newNextDate.setHours(24,0,0,0);
-  newNextDateSTR=newNextDate.toISOString();
-  console.log(newNextDateSTR);
+router.put("/update", async (req, res) => {
+  
+  const id = req.body.id;
+  const title = req.body.title;
+  const message = req.body.message;
+  const date = req.body.alertDate; 
 
   try {
-   const Meetings = await MeetingModel.find( {meetingDate : {
-                                               $gte : new Date(newDateSTR),
-                                               $lt :  new Date(newNextDateSTR)
-                                               }
-                                              })
-    res.send(Meetings)
 
-  }catch(err)
-  {
-    console.log(err);
-  }
-  
-})
-
-
-
+    const result = await AlertModel.updateOne({id},{
+              title :title,
+              message : message,
+              alertDate : date,
+    });
+    console.log(result);
+ 
+  } catch(error)
+    {
+      console.log("error");
+    }
+ 
+});
 
 
-
-
-
-
-
-
-
+/*
 // POST users listing. 
 router.post('/add', async (req, res) => {  
 
