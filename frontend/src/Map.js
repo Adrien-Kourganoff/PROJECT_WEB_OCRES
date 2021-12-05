@@ -20,10 +20,11 @@ import {
 
 //import Admin from "./Admin";
 
-import { Chart, PieController, ArcElement, Legend, Tooltip, Title, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
+import { Chart, PieController, ArcElement, Legend, Tooltip, Title, CategoryScale, LinearScale, PointElement, LineElement} from 'chart.js';
 
 import BoxSun from "./components/BoxSun.js";
 import BoxAPICreated from "./components/BoxAPICreated.js";
+import { Line } from 'react-chartjs-2';
 
 Chart.register(LinearScale, CategoryScale, PieController, ArcElement, Title, Legend, Tooltip, PointElement, LineElement);
 
@@ -639,7 +640,7 @@ export default function Map() {
                             onClick={() => {
                                 setSelected(marker);
                                 setCity(marker.nameCities);
-                                //callAPI(marker.nameCities);
+                                callAPI(marker.nameCities);
                                 callAPI2(marker.nameCities);
                                 callAPI3();
                                 callAPICreate();
