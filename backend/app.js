@@ -24,6 +24,7 @@ app.use("/weather", weatherRouter);
 app.use("/events", eventsRouter);
 app.use("/albums", albumsRouter);
 
+/*
 // ----------------------------- MongoDB ----------------------------------
 const { MongoClient } = require("mongodb");
 const url = "mongodb+srv://admin:admin@cluster0.2ztwl.mongodb.net/?retryWrites=true&w=majority";
@@ -31,12 +32,11 @@ const client = new MongoClient(url);
 
 async function run() {
     try {
-        console.log("oui");
         await client.connect();
         console.log("Connected correctly to server");
-        const db = client.db("test");
+        const db = client.db("jbtv");
          // Use the collection "people"
-         const col = db.collection("people");
+         const col = db.collection("eventList");
          // Construct a document                                                                                                                                                              
          let personDocument = {
              "name": { "first": "Thomas", "last": "Retout" },
@@ -62,5 +62,5 @@ async function run() {
 }
 run().catch(console.dir);
 // ------------------------------------------------------------------------
-
+*/
 module.exports = app;

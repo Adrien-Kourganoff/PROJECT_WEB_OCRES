@@ -12,7 +12,7 @@ export default function NextEvents(){
 
     useEffect(() => {
         fetchEvents();
-        console.log( {events} );
+        //console.log( {events} );
     }, []);
 
     return (
