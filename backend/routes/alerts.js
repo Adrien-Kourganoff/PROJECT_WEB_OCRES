@@ -40,20 +40,23 @@ router.put("/update", async (req, res) => {
 
 //delete by id
 
-router.delete("/delete", async (req, res) => {
-  
-  const id = req.body.id;
-  try {
+      router.delete("/delete/:id", async (req, res) => {
+      const id=req.params.id;
 
-    const result = await AlertModel.deleteOne({id});
-    console.log(result);
- 
-  } catch(error)
-    {
-      console.log("error");
-    }
- 
-});
+                 AlertModel.findByIdAndRemove(id, function(err){
+                  if(err){
+
+                  console.log(err);
+                  res.json(err);
+                
+                } else {
+                    res.json("delete");
+
+                  }
+               });
+
+          
+      });
 
 
 

@@ -6,10 +6,6 @@ import InvestAlertsEdit from '../../components/Admin/InvestAlertsEdit/InvestAler
 export default function InformationsEdit() {
    
     const [data, setData] = useState([]);
-    const [refresh, setRefresh] = useState(false);
-
-
-    const [updatedData, setUpdatedData] = useState([]);
 
     useEffect(() => {
 
@@ -24,8 +20,7 @@ export default function InformationsEdit() {
           fetchData();
 
         
-    },[updatedData])
-     //console.log(data)
+    },[])
 
     const updateAlert = async (id,titre,message,date) => {
         
@@ -42,14 +37,9 @@ export default function InformationsEdit() {
       };
     
       const deleteAlert = async (id) => {
-          
         
-        const response = await axios.delete('http://localhost:1337/alerts/delete', {  
-            id : id,
-        }
-        )
-        .catch((error) => console.log(error.resp));
-        console.log(response);
+               const response = await axios.delete(`http://localhost:1337/alerts/delete/${id}`)  
+               console.log(response);    
 
       };
 
@@ -69,7 +59,7 @@ else{
                 console.log(data)
 
             }
-            <InvestAlertsEdit data={data} updateAlert={updateAlert} deleteAlert={deleteAlert} updatedData={updatedData} />
+            <InvestAlertsEdit data={data} updateAlert={updateAlert} deleteAlert={deleteAlert} />
         </div>
     )
 }

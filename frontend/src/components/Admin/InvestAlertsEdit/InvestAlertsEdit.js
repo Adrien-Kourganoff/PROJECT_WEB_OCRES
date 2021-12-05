@@ -1,4 +1,4 @@
-import React, {useState,useEffect,useReducer} from 'react';
+import React, {useState,useEffect} from 'react';
 import  {Card ,ListGroup,Table,Button,Row,Col,Form} from 'react-bootstrap';
 import InvestAlertsEditStyle from './InvestAlertsEdit.module.css';
 import classNames from 'classnames';
@@ -12,17 +12,6 @@ export default function InvestAlertsEdit(props) {
     const [inputMessage, setInputMessage] = useState([]);
     const [inputDate, setInputDate] = useState([]);
   
-    const [tempProps, setTempProps] = useState(props);
-   
-    const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
-    const [update, setUpdate] = useState(false);
-
-
-    function handleClick() {
-        forceUpdate();
-      }
-
-
     function onChangeHandler(event) 
     {
         setInputTitle({[event.target.name]: event.target.value});
@@ -46,14 +35,14 @@ export default function InvestAlertsEdit(props) {
         var messages=[];
         var dates=[];
 
-        console.log(tempProps.data.data);
+        console.log(props.data.data);
 
-        for (var i=0; i<tempProps.data.data.length; i++ )
+        for (var i=0; i<props.data.data.length; i++ )
         {
     
-            titles.push(tempProps.data.data[i].title);    
-            messages.push(tempProps.data.data[i].message);   
-            dates.push(defDate(tempProps.data.data[i].alertDate));    
+            titles.push(props.data.data[i].title);    
+            messages.push(props.data.data[i].message);   
+            dates.push(defDate(props.data.data[i].alertDate));    
 
         }
         setInputTitle(titles);
@@ -61,7 +50,7 @@ export default function InvestAlertsEdit(props) {
         setInputDate(dates);
         console.log('rrere')
 
-      },[update]);
+      },[]);
 
 
 
@@ -72,21 +61,18 @@ export default function InvestAlertsEdit(props) {
        var date = document.getElementsByClassName("date"+id)[0].value;
         var newDate= new Date (date);
     
-        tempProps.updateAlert(id,titre,message,newDate);
+        props.updateAlert(id,titre,message,newDate);
        alert("Alerte mise à jour")
    }
 
    function deleteA(id)
    {
-    tempProps.deleteAlert(id);
-
+    props.deleteAlert(id);
     window.location.reload(false);
 
     alert("Alerte supprimé");
     
  }
-//                            <DatePicker className={"date"+alert._id} locale="fr" defaultDate={defDate(alert.alertDate) } />
-
    return( 
 
             <Card >
@@ -107,12 +93,12 @@ export default function InvestAlertsEdit(props) {
                     </thead>
                     <tbody className={classNames(InvestAlertsEditStyle.whiteColor)}>
                     {
-                        tempProps.data.data.map((alert, index) => (
+                        props.data.data.map((alert, index) => (
 
                             <tr className={classNames(InvestAlertsEditStyle.whiteColor)}>
                             <td className={classNames(InvestAlertsEditStyle.whiteColor)}>{index}</td>
 
-                            <td className={classNames(InvestAlertsEditStyle.whiteColor)}><Form.Control onChange={onChangeHandler} value={inputTitle[index]} name={"title"+alert._id} type="text" className={"title"+alert._id}/></td>
+<td className={classNames(InvestAlertsEditStyle.whiteColor)}><Form.Control onChange={onChangeHandler} value={inputTitle[index]} name={"title"+alert._id} type="text" className={"title"+alert._id}/></td>
 {
     console.log(inputTitle[index])
 }
