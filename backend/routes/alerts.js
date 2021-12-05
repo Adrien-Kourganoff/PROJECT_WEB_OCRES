@@ -7,7 +7,7 @@ const moment = require('moment')
 //GET meetings listing. //
 router.get('/', async (req, res) => {  
  
-  const alerts = await AlertModel.find()
+  const alerts = await AlertModel.find().sort({alertDate : -1});
 	res.json(alerts)
 
 })
