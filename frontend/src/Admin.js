@@ -2,35 +2,58 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import BoxAPICreated from './components/BoxAPICreated';
+import { useState } from 'react';
 
-const Admin = () => {
+function Admin() {
 
-    const callAPICreate = () => {
+    const [id, setId] = useState('');
+
+    const handleInputDelete = () => {
+        console.log(id);
+        axios
+            .delete(`http://localhost:3001/index/${id}`)
+            .catch(console.error);
+    };
+    const handleInputAdd = () => {
+        axios
+            .post(`http://localhost:3001/index`)
+            .catch(console.error);
+    };
+    var callAPICreate = () => {
         axios
             .get('http://localhost:3001/index')
             .then((data) => {
+                for (let i = 0; i < 5; i++) {
 
-                const tempHaute = data.data[0].tempHaute;
-                const lieuTempHaute = data.data[0].lieuTempHaute;
-                const anneeTempHaute = data.data[0].anneeTempHaute;
+                    const id = data.data[i]._id;
+                    const tempHaute = data.data[i].tempHaute;
+                    const lieuTempHaute = data.data[i].lieuTempHaute;
+                    const anneeTempHaute = data.data[i].anneeTempHaute;
 
-                const tempBasse = data.data[0].tempBasse;
-                const lieuTempBasse = data.data[0].lieuTempBasse;
-                const anneeTempBasse = data.data[0].anneeTempBasse;
+                    const tempBasse = data.data[i].tempBasse;
+                    const lieuTempBasse = data.data[i].lieuTempBasse;
+                    const anneeTempBasse = data.data[i].anneeTempBasse;
 
-                console.log(tempHaute);
-                console.log(lieuTempHaute);
+                    document.getElementById('id'+ i).innerHTML = `Id : ${id}`;
+                    document.getElementById('tempH'+ i).innerHTML = `Température la plus haute : ${tempHaute}°C`;
+                    document.getElementById('lieuTempH'+ i).innerHTML = `Lieu : ${lieuTempHaute}`
+                    document.getElementById('anneeTempH' + i).innerHTML = `Année : ${anneeTempHaute}`;
 
-                document.getElementById('tempH').innerHTML = `Température la plus haute : ${tempHaute}°C`;
-                document.getElementById('lieuTempH').innerHTML = `Lieu : ${lieuTempHaute}`
-                document.getElementById('anneeTempH').innerHTML = `Année : ${anneeTempHaute}`;
+                    document.getElementById('tempB' + i).innerHTML = `Température la plus basse : ${tempBasse}°C`;
+                    document.getElementById('lieuTempB' + i).innerHTML = `Lieu : ${lieuTempBasse}`;
+                    document.getElementById('anneeTempB' + i).innerHTML = `Année : ${anneeTempBasse}`;
+                }
 
-                document.getElementById('tempB').innerHTML = `Température la plus basse : ${tempBasse}°C`;
-                document.getElementById('lieuTempB').innerHTML = `Lieu : ${lieuTempBasse}`;
-                document.getElementById('anneeTempB').innerHTML = `Année : ${anneeTempBasse}`;
             })
             .catch(console.error);
     }
+
+
+    /*var putAPIDATA = () => {
+        axios
+            .put(`http://localhost:3001/index`)
+            .catch(console.error);
+    }*/
 
     return (
         callAPICreate(),
@@ -44,24 +67,12 @@ const Admin = () => {
             </div>
             <center>
                 <div>
-                    <div>
-                        <label htmlFor="name">Nom de l'element à rajouter dans l'API</label>
-                        <div>
-                            <input type="text" id="name" name="name" required
-                                minLength="4" maxLength="8" size="10">
-                            </input>
-                            <button>Submit</button>
-                        </div>
-                    </div>
-                    <div>
-                        <label htmlFor="name">Nom de l'element à enlever de l'API</label>
-                        <div>
-                            <input type="text" id="name" name="name" required
-                                minLength="4" maxLength="8" size="10">
-                            </input>
-                            <button>Submit</button>
-                        </div>
-                    </div>
+                    <input placeholder='id' onChange={e => setId(e.target.value)} />
+                    <button onClick={() => handleInputDelete()}>Delete</button>
+                </div>
+                <div>
+                    <input onChange={e => setId(e.target.value)} />
+                    <button onClick={() => handleInputAdd()}>Add</button>
                 </div>
             </center>
             <div>
@@ -70,7 +81,7 @@ const Admin = () => {
                 </Link>
             </div>
         </div>
-    )
-};
+    );
+}
 
 export default Admin;

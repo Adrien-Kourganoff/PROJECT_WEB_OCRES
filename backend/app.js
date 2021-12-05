@@ -10,10 +10,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const indexRoute = require('./routes/index')
-const usersRoute = require('./routes/users')
 
 app.use('/index', indexRoute);
-app.use('/users', usersRoute);
 
 app.get('/', (req, res) => {
     res.send('coucou');

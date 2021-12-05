@@ -595,24 +595,26 @@ export default function Map() {
             .get('http://localhost:3001/index')
             .then((data) => {
 
-                const tempHaute = data.data[0].tempHaute;
-                const lieuTempHaute = data.data[0].lieuTempHaute;
-                const anneeTempHaute = data.data[0].anneeTempHaute;
+                for (let i = 0; i < 5; i++) {
 
-                const tempBasse = data.data[0].tempBasse;
-                const lieuTempBasse = data.data[0].lieuTempBasse;
-                const anneeTempBasse = data.data[0].anneeTempBasse;
+                    const id = data.data[i]._id;
+                    const tempHaute = data.data[i].tempHaute;
+                    const lieuTempHaute = data.data[i].lieuTempHaute;
+                    const anneeTempHaute = data.data[i].anneeTempHaute;
 
-                console.log(tempHaute);
-                console.log(lieuTempHaute);
+                    const tempBasse = data.data[i].tempBasse;
+                    const lieuTempBasse = data.data[i].lieuTempBasse;
+                    const anneeTempBasse = data.data[i].anneeTempBasse;
 
-                document.getElementById('tempH').innerHTML = `Température la plus haute : ${tempHaute}°C`;
-                document.getElementById('lieuTempH').innerHTML = `Lieu : ${lieuTempHaute}`
-                document.getElementById('anneeTempH').innerHTML = `Année : ${anneeTempHaute}`;
+                    document.getElementById('id'+ i).innerHTML = `Id : ${id}`;
+                    document.getElementById('tempH'+ i).innerHTML = `Température la plus haute : ${tempHaute}°C`;
+                    document.getElementById('lieuTempH'+ i).innerHTML = `Lieu : ${lieuTempHaute}`
+                    document.getElementById('anneeTempH' + i).innerHTML = `Année : ${anneeTempHaute}`;
 
-                document.getElementById('tempB').innerHTML = `Température la plus basse : ${tempBasse}°C`;
-                document.getElementById('lieuTempB').innerHTML = `Lieu : ${lieuTempBasse}`;
-                document.getElementById('anneeTempB').innerHTML = `Année : ${anneeTempBasse}`;
+                    document.getElementById('tempB' + i).innerHTML = `Température la plus basse : ${tempBasse}°C`;
+                    document.getElementById('lieuTempB' + i).innerHTML = `Lieu : ${lieuTempBasse}`;
+                    document.getElementById('anneeTempB' + i).innerHTML = `Année : ${anneeTempBasse}`;
+                }
             })
             .catch(console.error);
     }
@@ -640,7 +642,7 @@ export default function Map() {
                             onClick={() => {
                                 setSelected(marker);
                                 setCity(marker.nameCities);
-                                callAPI(marker.nameCities);
+                                //callAPI(marker.nameCities);
                                 callAPI2(marker.nameCities);
                                 callAPI3();
                                 callAPICreate();
