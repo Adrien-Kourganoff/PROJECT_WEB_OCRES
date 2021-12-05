@@ -73,7 +73,12 @@ export default function EventListTable(){
 }
 
 function ClickLink(params){
-    return <td onClick={()=> window.open(params, "_blank")}>Cliquer ici pour acceder</td>;
+    return <td contentEditable="false" className="lien" onClick={()=> window.open(params, "_blank")}>Cliquer ici pour acceder</td>;
+}
+
+function handleChange(params, dvalue){
+  if(params!=dvalue && dvalue!=null)
+  console.log(params + " " + dvalue);
 }
 
 //Code taken from the exemple presentation for react-table
@@ -91,6 +96,8 @@ function Table({ columns, data }) {
       },
       useSortBy
     )
+
+    let lol=null;
   
     return (
       <>
@@ -124,7 +131,11 @@ function Table({ columns, data }) {
                   <tr {...row.getRowProps()}>
                     {row.cells.map(cell => {
                       return (
-                        <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                        //<td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                        <td {...cell.getCellProps()}>
+                          <div contentEditable onClick={(truc) => lol=truc.target.textContent} onBlur={(truc)=> handleChange(truc.target.textContent,lol)}>{cell.render('Cell')} </div>
+                        </td>
+                        //<input type="text" className="edit" defaultValue={cell.value} onBlur={(truc)=> console.log(truc.target.value)} />
                       )
                     })}
                   </tr>
