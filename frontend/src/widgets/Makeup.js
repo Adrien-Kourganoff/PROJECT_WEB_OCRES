@@ -49,7 +49,7 @@ class Makeup extends Component {
             return(
                  <div className = "Makeup_infos">
                     <h4 className="widget-title">Makeup</h4>
-                    <img src= {this.state.image} className="Item_icon" alt = ""/>
+                    <img src= {this.state.image} width="30%" height="30%"className="Item_icon" alt = ""/>
                     <p>Name: {this.state.name}</p>
                     <p>Price: {this.state.price} €</p>
                     <p>Rating: {this.state.rating} ⭐️</p>

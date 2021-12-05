@@ -43,11 +43,11 @@ class Nasa extends Component {
 
         if (this.state.request){
             return(
-                <div className="Nasa_picture">
+                <div className="Nasa_picture" >
                     <h4 className="widget-title">NASA Picture of the day</h4>
                     <p>Title: {this.state.title}</p>
                     <p>date: {date}</p>
-                    <img src= {this.state.image} className="picture" alt = ""/>
+                    <img src= {this.state.image} width="60%" height="60%" className="picture" alt = "" />
                 </div>
             );
         }

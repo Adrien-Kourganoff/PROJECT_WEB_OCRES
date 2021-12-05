@@ -1,5 +1,37 @@
-.routes_place {
-  border: 1px solid  #bb8fce;
-  margin:3px;
-  padding: 5px;
-};
+.navbar {
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar .navbar-brand img {
+  width: 40px;
+}
+
+a {
+  text-decoration:  none;
+  color:  grey;
+}
+
+a:hover {
+  color:  black;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: black !important;
+
+}

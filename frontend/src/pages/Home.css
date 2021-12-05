@@ -1,32 +1,34 @@
 .Home {
     text-align: center;
-    /*display: grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 48% 48%;
     grid-gap: 20px;
     grid-auto-rows: minmax(100px, auto);
-    height: 100vh;
-    width: 100vw;*/
+    height: 90vh;
+    width: 100vw;
   }
   
   .grid-meteo {
-      background-color: aquamarine;
+      background-color: tan;
       border-radius: 15px;
       grid-column: 1;
       grid-row: 1;
       margin: 2% 0% 0% 2%;
   }
+
   
   .grid-nasa {
-    background-color: limegreen;
+    background-color: beige;
     border-radius: 15px;
     grid-column: 2;
     grid-row: 1;
     margin: 2% 0% 0% 0%;
   }
+
   
   .grid-rates {
-    background-color: grey;
+    background-color: lightgoldenrodyellow;
     border-radius: 15px;
     grid-column: 3;
     grid-row: 1;
@@ -34,7 +36,7 @@
   }
   
   .grid-suggestions {
-    background-color: rebeccapurple;
+    background-color: antiquewhite;
     border-radius: 15px;
     grid-column: 1;
     grid-row: 2;
@@ -42,7 +44,7 @@
   }
   
   .grid-films {
-    background-color: hotpink;
+    background-color: bisque;
     border-radius: 15px;
     grid-column: 2;
     grid-row: 2;
@@ -50,9 +52,40 @@
   }
   
   .grid-shopping {
-    background-color: yellow;
+    background-color: floralwhite;
     border-radius: 15px;
     grid-column: 3;
     grid-row: 2;
     margin: 0% 2% 1% 0%;
   }
+/*
+  // Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .Home {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 576px) {
+  .Home {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .Home {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .Home {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Home {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}*/

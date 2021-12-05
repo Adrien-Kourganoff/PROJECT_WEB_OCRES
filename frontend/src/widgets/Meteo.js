@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 // Clé api
 const API_KEY = "4081444b7b90198136fefe6ed4ccf35b";
@@ -62,22 +62,24 @@ class Meteo extends Component {
         if(this.state.request){
             return(
                 <div className="Meteo">
-                    <h4 className="widget-title">Météo</h4>
-                    <p>{this.state.city}</p>
-                    <p id="weather_description">{this.state.info}</p>
-                    <h3 id="weather_temp">{this.state.temp}</h3>
-                    <div className="temp_chart">
-                        <LineChart width={600} height={300} data={this.state.fiveDays} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                            <Line type="monotone" dataKey="average" stroke="#8884d8" />
-                            <Line type="monotone" dataKey="min" stroke="#475dff" />
-                            <Line type="monotone" dataKey="max" stroke="#f55e47" />
-                            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                            <XAxis dataKey="name" />
-                            <YAxis />
-                            <Tooltip />
-                        </LineChart>
-                    </div>
+                  <h4 className="widget-title">Météo</h4>
+                  <p>{this.state.city}</p>
+                  <p id="weather_description">{this.state.info}</p>
+                  <h3 id="weather_temp">{this.state.temp}</h3>
+                  <div className="temp_chart">
+                  <ResponsiveContainer width="99%" aspect={3}>
+                    <LineChart width={300} height={400} data={this.state.fiveDays} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                      <Line type="monotone" dataKey="average" stroke="#8884d8" />
+                      <Line type="monotone" dataKey="min" stroke="#475dff" />
+                      <Line type="monotone" dataKey="max" stroke="#f55e47" />
+                      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                      <XAxis dataKey="name" />
+                      <YAxis />
+                      <Tooltip />
+                    </LineChart>
+                  </ResponsiveContainer>
                   </div>
+                </div>
             );
         }
         else{

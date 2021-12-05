@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Link } from 'react-router-dom';
 import Routs from './Routs.js';
 //import Widget from './widgets/Widget.js';
 
@@ -15,10 +15,18 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/settings">Settings</Link></li>
-        </ul>
+        <div className="navbar navbar-expand-sm navbar-light navbar">
+          <a className="navbar-brand" href="/">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt=""/>
+          </a>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <a className="nav-link btn btn-ghost"href="/settings">Settings </a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className = "routes_place">
           <Routs/>
         </div>
