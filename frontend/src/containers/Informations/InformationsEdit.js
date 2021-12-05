@@ -6,6 +6,10 @@ import InvestAlertsEdit from '../../components/Admin/InvestAlertsEdit/InvestAler
 export default function InformationsEdit() {
    
     const [data, setData] = useState([]);
+    const [refresh, setRefresh] = useState(false);
+
+
+    const [updatedData, setUpdatedData] = useState([]);
 
     useEffect(() => {
 
@@ -18,9 +22,10 @@ export default function InformationsEdit() {
           };
 
           fetchData();
-          console.log(data);
+
         
-    },[])
+    },[updatedData])
+     //console.log(data)
 
     const updateAlert = async (id,titre,message,date) => {
         
@@ -48,14 +53,9 @@ export default function InformationsEdit() {
 
       };
 
-      const refresh = async () => {
 
-        const response = await axios.get('http://localhost:1337/alerts', {  
-        })
-        .catch((error) => console.log(error.resp));
-      setData(response);
-      };
-
+      
+    
 
 
        if (data===undefined) //Si tableau vide cad api pas encore fetch
@@ -65,7 +65,11 @@ export default function InformationsEdit() {
 else{
     return ( 
         <div>
-            <InvestAlertsEdit data={data} updateAlert={updateAlert} deleteAlert={deleteAlert} refresh={refresh}/>
+            {
+                console.log(data)
+
+            }
+            <InvestAlertsEdit data={data} updateAlert={updateAlert} deleteAlert={deleteAlert} updatedData={updatedData} />
         </div>
     )
 }

@@ -6,14 +6,16 @@ import moment from 'moment';
   
 export default function InvestAlertsEdit(props) {
 
-    var data=props.data;
+    //var data=props.data;
 
     const [inputTitle, setInputTitle] = useState([]);
     const [inputMessage, setInputMessage] = useState([]);
     const [inputDate, setInputDate] = useState([]);
+  
+    const [tempProps, setTempProps] = useState(props);
    
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
-    console.log("Rendered! or did I just re-render?");
+    const [update, setUpdate] = useState(false);
 
 
     function handleClick() {
@@ -44,20 +46,22 @@ export default function InvestAlertsEdit(props) {
         var messages=[];
         var dates=[];
 
-        for (var i=0; i<props.data.data.length; i++ )
+        console.log(tempProps.data.data);
+
+        for (var i=0; i<tempProps.data.data.length; i++ )
         {
     
-            titles.push(props.data.data[i].title);    
-            messages.push(props.data.data[i].message);   
-            dates.push(defDate(props.data.data[i].alertDate));    
+            titles.push(tempProps.data.data[i].title);    
+            messages.push(tempProps.data.data[i].message);   
+            dates.push(defDate(tempProps.data.data[i].alertDate));    
 
         }
         setInputTitle(titles);
         setInputMessage(messages);
         setInputDate(dates);
-    
+        console.log('rrere')
 
-      });
+      },[update]);
 
 
 
@@ -68,18 +72,19 @@ export default function InvestAlertsEdit(props) {
        var date = document.getElementsByClassName("date"+id)[0].value;
         var newDate= new Date (date);
     
-       props.updateAlert(id,titre,message,newDate);
+        tempProps.updateAlert(id,titre,message,newDate);
        alert("Alerte mise à jour")
    }
 
    function deleteA(id)
    {
+    tempProps.deleteAlert(id);
 
-    props.deleteAlert(id)
+    window.location.reload(false);
+
     alert("Alerte supprimé");
-    props.refresh();
-    handleClick();
-   }
+    
+ }
 //                            <DatePicker className={"date"+alert._id} locale="fr" defaultDate={defDate(alert.alertDate) } />
 
    return( 
@@ -102,13 +107,15 @@ export default function InvestAlertsEdit(props) {
                     </thead>
                     <tbody className={classNames(InvestAlertsEditStyle.whiteColor)}>
                     {
-                        data.data.map((alert, index) => (
+                        tempProps.data.data.map((alert, index) => (
 
                             <tr className={classNames(InvestAlertsEditStyle.whiteColor)}>
                             <td className={classNames(InvestAlertsEditStyle.whiteColor)}>{index}</td>
 
                             <td className={classNames(InvestAlertsEditStyle.whiteColor)}><Form.Control onChange={onChangeHandler} value={inputTitle[index]} name={"title"+alert._id} type="text" className={"title"+alert._id}/></td>
-
+{
+    console.log(inputTitle[index])
+}
                             <td className={classNames(InvestAlertsEditStyle.whiteColor)}> <Form.Control  onChange={onChangeHandler} value={inputMessage[index]} name={"message"+alert._id} className={"message"+alert._id} as="textarea" /></td>  
 
                             <td> 
