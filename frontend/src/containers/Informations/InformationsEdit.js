@@ -43,6 +43,22 @@ export default function InformationsEdit() {
 
       };
 
+   
+      const addAlert = async (titre,message,date) => {
+        
+        const response = await axios.post('http://localhost:1337/alerts/add', {  
+            title : titre,
+            message : message,
+            alertDate : date,
+        }
+        )
+        .catch((error) => console.log(error.resp));      
+
+        console.log(response);
+
+      };
+    
+
 
       
     
@@ -55,11 +71,7 @@ export default function InformationsEdit() {
 else{
     return ( 
         <div>
-            {
-                console.log(data)
-
-            }
-            <InvestAlertsEdit data={data} updateAlert={updateAlert} deleteAlert={deleteAlert} />
+            <InvestAlertsEdit data={data} updateAlert={updateAlert} addAlert={addAlert} deleteAlert={deleteAlert} />
         </div>
     )
 }

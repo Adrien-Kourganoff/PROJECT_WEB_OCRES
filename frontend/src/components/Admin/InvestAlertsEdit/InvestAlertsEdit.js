@@ -11,6 +11,8 @@ export default function InvestAlertsEdit(props) {
     const [inputTitle, setInputTitle] = useState([]);
     const [inputMessage, setInputMessage] = useState([]);
     const [inputDate, setInputDate] = useState([]);
+
+  
   
     function onChangeHandler(event) 
     {
@@ -62,7 +64,9 @@ export default function InvestAlertsEdit(props) {
         var newDate= new Date (date);
     
         props.updateAlert(id,titre,message,newDate);
-       alert("Alerte mise à jour")
+
+        window.location.reload(false);  
+        alert("Alerte mise à jour")
    }
 
    function deleteA(id)
@@ -72,6 +76,22 @@ export default function InvestAlertsEdit(props) {
 
     alert("Alerte supprimé");
     
+ }
+
+ function addA()
+ {
+    var titre = document.getElementsByClassName("newTitle")[0].value;
+    var message = document.getElementsByClassName("newMessage")[0].value;
+    var date = document.getElementsByClassName("newDate")[0].value;
+    var newDate= new Date (date);
+ 
+   props.addAlert(titre,message,newDate);
+   window.location.reload(false);
+
+   alert("Alerte ajoutée");
+
+
+
  }
    return( 
 
@@ -92,26 +112,43 @@ export default function InvestAlertsEdit(props) {
                         </tr>
                     </thead>
                     <tbody className={classNames(InvestAlertsEditStyle.whiteColor)}>
-                    {
-                        props.data.data.map((alert, index) => (
 
-                            <tr className={classNames(InvestAlertsEditStyle.whiteColor)}>
-                            <td className={classNames(InvestAlertsEditStyle.whiteColor)}>{index}</td>
+                    <tr className={classNames(InvestAlertsEditStyle.whiteColor)}>
+                            <td className={classNames(InvestAlertsEditStyle.whiteColor)}>0</td>
 
-<td className={classNames(InvestAlertsEditStyle.whiteColor)}><Form.Control onChange={onChangeHandler} value={inputTitle[index]} name={"title"+alert._id} type="text" className={"title"+alert._id}/></td>
-{
-    console.log(inputTitle[index])
-}
-                            <td className={classNames(InvestAlertsEditStyle.whiteColor)}> <Form.Control  onChange={onChangeHandler} value={inputMessage[index]} name={"message"+alert._id} className={"message"+alert._id} as="textarea" /></td>  
+                            <td className={classNames(InvestAlertsEditStyle.whiteColor)}><Form.Control type="text" className={'newTitle'}/></td>
+                            
+                            <td className={classNames(InvestAlertsEditStyle.whiteColor)}> <Form.Control as="textarea"  className={'newMessage'}/></td>  
 
                             <td> 
-                                <input type="date"  onChange={onChangeHandler} value={inputDate[index]} name={"date"+alert._id} className={"date"+alert._id}/>
+                                <input type="date" value={defDate(new Date)}   className={'newDate'}/>
                             </td>
 
                             <td  className={classNames(InvestAlertsEditStyle.tdStyle,InvestAlertsEditStyle.whiteColor)}>                                   
                                 <Row>
-                                    <Col><Button onClick={() => updateA(alert._id)} variant="primary">U</Button></Col>
-                                    <Col><Button onClick={() => deleteA(alert._id)} variant="Danger">D</Button></Col>
+                                    <Col><button onClick={() => addA()}  type="button" className="btn">Add</button></Col>
+                                </Row>
+                            </td>
+                        </tr>    
+                  
+                    {
+                        props.data.data.map((alert, index) => (
+
+                            <tr className={classNames(InvestAlertsEditStyle.whiteColor)}>
+                            <td className={classNames(InvestAlertsEditStyle.whiteColor)}>{index+1}</td>
+
+                            <td className={classNames(InvestAlertsEditStyle.whiteColor)}><Form.Control onChange={onChangeHandler} value={inputTitle[index]} name={"title"+alert._id} type="text" className={"title"+alert._id}/></td>
+                            
+                            <td className={classNames(InvestAlertsEditStyle.whiteColor)}> <Form.Control  onChange={onChangeHandler} value={inputMessage[index]} name={"message"+alert._id} className={"message"+alert._id} as="textarea" /></td>  
+
+                            <td> 
+                                <input type="date" value={new Date()} onChange={onChangeHandler} value={inputDate[index]} name={"date"+alert._id} className={"date"+alert._id}/>
+                            </td>
+
+                            <td  className={classNames(InvestAlertsEditStyle.tdStyle,InvestAlertsEditStyle.whiteColor)}>                                   
+                                <Row>
+                                    <Col><button onClick={() => updateA(alert._id)} type="button" className="btn">Update</button></Col>
+                                    <Col><button onClick={() => deleteA(alert._id)} type="button" className="btn">Delete</button></Col>
                                 </Row>
                             </td>
                         </tr>        

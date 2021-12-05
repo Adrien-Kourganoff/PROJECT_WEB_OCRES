@@ -1,5 +1,5 @@
-import React from 'react';
-import  {Card ,ListGroup,} from 'react-bootstrap';
+import React, {useEffect} from 'react';
+import  {Card ,ListGroup} from 'react-bootstrap';
 import InvestAlertsStyle from'./InvestAlerts.module.css'
 import classNames from 'classnames';
 let moment = require('moment');
@@ -10,12 +10,20 @@ export default function InvestAlerts(props) {
 
     var data = props.data;
 
-    for (var i=0; i<data.data.length; i++)
-    {
-           var dateStringBefore=moment((data.data[i].alertDate).format);          
-            data.data[i].alertDate=dateStringBefore.format('lll').toString();
-    }
+       function defDate(dateString)
+      {
+           var dateSTR= moment(new Date(dateString)).format('LL');
+   
+       return dateSTR;
+   
+      }
+
     
+    useEffect(() => {
+        
+
+
+      });
     return( 
 
     <Card>
@@ -29,7 +37,7 @@ export default function InvestAlerts(props) {
                     <div className={classNames(InvestAlertsStyle.alertStyle)}>
                         <div className={classNames(InvestAlertsStyle.titleStyle)}>{alert.title}</div>
                         <div className={classNames(InvestAlertsStyle.messageStyle)}>{alert.message}</div>
-                        <div className={classNames(InvestAlertsStyle.dateStyle)}>{alert.alertDate}</div>
+                        <div className={classNames(InvestAlertsStyle.dateStyle)}>{defDate(alert.alertDate)}</div>
 
                     </div>
                 </ListGroup.Item>

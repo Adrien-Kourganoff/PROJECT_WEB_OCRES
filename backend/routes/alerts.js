@@ -59,23 +59,30 @@ router.put("/update", async (req, res) => {
       });
 
 
+// post
 
-/*
-// POST users listing. 
-router.post('/add', async (req, res) => {  
+router.post("/add", async (req, res) => {
+  
+  const title = req.body.title;
+  const message = req.body.message;
+  const date = req.body.alertDate; 
 
-  const Meetings = new MeetingModel ({lastName : "ilies ", name : "kalcha", email :"db@ece.fr", meeetingDate : "12/12/2021" })
-
+ const alert = new AlertModel({
+              title :title,
+              message : message,
+              alertDate : date,
+    });
+    
   try {
-    await Meetings.save();
-    res.send("insered data");
-  } catch(err) {
-    console.log(err);
-  }
-
-})
-
-
-*/
+    await alert.save();
+    res.send("inserted data");
+    //console.log("efer"+alert);
+ 
+  } catch(error)
+    {
+      console.log("error");
+    }
+ 
+});
 
 module.exports = router;
