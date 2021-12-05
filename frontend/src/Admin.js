@@ -44,16 +44,24 @@ const Admin = () => {
             </div>
             <center>
                 <div>
-                    <form className='form' id='myForm'>
-                        <label for='tH'>Température Haute</label>
-                        <label for='lieuTH'>Température Haute</label>
-                        <label for='anneeTH'>Température Haute</label>
-
-                        <label for='tB'>Température Haute</label>
-                        <label for='lieuTB'>Température Haute</label>
-                        <label for='anneeTB'>Température Haute</label>
-                        <button type="submit">Submit</button>
-                    </form>
+                    <div>
+                        <label htmlFor="name">Nom de l'element à rajouter dans l'API</label>
+                        <div>
+                            <input type="text" id="name" name="name" required
+                                minLength="4" maxLength="8" size="10">
+                            </input>
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label htmlFor="name">Nom de l'element à enlever de l'API</label>
+                        <div>
+                            <input type="text" id="name" name="name" required
+                                minLength="4" maxLength="8" size="10">
+                            </input>
+                            <button>Submit</button>
+                        </div>
+                    </div>
                 </div>
             </center>
             <div>
