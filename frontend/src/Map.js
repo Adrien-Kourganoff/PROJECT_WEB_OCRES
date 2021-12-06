@@ -39,6 +39,7 @@ const mapContainerStyle = {
     height: '400px',
 }
 
+
 var google = require('@google/maps').createClient({
     key: 'REACT_APP_GOOGLE_MAPS_API_KEY'
 });
@@ -89,6 +90,66 @@ const cities = [{
     lng: -74.0060152,
     time: 6,
     nameCities: "New York"
+},
+{
+    lat: 38.7077507,
+    lng: -9.1365919,
+    time: 7,
+    nameCities: "Lisbonne"
+},
+{
+    lat: 23.135305,
+    lng: -82.3589631,
+    time: 8,
+    nameCities: "La Havane"
+},
+{
+    lat: 45.5031824,
+    lng: -73.5698065,
+    time: 9,
+    nameCities: "Montréal"
+},
+{
+    lat: 14.6027962,
+    lng: -61.0676724,
+    time: 10,
+    nameCities: "Fort-de-France"
+},
+{
+    lat: 34.0536909,
+    lng: -118.242766,
+    time: 11,
+    nameCities: "Los Angeles"
+},
+{
+    lat: -23.5506507,
+    lng: -46.6333824,
+    time: 12,
+    nameCities: "Sao Paulo"
+},
+{
+    lat: -6.1753942,
+    lng: 106.827183,
+    time: 13,
+    nameCities: "Jakarta"
+},
+{
+    lat: 6.130419,
+    lng: 1.215829,
+    time: 14,
+    nameCities: "Lomé"
+},
+{
+    lat: 30.0443879,
+    lng: 31.2357257,
+    time: 15,
+    nameCities: "Le Caire"
+},
+{
+    lat: 55.6052931,
+    lng: 13.0001566,
+    time: 16,
+    nameCities: "Malmo"
 }
 ]
 
@@ -110,6 +171,7 @@ export default function Map() {
             lat: event.latLng.lat(),
             lng: event.latLng.lng(),
         }
+
 
         for (var i = 0; i < cities.length; ++i) {
             if (cities[i].lat === latlng.lat && cities[i].lng === latlng.lng) {
@@ -294,7 +356,7 @@ export default function Map() {
                     document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
-                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength} `;
 
                     var heures1 = sunrise.substring(0, 1);
                     var minutes1 = sunrise.substring(2, 4);
@@ -399,7 +461,7 @@ export default function Map() {
                     document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (+2)`;
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (+2)`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (+2)`;
-                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength} (+2)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
 
                     var heures1 = sunrise.substring(0, 1);
                     var minutes1 = sunrise.substring(2, 4);
@@ -556,7 +618,7 @@ export default function Map() {
                     document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-6)`;
                     document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-6)`;
                     document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-6)`;
-                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength} (-6)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength} `;
 
                     var heures1 = sunrise.substring(0, 2);
                     var minutes1 = sunrise.substring(3, 5);
@@ -571,6 +633,529 @@ export default function Map() {
                     document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
                     document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
 
+                })
+                .catch(console.error);
+        }
+        if (city === "Lisbonne") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=38.7077507&lon=-9.1365919&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=38.7077507&lon=-9.1365919&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
+        }
+
+        if (city === "La Havane") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=23.135305&lon=-82.3589631&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=23.135305&lon=-82.3589631&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
+        }
+
+        if (city === "Montréal") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=45.5031824&lon=-73.5698065&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=45.5031824&lon=-73.5698065&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
+        }
+
+        if (city === "Fort-de-France") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=14.6027962&lon=-61.0676724&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=14.6027962&lon=-61.0676724&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
+        }
+
+        if (city === "Los Angeles") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=34.0536909&lon=-118.242766&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=34.0536909&lon=-118.242766&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
+        }
+        if (city === "Sao Paulo") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=-23.5506507&lon=-46.6333824&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=-23.5506507&lon=-46.6333824&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
+        }
+        if (city === "Jakarta") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=-6.1753942&lon=106.827183&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=-6.1753942&lon=106.827183&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
+        }
+        if (city === "Lomé") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=6.130419&lon=1.215829&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=6.130419&lon=1.215829&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
+        }
+        if (city === "Le Caire") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=30.0443879&lon=31.2357257&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=30.0443879&lon=31.2357257&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
+                })
+                .catch(console.error);
+        }
+        if (city === "Malmo") {
+            axios
+                .get(`https://api.breezometer.com/weather/v1/current-conditions?lat=55.6052931&lon=13.0001566&key=641f82b214e14a6fb39bf36a33bbcdb6`)
+                .then((data) => {
+                    // Récupère la donnée d'une API
+                    const windSpeed = data.data.data.wind.speed.value;
+                    const pressure = data.data.data.pressure.value;
+                    const humidity = data.data.data.relative_humidity;
+
+
+                    // Modifier le DOM
+                    document.getElementById('vitesse-vent').innerHTML = `${windSpeed} km/h`;
+                    document.getElementById('pressure').innerHTML = `${pressure} mb`;
+                    document.getElementById('humidity').innerHTML = `${humidity} %`;
+                })
+                .catch(console.error);
+
+            axios
+                .get(`https://api.sunrise-sunset.org/json?lat=55.6052931&lon=13.0001566&date=today`)
+                .then((data) => {
+
+                    // Récupère la donnée d'une API
+                    const sunrise = data.data.results.sunrise;
+                    const sunset = data.data.results.sunset;
+                    const solarnoon = data.data.results.solar_noon;
+                    const daylength = data.data.results.day_length;
+
+                    // Modifier le DOM
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
+
+                    var heures1 = sunrise.substring(0, 1);
+                    var minutes1 = sunrise.substring(2, 4);
+                    var secondes1 = sunrise.substring(5, 7);
+
+                    console.log(heures1);
+                    console.log(minutes1);
+                    console.log(secondes1);
+
+                    const heure1 = heures1 * 30;
+                    const minute1 = minutes1 * 6;
+                    const seconde1 = secondes1 * 6;
+
+                    document.querySelector('.heure').style.transform = `rotate(${heure1}deg)`;
+                    document.querySelector('.minute').style.transform = `rotate(${minute1}deg)`;
+                    document.querySelector('.seconde').style.transform = `rotate(${seconde1}deg)`;
                 })
                 .catch(console.error);
         }
