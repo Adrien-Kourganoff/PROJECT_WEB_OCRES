@@ -718,9 +718,9 @@ export default function Map() {
                     const daylength = data.data.results.day_length;
 
                     // Modifier le DOM
-                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
-                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
-                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-6)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-6)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-6)`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
 
                     var heures1 = sunrise.substring(0, 1);
@@ -771,9 +771,9 @@ export default function Map() {
                     const daylength = data.data.results.day_length;
 
                     // Modifier le DOM
-                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
-                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
-                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-6)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-6)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-6)`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
 
                     var heures1 = sunrise.substring(0, 1);
@@ -824,9 +824,9 @@ export default function Map() {
                     const daylength = data.data.results.day_length;
 
                     // Modifier le DOM
-                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
-                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
-                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-5)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-5)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-5)`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
 
                     var heures1 = sunrise.substring(0, 1);
@@ -877,9 +877,9 @@ export default function Map() {
                     const daylength = data.data.results.day_length;
 
                     // Modifier le DOM
-                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
-                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
-                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-9)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-9)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-9)`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
 
                     var heures1 = sunrise.substring(0, 1);
@@ -929,9 +929,9 @@ export default function Map() {
                     const daylength = data.data.results.day_length;
 
                     // Modifier le DOM
-                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
-                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
-                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-4)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-4)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-4)`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
 
                     var heures1 = sunrise.substring(0, 1);
@@ -981,9 +981,9 @@ export default function Map() {
                     const daylength = data.data.results.day_length;
 
                     // Modifier le DOM
-                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
-                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
-                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (+6)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (+6)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (+6)`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
 
                     var heures1 = sunrise.substring(0, 1);
@@ -1085,9 +1085,9 @@ export default function Map() {
                     const daylength = data.data.results.day_length;
 
                     // Modifier le DOM
-                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
-                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
-                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (+1)`;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (+1)`;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (+1)`;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
 
                     var heures1 = sunrise.substring(0, 1);
@@ -1136,9 +1136,9 @@ export default function Map() {
                     const daylength = data.data.results.day_length;
 
                     // Modifier le DOM
-                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} (-1)`;
-                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} (-1)`;
-                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} (-1)`;
+                    document.getElementById('sunrise').innerHTML = `Lever du soleil : ${sunrise} `;
+                    document.getElementById('sunset').innerHTML = `Coucher du soleil : ${sunset} `;
+                    document.getElementById('solarnoon').innerHTML = `Midi solaire : ${solarnoon} `;
                     document.getElementById('daylength').innerHTML = `Durée de la journée : ${daylength}`;
 
                     var heures1 = sunrise.substring(0, 1);
