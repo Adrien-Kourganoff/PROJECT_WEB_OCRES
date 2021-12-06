@@ -38,11 +38,13 @@
   margin-right: auto;
 }
 .card-header{
-  background-color: #09d3ac;
+  background-color: #2e7466;
+  color:white;
 }
 
 .card-body{
-  background-color: aquamarine;
+  background-color: rgb(46, 78, 67);
+  color:white;
 }
 h1, h3{
   padding:15px;
@@ -53,9 +55,11 @@ h1, h3{
 }
 body{
   background-color: #2E4053;
+  color:white;
 }
 .TitleSite,.titreDonnee{
   background-color: #2e3e4e;
+  color: white;
 }
 
 .clock {
@@ -118,3 +122,12 @@ body{
   border: 2px solid #1b1b1b;
   border-radius: 50%;
 } */
+
+hr {
+  border: none;
+  border-top: 5px double #333;
+  color: rgb(11, 12, 12);
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+}

@@ -20,7 +20,7 @@ const BoxAPICreated = ({ name }) => {
                                 <p id="tempB0"></p>
                                 <p id="lieuTempB0"></p>
                                 <p id="anneeTempB0"></p>
-                                
+                                <hr/>
                                 <p id="id1"></p>
                                 <p id="tempH1"></p>
                                 <p id="lieuTempH1"></p>
@@ -28,7 +28,7 @@ const BoxAPICreated = ({ name }) => {
                                 <p id="tempB1"></p>
                                 <p id="lieuTempB1"></p>
                                 <p id="anneeTempB1"></p>
-
+                                <hr/>
                                 <p id="id2"></p>
                                 <p id="tempH2"></p>
                                 <p id="lieuTempH2"></p>
@@ -36,7 +36,7 @@ const BoxAPICreated = ({ name }) => {
                                 <p id="tempB2"></p>
                                 <p id="lieuTempB2"></p>
                                 <p id="anneeTempB2"></p>
-
+                                <hr/>
                                 <p id="id3"></p>
                                 <p id="tempH3"></p>
                                 <p id="lieuTempH3"></p>
@@ -44,7 +44,7 @@ const BoxAPICreated = ({ name }) => {
                                 <p id="tempB3"></p>
                                 <p id="lieuTempB3"></p>
                                 <p id="anneeTempB3"></p>
-    
+                                <hr/>
                                 <p id="id4"></p>
                                 <p id="tempH4"></p>
                                 <p id="lieuTempH4"></p>
