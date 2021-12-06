@@ -43,24 +43,6 @@ router.get('/:postId', async function (req, res, next) {
   }
 });
 
-var deleteAPIDATA = () => {
-  axios
-      .delete("http://localhost:3001/index/${id}")
-      .catch(console.error);
-}
-//Delete Post
-/*URL = "http://localhost:3001/index";
-
-axios.delete(URL, {
-  headers: {
-    Authorization: authorizationToken
-  },
-  data: {
-    username: "dbUser", 
-    password:"dbUser"
-  },
-}); */
-
 
 router.delete('/:postId', async function (req, res, next) {
 
@@ -87,20 +69,6 @@ router.patch('/:postId', async function (req, res, next) {
   }
 
 });
-
-//delete api
-//URL = "http://localhost:3001/index";
-
-/*axios.delete(URL, {
-  headers: {
-    Authorization: authorizationToken
-  },
-  data: {
-    username: "dbUser", 
-    password:"dbUser"
-  },
-});*/
-
 
 module.exports = router;
 

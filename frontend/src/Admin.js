@@ -57,7 +57,7 @@ function Admin() {
 
     return (
         callAPICreate(),
-        deleteAPIDATA(),
+        //deleteAPIDATA(),
         <div>
             <div>
                 <h1>Modification de l'API créée</h1>
