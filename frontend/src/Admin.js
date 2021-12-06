@@ -8,24 +8,41 @@ function Admin() {
 
     const [id, setId] = useState('');
 
+    const [tempHaute, setTempH] = useState('');
+    const [lieuTempH, setLieuH] = useState('');
+    const [anneeTempH, setAnneeH] = useState('');
+
+    const [tempBasse, setTempB] = useState('');
+    const [lieuTempB, setLieuB] = useState('');
+    const [anneeTempB, setAnneeB] = useState('');
+
     const handleInputDelete = () => {
-        console.log(id);
         axios
             .delete(`http://localhost:3001/index/${id}`)
             .catch(console.error);
+        document.location.reload(true);
     };
     const handleInputAdd = () => {
+        let newAPI = {
+            "tempHaute": tempHaute,
+            "lieuTempHaute": lieuTempH,
+            "anneeTempHaute": anneeTempH,
+            "tempBasse": tempBasse,
+            "lieuTempBasse": lieuTempB,
+            "anneeTempBasse": anneeTempB
+        };
         axios
-            .post(`http://localhost:3001/index`)
+            .post(`http://localhost:3001/index`, newAPI)
             .catch(console.error);
+        document.location.reload(true);
     };
     var callAPICreate = () => {
         axios
             .get('http://localhost:3001/index')
             .then((data) => {
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < data.data.length; i++) {
 
-                    const id = data.data[i]._id;
+                    const idPost = data.data[i]._id;
                     const tempHaute = data.data[i].tempHaute;
                     const lieuTempHaute = data.data[i].lieuTempHaute;
                     const anneeTempHaute = data.data[i].anneeTempHaute;
@@ -34,9 +51,9 @@ function Admin() {
                     const lieuTempBasse = data.data[i].lieuTempBasse;
                     const anneeTempBasse = data.data[i].anneeTempBasse;
 
-                    document.getElementById('id'+ i).innerHTML = `Id : ${id}`;
-                    document.getElementById('tempH'+ i).innerHTML = `Température la plus haute : ${tempHaute}°C`;
-                    document.getElementById('lieuTempH'+ i).innerHTML = `Lieu : ${lieuTempHaute}`
+                    document.getElementById('id' + i).innerHTML = `Id : ${idPost}`;
+                    document.getElementById('tempH' + i).innerHTML = `Température la plus haute : ${tempHaute}°C`;
+                    document.getElementById('lieuTempH' + i).innerHTML = `Lieu : ${lieuTempHaute}`
                     document.getElementById('anneeTempH' + i).innerHTML = `Année : ${anneeTempHaute}`;
 
                     document.getElementById('tempB' + i).innerHTML = `Température la plus basse : ${tempBasse}°C`;
@@ -47,14 +64,6 @@ function Admin() {
             })
             .catch(console.error);
     }
-
-
-    /*var putAPIDATA = () => {
-        axios
-            .put(`http://localhost:3001/index`)
-            .catch(console.error);
-    }*/
-
     return (
         callAPICreate(),
         //deleteAPIDATA(),
@@ -72,7 +81,12 @@ function Admin() {
                     <button onClick={() => handleInputDelete()}>Delete</button>
                 </div>
                 <div>
-                    <input onChange={e => setId(e.target.value)} />
+                    <input placeholder='Température Haute' onChange={e => setTempH(e.target.value)} />
+                    <input placeholder='Lieu' onChange={e => setLieuH(e.target.value)} />
+                    <input placeholder='Année' onChange={e => setAnneeH(e.target.value)} />
+                    <input placeholder='Température Basse' onChange={e => setTempB(e.target.value)} />
+                    <input placeholder='Lieu' onChange={e => setLieuB(e.target.value)} />
+                    <input placeholder='Année' onChange={e => setAnneeB(e.target.value)} />
                     <button onClick={() => handleInputAdd()}>Add</button>
                 </div>
             </center>
