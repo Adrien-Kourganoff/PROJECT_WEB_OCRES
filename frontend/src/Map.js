@@ -227,7 +227,7 @@ export default function Map() {
                 }
 
                 const ctx = document.getElementById('myChart').getContext('2d');
-                var myChart = new Chart(ctx, {
+                myChart = new Chart(ctx, {
                     type: 'line',
                     data: {
                         labels: ["Aujourd'hui", "Demain", "Après-Demain", "Le jour d'après"],
