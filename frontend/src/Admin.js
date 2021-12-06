@@ -91,9 +91,11 @@ function Admin() {
                 </div>
             </center>
             <div>
-                <Link to="/map">
-                    Pour retourner sur la page d'affichage des API, cliquer ici
-                </Link>
+                <center>
+                    <Link to="/map">
+                        Pour retourner sur la page d'affichage des API, cliquer ici
+                    </Link>
+                </center>
             </div>
         </div>
     );

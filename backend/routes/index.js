@@ -43,7 +43,7 @@ router.get('/:postId', async function (req, res, next) {
   }
 });
 
-
+//Delete a post
 router.delete('/:postId', async function (req, res, next) {
 
   try {
