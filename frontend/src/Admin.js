@@ -5,6 +5,12 @@ import BoxAPICreated from './components/BoxAPICreated';
 
 const Admin = () => {
 
+    var deleteAPIDATA = () => {
+        axios
+            .delete('http://localhost:3001/index/${id}')
+            .catch(console.error);
+      }
+
     const callAPICreate = () => {
         axios
             .get('http://localhost:3001/index')
@@ -34,6 +40,7 @@ const Admin = () => {
 
     return (
         callAPICreate(),
+        deleteAPIDATA(),
         <div>
             <div>
                 <h1>Modification de l'API créée</h1>
