@@ -36,6 +36,21 @@ function Admin() {
             .catch(console.error);
         document.location.reload(true);
     };
+
+    const handleInputUpdate = () => {
+        let newAPI2 = {
+            "tempHaute": tempHaute,
+            "lieuTempHaute": lieuTempH,
+            "anneeTempHaute": anneeTempH,
+            "tempBasse": tempBasse,
+            "lieuTempBasse": lieuTempB,
+            "anneeTempBasse": anneeTempB
+        };
+        axios
+            .patch(`http://localhost:3001/index/${id}`, newAPI2)
+            .catch(console.error);
+        document.location.reload(true);
+    };
     var callAPICreate = () => {
         axios
             .get('http://localhost:3001/index')
@@ -88,6 +103,16 @@ function Admin() {
                     <input placeholder='Lieu' onChange={e => setLieuB(e.target.value)} />
                     <input placeholder='Année' onChange={e => setAnneeB(e.target.value)} />
                     <button onClick={() => handleInputAdd()}>Add</button>
+                </div>
+                <div>
+                    <input placeholder='id' onChange={e => setId(e.target.value)} />
+                    <input placeholder='Température Haute' onChange={e => setTempH(e.target.value)} />
+                    <input placeholder='Lieu' onChange={e => setLieuH(e.target.value)} />
+                    <input placeholder='Année' onChange={e => setAnneeH(e.target.value)} />
+                    <input placeholder='Température Basse' onChange={e => setTempB(e.target.value)} />
+                    <input placeholder='Lieu' onChange={e => setLieuB(e.target.value)} />
+                    <input placeholder='Année' onChange={e => setAnneeB(e.target.value)} />
+                    <button onClick={() => handleInputUpdate()}>Update</button>
                 </div>
             </center>
             <div>
