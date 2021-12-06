@@ -125,7 +125,7 @@ function sendData(){
 }
 
 function handleChange(params, dvalue){
-  if(params!=dvalue && dvalue!=null && yes==false && params!='' && dvalue!=''){
+  if(params!=dvalue && dvalue!=null && yes==false && params!='' && dvalue!='' && params!='Cliquer ici pour acceder' && dvalue!='Cliquer ici pour acceder'){
     console.log("on rentre dans la boucle " + params + " " + dvalue);
     //return <div className="pop-up">Do you Really want to change ${dvalue} by ${params} ? </div>
     let popUp = document.getElementById("pop-up");
