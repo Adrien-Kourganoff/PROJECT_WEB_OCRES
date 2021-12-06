@@ -6,19 +6,24 @@ import GetBarChart from '../components/GetBarChart';
 import Getweather from '../components/Getweather';
 import GetAdress from '../components/Getaddress';
 import Getmyapi from '../components/Getmyapi';
+import Map from '../components/map.js';
 
 storiesOf('GetBarChart', module)
-.add('with primary', () => <GetBarChart />);
+.add('display', () => <GetBarChart />);
 
 storiesOf('Getmyapi', module)
-.add('with primary', () => <Getmyapi/>);
+.add('display', () => <Getmyapi/>);
 
 storiesOf('GetAdress', module)
-.add('with primary', () => <GetAdress/>);
+.add('display', () => <GetAdress/>);
+
+
+storiesOf('Map', module)
+.add('display', () => <Map/>);
 
 
 storiesOf('Getweather', module)
-.add('with primary', () => <Getweather />);
+.add('display', () => <Getweather />);
 
 storiesOf('Getchart', module)
-.add('with primary', () => <Getchart />);
+.add('display', () => <Getchart />);
