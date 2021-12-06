@@ -1,0 +1,14 @@
+.getaddress {
+ 
+  width: 25em;
+  height: fit-content;  
+  background-color: #ced7ef;
+  color: darkblue;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 24;
+}
+
+
