@@ -80,6 +80,7 @@ function Admin() {
             .catch(console.error);
     }
     return (
+        callAPICreate(),
         <div>
             <div>
                 <h1>Modification de l'API créée</h1>
