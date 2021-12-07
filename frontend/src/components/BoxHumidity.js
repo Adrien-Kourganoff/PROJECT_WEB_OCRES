@@ -1,6 +1,6 @@
 import React from "react";
 
-const Box4 = ({ name }) => {
+const BoxHumidity = ({ name }) => {
     return (
         <div className="box">
             <div className="container">
@@ -13,7 +13,7 @@ const Box4 = ({ name }) => {
                             <h2 id="day0-forecast-main" className="card-title">
                             </h2>
                             <div>
-                                <p id="vitesse-vent"></p>
+                                <p id="humidity"></p>
                             </div>
                         </div>
                     </div>
@@ -22,4 +22,4 @@ const Box4 = ({ name }) => {
         </div>
     );
 };
-export default Box4;
+export default BoxHumidity;

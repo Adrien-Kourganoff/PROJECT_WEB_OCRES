@@ -80,20 +80,18 @@ function Admin() {
             .catch(console.error);
     }
     return (
-        callAPICreate(),
-        //deleteAPIDATA(),
         <div>
             <div>
                 <h1>Modification de l'API créée</h1>
             </div>
             <div>
                 <h3>Voici l'API que vous avez créée</h3>
-                <BoxAPICreated />
+                <BoxAPICreated name={"Modification de votre API"}/>
             </div>
             <center>
                 <div>
-                    <input placeholder='id' onChange={e => setId(e.target.value)} />
-                    <button onClick={() => handleInputDelete()}>Delete</button>
+                    <input placeholder='id' onChange={e => setId(e.target.value)} /><br></br>
+                    <button onClick={() => handleInputDelete()}>Supprimer</button>
                 </div>
                 <div>
                     <input placeholder='Température Haute' onChange={e => setTempH(e.target.value)} />
@@ -101,8 +99,8 @@ function Admin() {
                     <input placeholder='Année' onChange={e => setAnneeH(e.target.value)} />
                     <input placeholder='Température Basse' onChange={e => setTempB(e.target.value)} />
                     <input placeholder='Lieu' onChange={e => setLieuB(e.target.value)} />
-                    <input placeholder='Année' onChange={e => setAnneeB(e.target.value)} />
-                    <button onClick={() => handleInputAdd()}>Add</button>
+                    <input placeholder='Année' onChange={e => setAnneeB(e.target.value)} /><br></br>
+                    <button onClick={() => handleInputAdd()}>Ajouter</button>
                 </div>
                 <div>
                     <input placeholder='id' onChange={e => setId(e.target.value)} />
@@ -111,14 +109,16 @@ function Admin() {
                     <input placeholder='Année' onChange={e => setAnneeH(e.target.value)} />
                     <input placeholder='Température Basse' onChange={e => setTempB(e.target.value)} />
                     <input placeholder='Lieu' onChange={e => setLieuB(e.target.value)} />
-                    <input placeholder='Année' onChange={e => setAnneeB(e.target.value)} />
-                    <button onClick={() => handleInputUpdate()}>Update</button>
+                    <input placeholder='Année' onChange={e => setAnneeB(e.target.value)} /><br></br>
+                    <button onClick={() => handleInputUpdate()}>Mettre à jour</button>
                 </div>
             </center>
             <div>
                 <center>
                     <Link to="/map">
-                        Pour retourner sur la page d'affichage des API, cliquer ici
+                        <div className='bouton'>
+                            Pour retourner sur la page d'affichage des API, cliquer ici 
+                        </div>
                     </Link>
                 </center>
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Box7 = ({ name }) => {
+const BoxPressure = ({ name }) => {
     return (
         <div className="box">
             <div className="container">
@@ -10,10 +10,10 @@ const Box7 = ({ name }) => {
                             <h4 className="my-0 font-weight-normal">{name}</h4>
                         </div>
                         <div className="card-body">
-                            <h2 id="day0-forecast-main" className="card-title">
+                            <h2 className="card-title">
                             </h2>
                             <div>
-                                <p id="humidity"></p>
+                                <p id="pressure"></p>
                             </div>
                         </div>
                     </div>
@@ -22,4 +22,4 @@ const Box7 = ({ name }) => {
         </div>
     );
 };
-export default Box7;
+export default BoxPressure;
