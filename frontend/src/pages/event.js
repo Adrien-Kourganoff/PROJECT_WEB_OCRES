@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from '../components/navigation';
-import EventListTable from '../components/events';
+import EventTable from '../components/events';
 import "../styles/settings.css";
 
 function Event() {
@@ -8,7 +8,7 @@ function Event() {
       <div className="App">
         <Navigation/>
         <header className="Page">
-          <EventListTable/>
+          <EventTable/>
         </header>
       </div>
     );

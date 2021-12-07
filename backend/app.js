@@ -26,7 +26,7 @@ app.use("/albums", albumsRouter);
 
 /*
 // ----------------------------- MongoDB ----------------------------------
-/*const { MongoClient } = require("mongodb");
+const { MongoClient } = require("mongodb");
 const url = "mongodb+srv://admin:admin@cluster0.2ztwl.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url);
 
@@ -62,5 +62,5 @@ async function run() {
 }
 run().catch(console.dir);*/
 // ------------------------------------------------------------------------
-*/
+
 module.exports = app;
