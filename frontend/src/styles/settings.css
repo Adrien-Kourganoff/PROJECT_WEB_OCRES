@@ -318,6 +318,11 @@ body{
 }
 
 
+
+
+
+/* -------------- MEDIA QUERIES --------------- */
+
 /* For small screens like mobile phones */
 @media only screen and (max-width: 684px){
   /* Changes the components size */

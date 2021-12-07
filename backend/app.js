@@ -26,7 +26,7 @@ app.use("/albums", albumsRouter);
 
 /*
 // ----------------------------- MongoDB ----------------------------------
-const { MongoClient } = require("mongodb");
+/*const { MongoClient } = require("mongodb");
 const url = "mongodb+srv://admin:admin@cluster0.2ztwl.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url);
 
@@ -39,11 +39,11 @@ async function run() {
          const col = db.collection("eventList");
          // Construct a document                                                                                                                                                              
          let personDocument = {
-             "name": { "first": "Thomas", "last": "Retout" },
+             "name": { "first": "test", "last": "TEST" },
              "birth": new Date(2000, 2, 12), // June 23, 1912                                                                                                                                 
              "death": new Date(2086, 10, 7),  // June 7, 1954                                                                                                                                  
              "contribs": [ "Turing machine", "IoT", "Javascript" ],
-             "views": 120
+             "views": 0
          }
          // Insert a single document, wait for promise so we can read it back
          const p = await col.insertOne(personDocument);
@@ -60,7 +60,7 @@ async function run() {
         await client.close();
     }
 }
-run().catch(console.dir);
+run().catch(console.dir);*/
 // ------------------------------------------------------------------------
 */
 module.exports = app;
