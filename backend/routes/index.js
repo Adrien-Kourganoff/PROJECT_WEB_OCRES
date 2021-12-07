@@ -43,7 +43,7 @@ router.get('/:postId', async function (req, res, next) {
   }
 });
 
-
+//Delete a post
 router.delete('/:postId', async function (req, res, next) {
 
   try {
@@ -60,8 +60,17 @@ router.delete('/:postId', async function (req, res, next) {
 router.patch('/:postId', async function (req, res, next) {
   try {
     const updatedPost = await Post.updateOne(
-    { _id: req.params.postId }, 
-    { $set: {tempHaute: req.body.tempHaute } }
+      { _id: req.params.postId },
+      {
+        $set: {
+          tempHaute: req.body.tempHaute,
+          lieuTempHaute: req.body.lieuTempHaute,
+          anneeTempHaute: req.body.anneeTempHaute,
+          tempBasse: req.body.tempBasse,
+          lieuTempBasse: req.body.lieuTempBasse,
+          anneeTempBasse: req.body.anneeTempBasse,
+        }
+      }
     );
     res.json(updatedPost);
   } catch (err) {
