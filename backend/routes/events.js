@@ -28,6 +28,27 @@ router.get('/', async function(req, res, next) {
     res.status(200).send(response);
 });
 
+/* UPDATE user. */
+router.post('/:id', async function(req, res) {
+
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+
+    console.log(req.params.id);
+
+    await client.connect();
+    console.log("Connected correctly to server");
+    const db = client.db("jbtv");
+    const col = db.collection("eventList");
+    const result = await col.updateOne({_id: req.params.id}, {$set: {"event" : "yo"}});
+    console.log(result);
+
+    // Return message
+    res.json({
+      message: `Just updated ${req.params.id} with yo`
+  });
+});
+  
+
 /*
 async function run() {
     try {

@@ -56,7 +56,7 @@ export default function Graphs(){
 
     return (
         <div className='chart'>
-            <XYPlot width={500} height={500} margin={70}>
+            <XYPlot width={600} height={500} margin={150}>
                 <HorizontalGridLines style={{stroke: '#B7E9ED'}} />
                 <VerticalGridLines style={{stroke: '#B7E9ED'}} />
                 <XAxis
@@ -93,18 +93,14 @@ export default function Graphs(){
                 <List events={events}/>
             </div>
             <XYPlot
-                margin={70}
+                margin={150}
                 xType="time"
-                width={500}
+                width={600}
                 height={500}>
                 <VerticalGridLines />
                 <HorizontalGridLines />
                 <XAxis tickValues={ticks} tickFormat={v => {
-                    var format;
-                    for (let i = 0; i < 3; i++) {
-                        format += new Date(v).toString().split(' ')[i] + ' ';
-                    }
-                    return format
+                    return new Date(v).toLocaleDateString("fr-FR",{ year: 'numeric', month: 'short', day: 'numeric' });
                     } } tickLabelAngle={-45} style={{fill:'var(--text)'}} />
                 <YAxis style={{fill:'var(--text)'}}/>
                 <VerticalRectSeries data={datasTime} style={{stroke: 'var(--text)', strokeWidth: 1}} />
