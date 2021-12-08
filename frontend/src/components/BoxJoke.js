@@ -1,6 +1,6 @@
 import React from "react";
 
-const Box6 = ({ name }) => {
+const BoxJoke = ({ name }) => {
     return (
         <div className="bigBox">
             <div className="container">
@@ -22,4 +22,4 @@ const Box6 = ({ name }) => {
         </div>
     );
 };
-export default Box6;
+export default BoxJoke;

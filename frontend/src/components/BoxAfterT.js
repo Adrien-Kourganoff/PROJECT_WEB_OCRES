@@ -1,6 +1,6 @@
 import React from "react";
 
-const Box3 = ({name}) => {
+const BoxAfterT = ({name}) => {
     return(
     <div className="box">
         <div className="container">
@@ -10,12 +10,12 @@ const Box3 = ({name}) => {
                         <h4 className="my-0 font-weight-normal">{name}</h4>
                     </div>
                     <div className="card-body">
-                        <h2 id="day3-forecast-main" className="card-title">
+                        <h2 id="day2-forecast-main" className="card-title">
                         </h2>
                         <div>
-                            <p id="day3-forecast-more-info"></p>
-                            <div id="day3-icon-weather-container" ></div>
-                            <h3 id="day3-forecast-temp"> </h3>
+                            <p id="day2-forecast-more-info"></p>
+                            <div id="day2-icon-weather-container" ></div>
+                            <h3 id="day2-forecast-temp"> </h3>
                         </div>
                     </div>
                 </div>
@@ -24,4 +24,4 @@ const Box3 = ({name}) => {
     </div>
     );
 };
-export default Box3;
+export default BoxAfterT;

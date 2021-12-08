@@ -1,12 +1,12 @@
 import React from "react";
-import Box from './components/Box.js';
-import Box2 from './components/Box2.js';
-import Box3 from './components/Box3.js';
-import Box4 from './components/Box4.js';
-import Box5 from './components/Box5.js';
-import Box6 from './components/Box6.js';
-import Box7 from './components/Box7.js';
-import Box8 from './components/Box8.js';
+import BoxTomorrow from './components/BoxTomorrow.js';
+import BoxAfterT from './components/BoxAfterT.js';
+import BoxNextDay from './components/BoxNextDay.js';
+import BoxVitvent from './components/BoxVitvent.js';
+import BoxPressure from './components/BoxPressure.js';
+import BoxJoke from './components/BoxJoke.js';
+import BoxHumidity from './components/BoxHumidity.js';
+import BoxChart from './components/BoxChart.js';
 import BoxEmojis from './components/BoxEmojis.js';
 import axios from "axios";
 import TodayBox from './components/TodayBox.js';
@@ -85,12 +85,6 @@ const cities = [{
     lng: 12.4829321,
     time: 5,
     nameCities: "Rome"
-},
-{
-    lat: 40.7127281,
-    lng: -74.0060152,
-    time: 6,
-    nameCities: "New York"
 },
 {
     lat: 38.7077507,
@@ -249,7 +243,6 @@ export default function Map() {
 
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading Maps";
-
     callAPI2();
     callAPI3();
     return (
@@ -305,30 +298,32 @@ export default function Map() {
             </div>
             <TodayBox name={"Aujourd'hui"} />
             <div className="App-header">
-                <Box name={"Demain"} />
-                <Box2 name={"Après-demain"} />
-                <Box3 name={"Le jour d'après"} />
+                <BoxTomorrow name={"Demain"} />
+                <BoxAfterT name={"Après-demain"} />
+                <BoxNextDay name={"Le jour d'après"} />
             </div>
             <div className="App-header">
-                <Box4 name={"Vitesse du vent"} />
-                <Box5 name={"Pression"} />
-                <Box7 name={"Humidité"} />
+                <BoxVitvent name={"Vitesse du vent"} />
+                <BoxPressure name={"Pression"} />
+                <BoxHumidity name={"Humidité"} />
             </div>
             <div>
                 <BoxSun name={"Données sur la journée (Heure UTC)"} />
                 <BoxEmojis name={"Conseils pour s'habiller"} />
             </div>
             <div>
-                <Box8 name={"Graphe des températures"} />
+                <BoxChart name={"Graphe des températures"} />
                 <BoxAPICreated name={"Record des températures en France !"} />
             </div>
             <div>
-                <Box6 name={"Blague du jour !"} />
+                <BoxJoke name={"Blague du jour !"} />
             </div>
             <div>
                 <center>
                     <Link to="/admin">
-                        Pour modifier les données de l'API créée, cliquer ici
+                        <div className="bouton">
+                            Pour modifier les données de l'API créée, cliquer ici
+                        </div>
                     </Link>
                 </center>
             </div>

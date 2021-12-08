@@ -10,7 +10,7 @@ const BoxSun = ({ name }) => {
                             <h4 className="my-0 font-weight-normal">{name}</h4>
                         </div>
                         <div className="card-body">
-                            <h2 id="day0-forecast-main" className="card-title">
+                            <h2 className="card-title">
                             </h2>
                             <div>
                                 <p id="sunrise"></p>
@@ -19,12 +19,14 @@ const BoxSun = ({ name }) => {
                                         <span className="heure"></span>
                                         <span className="minute"></span>
                                         <span className="seconde"></span>
-                                        <span className="point"></span>
                                     </div>
                                 </div>
-                                <p id="sunset"></p>
-                                <p id="solarnoon"></p>
-                                <p id="daylength"></p>
+                                <div>
+                                    <br></br>
+                                    <p id="sunset"></p>
+                                    <p id="solarnoon"></p>
+                                    <p id="daylength"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
