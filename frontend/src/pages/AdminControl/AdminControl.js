@@ -1,6 +1,6 @@
 import React from 'react';
 import InformationsEdit from '../../containers/Informations/InformationsEdit';
-import  '../../globalCss/Card.css';
+import  '../../GlobalCss/Card.css';
 import  './AdminControl.css';
 
 

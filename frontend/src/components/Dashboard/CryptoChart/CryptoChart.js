@@ -8,6 +8,7 @@ import 'moment/locale/fr'
 moment.locale('fr');
 moment().format("DD/MM/YYYY");
 
+
 export default function CryptoChart(props) {
 
     const chartRef = useRef();

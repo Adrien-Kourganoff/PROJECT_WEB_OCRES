@@ -2,7 +2,7 @@ import React from 'react';
 import EthDatas from '../../containers/EthDatas/EthDatas';
 import EthChart from '../../containers/EthChart/EthChart';
 import EthNews from '../../containers/EthNews/EthNews'
-import  '../../globalCss/Card.css';
+import  '../../GlobalCss/Card.css';
 import  './Dashboard.css';
 
 import EthConverter from '../../containers/EthConverter/EthConverter';
