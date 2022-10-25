@@ -20,5 +20,4 @@ Les instructions sont à retrouver dans le pdf instruction.pdf.
 
 **Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
 
-audrey hana les plus belles et les plus saoulé
-ciao
+c'est l'heure du repas 
