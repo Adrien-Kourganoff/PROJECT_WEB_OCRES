@@ -21,3 +21,4 @@ Les instructions sont à retrouver dans le pdf instruction.pdf.
 **Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
 
 je fais genre jai pas comppris pcq jai l'impression que le V a compris ce quon disait... quoi que tu me dira elle comprend pas grand chose
+tout à l'heure elle a demandé un cours de Figma à Elena, frere elle est même pas un peu réfléchie pour être un peu autodidact sur figma
