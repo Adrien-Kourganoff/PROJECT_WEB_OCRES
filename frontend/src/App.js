@@ -1,4 +1,6 @@
-<script src="C:\Users\Hana\Desktop\WEB\PROJECT_WEB_OCRES2\frontend\src\App.css"></script>
+import React from 'react';
+
+import './App.css';
 
 
 function App() {
