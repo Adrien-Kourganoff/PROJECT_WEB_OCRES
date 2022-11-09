@@ -1,9 +1,10 @@
-import './App.css';
+<script src="C:\Users\Hana\Desktop\WEB\PROJECT_WEB_OCRES2\frontend\src\App.css"></script>
+
 
 function App() {
   return (
     <div className="App">
-          A vous de jouer !
+      Bienvenue sur SongBox
     </div>
   );
 }
