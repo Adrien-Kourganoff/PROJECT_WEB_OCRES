@@ -1,5 +1,6 @@
 import React from 'react';
 import Horloge from './components/horloge'
+import Welcome from './components/welcome'
 
 import './App.css';
 
@@ -9,8 +10,9 @@ function App() {
     <div className="App">
       Bienvenue sur SongBox
 
-      /* afficher l'horloge*/
+      /*afficher l'horloge*/
       <Horloge />
+      <Welcome />
     </div>
   );
 }
