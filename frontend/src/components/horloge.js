@@ -1,6 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './horloge.css';
 
+function Horloge() {
+    const [horlogeState, setHorlogeState] = useState();
+
+    useEffect(() => {
+        // 1000 est l'interval
+        setInterval(() => {
+            const date = new Date();
+            setHorlogeState(date.toLocaleTimeString());
+        }, 1000);
+
+    }, []);
+
+    return <div>{horlogeState}</div>
+
+}
+
+export default Horloge;
+
+
+{/*
 export default class Horloge extends React.Component {
     render() {
         return (
@@ -23,4 +43,4 @@ export default class Horloge extends React.Component {
 
             </div>);
     }
-}
+} */}

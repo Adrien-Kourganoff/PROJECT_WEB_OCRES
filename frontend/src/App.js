@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       Bienvenue sur SongBox
 
-      /*afficher l'horloge*/
+      {/*afficher l'horloge  */}
       <Horloge />
       <Welcome />
     </div>
