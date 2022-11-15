@@ -4,6 +4,7 @@ import './welcome.css';
 
 
 
+
 export default class Welcome extends React.Component {
 
     constructor(props) {
@@ -31,20 +32,23 @@ export default class Welcome extends React.Component {
                 {/* formulaire nom d'artiste  */}
 
                 <div className="formulaire">
+
                     <label >
-                        Nom d'artiste :
-                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                        <input type="text" value={this.state.value} onChange={this.handleChange} size="15"
+                            placeholder="Nom d'artiste" />
                     </label>
 
                     {/* formulaire mot de passe   */}
 
                     <label>
-                        <p> Mot de passe :
-                            <input type="text" value={this.state.value} onChange={this.handleChange} /> </p>
+                        <p>
+                            <input type="text" value={this.state.value} onChange={this.handleChange} size="15"
+                                placeholder="Mot de passe" /> </p>
                     </label>
                 </div>
 
-                <input type="submit" value="Envoyer" />
+                <br /> <input type="submit" value="Se connecter" />
+
             </form>
         );
     }
