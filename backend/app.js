@@ -1,19 +1,33 @@
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+require("dotenv").config();
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+const express = require("express");
+const mongoose = require("mongoose");
+const noteRoutes = require("./routes/note");
 
-var app = express();
+// Create a new express app
+const app = express();
 
-app.use(logger("dev"));
+// use body + params
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+// Print all requests
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
 
-module.exports = app;
+// Routes
+app.use("/note", noteRoutes);
+
+// Connect to MongoDB + Started Server
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(process.env.PORT || 8000, () =>
+      console.log(
+        "Connected to DB and Server started on port",
+        process.env.PORT
+      )
+    );
+  })
+  .catch((err) => console.log(err));

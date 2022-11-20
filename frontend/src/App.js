@@ -1,30 +1,15 @@
-import React from 'react';
-import Horloge from './components/horloge'
-import Welcome from './components/welcome'
-
-import './App.css';
-import './components/horloge';
-
+import React from "react";
+import Horloge from "./components/horloge";
+import Welcome from "./components/welcome";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-
-      <div className="Welcome">
-        Bienvenue sur SongBox
-      </div>
-
-      <div className="Horloge">
-        {/*afficher l'horloge  */}
-        <Horloge />
-      </div>
-
-      <div className="Hello">
-        <Welcome />
-      </div>
-
-    </div>
+    <Routes>
+      <Route path="/" element={<Welcome />} />
+      <Route path="/horloge" element={<Horloge />} />
+    </Routes>
   );
 }
 
-export default App
+export default App;
