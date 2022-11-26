@@ -12,7 +12,7 @@ const Welcome = () => {
 
   const onSubmit = () => {
     console.log("name", name);
-    navigate("/horloge");
+    navigate("/dashboard");
   };
   return (
     <div>
