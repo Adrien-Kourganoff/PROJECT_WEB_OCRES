@@ -1,0 +1,15 @@
+.Topbar {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.Date {
+    text-align: left;
+    display: flex;
+    font-size: 17px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    padding-left: 3%;
+}
