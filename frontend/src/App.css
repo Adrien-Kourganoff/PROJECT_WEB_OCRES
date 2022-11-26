@@ -1,3 +1,22 @@
 .App {
   text-align: center;
+  background: linear-gradient(#939ed0 30%,
+      #A0D3FF 40%,
+      #9692e1 75%);
+  /*background: #F0F8FF;*/
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AppGlass {
+  display: grid;
+  height: 96%;
+  width: 96%;
+  border-radius: 2rem;
+  background-color: rgba(240, 248, 255, 0.7);
+  overflow: hidden;
+  grid-template-columns: 12rem auto;
+  grid-template-rows: 5rem auto;
 }
