@@ -11,12 +11,26 @@
 }
 
 .AppGlass {
-  display: grid;
+  /* display: grid; */
+  display: flex;
   height: 96%;
   width: 96%;
   border-radius: 2rem;
   background-color: rgba(240, 248, 255, 0.7);
   overflow: hidden;
-  grid-template-columns: 12rem auto;
-  grid-template-rows: 5rem auto;
+  /* grid-template-columns: 12rem auto; */
+  /* grid-template-rows: 5rem auto; */
+}
+
+.main
+{
+  width: auto;
+}
+
+.widget
+{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
 }
