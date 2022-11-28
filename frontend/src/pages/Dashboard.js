@@ -1,6 +1,6 @@
 import Horloge from "../components/horloge";
 import Note from "../components/Note";
-import Spotify from "../components/spotify";
+import Spotify from "../components/Spotify/spotify";
 
 const Dashboard = () => {
   return (

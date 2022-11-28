@@ -10,6 +10,7 @@ function Spotify() {
 
   const [token, setToken] = useState("");
   const [searchKey, setSearchKey] = useState("");
+  const [artists, setArtists] = useState([]);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -35,8 +36,9 @@ function Spotify() {
   };
 
   const searchArtists = async (e) => {
+    e.preventDefault();
     const { data } = await axios.get("https://api.spotify.com/v1/search", {
-      hearders: {
+      headers: {
         Authorization: `Bearer ${token}`,
       },
       params: {
@@ -45,7 +47,23 @@ function Spotify() {
       },
     });
 
-    console.log(data);
+    setArtists(data.artists.items[0]);
+    console.log(artists);
+  };
+
+  const renderArtists = () => {
+    return (
+      <div>
+        {artists ? (
+          <div>
+            <img width={"25%"} src={artists.images[0].url} alt="" />
+            {artists.name}
+          </div>
+        ) : (
+          <div>No Image</div>
+        )}
+      </div>
+    );
   };
 
   return (
@@ -63,14 +81,23 @@ function Spotify() {
           <button onClick={logout}> Se deconnecter</button>
         )}
 
+        {console.log("token", token)}
+
         {token ? (
-          <form onSubmit={searchArtists}>
-            <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-            <button type="submit"> Recherche </button>
-          </form>
+          <div>
+            <form onSubmit={searchArtists}>
+              <input
+                type="text"
+                onChange={(e) => setSearchKey(e.target.value)}
+              />
+              <button type="submit"> Rechercher </button>
+            </form>
+          </div>
         ) : (
-          <h2> S'il vous plait connecter vous</h2>
+          <h2> Connectez vous</h2>
         )}
+
+        {renderArtists()}
       </header>
     </div>
   );
