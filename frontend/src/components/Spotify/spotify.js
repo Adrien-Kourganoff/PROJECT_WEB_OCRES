@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./spotify.css";
 import axios from "axios";
+import './spotify.css';
 import SpotifyGetPlaylists from "./SpotifyGetPlaylist";
 
 function Spotify() {
@@ -28,7 +29,7 @@ function Spotify() {
   }, []);
 
   const logout = () => {
-    setToken("");
+    setToken(""); /*NE RIEN ECRIRE ICI SINON PLUS DE PROJET ET C LA MIERDA*/
     window.localStorage.removeItem("token");
   };
 
@@ -52,10 +53,10 @@ function Spotify() {
       return <div>{""}</div>;
     }
     return (
-      <div>
-        {artists.images.length ? (
+      <div className="PhotoArtiste">
+        {artists.images.length ? ( /*IMAGE DE L'ARTISTE */
           <div>
-            <img width={"25%"} src={artists.images[0].url} alt="" />
+            <img width={"40%"} src={artists.images[0].url} alt="" />
           </div>
         ) : (
           <div>No Image</div>
@@ -66,38 +67,45 @@ function Spotify() {
   };
 
   return (
+
     <div className="spotify">
+
       <header className="spotify-header">
-        <h1> Spotify </h1>
+
         {!token ? (
-          <a
+
+          //LIEN DE CONNEXIN 
+          <a className="se_connecter"
             href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
           >
             {" "}
             <button type="submit"> Connexion a Spotify </button>
           </a>
+
         ) : (
-          <button onClick={logout}> Se deconnecter</button>
+
+          <button className="bouton_deconnexion" onClick={logout}> Se deconnecter</button>
         )}
         {console.log("token", token)}
         {token ? (
           <div>
             <form onSubmit={searchArtists}>
-              <input
+              <input className="formulaire_recherche"
                 type="text"
+                placeholder="  Rechercher un artiste"
                 onChange={(e) => setSearchKey(e.target.value)}
               />
-
-              <button type="submit"> Rechercher </button>
+              <button className="bouton_recherche" type="submit"> Rechercher </button>
               <SpotifyGetPlaylists />
             </form>
             {renderArtists()}
           </div>
         ) : (
-          <h6> Connectez vous </h6>
+          <h2> </h2>
         )}
       </header>
     </div>
+
   );
 }
 
