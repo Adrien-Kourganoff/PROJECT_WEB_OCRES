@@ -1,0 +1,60 @@
+.PhotoArtiste {}
+
+.spotify {
+    margin-left: 350px;
+    margin-top: -250px;
+}
+
+.bouton_recherche {
+
+    background-color: #FED3D3;
+    box-shadow: 2px 2px 3px rgb(174, 174, 174);
+    border: none;
+    border-color: rgb(206, 205, 205);
+    border-radius: 30px;
+    color: black;
+    width: 100px;
+    height: 35px;
+
+
+
+}
+
+.bouton_recherche:hover {
+    background-color: #ffce8e;
+    border: 3px solid black;
+    font-style: italic;
+
+
+}
+
+.bouton_deconnexion {
+
+    background-color: #FED3D3;
+    box-shadow: 2px 2px 3px rgb(174, 174, 174);
+    border: none;
+    border-color: rgb(206, 205, 205);
+    border-radius: 30px;
+    color: black;
+    width: 150px;
+    height: 35px;
+
+}
+
+.bouton_deconnexion:hover {
+    background-color: #ffce8e;
+    border: 3px solid black;
+    font-style: italic;
+}
+
+.formulaire_recherche {
+
+    width: 40%;
+    height: 50px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 3px rgb(174, 174, 174);
+    border: none;
+
+    border-color: rgb(206, 205, 205);
+
+}

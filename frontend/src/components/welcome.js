@@ -31,7 +31,7 @@ const Welcome = () => {
               className="artiste"
               onChange={(e) => setName(e.target.value)}
               size="15"
-              placeholder="   Nom d'artiste"
+              placeholder="Nom d'artiste"
               value={name}
               required
             />
@@ -46,7 +46,7 @@ const Welcome = () => {
                 className="mdp"
                 onChange={(e) => setPassword(e.target.value)}
                 size="15"
-                placeholder="    Mot de passe"
+                placeholder="Mot de passe"
                 value={password}
                 required
               />{" "}
