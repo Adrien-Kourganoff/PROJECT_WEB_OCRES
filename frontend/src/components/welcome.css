@@ -1,14 +1,71 @@
 .Welcome {
   text-align: center;
   color: black;
-  margin-top: 100px;
-  font-size: 90px;
-  font-family: "Courier New", Courier, monospace;
+
+  font-size: 70px;
+
+  font-family: 'Inria Sans';
+  z-index: 0;
+
 }
+
 .formulaire {
   flex: initial;
   text-align: center;
   color: black;
   margin-top: 100px;
   font-size: xx-large;
+}
+
+.artiste {
+
+
+  width: 40%;
+  height: 35px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 2px 2px 3px rgb(174, 174, 174);
+
+  ;
+
+
+
+}
+
+.mdp {
+  width: 40%;
+  height: 35px;
+  margin: 0 auto;
+  border-radius: 30px;
+  box-shadow: 2px 2px 3px rgb(174, 174, 174);
+  border: none;
+
+  border-color: rgb(206, 205, 205);
+}
+
+.form-submit-button {
+
+  background-color: #FED3D3;
+  box-shadow: 2px 2px 3px rgb(174, 174, 174);
+  border: none;
+  border-color: rgb(206, 205, 205);
+  border-radius: 30px;
+  color: black;
+  width: 150px;
+  height: 35px;
+}
+
+.form-submit-button:hover {
+  background-color: #ffce8e;
+  border: 3px solid black;
+  font-style: italic;
+}
+
+.image {
+  margin-top: 0px;
+  margin-left: 0px;
+  height: 90px;
+  z-index: 2;
+  /*a voir avec le prof pourquoi ca se superpose pas avec le titre*/
 }
