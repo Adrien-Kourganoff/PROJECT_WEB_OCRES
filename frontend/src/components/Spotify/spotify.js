@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./spotify.css";
 import axios from "axios";
 import './spotify.css';
-import SpotifyGetPlaylists from "./SpotifyGetPlaylist";
+import SpotifyGetPlaylists from "./SpotifyGetPlaylists";
 
 function Spotify() {
   const CLIENT_ID = "4758a41c44b8416b81efdb1e1f9a9ff5";
