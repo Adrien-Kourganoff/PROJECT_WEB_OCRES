@@ -26,6 +26,8 @@
   border: none;
   border-radius: 30px;
   box-shadow: 2px 2px 3px rgb(174, 174, 174);
+  padding: 0px 20px;
+
 
   ;
 
@@ -40,6 +42,9 @@
   border-radius: 30px;
   box-shadow: 2px 2px 3px rgb(174, 174, 174);
   border: none;
+  padding: 0px 20px;
+
+
 
   border-color: rgb(206, 205, 205);
 }
