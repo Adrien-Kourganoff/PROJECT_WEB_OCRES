@@ -73,7 +73,7 @@ function Spotify() {
             href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
           >
             {" "}
-            Se connecter a Spotify
+            <button type="submit"> Connexion a Spotify </button>
           </a>
         ) : (
           <button onClick={logout}> Se deconnecter</button>
@@ -91,7 +91,7 @@ function Spotify() {
             {renderArtists()}
           </div>
         ) : (
-          <h2> Connectez vous</h2>
+          <h6> Connectez vous </h6>
         )}
       </header>
     </div>
