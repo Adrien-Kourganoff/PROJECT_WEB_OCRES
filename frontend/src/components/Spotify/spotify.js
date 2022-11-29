@@ -11,7 +11,6 @@ function Spotify() {
   const [token, setToken] = useState("");
   const [searchKey, setSearchKey] = useState("");
   const [artists, setArtists] = useState([]);
-
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -26,12 +25,10 @@ function Spotify() {
     }
     setToken(token);
   }, []);
-
   const logout = () => {
     setToken(""); /*NE RIEN ECRIRE ICI SINON PLUS DE PROJET ET C LA MIERDA*/
     window.localStorage.removeItem("token");
   };
-
   const searchArtists = async (e) => {
     e.preventDefault();
     const { data } = await axios.get("https://api.spotify.com/v1/search", {
@@ -46,14 +43,13 @@ function Spotify() {
     setArtists(data.artists.items[0]);
     console.log(artists);
   };
-
   const renderArtists = () => {
     if (artists.length === 0) {
       return <div>{""}</div>;
     }
     return (
       <div className="PhotoArtiste">
-        {artists.images.length ? ( /*IMAGE DE L'ARTISTE */
+        {artists.images.length /*IMAGE DE L'ARTISTE */ ? (
           <div>
             <img width={"40%"} src={artists.images[0].url} alt="" />
           </div>
@@ -64,37 +60,39 @@ function Spotify() {
       </div>
     );
   };
-
   return (
-
     <div className="spotify">
-
       <header className="spotify-header">
-
         {!token ? (
-
-          //LIEN DE CONNEXIN 
-          <a className="se_connecter"
+          //LIEN DE CONNEXIN
+          <a
+            className="se_connecter"
             href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
           >
             {" "}
-            Se connecter a Spotify
+            <button type="submit"> Connexion a Spotify </button>
           </a>
-
         ) : (
-
-          <button className="bouton_deconnexion" onClick={logout}> Se deconnecter</button>
+          <button className="bouton_deconnexion" onClick={logout}>
+            {" "}
+            Se deconnecter
+          </button>
         )}
         {console.log("token", token)}
         {token ? (
           <div>
             <form onSubmit={searchArtists}>
-              <input className="formulaire_recherche"
+              <input
+                className="formulaire_recherche"
                 type="text"
                 placeholder="  Rechercher un artiste"
                 onChange={(e) => setSearchKey(e.target.value)}
               />
-              <button className="bouton_recherche" type="submit"> Rechercher </button>
+              <button className="bouton_recherche" type="submit">
+                {" "}
+                Rechercher{" "}
+              </button>
+              <SpotifyGetPlaylists />
             </form>
             {renderArtists()}
           </div>
@@ -103,8 +101,6 @@ function Spotify() {
         )}
       </header>
     </div>
-
   );
 }
-
 export default Spotify;
