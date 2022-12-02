@@ -6,8 +6,9 @@ import '../Meteo/Forecast'
 import Sidebar from '../Sidebar/Sidebar';
 import Topbar from '../Topbar/Topbar';
 import Forecast from '../Meteo/Forecast';
+import NbaAPI from '../NBA/NbaAPI';
 
-const DashBoard = () => {
+function DashBoard() {
 
 
     return (
@@ -18,16 +19,15 @@ const DashBoard = () => {
                     <Topbar />
                     <div className='widget'>
                         <Forecast />
-                        <Forecast />
-                        <Forecast />
+                        <NbaAPI />
                     </div>
-                   
+
 
                 </div>
 
             </div>
         </div>
-    )
+    );
 }
 
 export default DashBoard
