@@ -6,7 +6,9 @@ import Soleilimg from '../../img/soleil.png'
 class Day extends Component {
   render() {
     const { data } = this.props;
+    console.log("1");
     console.log("data", data);
+    console.log("2");
     if (!data) return null;
 
     const { dt_txt } = data;
@@ -14,6 +16,7 @@ class Day extends Component {
     const { icon, description } = data.weather[0];
     const nuage = data.clouds.all;
     const vent = data.wind.speed;
+
     const pluie = 12;
     console.log(vent);
     return (
