@@ -16,7 +16,7 @@ class NbaAPI extends React.Component {
     }
   
     componentDidMount() {
-      fetch("https://www.balldontlie.io/api/v1/games?dates[]=2022-11-17")
+      fetch("https://www.balldontlie.io/api/v1/games?dates[]=2022-11-30")
         .then(res => res.json())
         .then(
           (result) => {
@@ -28,7 +28,6 @@ class NbaAPI extends React.Component {
 
             console.log(this.state.items);
             console.log("use");
-            console.log(this.state.items.data[0]);
         
         },
           // Note: it's important to handle errors here
@@ -47,7 +46,13 @@ class NbaAPI extends React.Component {
     render() {
       const { error, isLoaded, items } = this.state;
       const datas = this.state.items;
-      const test = "oui";
+    //   const nomImg = this.state.items.data[0].visitor_team.abbreviation;
+    //    console.log(nomImg) ;
+       console.log("oui");
+      const test = "LAC";
+      
+      console.log('../../img/img'+test+'.png');
+
       if (error) {
         return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
@@ -57,26 +62,27 @@ class NbaAPI extends React.Component {
            
             //   <NbaWidget  data={datas} />
            <div className="widget2">
+            
+            <p className="Titre">Resultats de la nuit</p>
                
                 <div className="match">
-                <div className="logo1"><img src= {require('../../img/imgLAC.png')} alt="logo club" className="logoEquipe"/></div>
+                    <div className="logo1"><img src= {require('../../img/img'+datas.data[0].home_team.abbreviation+'.png')} alt="logo club" className="logoEquipe"/></div>
                     <div className="score"><p>{datas.data[0].home_team_score}  -  {datas.data[0].visitor_team_score}</p></div>
-                    <div className="logo2"><p>{datas.data[0].visitor_team.abbreviation}</p></div>
-                </div>
-                <div className="match">
-                    <div className="logo1"><p>{datas.data[1].home_team.abbreviation}</p></div>
-                    <div className="score"><p>{datas.data[1].home_team_score}  -  {datas.data[1].visitor_team_score}</p></div>
-                    <div className="logo2"><p>{datas.data[1].visitor_team.abbreviation}</p></div>
-                </div>
-                <div className="match">
-                    <div className="logo1"><p>{datas.data[2].home_team.abbreviation}</p></div>
-                    <div className="score"><p>{datas.data[2].home_team_score}  -  {datas.data[2].visitor_team_score}</p></div>
-                    <div className="logo2"><p>{datas.data[2].visitor_team.abbreviation}</p></div>
+                    <div className="logo1"><img src= {require('../../img/img'+datas.data[0].visitor_team.abbreviation+'.png')} alt="logo club" className="logoEquipe"/></div>
                 </div>
                 
-
-          
-           
+                <div className="match">
+                    <div className="logo1"><img src= {require('../../img/img'+datas.data[1].home_team.abbreviation+'.png')} alt="logo club" className="logoEquipe"/></div>
+                    <div className="score"><p>{datas.data[1].home_team_score}  -  {datas.data[1].visitor_team_score}</p></div>
+                    <div className="logo1"><img src= {require('../../img/img'+datas.data[1].visitor_team.abbreviation+'.png')} alt="logo club" className="logoEquipe"/></div>
+                </div>  
+                 
+                <div className="match">
+                    <div className="logo1"><img src= {require('../../img/img'+datas.data[2].home_team.abbreviation+'.png')} alt="logo club" className="logoEquipe"/></div>
+                    <div className="score"><p>{datas.data[2].home_team_score}  -  {datas.data[2].visitor_team_score}</p></div>
+                    <div className="logo1"><img src= {require('../../img/img'+datas.data[2].visitor_team.abbreviation+'.png')} alt="logo club" className="logoEquipe"/></div>
+                </div>
+        
            </div>
         );
       }
