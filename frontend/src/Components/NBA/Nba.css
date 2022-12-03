@@ -2,9 +2,9 @@
 
     text-align: center;
     border-radius: 5%;
-    background-color: #c47c2f;
+    background-color: #fcfcfc;
     width: 30%;
-    height: 30%;
+    height: 40%;
     margin: 20px;
   }
 
@@ -18,7 +18,7 @@
 
   .logo1
   {
-    border: solid;
+    /* border: solid; */
     width: 33%;
     display: flex;
     justify-content: center;
@@ -26,13 +26,13 @@
   }
   .logo2
   {
-    border: solid;
+    /* border: solid; */
     width: 33%;
   }
 
   .score
   {
-    border: solid;
+    /* border: solid; */
     width: 67%;
   }
 
@@ -41,5 +41,11 @@
  
     width: 40px;
     height: 40px;
-    border: solid;
+    /* border: solid; */
+  }
+
+  .Titre
+  {
+    margin-top: 0px;
+    font-weight: bold;
   }
