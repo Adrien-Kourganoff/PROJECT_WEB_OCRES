@@ -1,0 +1,81 @@
+*
+{
+/* border: solid; */
+}
+
+.day-container {
+  
+  text-align: center;
+ 
+  border-radius: 5%;
+  background-color: #CBE5F7;
+  
+}
+
+.temp
+{
+  vertical-align: middle;
+  font-size: 400%;
+  color: #2C6497;
+
+ 
+}
+
+.date
+{
+ 
+  font-weight: bold;
+  margin-top: 0px;
+
+}
+.immg
+{
+  max-width: 120px; 
+   height: auto; 
+  vertical-align: middle;
+  margin-right: 21px;
+ 
+}
+
+.ImgTemp
+{
+  
+  border-color: red;
+  vertical-align: middle;
+
+}
+
+.InfoSup
+{
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.duo
+{
+  margin-left: 10px;
+  margin-right: 10px;
+   width: 4em; 
+  /* min-width: 4em; */
+}
+
+.duo>img
+{
+   max-width: 20px; 
+   height: auto; 
+}
+
+.duo>p
+{
+  font-size: 70%;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+p
+{
+  color: #2C6497;
+}
+
