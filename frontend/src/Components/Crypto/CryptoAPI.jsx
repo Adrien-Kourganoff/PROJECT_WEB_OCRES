@@ -25,7 +25,7 @@ class CryptoAPI extends React.Component {
 
             console.log("Crypto");
             console.log(this.state.items);
-            console.log("Crypto");
+            // console.log("Crypto");
         
         },
           // Note: it's important to handle errors here
