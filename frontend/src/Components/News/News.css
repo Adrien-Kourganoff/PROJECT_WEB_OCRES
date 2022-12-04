@@ -1,0 +1,51 @@
+
+.widget4 {
+
+    text-align: center;
+    border-radius: 5%;
+    background-color: #fcfcfc;
+    width: 55%;
+    height: 30%;
+    /* margin: 20px; */
+  }
+
+.titre
+{
+    /* border: solid; */
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.content
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.ImageNews
+{
+    width: 24%;
+    height: auto;
+    /* border: solid; */
+    border-radius: 5%;
+    margin-right: 20px;
+}
+
+.descr
+{
+    /* border: solid; */
+    text-align: start;
+    font-size: 80%;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.end
+{
+    font-size: 70%;
+    text-align: start;
+    margin-left: 20px;
+    
+}

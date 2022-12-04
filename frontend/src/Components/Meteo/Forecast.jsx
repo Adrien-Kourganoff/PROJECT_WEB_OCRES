@@ -49,7 +49,7 @@ class Forecast extends Component {
     const { city } = this.props;
     if (!forecast) return <p>Loading...</p>;
     return (
-      <div className="Meteo">
+      
         <div className="forecast-container">
           {/* render tout le tableau */}
           {forecast.map((forecastData, index) => {
@@ -61,7 +61,7 @@ class Forecast extends Component {
           <Day data={forecast[3]}/>
           <Day data={forecast[4]}/> */}
         </div>
-      </div>
+     
     );
   }
 }

@@ -1,0 +1,14 @@
+.widget3
+{
+    width: 40%;
+    height: 10%;
+    border: solid;
+    text-align: center;
+    border-radius: 5%;
+    background-color: #3380FF;
+}
+
+.grp
+{
+    border: solid;
+}
