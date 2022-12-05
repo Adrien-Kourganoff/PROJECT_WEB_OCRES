@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./Crypto.css"
-
 import '@progress/kendo-theme-default/dist/all.css';
 import {
-    Chart,
-    ChartTitle,
-    ChartSeries,
-    ChartSeriesItem,
-    ChartLegend,
+  Chart,
+  ChartTitle,
+  ChartSeries,
+  ChartSeriesItem,
+  ChartCategoryAxis,
+  ChartCategoryAxisItem,
 } from "@progress/kendo-react-charts";
-
 
 
 
@@ -55,63 +53,51 @@ class CryptoAPI extends React.Component {
             )
     }
 
+
     render() {
         const { error, isLoaded, items } = this.state;
         const datas = this.state.items;
 
-        if (error) {
-            return <div>Error: {error.message}</div>;
-        } else if (!isLoaded) {
-            return <div>Loading...</div>;
-        } else {
+      if (error) {
+        return <div>Error: {error.message}</div>;
+      } else if (!isLoaded) {
+        return <div>Loading...</div>;
+      } else {
 
-            const pieData ={
-                labels: ["1","2","3"],
-                datasets: [{
-                  label: 'My First Dataset',
-                  data: [65, 59, 80],
-                  fill: true,
-                  borderColor: 'rgb(75, 192, 192)',
-                  tension: 0.5
-                }]
-              };
-            return (
+        const pieData = [
+          {
+            name: "1",
+            share: 16000,
+            color: "rgba(0, 128, 255, 1)",
+          },
+          {
+            name: "2",
+            share: 16100,
+            color: "rgba(255, 153, 153, 1)",
+            
+          },
+          {
+            name: "3",
+            share: 16050,
+            color: "rgba(245, 0, 0, 1)",
+            explode: true,
+            
+          },
+         
+        
+      
+        ];
+        const categories = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+        return (
+           
 
-                <div className="widget3">
+          <p>Hello</p>
+           
+          
+           
+        );
+      }
 
-                    <p>Crypto: {datas.name}</p>
-
-                    <Chart
-                        style={{
-                            
-                        }}
-                    >
-                        <ChartTitle text="Les sports les plus regardÃ©s" align="center" />
-                        <ChartLegend position="right" orientation="vertical" align="end" />
-                        <ChartSeries>
-                            <ChartSeriesItem
-
-                                type="line"
-                                overlay={{
-                                    gradient: "glass",
-                                }}
-                                tooltip={{
-                                    visible: false,
-                                }}
-                                data={pieData}
-                                categoryField="name"
-                                 field="share"
-                                color="color"
-                              
-                            />
-                        </ChartSeries>
-                    </Chart>
-                </div>
-
-
-
-            );
-        }
     }
 }
 

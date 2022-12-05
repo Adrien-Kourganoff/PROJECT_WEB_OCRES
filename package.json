@@ -1,11 +1,15 @@
 {
   "dependencies": {
+    "@progress/kendo-licensing": "^1.2.2",
+    "@progress/kendo-react-charts": "^5.9.0",
+    "@progress/kendo-react-dateinputs": "^5.9.0",
+    "@progress/kendo-react-intl": "^5.9.0",
+    "@progress/kendo-theme-default": "^5.12.0",
     "axios": "^1.2.0",
-<<<<<<< HEAD
+
     "chart.js": "^4.0.1",
     "react-chartjs-2": "^5.0.1"
-=======
+
     "react-router-dom": "^6.4.3"
->>>>>>> 17d8f8e6a1e7d26c8a37e073b58efe70805eab33
   }
 }
