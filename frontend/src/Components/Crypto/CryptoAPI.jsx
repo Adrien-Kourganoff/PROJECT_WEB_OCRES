@@ -1,5 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
+import '@progress/kendo-theme-default/dist/all.css';
+import {
+  Chart,
+  ChartTitle,
+  ChartSeries,
+  ChartSeriesItem,
+  ChartCategoryAxis,
+  ChartCategoryAxisItem,
+} from "@progress/kendo-react-charts";
 
 
 class CryptoAPI extends React.Component {
@@ -40,6 +49,8 @@ class CryptoAPI extends React.Component {
           }
         )
     }
+
+   
   
     render() {
         const { error, isLoaded, items } = this.state;
@@ -50,9 +61,36 @@ class CryptoAPI extends React.Component {
       } else if (!isLoaded) {
         return <div>Loading...</div>;
       } else {
+
+        const pieData = [
+          {
+            name: "1",
+            share: 16000,
+            color: "rgba(0, 128, 255, 1)",
+          },
+          {
+            name: "2",
+            share: 16100,
+            color: "rgba(255, 153, 153, 1)",
+            
+          },
+          {
+            name: "3",
+            share: 16050,
+            color: "rgba(245, 0, 0, 1)",
+            explode: true,
+            
+          },
+         
+        
+      
+        ];
+        const categories = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
         return (
            
-            <p>Hello</p>
+
+          <p>Hello</p>
+           
           
            
         );
