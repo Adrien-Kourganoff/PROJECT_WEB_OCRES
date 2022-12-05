@@ -1,4 +1,3 @@
-
 .widget4 {
 
     text-align: center;
@@ -7,23 +6,20 @@
     width: 55%;
     height: 30%;
     /* margin: 20px; */
-  }
+}
 
-.titre
-{
+.titre {
     /* border: solid; */
     margin-top: 0px;
     font-weight: bold;
 }
 
-.content
-{
+.content {
     display: flex;
     flex-direction: row;
 }
 
-.ImageNews
-{
+.ImageNews {
     width: 24%;
     height: auto;
     /* border: solid; */
@@ -31,8 +27,7 @@
     margin-right: 20px;
 }
 
-.descr
-{
+.descr {
     /* border: solid; */
     text-align: start;
     font-size: 80%;
@@ -42,10 +37,9 @@
     margin-bottom: 0px;
 }
 
-.end
-{
+.end {
     font-size: 70%;
     text-align: start;
     margin-left: 20px;
-    
+
 }

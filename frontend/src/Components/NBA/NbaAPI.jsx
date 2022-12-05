@@ -48,10 +48,7 @@ class NbaAPI extends React.Component {
       const datas = this.state.items;
     //   const nomImg = this.state.items.data[0].visitor_team.abbreviation;
     //    console.log(nomImg) ;
-       console.log("NBA->");
-       console.log(datas.data);
-       console.log("<-NBA");
-       
+       console.log("oui");
       const test = "LAC";
       
       console.log('../../img/img'+test+'.png');
