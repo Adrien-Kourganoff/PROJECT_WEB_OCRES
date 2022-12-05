@@ -11,47 +11,49 @@ import {
 } from "@progress/kendo-react-charts";
 
 
+
 class CryptoAPI extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = {
-        error: null,
-        isLoaded: false,
-        items: []
-      };
+        super(props);
+        this.state = {
+            error: null,
+            isLoaded: false,
+            items: []
+        };
     }
-  
+
+
+
     componentDidMount() {
-      fetch("https://api.coingecko.com/api/v3/coins/ethereum?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true")
-        .then(res => res.json())
-        .then(
-          (result) => {
-            
-            this.setState({
-              isLoaded: true,
-              items: result
-            });
+        fetch("https://api.coingecko.com/api/v3/coins/ethereum?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true")
+            .then(res => res.json())
+            .then(
+                (result) => {
 
-            console.log("Crypto");
-            console.log(this.state.items);
-            // console.log("Crypto");
-        
-        },
-          // Note: it's important to handle errors here
-          // instead of a catch() block so that we don't swallow
-          // exceptions from actual bugs in components.
+                    this.setState({
+                        isLoaded: true,
+                        items: result
+                    });
 
-          (error) => {
-            this.setState({
-              isLoaded: true,
-              error
-            });
-          }
-        )
+                    console.log("Crypto");
+                    console.log(this.state.items);
+                    // console.log("Crypto");
+
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
     }
 
-   
-  
+
     render() {
         const { error, isLoaded, items } = this.state;
         const datas = this.state.items;
@@ -95,7 +97,8 @@ class CryptoAPI extends React.Component {
            
         );
       }
-    }
-  }
 
-  export default CryptoAPI;
+    }
+}
+
+export default CryptoAPI;

@@ -9,11 +9,15 @@ import Forecast from '../Meteo/Forecast';
 import NbaAPI from '../NBA/NbaAPI';
 import CryptoAPI from '../Crypto/CryptoAPI';
 import GrapheCrypto from '../Crypto/GrapheCrypto'
+import NewsAPI from '../News/NewsAPI';
+
 
 function DashBoard() {
 
 
     return (
+       
+        
         <div className="App">
             <div className="AppGlass">
                 <Sidebar />
@@ -24,6 +28,8 @@ function DashBoard() {
                         {/* <NbaAPI /> */}
                         {/* <CryptoAPI /> */}
                         <GrapheCrypto />
+                        <CryptoAPI />
+                        <NewsAPI />
                     </div>
 
 
