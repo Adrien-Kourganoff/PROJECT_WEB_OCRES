@@ -1,0 +1,16 @@
+.forecast-header {
+  text-align: center;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  height: 40%;
+  margin: 30px;
+}
+
+.Meteo
+{
+  margin: 20px;
+}

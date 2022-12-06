@@ -1,0 +1,51 @@
+.widget2 {
+
+    text-align: center;
+    border-radius: 5%;
+    background-color: #fcfcfc;
+    width: 30%;
+    height: 40%;
+    margin: 20px;
+  }
+
+  .match
+  {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+
+  }
+
+  .logo1
+  {
+    /* border: solid; */
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo2
+  {
+    /* border: solid; */
+    width: 33%;
+  }
+
+  .score
+  {
+    /* border: solid; */
+    width: 67%;
+  }
+
+  .logoEquipe
+  {
+ 
+    width: 40px;
+    height: 40px;
+    /* border: solid; */
+  }
+
+  .Titre
+  {
+    margin-top: 0px;
+    font-weight: bold;
+  }
